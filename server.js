@@ -27,6 +27,12 @@ app.use(express.static('.'));
 
 // API endpoint for recommendations
 app.post('/api/recommend', async (req, res) => {
+  // Vérification de clé API au début
+  if (!process.env.GEMINI_API_KEY) {
+    console.error('Clé API manquante dans Render');
+    return res.status(500).json({ error: 'Clé API manquante dans Render' });
+  }
+  
   try {
     const { userProfile, miceData } = req.body;
 
@@ -35,12 +41,7 @@ app.post('/api/recommend', async (req, res) => {
     }
 
     // API Key with trim to remove hidden spaces
-    const apiKey = (process.env.GEMINI_API_KEY || '').trim();
-    
-    if (!apiKey) {
-      console.error('GEMINI_API_KEY not configured');
-      return res.status(500).json({ error: 'GEMINI_API_KEY not configured' });
-    }
+    const apiKey = process.env.GEMINI_API_KEY.trim();
 
     const prompt = `Tu es l'expert MinSp. Analyse ce profil utilisateur : ${JSON.stringify(userProfile)} 
     et ce catalogue de souris : ${JSON.stringify(miceData)}.
@@ -100,8 +101,10 @@ app.post('/api/recommend', async (req, res) => {
     res.json(JSON.parse(cleanJson));
   } catch (error) {
     console.error('Recommendation error:', error);
+    // Renvoie l'erreur complète au frontend
     res.status(500).json({ 
       error: error.message,
+      details: error.response?.data || error,
       stack: error.stack 
     });
   }
