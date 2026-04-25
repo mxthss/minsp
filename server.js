@@ -28,7 +28,14 @@ app.post('/api/recommend', async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields: userProfile and miceData' });
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    // Debug: Check if API key is present (without exposing it)
+    const rawApiKey = process.env.GEMINI_API_KEY;
+    console.log('Clé présente ?', !!rawApiKey);
+    console.log('Clé length:', rawApiKey ? rawApiKey.length : 0);
+    
+    // Trim API key to remove any hidden spaces
+    const apiKey = rawApiKey ? rawApiKey.trim() : null;
+    
     if (!apiKey) {
       return res.status(500).json({ error: 'GEMINI_API_KEY not configured' });
     }
@@ -42,6 +49,14 @@ app.post('/api/recommend', async (req, res) => {
     }
     Interdiction de mettre du texte avant ou après le JSON.`;
 
+    // Strict JSON format for Gemini v1 API
+    const requestBody = {
+      contents: [{
+        parts: [{ text: prompt }]
+      }]
+    };
+    console.log('Request body format:', JSON.stringify(requestBody).substring(0, 100) + '...');
+    
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
@@ -49,11 +64,7 @@ app.post('/api/recommend', async (req, res) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          contents: [{
-            parts: [{ text: prompt }]
-          }]
-        })
+        body: JSON.stringify(requestBody)
       }
     );
 
