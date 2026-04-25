@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinSp - AI Mouse Recommendation</title>
+  <meta name="description" content="Get personalized mouse recommendations powered by AI. Answer a few questions and find your perfect mouse.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .ai-page {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px 80px;
+      min-height: calc(100vh - 200px);
+    }
+
+    .ai-container {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .ai-page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .ai-page-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin: 0 0 12px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 50%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-page-header p {
+      font-size: 1.15rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    .ai-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: opacity 0.2s;
+    }
+
+    .ai-back-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Form Card */
+    .ai-form-card {
+      background: linear-gradient(135deg, rgba(12, 22, 40, 0.92) 0%, rgba(8, 16, 32, 0.96) 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(139, 92, 246, 0.06);
+    }
+
+    .ai-form-card h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ai-form-card h2 .icon {
+      font-size: 1.5rem;
+    }
+
+    .ai-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ai-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .ai-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ai-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ai-form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ai-form-group label .required {
+      color: #ef4444;
+    }
+
+    .ai-form-group input,
+    .ai-form-group select {
+      padding: 14px 16px;
+      background: var(--field);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ai-form-group input:focus,
+    .ai-form-group select:focus {
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+
+    .ai-form-group input::placeholder {
+      color: var(--text-faint);
+    }
+
+    .ai-form-hint {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      margin-top: 4px;
+    }
+
+    .ai-submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      margin-top: 12px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      border: none;
+      border-radius: 14px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+    }
+
+    .ai-submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+    }
+
+    .ai-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .ai-submit-btn .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: ai-spin 1s linear infinite;
+    }
+
+    @keyframes ai-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Loading State */
+    .ai-loading-card {
+      background: linear-gradient(135deg, rgba(12, 22, 40, 0.92) 0%, rgba(8, 16, 32, 0.96) 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .ai-loading-card .ai-loading-spinner {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 24px;
+      border: 4px solid rgba(139, 92, 246, 0.2);
+      border-top-color: #8b5cf6;
+      border-radius: 50%;
+      animation: ai-spin 1s linear infinite;
+    }
+
+    .ai-loading-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 8px;
+    }
+
+    .ai-loading-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* Results */
+    .ai-results-card {
+      background: linear-gradient(135deg, rgba(12, 22, 40, 0.92) 0%, rgba(8, 16, 32, 0.96) 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .ai-results-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .ai-results-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 8px;
+    }
+
+    .ai-results-header p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* Best Choice */
+    .ai-best-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
+      border: 2px solid rgba(139, 92, 246, 0.3);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .ai-best-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      border-radius: 20px;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .ai-best-badge::before {
+      content: '✨';
+    }
+
+    .ai-best-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 12px;
+    }
+
+    .ai-best-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #8b5cf6;
+      margin: 0 0 16px;
+    }
+
+    .ai-best-specs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .ai-best-specs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .ai-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: var(--accent);
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 16px rgba(87, 184, 255, 0.25);
+    }
+
+    .ai-view-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(87, 184, 255, 0.35);
+    }
+
+    /* Reason */
+    .ai-reason-card {
+      background: rgba(10, 20, 38, 0.5);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .ai-reason-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-reason-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Alternatives */
+    .ai-alternatives-card {
+      background: rgba(10, 20, 38, 0.5);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .ai-alternatives-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+    }
+
+    .ai-alt-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ai-alt-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .ai-alt-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--line);
+    }
+
+    .ai-alt-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ai-alt-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .ai-alt-desc {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+    }
+
+    .ai-alt-price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    /* New Recommendation Button */
+    .ai-new-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      margin-top: 24px;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ai-new-btn:hover {
+      border-color: #8b5cf6;
+      color: #8b5cf6;
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    /* Error Card */
+    .ai-error-card {
+      background: linear-gradient(135deg, rgba(12, 22, 40, 0.92) 0%, rgba(8, 16, 32, 0.96) 100%);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 24px;
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .ai-error-icon {
+      font-size: 3.5rem;
+      margin: 0 0 16px;
+    }
+
+    .ai-error-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 8px;
+    }
+
+    .ai-error-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0 0 24px;
+    }
+
+    .ai-retry-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      color: #ef4444;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ai-retry-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+    }
+
+    /* Hidden utility */
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="theme-tech">
+  <div class="ai-page">
+    <div class="ai-container">
+      <a href="index.html" class="ai-back-link">← Back to catalog</a>
+
+      <div class="ai-page-header">
+        <h1>🤖 AI Mouse Recommendation</h1>
+        <p>Answer a few questions and let our AI find your perfect mouse</p>
+      </div>
+
+      <!-- Step 1: Form -->
+      <div class="ai-form-card" id="ai-form-section">
+        <h2><span class="icon">🎯</span> Your Preferences</h2>
+        <form class="ai-form" id="ai-form">
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-budget">Budget <span class="required">*</span></label>
+              <input type="number" id="ai-budget" name="budget" placeholder="e.g. 100" min="10" max="500" required>
+              <span class="ai-form-hint">Maximum budget in USD</span>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-hand-size">Hand Size <span class="required">*</span></label>
+              <select id="ai-hand-size" name="handSize" required>
+                <option value="">Select...</option>
+                <option value="small">Small (&lt; 17cm)</option>
+                <option value="medium">Medium (17-19cm)</option>
+                <option value="large">Large (&gt; 19cm)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-usage">Primary Usage <span class="required">*</span></label>
+              <select id="ai-usage" name="usage" required>
+                <option value="">Select...</option>
+                <option value="gaming">Gaming</option>
+                <option value="fps">FPS Gaming</option>
+                <option value="moba">MOBA / MMO</option>
+                <option value="bureautique">Office / Work</option>
+                <option value="design">Design / Creative</option>
+                <option value="mix">Mixed Usage</option>
+              </select>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-wireless">Connection <span class="required">*</span></label>
+              <select id="ai-wireless" name="wireless" required>
+                <option value="">Select...</option>
+                <option value="true">Wireless only</option>
+                <option value="false">Wired only</option>
+                <option value="any">No preference</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-group">
+            <label for="ai-grip-style">Grip Style <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+            <select id="ai-grip-style" name="gripStyle">
+              <option value="">Any - I don't know / flexible</option>
+              <option value="palm">Palm Grip (whole hand on mouse)</option>
+              <option value="claw">Claw Grip (fingers arched)</option>
+              <option value="fingertip">Fingertip Grip (only fingers touch)</option>
+            </select>
+            <span class="ai-form-hint">How you naturally hold your mouse</span>
+          </div>
+
+          <button type="submit" class="ai-submit-btn" id="ai-submit-btn">
+            <span>✨</span>
+            Get My Recommendation
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 2: Loading -->
+      <div class="ai-loading-card hidden" id="ai-loading-section">
+        <div class="ai-loading-spinner"></div>
+        <h3>Analyzing your profile...</h3>
+        <p>Our AI is comparing your needs with our database of mice</p>
+      </div>
+
+      <!-- Step 3: Results -->
+      <div class="ai-results-card hidden" id="ai-results-section">
+        <div class="ai-results-header">
+          <h2>🎉 Your Perfect Match</h2>
+          <p>Based on your preferences, here's what we recommend</p>
+        </div>
+
+        <div id="ai-results-content">
+          <!-- Results injected here -->
+        </div>
+
+        <button type="button" class="ai-new-btn" id="ai-new-btn">
+          <span>🔄</span>
+          Get another recommendation
+        </button>
+      </div>
+
+      <!-- Step 4: Error -->
+      <div class="ai-error-card hidden" id="ai-error-section">
+        <div class="ai-error-icon">⚠️</div>
+        <h3>Oops! Something went wrong</h3>
+        <p id="ai-error-message">We couldn't get a recommendation. Please try again.</p>
+        <button type="button" class="ai-retry-btn" id="ai-error-btn">
+          <span>🔄</span>
+          Try Again
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./data/mice.js"></script>
+  <script>
+    // Check authentication first
+    (function() {
+      var SESSION_KEY = 'currentUser';
+      var currentUser = null;
+      try {
+        var data = localStorage.getItem(SESSION_KEY);
+        currentUser = data ? JSON.parse(data) : null;
+      } catch(e) {
+        currentUser = null;
+      }
+      
+      if (!currentUser) {
+        // Redirect to login with return URL
+        window.location.href = 'login.html?return=' + encodeURIComponent(window.location.pathname.split('/').pop());
+        return;
+      }
+      
+      // Show user greeting
+      document.addEventListener('DOMContentLoaded', function() {
+        var backLink = document.querySelector('.ai-back-link');
+        if (backLink && currentUser.pseudo) {
+          backLink.insertAdjacentHTML('afterend', 
+            '<p style="color: var(--text-faint); font-size: 0.9rem; margin: -16px 0 16px;">Welcome, <strong>' + 
+            escapeHtml(currentUser.pseudo) + '</strong> ✨</p>');
+        }
+      });
+      
+      function escapeHtml(text) {
+        if (!text) return '';
+        return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+    })();
+
+    // AI Recommendation Page Logic
+    (function() {
+      // DOM Elements
+      var formSection = document.getElementById('ai-form-section');
+      var loadingSection = document.getElementById('ai-loading-section');
+      var resultsSection = document.getElementById('ai-results-section');
+      var errorSection = document.getElementById('ai-error-section');
+      var form = document.getElementById('ai-form');
+      var submitBtn = document.getElementById('ai-submit-btn');
+      var resultsContent = document.getElementById('ai-results-content');
+      var newBtn = document.getElementById('ai-new-btn');
+      var errorBtn = document.getElementById('ai-error-btn');
+      var errorMessage = document.getElementById('ai-error-message');
+
+      function showSection(section) {
+        formSection.classList.add('hidden');
+        loadingSection.classList.add('hidden');
+        resultsSection.classList.add('hidden');
+        errorSection.classList.add('hidden');
+        
+        section.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function buildMiceDataForAI() {
+        // Use window.MOUSE_DATA which is exposed by mice.js
+        var data = window.MOUSE_DATA || [];
+        return data.slice(0, 50).map(function(mouse) {
+          return {
+            name: mouse.name,
+            brand: mouse.brand,
+            price: mouse.price || 'N/A',
+            dpi: mouse.dpi || mouse.dpiMax || 'N/A',
+            wireless: mouse.wireless || mouse.connectivity === 'wireless' || false,
+            weight: mouse.weight || 'N/A',
+            shape: mouse.shape || 'N/A',
+            type: mouse.type || 'N/A',
+            grip: mouse.grip || 'N/A',
+            usageTags: [mouse.segment || 'general']
+          };
+        });
+      }
+
+      // API endpoint - relative path works for both local and Render
+      var API_URL = '/api/recommend';
+
+      async function getRecommendation(userProfile) {
+        var miceData = buildMiceDataForAI();
+
+        try {
+          var response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userProfile, miceData })
+          });
+
+          if (!response.ok) {
+            var errorData = await response.json().catch(function() {
+              return { error: 'Server error: ' + response.status };
+            });
+            throw new Error(errorData.error || 'Request failed');
+          }
+
+          var data = await response.json();
+          
+          // Convert Netlify format to display format
+          return {
+            best: {
+              name: data.bestChoice.name,
+              reason: data.bestChoice.reason
+            },
+            alternatives: data.alternatives.slice(0, 3).map(function(alt) {
+              return { name: alt.name, reason: 'Alternative option' };
+            })
+          };
+        } catch (error) {
+          console.error('API error:', error);
+          throw new Error('AI service unavailable. Please try again later.');
+        }
+      }
+
+      function findMouseByName(name) {
+        var data = window.MOUSE_DATA || [];
+        return data.find(function(m) {
+          return m.name.toLowerCase() === name.toLowerCase() ||
+                 name.toLowerCase().includes(m.name.toLowerCase()) ||
+                 m.name.toLowerCase().includes(name.toLowerCase());
+        });
+      }
+
+      function escapeHtml(text) {
+        if (!text) return '';
+        return text
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function displayResults(recommendation) {
+        var best = recommendation.bestChoice;
+        var alternatives = recommendation.alternatives || [];
+        var bestMouse = findMouseByName(best.name);
+
+        var html = '';
+
+        // Best choice card
+        html += '<div class="ai-best-card">';
+        html += '<div class="ai-best-badge">Best Choice</div>';
+        html += '<h3 class="ai-best-name">' + escapeHtml(best.name) + '</h3>';
+        html += '<div class="ai-best-price">$' + best.price + '</div>';
+        
+        if (bestMouse) {
+          html += '<div class="ai-best-specs">';
+          if (bestMouse.dpi || bestMouse.dpiMax) {
+            html += '<span>📊 ' + (bestMouse.dpi || bestMouse.dpiMax) + ' DPI</span>';
+          }
+          if (bestMouse.weight) {
+            html += '<span>⚖️ ' + bestMouse.weight + 'g</span>';
+          }
+          html += '<span>' + (bestMouse.wireless ? '📡 Wireless' : '🔌 Wired') + '</span>';
+          html += '</div>';
+          
+          // Create product URL
+          var productUrl = 'index.html?product=' + bestMouse.id;
+          html += '<a href="' + productUrl + '" class="ai-view-btn">View Product Details</a>';
+        }
+        html += '</div>';
+
+        // Reason card
+        html += '<div class="ai-reason-card">';
+        html += '<h4>💡 Why this mouse?</h4>';
+        html += '<p>' + escapeHtml(best.reason) + '</p>';
+        html += '</div>';
+
+        // Alternatives
+        if (alternatives.length > 0) {
+          html += '<div class="ai-alternatives-card">';
+          html += '<h4>🔄 Alternative Options</h4>';
+          html += '<div class="ai-alt-list">';
+          
+          alternatives.forEach(function(alt) {
+            var altMouse = findMouseByName(alt.name);
+            if (altMouse) {
+              html += '<a href="index.html?product=' + altMouse.id + '" class="ai-alt-item">';
+            } else {
+              html += '<div class="ai-alt-item">';
+            }
+            html += '<div class="ai-alt-info">';
+            html += '<span class="ai-alt-name">' + escapeHtml(alt.name) + '</span>';
+            if (altMouse) {
+              html += '<span class="ai-alt-desc">' + altMouse.brand + ' • ' + (altMouse.wireless ? 'Wireless' : 'Wired') + '</span>';
+            }
+            html += '</div>';
+            html += '<span class="ai-alt-price">$' + alt.price + '</span>';
+            html += altMouse ? '</a>' : '</div>';
+          });
+          
+          html += '</div></div>';
+        }
+
+        resultsContent.innerHTML = html;
+      }
+
+      async function handleSubmit(e) {
+        e.preventDefault();
+
+        var formData = new FormData(form);
+        var userProfile = {
+          budget: parseInt(formData.get('budget'), 10),
+          usage: formData.get('usage'),
+          wireless: formData.get('wireless'),
+          handSize: formData.get('handSize'),
+          gripStyle: formData.get('gripStyle')
+        };
+
+        // Show loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<div class="spinner"></div> Processing...';
+        showSection(loadingSection);
+
+        try {
+          var recommendation = await getRecommendation(userProfile);
+          displayResults(recommendation);
+          showSection(resultsSection);
+        } catch (error) {
+          console.error('Failed:', error);
+          var errorMsg = error.message || 'Failed to get recommendation.';
+          
+          // Detect if backend is not running
+          if (errorMsg.includes('Failed to fetch') || errorMsg.includes('NetworkError') || errorMsg.includes('connexion') || errorMsg.includes('network')) {
+            errorMsg = '🔧 Backend server is not running.\n\nPlease start the backend:\n1. Open terminal\n2. cd backend\n3. npm install (first time)\n4. npm start';
+          }
+          
+          errorMessage.innerHTML = errorMsg.replace(/\n/g, '<br>');
+          showSection(errorSection);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>✨</span> Get My Recommendation';
+        }
+      }
+
+      function resetForm() {
+        form.reset();
+        showSection(formSection);
+      }
+
+      // Event listeners
+      form.addEventListener('submit', handleSubmit);
+      newBtn.addEventListener('click', resetForm);
+      errorBtn.addEventListener('click', resetForm);
+
+      // Check for URL params (if coming back from product)
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('reset')) {
+        resetForm();
+      }
+    })();
+  </script>
+</body>
+</html>

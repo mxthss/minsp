@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="MinSp - Electronic Product Comparison">
+  <meta name="description" content="MinSp - A clean, standardized catalog to compare gaming and office mice. Each product includes an image, sources, and profiles built around 5 core specs: DPI, Polling Rate, Weight, Type, and Shape.">
+  <meta name="keywords" content="MinSp, gaming mouse, office mouse, computer mouse, mouse comparison, DPI, polling rate, lightweight mouse, ergonomic mouse">
+  <meta name="author" content="MinSP">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="tVLH35Btzbnv8iQfNclBsHXj0mWHcWVn236ITNA6nV0" />
+
+  <!-- OpenGraph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minsp.example.com/">
+  <meta property="og:title" content="MinSp - Electronic Product Comparison">
+  <meta property="og:description" content="MinSp - A clean, standardized catalog to compare gaming and office mice. Choose, compare, play.">
+  <meta property="og:image" content="https://minsp.example.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="MinSP">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://minsp.example.com/">
+  <meta name="twitter:title" content="MinSp - Electronic Product Comparison">
+  <meta name="twitter:description" content="MinSp - A clean, standardized catalog to compare gaming and office mice. Choose, compare, play.">
+  <meta name="twitter:image" content="https://minsp.example.com/og-image.png">
+
+  <!-- Discord (utilise OpenGraph) -->
+  <meta name="theme-color" content="#57b8ff">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" href="/favicon.ico?v=2" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
+  />
+
+  <title>MinSp - Electronic Product Comparison</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="canonical" href="https://minsp.example.com/">
+</head>
+<body class="theme-tech">
+  <div id="catalog-view" class="spa-view is-visible">
+    <div class="page-shell app-shell">
+      <header class="hero-panel panel-surface">
+        <div class="header-actions">
+          <div class="user-section" id="user-section"></div>
+        <div class="language-picker" id="language-picker">
+            <button
+              class="language-trigger"
+              id="language-trigger"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-label="Choose the catalog language."
+            >
+              <span class="language-flag">
+                <span id="current-language-flag" class="fi fi-us" aria-hidden="true"></span>
+              </span>
+              <span class="language-trigger-copy">
+                <span class="language-trigger-kicker" id="language-trigger-kicker">Language</span>
+                <span class="language-trigger-label" id="current-language-label">English (US)</span>
+              </span>
+              <span class="language-trigger-chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="language-menu hidden" id="language-menu" role="listbox" aria-label="Choose the catalog language."></div>
+          </div>
+        </div>
+
+        <div class="hero-top">
+        <p class="eyebrow" id="hero-eyebrow">MinSp - Electronic Product Comparison</p>
+        <a href="#" class="logo"><span class="notranslate" translate="no">Min<span class="logo-sp">Sp</span></span></a>
+        <p class="slogan" id="hero-slogan">MinSp : choose, compare, <span class="highlight">play</span></p>
+        <p class="hero-text" id="hero-text">
+          <span id="hero-intro">A clean, standardized catalog to compare gaming and office mouse.</span>
+          <span id="hero-count-prefix">Each product includes an image, sources, and exactly</span>
+          <span id="standardized-count">0</span>
+          <span id="hero-count-suffix">profiles built around 5 core specs.</span>
+        </p>
+      </div>
+
+        <div class="hero-rule" aria-hidden="true"></div>
+
+        <section class="hero-stats" aria-label="Catalog stats">
+          <article class="stat-card">
+            <span class="stat-label" id="models-label">Models</span>
+            <strong class="stat-value" id="total-models">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label" id="brands-label">Brands</span>
+            <strong class="stat-value" id="total-brands">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label" id="images-label">Images</span>
+            <strong class="stat-value" id="official-images">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label" id="results-label">Results</span>
+            <strong class="stat-value" id="visible-results">0</strong>
+          </article>
+        </section>
+      </header>
+
+      <section class="catalog-bubble-section" id="catalog-bubble-section">
+        <div class="catalog-bubble">
+          <h2 class="catalog-bubble-title">Catalog</h2>
+          <p class="catalog-bubble-subtitle">Explore our product categories</p>
+          <div class="catalog-bubble-grid">
+            <a href="/souris" class="catalog-bubble-card" data-catalog="mice">
+              <span class="catalog-bubble-card-icon">🖱️</span>
+              <span class="catalog-bubble-card-name">Mice</span>
+              <span class="catalog-bubble-card-desc">Gaming & office</span>
+            </a>
+            <a href="/claviers" class="catalog-bubble-card" data-catalog="keyboard">
+              <span class="catalog-bubble-card-icon">⌨️</span>
+              <span class="catalog-bubble-card-name">Keyboards</span>
+              <span class="catalog-bubble-card-desc">Mechanical & gaming</span>
+            </a>
+            <a href="/composants" class="catalog-bubble-card" data-catalog="pc-component">
+              <span class="catalog-bubble-card-icon">🖥️</span>
+              <span class="catalog-bubble-card-name">PC Components</span>
+              <span class="catalog-bubble-card-desc">Graphics cards, RAM…</span>
+            </a>
+            <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
+              <span class="catalog-bubble-card-icon">📱</span>
+              <span class="catalog-bubble-card-name">Smartphones</span>
+              <span class="catalog-bubble-card-desc">Coming soon</span>
+            </a>
+            <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
+              <span class="catalog-bubble-card-icon">🎧</span>
+              <span class="catalog-bubble-card-name">Audio</span>
+              <span class="catalog-bubble-card-desc">Coming soon</span>
+            </a>
+            <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
+              <span class="catalog-bubble-card-icon">🔌</span>
+              <span class="catalog-bubble-card-name">Accessoires</span>
+              <span class="catalog-bubble-card-desc">Coming soon</span>
+            </a>
+          </div>
+          <a href="about.html" class="catalog-bubble-cta" id="catalog-bubble-cta">Learn more</a>
+        </div>
+      </section>
+
+
+      <section class="toolbar-panel toolbar-grid hidden" id="toolbar-panel" aria-label="Search and filters">
+        <label class="search-field">
+          <span class="field-label" id="search-label">Search</span>
+          <div class="field-shell">
+            <span class="field-icon" aria-hidden="true">&#8981;</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search: gaming, office, wireless, color, weight, features..."
+              autocomplete="off"
+              aria-labelledby="search-label"
+              aria-describedby="search-help"
+              role="searchbox"
+            >
+          </div>
+          <span id="search-help" class="sr-only">Use this field to search mouse by name, brand, or features.</span>
+        </label>
+
+        <label class="filter-field">
+          <span class="field-label" id="brand-label">Brand</span>
+          <select
+            id="brand-filter"
+            aria-labelledby="brand-label"
+            aria-describedby="brand-help"
+            aria-label="Filter by brand"
+          >
+            <option value="all">All brands</option>
+          </select>
+          <span id="brand-help" class="sr-only">Filter results by mouse brand.</span>
+        </label>
+
+        <label class="filter-field">
+          <span class="field-label" id="type-label">Type</span>
+          <select
+            id="type-filter"
+            aria-labelledby="type-label"
+            aria-describedby="type-help"
+            aria-label="Filter by type"
+          >
+            <option value="all">All types</option>
+          </select>
+          <span id="type-help" class="sr-only">Filter results by mouse type, gaming or office.</span>
+        </label>
+
+        <button class="reset-button" type="button" id="reset-filters" aria-label="Reset all search filters">
+          Reset
+        </button>
+      </section>
+
+      <div id="search-history-container"></div>
+
+      <main class="workspace workspace-layout hidden" id="main-workspace">
+        <section class="catalog-panel panel-surface" id="catalog-panel">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker" id="catalog-kicker">Catalog</p>
+              <h2 id="catalog-title">Product selection</h2>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="back-home-btn" id="back-home-btn">← 🏠 <span data-translate="Home">Home</span></button>
+              <button type="button" class="fav-view-btn" id="fav-view-btn">★ <span id="fav-btn-text">Favorites</span></button>
+              <a href="ai-recommend.html" class="ai-recommend-btn" id="ai-recommend-btn" title="Get AI mouse recommendation (login required)" onclick="return checkAIAccess();">
+                <span class="ai-btn-icon">✨</span>
+                <span class="ai-btn-text">AI</span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="catalog-grid"
+            id="catalog-grid"
+            aria-live="polite"
+            aria-label="Mouse product grid"
+            role="region"
+          ></div>
+        </section>
+
+        <section class="favorites-page panel-surface hidden" id="favorites-page">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker" id="fav-kicker">Favorites</p>
+              <h2 id="fav-page-title" data-translate="Your favorite mouse">Your favorite mouse</h2>
+            </div>
+            <button type="button" class="back-btn" id="back-to-catalog">← Back to catalog</button>
+          </div>
+          <div class="catalog-grid" id="favorites-grid"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div
+    id="detail-view"
+    class="spa-view hidden"
+    aria-hidden="true"
+    aria-label="Selected product details"
+    role="dialog"
+    aria-modal="true"
+  >
+    <button id="close-btn" type="button" aria-label="Close product details">&times;</button>
+    <div class="detail-view-shell">
+      <aside
+        class="detail-panel panel-surface"
+        id="detail-panel"
+        aria-live="polite"
+        aria-label="Selected product details"
+        role="complementary"
+      >
+        <div class="detail-empty">
+          <p class="section-kicker">Product details</p>
+          <h2>Choose a mouse</h2>
+          <p>
+            Click a card to open the image, the 5 standardized specs,
+            and the related sources.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="google_translate_element" class="hidden" aria-hidden="true"></div>
+
+  <style>
+    .goog-te-banner-frame, .goog-te-banner, .skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
+    }
+    body {
+      top: 0 !important;
+      position: static !important;
+    }
+    #goog-gt-tt, .goog-te-balloon-frame {
+      display: none !important;
+    }
+    .goog-te-gadget {
+      display: none !important;
+    }
+  </style>
+
+  <script src="./data/mice.js"></script>
+  <script src="./data/keyboards.js"></script>
+  <script src="./data/pc-components.js"></script>
+  <script src="./app.js"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          autoDisplay: false
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+    // Check AI access - redirects to login if not authenticated
+    function checkAIAccess() {
+      var SESSION_KEY = 'currentUser';
+      var currentUser = null;
+      try {
+        var data = localStorage.getItem(SESSION_KEY);
+        currentUser = data ? JSON.parse(data) : null;
+      } catch(e) {
+        currentUser = null;
+      }
+      
+      if (!currentUser) {
+        alert('🔒 Please log in to use AI recommendations\n\nCreate a free account to unlock personalized mouse recommendations powered by AI.');
+        window.location.href = 'login.html?return=ai-recommend.html';
+        return false;
+      }
+      
+      return true;
+    }
+  </script>
+</body>
+</html>

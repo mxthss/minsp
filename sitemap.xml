@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://minsp.netlify.app/</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+
+  <!-- Exemple pour ajouter une nouvelle page :
+  <url>
+    <loc>https://minsp.netlify.app/about</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  -->
+</urlset>

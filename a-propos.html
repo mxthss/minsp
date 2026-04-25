@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinSp - À propos | Comparateur d'objets électroniques</title>
+  <meta name="description" content="MinSp est un comparateur d'objets électroniques. Découvrez notre mission : aider les utilisateurs à comparer souris, claviers, composants PC et plus encore.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="MinSp - À propos | Comparateur d'objets électroniques">
+  <meta property="og:description" content="MinSp est un comparateur d'objets électroniques. Découvrez notre mission et nos catégories de produits.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MinSp - À propos | Comparateur d'objets électroniques">
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .about-page {
+      display: flex;
+      justify-content: center;
+      padding: 60px 20px 80px;
+      min-height: calc(100vh - 120px);
+    }
+    .about-container {
+      max-width: 800px;
+      width: 100%;
+    }
+    .about-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: opacity 0.2s;
+    }
+    .about-back:hover {
+      opacity: 0.8;
+    }
+    .about-hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .about-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin: 0 0 12px;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-hero p {
+      font-size: 1.2rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+    .about-section {
+      margin-bottom: 40px;
+    }
+    .about-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+    }
+    .about-section p {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin: 0 0 12px;
+    }
+    .about-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .about-section li {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+    .about-section li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    .about-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .about-card-item {
+      background: rgba(10, 20, 38, 0.7);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .about-card-item .icon {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+    .about-card-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 6px;
+    }
+    .about-card-item p {
+      font-size: 0.85rem;
+      color: var(--text-faint);
+      margin: 0;
+    }
+    .about-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+    .about-cta a {
+      display: inline-block;
+      padding: 14px 40px;
+      background: linear-gradient(135deg, var(--accent) 0%, #3ba8e8 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(87, 184, 255, 0.25);
+    }
+    .about-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(87, 184, 255, 0.35);
+    }
+    @media (max-width: 700px) {
+      .about-hero h1 { font-size: 2rem; }
+      .about-card-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .about-card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="theme-tech">
+  <div class="about-page">
+    <div class="about-container">
+      <a href="index.html" class="about-back" id="about-back">← Retour à l'accueil</a>
+
+      <div class="about-hero">
+        <h1>Qu'est-ce que MinSp ?</h1>
+        <p>Le comparateur d'objets électroniques de référence</p>
+      </div>
+
+      <div class="about-section">
+        <h2>Notre mission</h2>
+        <p><strong>MinSp</strong> est un comparateur indépendant conçu pour vous aider à choisir le meilleur matériel électronique. Que vous cherchiez une souris gaming, un clavier mécanique ou des composants pour votre PC, MinSp centralise toutes les informations en un seul endroit.</p>
+        <p>Fini les heures de recherche sur plusieurs sites : sur MinSp, vous comparez les produits selon leurs caractéristiques techniques, leurs marques et leurs profils d'utilisation, le tout dans un interface clair et moderne.</p>
+      </div>
+
+      <div class="about-section">
+        <h2>Ce que nous proposons</h2>
+        <ul>
+          <li><strong>Comparaison détaillée</strong> — Chaque produit est présenté avec ses spécifications clés (DPI, poids, type, forme, taux de polling, etc.)</li>
+          <li><strong>Catalogue structuré</strong> — Souris, claviers, composants PC : chaque catégorie est organisée pour une navigation fluide</li>
+          <li><strong>Recherche intelligente</strong> — Filtrez par marque, type, caractéristiques pour trouver exactement ce qu'il vous faut</li>
+          <li><strong>Données vérifiées</strong> — Les fiches produits sont construites à partir de sources fiables et mises à jour régulièrement</li>
+          <li><strong>Gratuit et sans publicité</strong> — MinSp est un outil gratuit, sans popup ni bannière intrusive</li>
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <h2>Nos catégories</h2>
+        <div class="about-card-grid">
+          <div class="about-card-item">
+            <div class="icon">🖱️</div>
+            <h3>Souris</h3>
+            <p>Gaming & bureau, de 50 à 30 000 DPI</p>
+          </div>
+          <div class="about-card-item">
+            <div class="icon">⌨️</div>
+            <h3>Claviers</h3>
+            <p>Mécaniques, membranaires, gaming</p>
+          </div>
+          <div class="about-card-item">
+            <div class="icon">🖥️</div>
+            <h3>Composants PC</h3>
+            <p>GPU, CPU, RAM, refroidissement…</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2>Pourquoi MinSp ?</h2>
+        <p>Le marché de l'électronique est vaste et complexe. MinSp simplifie votre recherche en vous offrant un outil de comparaison objectif et complet. Pas d'affiliation, pas de biais : juste des données claires pour prendre la bonne décision.</p>
+      </div>
+
+      <div class="about-cta">
+        <a href="index.html" id="about-cta-link">Explorer le catalogue MinSp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

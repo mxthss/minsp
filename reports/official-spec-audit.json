@@ -1,0 +1,2477 @@
+[
+  {
+    "name": "Logitech G Pro X2 Superstrike",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-ae/products/gaming-mice/pro-x2-superstrike-mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G502 X",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/g502-x-wired-lightforce.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "25 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "89 g",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G502 X Plus",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/g502-x-plus-wireless-lightforce.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "25 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "106 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G502 Hero",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/g502-hero-gaming-mouse.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "25 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "121 g",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G Pro X Superlight",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-wireless-mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "25 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "63 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G Pro X Superlight 2",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/pro-x2-superlight-wireless-mouse.910-006628.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "60 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G Pro X Superlight 2 SE",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-gb/products/gaming-mice/pro-x-superlight-2-se.910-007555.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "60 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G305 Lightspeed / G304",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/g305-lightspeed-wireless-gaming-mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "99 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech MX Master 4",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/mx-master-4-business.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "8 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "150 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "8000 DPI",
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "™&#34;,&#34;series&#34;:&#34;<strong>mx-master-series</strong> <span>series</span>&#34;,&#34;feature&#34;:&#34;backlit-keys rechargeable programmable-keys media-keys quiet-keys easy-switch-technology&#34;,&#34;newProductTag&#34;:false,&#34;featuredProduct&#34;:false,&#34;featuresList",
+      ":&#34;graphite&#34;,&#34;glbPath&#34;:null,&#34;usdzPath&#34;:null,&#34;variantSubtitle&#34;:&#34;Free users to focus with a science-driven ergonomic keyboard that promotes a more relaxed, natural typing experience designed for hours of comfortable use.",
+      "eyboard for Business&#34;,&#34;name&#34;:&#34;ergo-k860-for-business&#34;,&#34;subtitle&#34;:&#34;Free users to focus with a science-driven ergonomic keyboard that promotes a more relaxed, natural typing experience designed for hours of comfortable use.",
+      "&#34;,&#34;description&#34;:&#34;Science-driven ergonomic wireless keyboard for a more relaxed, natural typing experience&#34;,&#34;cid&#34;:&#34;ergo-k860-for-business&#34;,&#34;warrantyInformatio",
+      "&#34;920-010175&#34;],&#34;productTitle&#34;:&#34;ERGO K860 Split Keyboard for Business&#34;,&#34;shortDescription&#34;:&#34;Science-driven ergonomic wireless keyboard for a more relaxed, natural typing experience&#34;,&#34;series&#34;:&#34;<strong>ergo-series</strong> <span>series</span>",
+      "&#34;,&#34;feature&#34;:&#34;easy-switch-technology media-keys palm-rest programmable-keys quiet-keys rechargeable&#34;,&#34;newProductTag&#34;:false,&#34;featuredProduct&#34;:false,&#34;featuresList&#34;:[&#34;ToDo&#34;",
+      "2 mm) Weight : 5.",
+      "1 mm) Weight : 0.",
+      "83 in (148 mm) Weight : 7.",
+      "76 oz (220 g) Technical Specifications Sensors Sensor Technology: Darkfield high precision Nominal value: 1,000 DPI DPI (Minimal and maximal value): 200-8,000 DPI (can be set in increments of 50 DPI) Buttons Number of Buttons: 8 (left/right-click, back/forwar",
+      "DATASHEET WATCH VIDEO A NEW SENSE OF MASTERY Made for professionals who demand excellence, MX Master 4 offers advanced features like an 8K DPI Darkfield laser sensor, Quiet Click technology, haptic feedback, and 2X more powerful connectivity Compared to MX Master 3S for Business .",
+      "The 8K DPI Darkfield laser sensor tracks with incredible precision even on glass 4 mm minimum glass thickness."
+    ]
+  },
+  {
+    "name": "Logitech MX Master 3S",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/mx-master-3s.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "8 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech MX Anywhere 3S",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/mx-anywhere-3s.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "8 000 DPI",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech Signature M650",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/m650-signature-wireless-mouse-business.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "4 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Logitech POP Mouse",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/pop-wireless-mouse.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "4 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech Lift",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/lift-vertical-ergonomic-mouse-business.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "4 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "Lift Vertical Ergonomic Mouse for Business | Logitech Lift Vertical Ergonomic Mouse for Business SKIP TO MAIN CONTENT Support US,en shop shop shop Shop by category Mice Keyboards Combos Headsets & Earbuds Webcams iPad",
+      "omfort The right size for everybody Logi Bolt wireless technology Data Sheet Watch Video Overview Features Overview Overview SCIENCE-DRIVEN ERGONOMICS ERGO MEANS BUSINESS SCIENTIFIC APPROACH The science of ergonomics is an integral part of our designers’ and engineers’ process of creating",
+      "Ergo Series mice offer more natural postures, superior ergonomic benefits, and reduced movement or muscle strain and striking form factors.",
+      "Ergonomically-designed products help people focus on what matters.",
+      "SEE WELLNESS TIPS ERGONOMICS IS ECONOMICS Ergonomic equipment helps people work more comfortably, with higher efficiency and quality, with less downtime.",
+      "In short, ergonomics is good economics.",
+      "'ERGONOMICS IS GOOD ECONOMICS' WHITE PAPER Features Features Ideal For People who want reduced forearm muscle fatigue People experiencing discomfort P",
+      "eople who want comfort for long hours at the computer AT A GLANCE View Lift for Business’ ergonomic and productivity features.",
+      "Key Features EFFICIENT GOOD ERGONOMICS IS GOOD ECONOMICS Ergonomic equipment helps people work more efficiently, comfortably and with less downtime.",
+      "span>series</span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/lift-vertical-ergonomic-mouse-business.",
+      "com/content/dam/logitech/en/products/mice/lift-for-business/gallery/lift-vertical-ergonomic-mouse-business-gallery-graphite-1.",
+      "gif/content/dam/logitech/en/products/mice/lift-for-business/gallery/lift-vertical-ergonomic-mouse-business-gallery-graphite-left-1."
+    ]
+  },
+  {
+    "name": "Logitech M337 / M535",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/m535-bluetooth-mouse.910-004529.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "1 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M170 / M171",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/m170-wireless-mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "1 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M220 Silent",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/m220-wireless-mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "1 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M221 Silent",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-ph/products/mice/m221-wireless-mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "1 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M330 Silent Plus",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/m330-silent-plus.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "1 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M720 Triathlon",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/m720-triathlon.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech MX Vertical",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/products/mice/mx-vertical-ergonomic-mouse.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "4 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G703 Lightspeed",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/g703-hero-wireless-gaming-mouse.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "25 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "95 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G705 Lightspeed",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice/g705-wireless-gaming-mouse.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "85 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G203 Lightsync",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G403 Hero",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G403 Lightspeed",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G603 Lightspeed",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G604 Lightspeed",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G600 MMO",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice.html",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech MX Anywhere 3",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "4 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech MX Ergo",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M510",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M705 Marathon",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech Pebble M350",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M90",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech M100",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech B100",
+    "brand": "Logitech",
+    "url": "https://www.logitech.com/en-us/shop/c/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G302",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/en-us/products/gaming-mice.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "fetch failed"
+  },
+  {
+    "name": "Logitech G303 Shroud Edition",
+    "brand": "Logitech",
+    "url": "https://www.logitechg.com/es-ar/products/gaming-mice/g303-shroud-wireless-mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "25 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Razer DeathAdder V4 Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-deathadder-v4-pro",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "45 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "58 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "1 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "56 g"
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "RAZER DEATHADDER V4 PRO FOR THE PRO Become the deadliest version of yourself with the Razer DeathAdder V4 Pro—an ultra-lightweight wireless ergonomic mouse that’s the perfect esports specimen.",
+      "56 G * ULTRA-LIGHTWEIGHT DESIGN Faster Swipes.",
+      "Re-engineered with weight optimizations and a smooth-touch finish, our latest DeathAdder gaming mouse is now more than 10% lighter than its predecessor.",
+      "Retaining an award-winning ergonomic shape loved by pros and fans alike, the mouse internals have been overhauled for greater structural integrity through sustainable materials.",
+      "Feel the difference with an ultra-stable wireless system that’s over 63% more efficient * , and capable of true 8000 Hz polling rate with 37% lower latency than previous gen.",
+      "Designed to complement our fastest wireless technology, the larger dongle houses a longer antenna for greater signal strength, while a weighted base keeps it anchored to your desk.",
+      "Connection Status Battery Life Polling Rate Excellent Good Fair Poor 100% 75% 50% 25% 8000 Hz 4000 Hz 2000 Hz 1000 Hz 500 Hz 125 Hz   Solid switches.",
+      "Aim true with an improved sensor with up to 45K DPI, 900 IPS, and 85 G."
+    ]
+  },
+  {
+    "name": "Razer DeathAdder V3 Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-deathadder-v3-pro/specs",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "63 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "8000 Hz",
+      "weight": "63 g"
+    },
+    "snippets": [
+      "Buy Razer DeathAdder V3 Pro - Black - Smooth-Touch - 8000 Hz | Gaming Mice | Razer.",
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "Hop Aboard > Razer DeathAdder V3 Pro Ultra-lightweight Ergonomic Wireless Esports Gaming Mouse for Pro Esports Learn more > This is a carousel with one large image and a track of thumbnails below.",
+      "View Gallery 63g Ultra-lightweight Design Refined Ergonomic Form & Smooth-touch Texture Razer™ HyperPolling Wireless Technology View all specifications Next Business Day Shipping Risk Free Return Com",
+      "00 Smooth-Touch Max Polling Rate Selected Option 8000 Hz 1000 Hz  Selecting this will change other specifications  - US$10.",
+      "00 8000 Hz Add RazerCare Protection Check out the coverage at a glance RazerCare Elite For Mice + US$29.",
+      "99 View details Add Razer Huntsman V3 Pro 8KHz - US - Black Product price: US$249.",
+      "99 View details Add Shop RazerStores RazerCafe Store Locator Purchase Programs Bulk Order Program Education Only at Razer Razer Silver Affiliate Newsletter Explore Technology Chroma RGB Concepts Esports Collabs Support Get Help Registrat",
+      "ion & Warranty RazerStore Support RazerCare Manage Razer ID Support Videos Recycling Program Accessibility Statement Company About Us Careers Newsroom zVentures Contact Us AI Gaming Newsletter Follow Us FOR GAMERS."
+    ]
+  },
+  {
+    "name": "Razer Basilisk V3",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/Razer-Basilisk-V3/RZ01-04000100-R3U1",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": "101 g"
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "10+1 Programmable Buttons Razer™ HyperScroll Tilt Wheel 11 Razer Chroma™ RGB Lighting Zones Tech Specs Form Factor Right-Handed Connectivity Wired - Razer™ Speedflex Cable Battery Life None RGB Lighting Razer Chroma™ RGB See more expand_more Sensor Optical Max Sensit",
+      "ivity (DPI) 26000 Max Speed (IPS) 650 Max Acceleration (G) 50 Programmable Buttons 11 Switch Type 2nd-gen Razer™ Optical Mouse Switch Switch Lifecycle 70 Million Clicks On-board Memory Profiles 5 Mouse Feet 10",
+      "65 in Weight 101 g / 3.",
+      "56 oz (Excluding cable) Accessory Compatibility None Shop RazerStores RazerCafe Store Locator Purchase Programs Bulk Order Program Education Only at Razer Razer Silver Affiliate Newsletter Explore Technology Chroma RGB Concepts Esports Collabs Support Get Help Registrat",
+      "ion & Warranty RazerStore Support RazerCare Manage Razer ID Support Videos Recycling Program Accessibility Statement Company About Us Careers Newsroom zVentures Contact Us AI Gaming Newsletter Follow Us FOR GAMERS."
+    ]
+  },
+  {
+    "name": "Razer Basilisk V3 Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-basilisk-v3-pro",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "30 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "30000 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": null
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "Text appears: Iconic ergonomic form with 10+1 programmable buttons The camera zooms out and transitions to a powerful red laser beam.",
+      "Text appears: Razer Focus Pro 30K Optical Sensor, world’s mose precise optical sensor*, 30,000 DPI As soon as the mouse lands on the desk, it blinks at incredible speed, disappearing out of frame.",
+      "Learn More > 13 INDIVIDUALLY PROGRAMMABLE LEDS OVER 300 CHROMA-INTEGRATED GAMES 16.",
+      "Learn More > More Advanced Features Iconic Ergonomic Form with 10+1 Programmable&nbsp;Buttons Iconic Ergonomic Form with 10+1 Programmable Buttons Cutting-Edge Ergonomics and Control Favored by millions worldwide, the mouse’s signature shape perfectly supports different gr",
+      "The Razer Basilisk V3 Pro features a unique right-handed ergonomic design with a signature thumb rest for less finger drag and smoother flicks when gaming.",
+      "In addition, its tilt scroll wheel can also be programmed for custom functions—just like every other button on the mouse.",
+      "Yes, you may purchase the Razer Mouse Dock Pro , or Razer HyperPolling Wireless Dongle to enable true 8000 Hz wireless polling rate.",
+      "please ensure to plug the HyperPolling Wireless Dongle or Mouse Dock Pro directly to an available USB port on your PC, close background programs and move your mouse in a circular motion when starting to test it within the application."
+    ]
+  },
+  {
+    "name": "Razer Viper V4 Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-viper-v4-pro",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "8000 Hz",
+      "weight": null
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "ENCY FASTER WIRELESS PLATFORM Push your play with the Razer HyperSpeed Wireless Gen-2 system—over 60% more efficient * , enabling true 8000 Hz polling and slashing latency by 55% versus the previous gen—delivering more consistent inputs so you can react with absolute precision in-g",
+      "Enhanced with 50K DPI, 930 IPS, and 90 G for unerring accuracy.",
+      "DYNAMIC SENSITIVITY Enable deeper control of your DPI output and mouse input to best suit your playstyle.",
+      "1-DPI STEP ADJUSTMENTS Achieve pixel-perfect sensitivity with single DPI step increments.",
+      "SENSITIVITY MATCHER Precisely port over the DPI settings of your current mouse to the Viper V4 Pro.",
+      "Designed to complement our fastest wireless technology, the larger dongle houses a taller antenna for greater signal strength, while a weighted base keeps it anchored to your desk.",
+      "Connection Status Battery Life Polling Rate Excellent Good Fair Poor 100% 75% 50% 25% 8000 Hz 4000 Hz 2000 Hz 1000 Hz 500 Hz 125 Hz MORE FEATURES VALIDATED BY PROS SMOOTH-TOUCH FINISH Coated with a finish that feels soft and smooth, yet remains easy to grip.",
+      "6 PROGRAMMABLE CONTROLS From essential commands to complex macros, enjoy a greater degree of control at your fingertips."
+    ]
+  },
+  {
+    "name": "Razer Viper V3 Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-viper-v3-pro/specs",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "35 000 DPI",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "54 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "35000 Hz",
+      "weight": "54 g"
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "Hop Aboard > Razer Viper V3 Pro Ultra-lightweight Symmetrical Wireless Esports Gaming Mouse with HyperPolling 8000 Hz Learn more > This is a carousel with one large image and a track of thumbnails below.",
+      "View Gallery 54 G Ultra-Lightweight Design Razer™ Focus Pro 35K Optical Sensor Gen-2 Razer™ HyperPolling 8K Hz Technology View all specifications Next Business Day Shipping Risk Free Return Comprehensive Customer Support This is a carousel with one l",
+      "99 View details Add Shop RazerStores RazerCafe Store Locator Purchase Programs Bulk Order Program Education Only at Razer Razer Silver Affiliate Newsletter Explore Technology Chroma RGB Concepts Esports Collabs Support Get Help Registrat",
+      "ion & Warranty RazerStore Support RazerCare Manage Razer ID Support Videos Recycling Program Accessibility Statement Company About Us Careers Newsroom zVentures Contact Us AI Gaming Newsletter Follow Us FOR GAMERS."
+    ]
+  },
+  {
+    "name": "Razer Naga V2 Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-naga-v2-pro/specs",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "99 View details Add Razer Huntsman V3 Pro 8KHz - US - Black Product price: US$249.",
+      "99 View details Add Razer DeathAdder V3 Pro - Black - Smooth-Touch - 8000 Hz Product price: US$159.",
+      "99 View details Add Shop RazerStores RazerCafe Store Locator Purchase Programs Bulk Order Program Education Only at Razer Razer Silver Affiliate Newsletter Explore Technology Chroma RGB Concepts Esports Collabs Support Get Help Registrat",
+      "ion & Warranty RazerStore Support RazerCare Manage Razer ID Support Videos Recycling Program Accessibility Statement Company About Us Careers Newsroom zVentures Contact Us AI Gaming Newsletter Follow Us FOR GAMERS."
+    ]
+  },
+  {
+    "name": "Razer Naga V2 HyperSpeed",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-naga-v2-hyperspeed",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "30 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "perSpeed Razer Naga V2 HyperSpeed ADAPT AND UNLEASH Rise to the top of your guild with the Razer Naga V2 HyperSpeed—a best-in-slot wireless ergonomic MMO mouse.",
+      "21 PROGRAMMABLE CONTROLS Ergonomically Placed Buttons for Optimized Control Whether you’re mapping out the essentials or going all out with advanced macros, this mouse is arm",
+      "ed with ergonomically positioned buttons that let you have an arsenal of commands at your fingertips.",
+      "1) DPI Stage Up 2) DPI Stage Down 3) Left Mouse Click 4) Right Mouse Click 5) Left Tilt-Click 6) Scroll Click 7) Right Tilt-Click 8) Scroll Up 9) Scroll Down +12)",
+      "4 GHZ) AND BLUETOOTH Ultra Low-latency Performance or Long Battery Life Unleash seamless, low-latency performance that's faster than other wirele",
+      "Hyperspeed Wireless Up to 250 Hours Interact the radio buttons and sliders below to change the value of \"Battery Life (Days)\" As a wireless ergonomic gaming mouse built for the long game, you can go for ages before its batteries need replacing.",
+      "The Razer Naga V2 HyperSpeed has a right-handed ergonomic design.",
+      "Learn more about our enhanced DPI features ."
+    ]
+  },
+  {
+    "name": "Razer Naga Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/mena-en/gaming-mice/razer-naga-pro",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "20 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "20000 DPI",
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "e up profile HE grenade Molotov Left mouse click Right mouse click Disable Next weapon Previous weapon Throw lethal Throw tactical Synapse: DPI stage up Synapse: DPI stage down Synapse: Cycle up profile Mount Melee Left mouse click Right mouse click Disable Jump Jump Disable Disable",
+      "on 10 Action button - Action button = Left mouse click Right mouse click Autorun Zoom in Zoom out Character pane Toggle guild & communities DPI increase DPI decrease Synapse: Cycle up profile Action button 1 Action button 2 Action button 3 Action button 4 Action button 5 Action butt",
+      "on 6 Action button 7 Action button 8 Action button 9 Assign Skull to target Assign Cross to target Assign Square to target UP TO 19+1 PROGRAMMABLE BUTTONS Have a greater arsenal of commands at your fingertips by mapping out essential hotkeys or macros via Razer Synapse 3, and util",
+      "Every button on the mouse and its side plates is ergonomically positioned, so you can access them easily and quickly, with each click providing audible, tactile feedback that feels satisfying and re",
+      "RAZER FOCUS+ OPTICAL SENSOR Our new, improved sensor has an industry-leading 20,000 DPI with 99."
+    ]
+  },
+  {
+    "name": "Razer Naga X",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-naga-x",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "18 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "85 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "on DeathAdder Viper Naga Basilisk Orochi Pro Click Compare Accessories Customs THE RAZER NAGA LINE With its unique 12-button thumb grid and ergonomic design, the Razer Naga provides MMO gamers the control they need for high-level raiding and PvP.",
+      "Learn More Buy Now Read More Learn More Buy Now Razer Naga V2 HyperSpeed Ergonomic Wireless MMO Gaming Mouse with 19 Programmable Buttons A wireless mouse designed for MMO marathons, with up to 250 hours on Razer HyperSpeed Wireless and 19 programmable buttons.",
+      "Razer Naga V2 HyperSpeed A wireless mouse designed for MMO marathons, with up to 250 hours on Razer HyperSpeed Wireless and 19 programmable buttons.",
+      "Learn More Buy Now Read More Learn More Buy Now Razer Naga Left-Handed Edition Ergonomic MMO Gaming Mouse for Left-Handed Users A wired MMO mouse with a true left-handed design and optimized ergonomics—for control and comfort th",
+      "Razer Naga Left-Handed Edition A wired MMO mouse with a true left-handed design and optimized ergonomics—for control and comfort that all gamers deserve.",
+      "Learn More Buy Now Read More Learn More Buy Now BASE CHARACTERISTICS 12-Button Thumb Grid (fully programmable via Razer Synapse) Ergonomic Design With Ring Finger Rest Compare Razer Naga models {\"@context\":\"https://schema.",
+      "99}}}]} Shop RazerStores RazerCafe Store Locator Purchase Programs Bulk Order Program Education Only at Razer Razer Silver Affiliate Newsletter Explore Technology Chroma RGB Concepts Esports Collabs Support Get Help Registrat",
+      "ion & Warranty RazerStore Support RazerCare Manage Razer ID Support Videos Recycling Program Accessibility Statement Company About Us Careers Newsroom zVentures Contact Us AI Gaming Newsletter Follow Us FOR GAMERS."
+    ]
+  },
+  {
+    "name": "Razer Viper Mini Hyperspeed",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-viper-mini-signature-edition/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "59 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "30000 Hz",
+      "weight": "49 g"
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "h-End Wireless Gaming Mouse – Razer Viper Mini Signature Edition Black White Only at Razer RAZER VIPER MINI SIGNATURE EDITION The Best Lightweight Performance Gaming Mouse Your dream mouse has just been surpassed.",
+      "For those who dare to want it all, arm yourself with a masterpiece that outclasses the competition in weight, design, and performance.",
+      "Introducing the Razer Viper Mini Signature Edition—the best lightweight performance gaming mouse ever created.",
+      "TRUE 8000 Hz POLLING RATE Industry-leading 0.",
+      "125 ms Polling Intervals Learn More > Download Here > A GAMING MASTERPIECE HYPER-LIGHTWEIGHT AT < 49 g MAGNESIUM ALLOY EXOSKELETON INDUSTRY-LEADING PERFORMANCE HYPER-LIGHTWEIGHT AT 49 g MAGNESIUM ALLOY EXOSKELETON INDUSTRY-LEADING P",
+      "ERFORMANCE OUR LIGHTEST MOUSE EVER CREATED Through careful material selection and calculated weight optimizations with zero impact on performance, the Signature Edition moves and feels like no mouse you’ve ever held.",
+      "SUPERIOR WEIGHT REDUCTION A stronger material is more suited for aggressive weight reduction while retaining maximum build strength.",
+      "PERFECTING FORM AND FUNCTION An intricate, yet ultra-durable design crafted from high-grade magnesium alloy with an exceptional strength‑to‑weight ratio."
+    ]
+  },
+  {
+    "name": "Razer DeathAdder Essential",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-deathadder-essential/specs",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "6 400 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "6400 DPI",
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "Hop Aboard > Razer DeathAdder Essential Essential gaming mouse with 6,400 DPI optical sensor Learn more > This is a carousel with one large image and a track of thumbnails below.",
+      "View Gallery True 6,400 DPI Optical Sensor Ergonomic Form Factor 5 Hyperesponse Buttons View all specifications Next Business Day Shipping Risk Free Return Comprehensive Customer Support This",
+      "99 View details Add Razer Huntsman V3 Pro 8KHz - US - Black Product price: US$249.",
+      "99 View details Add Razer DeathAdder V3 Pro - Black - Smooth-Touch - 8000 Hz Product price: US$159.",
+      "99 View details Add Shop RazerStores RazerCafe Store Locator Purchase Programs Bulk Order Program Education Only at Razer Razer Silver Affiliate Newsletter Explore Technology Chroma RGB Concepts Esports Collabs Support Get Help Registrat",
+      "ion & Warranty RazerStore Support RazerCare Manage Razer ID Support Videos Recycling Program Accessibility Statement Company About Us Careers Newsroom zVentures Contact Us AI Gaming Newsletter Follow Us FOR GAMERS."
+    ]
+  },
+  {
+    "name": "Razer Cobra Pro",
+    "brand": "Razer",
+    "url": "https://www.razer.com/gaming-mice/razer-cobra-pro",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "30 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "8000 Hz",
+      "weight": "77 g"
+    },
+    "snippets": [
+      "rs Content Creation Licensed Apparel & Gear Gamer Room Razer Gift Card More Explore Razer Customs Bundles RazerCare Refurbished Purchase Program Explore All Programs Partner & Affiliates Education Corporate Heroes PC PC Explore Laptops & Accessories Explore All Laptops All Portable G",
+      "erFlux Strider Goliathus Sphex Acari Pro Glide Compare Customs Keyboards Explore All Keyboards Esports Product Line Razer Huntsman V3 Pro 8KHz Niko Edition Razer Huntsman V3 Pro 8KHz Razer Huntsman V3 Pro Tenkeyless 8KHz Razer Huntsman V3 Pro Razer Huntsman V3 Pro Tenkeyless Razer",
+      "o Razer Nommo V2 Razer Nommo V2 X Razer Wireless Control Pod Speaker Head Cushion Product Line Razer Clio Compare Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "aming Finger Sleeve Razer Skins Furniture & Lifestyle Furniture & Lifestyle Explore Explore Furniture & Lifestyle Chairs Explore All Chairs Ergonomic Product Line View All Ergonomic Razer Iskur V2 NewGen Razer Iskur V2 X NewGen Razer Iskur V2 X Breathable Product Line View All Breathable",
+      "Featuring Razer HyperSpeed Wireless and 11 individually programmable lighting zones, color your play with an illuminating level of freedom and immersion.",
+      "11 INDIVIDUALLY PROGRAMMABLE LEDS OVER 200 CHROMA‑INTEGRATED GAMES 16.",
+      "Compact Form Factor & Feature Packed For Easy Handling Across Multiple Grip Styles Weighing just 77 g, the Razer Cobra Pro’s small, lightweight design feels great to hold and ensures a seamlessly immersive gaming experience for claw, palm, and fingertip grip styles.",
+      "The Razer Cobra Pro features a right-handed symmetrical compact form factor.",
+      "Yes, you may purchase the Razer Mouse Dock Pro , or Razer HyperPolling Wireless Dongle to enable true 8000 Hz wireless polling rate.",
+      "please ensure to plug the HyperPolling Wireless Dongle or Mouse Dock Pro directly to an available USB port on your PC, close background programs and move your mouse in a circular motion when starting to test it within the application.",
+      "Learn more about our enhanced DPI features .",
+      "Shop RazerStores RazerCafe Store Locator Purchase Programs Bulk Order Program Education Only at Razer Razer Silver Affiliate Newsletter Explore Technology Chroma RGB Concepts Esports Collabs Support Get Help Registrat"
+    ]
+  },
+  {
+    "name": "SteelSeries Aerox 9 Wireless",
+    "brand": "SteelSeries",
+    "url": "https://steelseries.com/gaming-mice/aerox-9-wireless",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "89 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": "89 g"
+    },
+    "snippets": [
+      "rt US Go to regions page Search closed Open cart slider with no items Gaming Products / Mice / Aerox 9 Wireless Aerox 9 Wireless Ultra Lightweight Super-Fast Mouse with AquaBarrier™ STUNNING RGB — Radiant 3-zone PrismSync RGB shines in 16.",
+      "8 million configurable colors ULTRA LIGHTWEIGHT — Purposefully designed holey shell reduces weight to 89g for effortless, fast gameplay AQUABARRIER™ — Mouse interiors are shielded from water splashes, dust, and dirt, technology rated IP54",
+      "18 PROGRAMMABLE BUTTONS — Execute the toughest rotations and instantly access plenty of shortcuts with a 12-button side panel PERFORMANCE TO OUTLAST Y",
+      "4GHz for gaming and Bluetooth 5.",
+      "es Change Products Headsets Mice Keyboards Mousepads Controllers Accessories Sale All Products Gaming Esports Opens in new tab Affiliate Program Opens in new tab Game Giveaways Opens in new tab Drivers & Support Software Support Opens in new tab Product Information Guides Opens in ne",
+      "4 GHz and Bluetooth?"
+    ]
+  },
+  {
+    "name": "SteelSeries Prime",
+    "brand": "SteelSeries",
+    "url": "https://steelseries.com/gaming-mice/prime",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "69 g",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": "50 g"
+    },
+    "snippets": [
+      "cated secondary depth sensor for instant lift-off detection Customize your settings on-board OLED screen, ready for any tournament 71g lightweight, textured matte design developed with top esports pros Join our community Giveaways, gaming, gear.",
+      "es Change Products Headsets Mice Keyboards Mousepads Controllers Accessories Sale All Products Gaming Esports Opens in new tab Affiliate Program Opens in new tab Game Giveaways Opens in new tab Drivers & Support Software Support Opens in new tab Product Information Guides Opens in ne",
+      "o adjustments to large sweeping movements, and everything in between, the world’s top esports pros helped us perfect a shape and ultra-lightweight 69g design that reduces hand fatigue when lifting and lowering the mouse without compromising durability.",
+      "Shop All Prime Shop All Prime Recommended Grip Styles The ergonomic right-handed shape of the Prime+ mouse is designed for a player’s highest demands, especially for those using claw or fingertip grip styles."
+    ]
+  },
+  {
+    "name": "SteelSeries Sensei / Sensei 310",
+    "brand": "SteelSeries",
+    "url": "https://steelseries.com/gaming-mice/sensei-310",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "10 The world&#x27;s first true 1 to 1 esports sensor Exclusive split-trigger mouse button design Omron 50-million click mechanical switches Ambidextrous design with pure silicone side grips Join our community Giveaways, gaming, gear.",
+      "es Change Products Headsets Mice Keyboards Mousepads Controllers Accessories Sale All Products Gaming Esports Opens in new tab Affiliate Program Opens in new tab Game Giveaways Opens in new tab Drivers & Support Software Support Opens in new tab Product Information Guides Opens in ne"
+    ]
+  },
+  {
+    "name": "SteelSeries Rival 710 / Rival 3 / Rival 5",
+    "brand": "SteelSeries",
+    "url": "https://steelseries.com/es-us/gaming-mice/rival-710",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "Programa de afiliados Se abre en una nueva pestaña."
+    ]
+  },
+  {
+    "name": "Asus ROG Gladius II Core",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/us/mice-mouse-pads/mice/ergonomic-right-handed/rog-gladius-ii-core-model/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "6 200 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "30 g",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "16000 DPI",
+      "pollingRate": "1000 Hz",
+      "weight": null
+    },
+    "snippets": [
+      "ery Where to buy Support Menu Features Features Tech Specs Awards Gallery Where to buy Support ROG Gladius II Core ROG Gladius II Core lightweight, ergonomic, wired optical gaming mouse with 6200-dpi sensor, ROG-exclusive switch-socket design and Aura Sync lighting Classic ROG Gladius",
+      "ergonomics, with discrete left and right buttons, lightweight design and durable non-slip side grips etched with the iconic ROG totem Gaming-grade PAW3327 optical sensor with up to 6200 DPI for fast, a",
+      "Gladius II Core is a complete ergonomic mouse with grip comfort and is one of our recommendations.",
+      "Gladius II Core is a complete ergonomic mouse with grip comfort and is one of our recommendations.",
+      "Asus has opted for the PAW3327 optical sensor with a sensitivity of 200 to 6200 dpi, a speed of 220 ips, an acceleration of 30G and a 1000Hz polling rate.",
+      "Asus has opted for the PAW3327 optical sensor with a sensitivity of 200 to 6200 dpi, a speed of 220 ips, an acceleration of 30G and a 1000Hz polling rate.",
+      "VIDEO ROG GLADIUS II WIRELESS DUAL WIRELESS CONNECTIVITY --> INDUSTRY-LEADING PERFORMANCE EXCLUSIVE SWITCH SOCKET DESIGN ERGONOMICALLY DESIGNED AURA SYNC RGB LIGHTING ARMOURY II COMPARE MODELS --> ARMOURY II LIGHTWEIGHT BUILD WITH A HEAVY PUNCH ROG Gladius II Core chann",
+      "Gladius II Core has a 6200-dpi optical sensor, and independent left and right buttons for accurate response and precise control.",
+      "With right-handed ergonomics for extended comfort, a fatigue-preventing lightweight build, push-fit switch sockets and integrated Aura Sync illumination, Gladius II Core is primed for outstanding victories.",
+      "4GHz USB dongle, or pair wirelessly via low-energy Bluetooth (BLE).",
+      "4GHz RF USB DONGLE When connected via the included 2.",
+      "4GHz RF dongle, ROG Gladius II Wireless delivers an ultrafast 1000Hz polling rate and interference-quashing Frequency-Hopping Spread Spectrum (FHSS) technology."
+    ]
+  },
+  {
+    "name": "Asus ROG Strix Impact III Wireless",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/us/mice-mouse-pads/mice/wireless/rog-strix-impact-iii-wireless/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "36 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "57 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "42000 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "57 g"
+    },
+    "snippets": [
+      "Features Tech Specs Awards Gallery Where to buy Support ROG Strix Impact III Wireless The ROG Strix Impact III Wireless is an ultralight 57-gram compact gaming mouse that features ROG SpeedNova wireless and Bluetooth ® modes with long-lasting battery life.",
+      "ROG AimPoint optical sensor : 36,000 dpi sensitivity with industry-leading <1% deviation for ultimate precision Dual wireless connectivity : Get in the game with ultrafast 2.",
+      "4 GHz RF or pair up to 3 devices with Bluetooth&reg; mode ROG SpeedNova wireless technology : Low-latency, reliable 2.",
+      "4 GHz RF wireless performance with incredible energy efficiency ROG Omni Receiver: Connect to multiple supported devices wirelessly with a single",
+      "receiver Lightweight ambidextrous design : Compact form factor at only 57 grams *excluding battery and receiver Push-Fit Switch Sockets : Swap with compatible mechanical switches to vary click force and extend the mous",
+      "4 GHz ROG SpeedNova The signal is stable, no lag at all, almost no different from using a wired mouse.",
+      "The mouse is comfortable to hold, DPI can be adjusted from the mouse, and additional lighting effects can be customized from the ASUS Amoury Crate app.",
+      "4 GHz ROG SpeedNova The signal is stable, no lag at all, almost no different from using a wired mouse.",
+      "The mouse is comfortable to hold, DPI can be adjusted from the mouse, and additional lighting effects can be customized from the ASUS Amoury Crate app.",
+      "t, it offers truly impressive sensitivity and control for the price range in which it goes, thanks to high-end components such as the 36000 DPI Asus AimPoint sensor, while the ability to replace the Switches with those of our choice is a plus we would like to see in all mice in a ce",
+      "t, it offers truly impressive sensitivity and control for the price range in which it goes, thanks to high-end components such as the 36000 DPI Asus AimPoint sensor, while the ability to replace the Switches with those of our choice is a plus we would like to see in all mice in a ce",
+      "espite the simple design Recommends award Build quality, design, excellent sensor, long-lasting but changeable microswitches, autonomy, low weight, good mobility."
+    ]
+  },
+  {
+    "name": "Asus ROG Harpe Ace Aim Lab Edition",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/us/mice-mouse-pads/mice/ambidextrous/rog-harpe-ace-aim-lab-edition-model/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "36 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "54 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "42000 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "54 g"
+    },
+    "snippets": [
+      "ery Where to buy Support Menu Features Features Tech Specs Awards Gallery Where to buy Support ROG Harpe Ace Aim Lab Edition The ultra-lightweight ROG Harpe Ace Aim Lab Edition is a 54-gram wireless gaming mouse with a pro-tested form factor, 36,000-dpi ROG AimPoint optical sensor, ROG",
+      "SpeedNova wireless technology, tri-mode connectivity, ROG Micro Switches, five programmable buttons, and synergy profile setting functions with the Aim Lab Settings Optimizer.",
+      "Lab Settings Optimizer : Synergistic software analyzes user strengths and play styles to tailor mouse settings uniquely to the player Lightweight 54-gram design : Extreme weight reduction through meticulous engineering and innovative bio-based nylon material construction ROG AimPoint",
+      "optical sensor : Next-gen 36,000‑dpi optical sensor with industry-leading < 1% cpi deviation for ultimate precision Tri-mode connectivity : Unmatched flexibility with wired USB",
+      "4 GHz RF, plus Bluetooth&reg; mode to pair up to three devices ROG SpeedNova wireless technology : Low-latency, reliable wireless performance and",
+      "4 GHz RF mode ROG Omni Receiver:  Connect to multiple supported devices wirelessly with a single receiver Onboard control : Allows frequently use",
+      "Axetrodinary award Asus Rog Harpe Ace Aim Lab Edition is an ultra-light wireless gaming mouse weighing 54 grams, with a 36,000 dpi ROG AimPoint optical sensor, ROG SpeedNova wireless technology, three-mode connection, ROG micro switches, five programmable buttons and a",
+      "Axetrodinary award Asus Rog Harpe Ace Aim Lab Edition is an ultra-light wireless gaming mouse weighing 54 grams, with a 36,000 dpi ROG AimPoint optical sensor, ROG SpeedNova wireless technology, three-mode connection, ROG micro switches, five programmable buttons and a",
+      "5 stars With its lightweight design and seriously impressive performance, the Asus ROG Harpe Ace Aim Lab Edition is a great all-round choice for esports.",
+      "5 stars With its lightweight design and seriously impressive performance, the Asus ROG Harpe Ace Aim Lab Edition is a great all-round choice for esports.",
+      "4 star This esports-focused mouse has high-end sensors, comes in with an incredible featherweight design, and has a carefully designed shell in order to make it as comfortable as possible in high-octane, esports titles.",
+      "4 star This esports-focused mouse has high-end sensors, comes in with an incredible featherweight design, and has a carefully designed shell in order to make it as comfortable as possible in high-octane, esports titles."
+    ]
+  },
+  {
+    "name": "Asus ROG Harpe Ace Mini",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/us/mice-mouse-pads/mice/ambidextrous/rog-harpe-ace-mini/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "49 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "42000 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "49 g"
+    },
+    "snippets": [
+      "ROG Harpe Ace Mini | Ambidextrous | Gaming Mice｜ROG - Republic of Gamers｜ROG USA Accessibility links Skip to content Accessibility Help Skip to Menu ASUS Footer USER My ROG",
+      "port Menu Features Features Tech Specs Awards Gallery Where to buy Support ROG Harpe Ace Mini PRO POTENTIAL Inheriting the pro-tested, semi-symmetrical shape profile of the standard Harpe Ace, the ROG Harpe Ace Mini carries all the top-tier tech in a smaller, refined form factor.",
+      "Plus, with its lightweight 49 g frame and smooth, matte coating, you’ll be executing outplays with ease.",
+      "49-Gram Ultra-lightweight Weight is kept down through selected optimizations made on the inner structure, PCB layout and an innovative bio-based nylon outer shell.",
+      "ROG AimPoint Pro Optical Sensor The new 42,000-dpi ROG AimPoint Pro optical sensor allows you to track and flick with absolute precision.",
+      "100-42,000 DPI WITH < 1% DEVIATION 750 IPS Max speed TRACK-ON-GLASS Compatibility with almost any surface 50g MAX ACCELERATION ROG Optical Micro Switches",
+      "Click consistency between the left and right mouse buttons is enhanced through a rigorous process that ensures that switches within the 5 gram-force deviation range are sorted together.",
+      "4 GHz RF or Bluetooth &reg; --> Onboard Control Preset mouse settings to-go Calibrate and adjust DPI, polling rate, lift-off distance, or reset your mouse wherever you go with the onboard customization feature.",
+      "- DPI on-the-scroll Press 3 to switch between four DPI settings - Polling rate Press 2 while holding 4 *Polling Rate Booster required for report rates above 2K Hz - Lift-off distance Press 1 whi",
+      "le holding 4 - Hardware reset Press 1, 2, 3, 5 at the same time 1 Forward Button 2 Backwards Button 3 DPI Button 4 Pairing Button 5 Scroll Wheel Customize It Your Way Armoury Crate Gear You can adjust RGB lighting, performance and surface-calibr",
+      "ation settings, or program and map buttons, with the Armoury Crate Gear software – made exclusively for the ROG Harpe Ace Mini.",
+      "reating a more sustainable future, use of plastics in the packaging of ROG Keris II Ace has been reduced, accounting for no more than 1% by weight."
+    ]
+  },
+  {
+    "name": "Asus TUF M3",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/mice-mouse-pads/mice/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Asus ROG Gladius III",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/mice-mouse-pads/mice/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Asus ROG Keris Wireless",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/mice-mouse-pads/mice/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Asus ROG Chakram",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/mice-mouse-pads/mice/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Asus ROG Spatha",
+    "brand": "Asus / ROG",
+    "url": "https://rog.asus.com/mice-mouse-pads/mice/",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Glorious Model D",
+    "brand": "Glorious",
+    "url": "https://www.gloriousgaming.com/products/glorious-model-d-matte-black",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "19000 DPI",
+      "pollingRate": "1000 Hz",
+      "weight": "69 g"
+    },
+    "snippets": [
+      "Close The most comfortable ergonomic RGB gaming mouse.",
+      "Its impossibly lightweight ergonomic frame contains a full suite of ultra-premium features.",
+      "Ultralight 69-gram weight Right-handed ergonomic shape Omron® mechanical switches rated for 20M clicks Capable of polling up to 1,000 Hz Pixart® 3360 Sensor Ideal for medium to large hands Compatible with OS: Windows, MacOS, Linux (USB Port Required Software: Glorious MODEL D",
+      "activeTab = newTab Key Features Tech Specs Ascended Cable Our proprietary braided cable is ultra-flexible and super lightweight, giving your mouse an almost wireless feel.",
+      "DPI Indicator The dedicated DPI indicator can be set to any colors you choose (requires software), so you always know your value, up to 12,000 DPI.",
+      "Warranty 2 years Shape Ergonomic Size Standard Weight 68-69g Connectivity Wired Grip Style Palm, Claw Max Polling Rate 1,000hz Battery Life None Sensor Pixart® PMW-3360 Sensor Max Sensitivity (DPI) 12,000 DPI Max Speed (IPS) 250 IPS Max Acceleration (G) 50g RGB Ligh",
+      "8 million color RGB(8 effects) Switch Type Omron®️ Mechanical Switches Switch Lifecycle Rated for 20M Clicks Programmable Buttons 6 Mouse Feet G-Skates Premium Mouse Feet Cable Ultra-Flexible Ascended Cable (2m / 6.",
+      "tware OS Support Windows, macOS, Linux System Requirements • Available USB port • Windows 7+, Mac OS, Linux Model D Wired Software Download Ergonomic Meets Lightweight Envisioned by a community of passionate gamers and developed by a team who accepts nothing less than perfection, Model D",
+      "Built for speed, control, and comfort - we packed a full suite of ultra-premium features into an impossibly lightweight, ergonomic frame.",
+      "Pixart® 3360 Sensor Pixel perfect tracking, no more spin-outs, 1000 Hz polling rate.",
+      "Honeycomb Shell Model D's honeycomb shell is the key to achieving a feather-light weight while maintaining its ultra-durable strength.",
+      "“A premium gaming mouse with fantastic ergonomics, stellar wireless performance, and stylish good looks."
+    ]
+  },
+  {
+    "name": "Endgame Gear OP1 8K",
+    "brand": "Endgame Gear",
+    "url": "https://www.endgamegear.com/en-us/gaming-mice/op1-8k-v2",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "30000 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "50 g"
+    },
+    "snippets": [
+      "Combined with a Nuvoton high-speed MCU and true 8000Hz polling, it delivers raw precision, ultra-fast responsiveness without the compromise of power-saving.",
+      "place International Resellers open_in_new Buy at Amazon US Lightweight ~49.",
+      "Kailh GX Mechanical Switches Features Specifications Downloads Product reviews Features expand_less Ultra-fast Polling Rate with up to 8000Hz Experience ultimate responsiveness and real-time precision with the incredible 8000Hz polling rate of the OP1 8k v2.",
+      "For older games without 8000Hz support, effortlessly adjust the polling rate with a simple long press of the mode button at the bottom of the mouse to cycle through the p",
+      "With optional Motion Sync up to 8000Hz, tracking becomes even smoother, at the cost of just one polling event of delay.",
+      "With a steady 8000Hz polling rate for the clicks, you'll enjoy ultra-low click latency across all sensor polling rate settings.",
+      "0 Redesigned Shape for Versatile Claw Grip With a lightweight build of just below 50g, the OP1 8k v2 gaming mouse offers unparalleled comfort during those intense gaming sessions, allowing you to focus",
+      "That means out of the box, we chose a smaller skate set that offers a great balance between surface area, weight and glide properties.",
+      "Specifications expand_less Colour Primary Colour Black Sensor Sensor Type Optical Sensor Model PixArt PAW3950 U+1F95A DPI adjustable Yes Min.",
+      "DPI 10 DPI Max.",
+      "DPI 30000 DPI DPI note steps of 10 CPI ≤10000 CPI, 50 CP >10000 CPI; pre-defined: 400, 800 (default), 1600, 3200 Lift Off Distance (LoT) 1 mm Lift off distan",
+      "2 mm Weight 49."
+    ]
+  },
+  {
+    "name": "Endgame Gear XM2w",
+    "brand": "Endgame Gear",
+    "url": "https://www.endgamegear.com/en-us/gaming-mice/xm2w-4k-v2",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "30000 DPI",
+      "pollingRate": "4000 Hz",
+      "weight": "62 g"
+    },
+    "snippets": [
+      "XM2w 4K v2 Wireless Gaming Mouse – Ultra-Low Latency & 4000Hz | Endgame Gear Skip to main content place Would you like to change your preferred country?",
+      "d by the Nordic nRF52840 MCU and paired with a high polling rate dongle, this mouse delivers unparalleled wireless performance of up to 4000Hz.",
+      "place International Resellers open_in_new Buy at Amazon US 4000Hz Wireless Lightweight construction total weight ~61.",
+      "ve Play Pioneering the essence of the renowned XM claw grip shape, the inner workings of the XM2 underwent meticulous redesign to achieve a weight of ~62g, all while upholding a robust hole-free shell design.",
+      "Wireless Polling Rate of up to 4000Hz To achieve the best performance possible, XM2w 4k v2 is powered by the Nordic nRF52840 wireless MCU.",
+      "Additionally, a Nuvoton M483 MCU is used in the dongle for the high-speed USB connection, enabling high wireless polling rates of up to 4000Hz for incredibly low sensor and click latency.",
+      "With a steady 4000Hz polling rate for the clicks, you'll enjoy ultra-low click latency across all sensor polling rate options.",
+      "Motion-Sync delivers consistently timed reports at polling rates up to 4000Hz, sharpening your muscle memory and perfecting competitive gameplay.",
+      "With the default settings, the XM2w 4k v2 delivers approximately 30 hours of battery life for continuous gaming at a 4000Hz polling rate, empowering gamers with uninterrupted playtime at peak performance.",
+      "With the new 1000Hz Power Saving mode, battery runtime for continuous gaming is extended to 54 hours.",
+      "Specifications expand_less Colour Primary Colour Black Sensor Sensor Type Optical Sensor Model PixArt PAW3950 U+1F95A DPI adjustable Yes Min.",
+      "DPI 10 DPI Max."
+    ]
+  },
+  {
+    "name": "Roccat Kone XP Air",
+    "brand": "Roccat",
+    "url": "https://www.turtlebeach.com/products/kone-xp-air-mouse",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "1000 Hz",
+      "weight": "50 g"
+    },
+    "snippets": [
+      "Refined ergonomic Kone shape Multi-button design and 4D wheel with 29 programmable inputs NVIDIA Reflex Compatible Lag-free 2.",
+      "4GHz wireless and Bluetooth dual connectivity Included RGB Rapid Charge Dock Up to 100 hours of battery life 3D RGB AIMO lighting with 5 programable zones Owl-Eye™ 19K dpi optical sensor TITAN Switch Optical for a tactile feel with optical speed Lightweight and flexible PhantomFlex™",
+      "movements View More Specs > CONTROL YOUR XP The Turtle Beach Kone XP Air Wireless Customizable Gaming Mouse with Charging Dock boasts 29 programmable inputs and lag-free 2.",
+      "4GHz Wireless + Bluetooth® connectivity.",
+      "FORM MEETS FUNCTION The KONE ergonomic shape ensures comfort over the longest gaming sessions and 10 dedicated buttons plus 4D scroll wheel expand into 29 programmable functions",
+      "4GHz WIRELESS technology Low-latency Bluetooth® wireless USB-C wired PRO ACCURACY AND PRECISION The Owl-Eye 19K DPI optical sensor combines with the TITAN Optical Switches to provide a responsive and ultra-fast experience giving you the competitive edge g",
+      "Key Features PHANTOMFLEX CHARGING CABLE The flexible and light USB-C charging cable feels weightless.",
+      "4GHz WIRELESS RECEIVER 2.",
+      "4GHz Wireless dongle can be conveniently plugged into the USB passthrough on the dock.",
+      "KONE XP AIR Programmable inputs and stunning RGB lighting can be saved on 4 onboard profiles.",
+      "4GHz Wireless + Bluetooth® connectivity.",
+      "Boasting 29 programmable inputs, the Kone XP Air delivers rich customization options in a stunning translucent shell filled with LEDs for immersive 3D lighting."
+    ]
+  },
+  {
+    "name": "Roccat Kone Pro",
+    "brand": "Roccat",
+    "url": "https://hk.turtlebeach.com/products/roccat-kone-pro-mouse",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": "50 g"
+    },
+    "snippets": [
+      "Kone Pro FEEL IS FLOW + 5 home / ROCCAT Kone Pro ROCCAT Kone Pro FEEL IS FLOW Compatible with PC Color Black Color Black Color White Iconic ergonomic shape refined to perfection Extremely lightweight shell PhantomFlex(TM) cable Heat-treated pure PTFE glides Titan Switch Optical for Tactil",
+      "e & Fast key presses Owl-Eye 19K DPI optical sensor 2-year limited manufacturer warranty NVIDIA Reflex verified View More Specs > FEEL IS FLOW Meet the ROCCAT® Kone Pro Air Erg",
+      "Perfected through 14 years of craftmanship, at just 75g the Kone Pro Air is lightweight, comfortable and advanced.",
+      "It utilizes the Titan Switch Optical, AIMO RGB lighting, our 19K DPI Owl-Eye Sensor, USB-C PhantomFlex™ charging cable and heat-treated glides.",
+      "4GHz for gaming, and Bluetooth for productivity.",
+      "THE ICON, PERFECTED The Kone’s ergonomic shape has always been adored by gamers worldwide, and in the Kone Pro Air, it’s been refined to perfection.",
+      "Lightweight yet strong, the Titan Wheel Pro has a satisfying scroll and tactile click.",
+      "ROCCAT® BIONIC SHELL The Kone Pro Air's solid yet light honeycomb shell keeps out unwanted dust and dirt, whilst providing an extreme lightweight of just 75g.",
+      "GRIP STYLES The Kone Pro Air's refined design and ergonomic shape mean it comfortably supports any grip style.",
+      "Technical specifications Product Overview Meet the ROCCAT® Kone Pro Lightweight Optical Ergonomic Performance Gaming Mouse with RGB Lighting.",
+      "Perfected through 14 years of craftmanship, at just 66g the Kone Pro is the most lightweight and advanced gaming mouse we’ve ever made.",
+      "It utilizes the Titan Switch Optical, AIMO RGB lighting, our 19K DPI Owl-Eye Sensor, PhantomFlex™ Cable and superior heat-treated PTFE glides."
+    ]
+  },
+  {
+    "name": "Cooler Master MM311",
+    "brand": "Cooler Master",
+    "url": "https://www.coolermaster.com/en-us/products/mm311/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "10 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "77 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "10000 DPI",
+      "pollingRate": null,
+      "weight": "77 g"
+    },
+    "snippets": [
+      "Learn More Home / Accessories / Mice / MM311 Wireless Mouse Lightweight Feel, Heavyweight Performance MM311 Wireless Mouse The MM311 gives you everything needed to win: adjustable 10,000 DPI optical sensor, genuine PTFE feet for",
+      "4 GHz wireless for supreme versatility.",
+      "All housed in a super-lightweight, revolutionary shell design that reduces the weight to 77g even with the battery.",
+      "Light on weight but heavy on performance, the MM311 truly floats above the rest.",
+      "4 GHz Wireless Connectivity Fast, stable transmission with a longer connection distance.",
+      "Lightweight, Ambidextrous Design Optimized for right-handers with two side buttons and lightweight design without exterior holes that compromise on aesthetics, weighs in at 77g even with a AA battery included.",
+      "Gaming Grade Optical Sensor Adjustable up to 10,000 DPI for greater tracking and precision."
+    ]
+  },
+  {
+    "name": "Cooler Master MM520",
+    "brand": "Cooler Master",
+    "url": "https://www.coolermaster.com/es-global/products/mastermouse-mm520/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": []
+  },
+  {
+    "name": "Cooler Master MM720",
+    "brand": "Cooler Master",
+    "url": "https://www.coolermaster.com/en-us/products/mm720/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": []
+  },
+  {
+    "name": "Cooler Master MM710",
+    "brand": "Cooler Master",
+    "url": "https://www.coolermaster.com/en-us/catalog/peripheral/mice/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": []
+  },
+  {
+    "name": "Cooler Master MM711",
+    "brand": "Cooler Master",
+    "url": "https://www.coolermaster.com/en-us/catalog/peripheral/mice/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": []
+  },
+  {
+    "name": "Cooler Master MM731",
+    "brand": "Cooler Master",
+    "url": "https://www.coolermaster.com/en-us/catalog/peripheral/mice/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": []
+  },
+  {
+    "name": "Keychron M7 8K",
+    "brand": "Keychron",
+    "url": "https://www.keychron.com/products/keychron-m7-wireless-mouse",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "30 000 DPI",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "66 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "3395 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "66 g"
+    },
+    "snippets": [
+      "4 GHz Wireless 8K Polling Rate Compact Ergonomic Full Metal Hot Swappable ISO Layout Magnetic Switch QMK Launcher Shine-through Slim Mechanical South-Facing RGB Southpaw Ultra-slim Wireles",
+      "4 GHz Wireless ZMK Open Source Full Metal Hot swappable 8K Polling Rate 2.",
+      "4 GHz Wireless ZMK Open Source Hot swappable Gasket 8K Polling Rate QMK Launcher Hot swappable Acoustic Foam Magnetic Switch 2.",
+      "4 GHz Wireless QMK Launcher Acoustic Foam 2.",
+      "4 GHz Wireless Slim Mechanical Full Metal 2.",
+      "4 GHz Wireless QMK Launcher Gasket Acoustic Foam QMK Launcher Slim Mechanical 2.",
+      "4 GHz Wireless Hot swappable QMK Launcher 2.",
+      "4 GHz Wireless Hot swappable Gasket QMK Launcher Wireless Slim Mechanical Shine through 2.",
+      "4 GHz Wireless Wireless QMK Launcher Hot swappable Gasket Acoustic Foam QMK Launcher Hot swappable Wireless Shine through QMK Launcher 2.",
+      "4 GHz Wireless Full Metal Hot swappable Gasket QMK Launcher Hot swappable Compact 2.",
+      "4 GHz Wireless Full Metal Hot swappable QMK Launcher 100% 96% 80% 75% 65% 60% Type 2.",
+      "4 GHz Wireless 8K Polling Rate Compact Ergonomic Full Metal Hot Swappable ISO Layout Magnetic Switch QMK Launcher Shine-through Slim Mechanical South-Facing RGB Southpaw Ultra-slim Wireles"
+    ]
+  },
+  {
+    "name": "Keychron M3 Mini V2 8K",
+    "brand": "Keychron",
+    "url": "https://www.keychron.com/products/keychron-m3-mini-wireless-mouse",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "8 000 DPI",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "55 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "3311 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "55 g"
+    },
+    "snippets": [
+      "4 GHz Wireless 8K Polling Rate Compact Ergonomic Full Metal Hot Swappable ISO Layout Magnetic Switch QMK Launcher Shine-through Slim Mechanical South-Facing RGB Southpaw Ultra-slim Wireles",
+      "4 GHz Wireless ZMK Open Source Full Metal Hot swappable 8K Polling Rate 2.",
+      "4 GHz Wireless ZMK Open Source Hot swappable Gasket 8K Polling Rate QMK Launcher Hot swappable Acoustic Foam Magnetic Switch 2.",
+      "4 GHz Wireless QMK Launcher Acoustic Foam 2.",
+      "4 GHz Wireless Slim Mechanical Full Metal 2.",
+      "4 GHz Wireless QMK Launcher Gasket Acoustic Foam QMK Launcher Slim Mechanical 2.",
+      "4 GHz Wireless Hot swappable QMK Launcher 2.",
+      "4 GHz Wireless Hot swappable Gasket QMK Launcher Wireless Slim Mechanical Shine through 2.",
+      "4 GHz Wireless Wireless QMK Launcher Hot swappable Gasket Acoustic Foam QMK Launcher Hot swappable Wireless Shine through QMK Launcher 2.",
+      "4 GHz Wireless Full Metal Hot swappable Gasket QMK Launcher Hot swappable Compact 2.",
+      "4 GHz Wireless Full Metal Hot swappable QMK Launcher 100% 96% 80% 75% 65% 60% Type 2.",
+      "4 GHz Wireless 8K Polling Rate Compact Ergonomic Full Metal Hot Swappable ISO Layout Magnetic Switch QMK Launcher Shine-through Slim Mechanical South-Facing RGB Southpaw Ultra-slim Wireles"
+    ]
+  },
+  {
+    "name": "Turtle Beach Kone II Air",
+    "brand": "Turtle Beach",
+    "url": "https://www.turtlebeach.com/products/kone-ii-air-mouse",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "26000 Hz",
+      "weight": "50 g"
+    },
+    "snippets": [
+      "Ergonomic shape for medium & larger hands and all grips Lag-free 2.",
+      "4GHz wireless & Bluetooth® dual connectivity Up to 350/130 hours of battery life (Bluetooth®/Wireless) Multi-button design supporting 21 programmable functions Multifunctional 4D free-spin scroll wheel with tilt Dynamic accuracy with 26k DPI/650 IPS (16.",
+      "l with optical speed Long-lasting switch durability - 100M click lifecycle Pure, heat-Treated PTFE glides for smooth movements Dual-zone programmable RGB Illumination Lightweight, braided PhantomFlex™ charging cable NVIDIA® Reflex compatible View More Specs > COMPLETE YOUR SETUP Vulc",
+      "99 ADD The Wireless Icon Returns The Kone II Air wireless ergonomic gaming mouse has weeks-long Bluetooth & wireless battery life, perfect ergonomics for all grips, 4D free-spinning wheel, 26K DPI sensor & satisfying, optical switch clicks.",
+      "4GHz wireless for up to 130 hours.",
+      "Dual-Zone RGB Illumination Kone II Air features two fully customizable RGB lighting zones which are programmable via the Swarm II app including synchronized AIMO intelligent lighting.",
+      "4GHz wireless for up to 130 hours.",
+      "Technical specifications Product Overview Raise Your Rank with the Turtle Beach® Kone™ II Air wireless ergonomic gaming mouse.",
+      "4GHz wireless.",
+      "9ft flexible charging cable, USB-C to USB-A USB Report Rate: 1000 Hz NVIDIA Reflex Software: Swarm II Sensor Owl-Eye 26K optical sensor Minimum DPI: 50 Maximum DPI: 26,000 Adjustable lift-off distance 50g acc",
+      "4GHz wireless via USB-A Adapter Bluetooth® USB-A Battery Rechargeable Battery Up to 350 Hours (Bluetooth®) Up to 130 Hours (Wireless) Dimensions",
+      "6mm Weight: 110g What&#x27;s in the Box Turtle Beach® Kone II Air Wireless USB-A Transmitter PhantomFlex™ USB-C to USB-A Charging Cable USB-A to USB-C"
+    ]
+  },
+  {
+    "name": "Turtle Beach Kone XP Air",
+    "brand": "Turtle Beach",
+    "url": "https://www.turtlebeach.com/products/kone-xp-air-mouse",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "110 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "1000 Hz",
+      "weight": "50 g"
+    },
+    "snippets": [
+      "Refined ergonomic Kone shape Multi-button design and 4D wheel with 29 programmable inputs NVIDIA Reflex Compatible Lag-free 2.",
+      "4GHz wireless and Bluetooth dual connectivity Included RGB Rapid Charge Dock Up to 100 hours of battery life 3D RGB AIMO lighting with 5 programable zones Owl-Eye™ 19K dpi optical sensor TITAN Switch Optical for a tactile feel with optical speed Lightweight and flexible PhantomFlex™",
+      "movements View More Specs > CONTROL YOUR XP The Turtle Beach Kone XP Air Wireless Customizable Gaming Mouse with Charging Dock boasts 29 programmable inputs and lag-free 2.",
+      "4GHz Wireless + Bluetooth® connectivity.",
+      "FORM MEETS FUNCTION The KONE ergonomic shape ensures comfort over the longest gaming sessions and 10 dedicated buttons plus 4D scroll wheel expand into 29 programmable functions",
+      "4GHz WIRELESS technology Low-latency Bluetooth® wireless USB-C wired PRO ACCURACY AND PRECISION The Owl-Eye 19K DPI optical sensor combines with the TITAN Optical Switches to provide a responsive and ultra-fast experience giving you the competitive edge g",
+      "Key Features PHANTOMFLEX CHARGING CABLE The flexible and light USB-C charging cable feels weightless.",
+      "4GHz WIRELESS RECEIVER 2.",
+      "4GHz Wireless dongle can be conveniently plugged into the USB passthrough on the dock.",
+      "KONE XP AIR Programmable inputs and stunning RGB lighting can be saved on 4 onboard profiles.",
+      "4GHz Wireless + Bluetooth® connectivity.",
+      "Boasting 29 programmable inputs, the Kone XP Air delivers rich customization options in a stunning translucent shell filled with LEDs for immersive 3D lighting."
+    ]
+  },
+  {
+    "name": "Zowie EC1",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie EC2",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie EC3",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie FK1",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie FK2",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie FK2-C",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie ZA11",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie ZA12",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Zowie ZA13",
+    "brand": "Zowie",
+    "url": "https://zowie.benq.com/en-us/mouse.html",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE All MICE --> Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC-DW (L/M/S) EC-",
+      "XL Setting to Share™ Refurbished Monitors Refresh Rate 600Hz 400Hz 280Hz ACCESSORY SHIELDING HOOD S SWITCH XL2566X+ 400Hz Monitor MOUSE back to menu MOUSE All MICE Sports Science in ZOWIE Mouse Design Mouse Fitting Kit EC SERIES Wireless EC-DW Glossy (L/M/S) EC",
+      "I'm a big fan of the ergonomic shape on the EC2."
+    ]
+  },
+  {
+    "name": "Redragon M612 8000 DPI",
+    "brand": "Redragon",
+    "url": "https://redragonshop.com/products/predator-m612",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "8 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "8000 DPI",
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "Redragon M612 Predator RGB Gaming Wired Mouse | 8000 DPI Optical Mouse &ndash; Redragonshop Skip to content Accessibility Statement Your cart is empty Continue shopping Have an account?",
+      "Check out VIEW CART 🎁 Join Reward Program to get points for your purchase.",
+      "Guide to Picking the Right Gaming Monitor What Is a Creamy Keyboard: Everything You Need to Know Before You Buy or Build Why Choose a Lightweight Mouse: The Benefits and Considerations The Ultimate Guide to Magnetic Switch Keyboards CONTACT US Customer Service Reward Program Affiliate",
+      "Program Influencers Recruit NEW ARRIVALS OPEN BOX DEALS Products MICE KEYBOARDS HEADSETS SPEAKERS COMBOS MINI PC ACCESSORIES MOUSEPADS POWER SUPPLI",
+      "025 What Is a Creamy Keyboard: Everything You Need to Know Before You Buy or Build View More By Redragon • March 13, 2025 Why Choose a Lightweight Mouse: The Benefits and Considerations View More By Redragon • February 24, 2025 The Ultimate Guide to Magnetic Switch Keyboards View More",
+      "Contact Now Reward Program Become a member and earn points for rewards!",
+      "View More Affiliate Program Help us sell and get paid.",
+      "Join our affiliate program!",
+      "🎁 Join Reward Program to get points for your purchase.",
+      "🎁 Join Reward Program to get points for your purchase.",
+      "ew Specifications Software Download Reviews Add To Cart Buy Now Predator m612 Buy Now Overview Specifications Software Reviews Pentakill, 5 DPI Levels Geared with 5 redefinable DPI levels (default as: 500/1000/2000/3000/4000), easy to switch between different game needs.",
+      "Dedicated demand of DPI options between 500-8000 is also available to be processed by software."
+    ]
+  },
+  {
+    "name": "HP 230 Slim / Lenovo 600",
+    "brand": "HP / Lenovo",
+    "url": "https://www.hp.com/ch-en/shop/products/accessories/hp-230-slim-wireless-mouse-aj7c2aa-abb",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "1 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": "1600 DPI",
+      "pollingRate": null,
+      "weight": "69 g"
+    },
+    "snippets": [
+      "dent Offers Business Offers Care Packs Instant Ink DISCOVER THE RANGE Ink & Toner PRODUCT TYPE Ink Toner Printhead Instant Ink Recycling Program Accessories CATEGORY Mice Keyboards Pens Docking & Hubs Power Adapters PRODUCT TYPE Bags & Cases Headsets Webcams & Microphones Gaming Acce",
+      "THE RANGE Deals Student Offers Business Offers Care Packs Instant Ink Ink & Toner PRODUCT TYPE Ink Toner Printhead Instant Ink Recycling Program Accessories CATEGORY Mice Keyboards Pens Docking & Hubs Power Adapters PRODUCT TYPE Bags & Cases Headsets Webcams & Microphones Gaming Acce",
+      "4GHz wireless connection.",
+      "4 GHz wireless connection[1] SEE PRODUCT Up to 1600 DPI for more agile movements SEE PRODUCT SEE PRODUCT Technical details c09077326 (PDF) Supported Operating Systems Compatible Operating Systems",
+      "4 GHz wireless connection Connector description USB-A Wireless range Up to 10 m in open area Multimedia and Input Devices Buttons 3 buttons Advan",
+      "ced scroll wheel Normal Resolution Up to 1600 dpi Sensor technology Red optical tracking Dimensions Dimensions (W x D x H) 115 x 633 x 362 mm Package dimensions (W x D x H) 129 x 78 x 47 mm",
+      "Appearance Indicator light Battery Weights Weight 69 g Package weight ~130 g Battery and Power Battery life Up to 18 months Battery type 1 x AA Warranty Manufacturer Warranty HP two-year limited warranty Box C",
+      "OmniBook 3 Laptop Next Gen AI 14-hs0072no D5WX2EA HP OmniBook 3 Laptop Next Gen AI 14-hv0042no D41YNEA HP OmniBook 3 Laptop Next Gen AI 14-hz0001nox D75KMEA HP OmniBook 3 Laptop Next Gen AI 14-hz0026no D5DB1EA HP OmniBook 3 Laptop Next Gen AI 14-hz0840nox D88LDEA HP OmniBook 3 Lap",
+      "top Next Gen AI 14-hz0842nox D88LGEA HP OmniBook 3 Laptop Next Gen AI 14-hz0845nox D88LHEA HP OmniBook 3 Laptop Next Gen AI 14-hz0863nox D88LKEA HP OmniBook 3 Laptop Next Gen AI 14-hz0865nox D88LLEA HP OmniBook 3 Laptop Next Gen AI 14-hz0867nox D88LNEA HP OmniBook 3 La",
+      "OmniBook 3 Laptop Next Gen AI 14-hs0072no D5WX2EA HP OmniBook 3 Laptop Next Gen AI 14-hv0042no D41YNEA HP OmniBook 3 Laptop Next Gen AI 14-hz0001nox D75KMEA HP OmniBook 3 Laptop Next Gen AI 14-hz0026no D5DB1EA HP OmniBook 3 Laptop Next Gen AI 14-hz0840nox D88LDEA HP OmniBook 3 Lap",
+      "top Next Gen AI 14-hz0842nox D88LGEA HP OmniBook 3 Laptop Next Gen AI 14-hz0845nox D88LHEA HP OmniBook 3 Laptop Next Gen AI 14-hz0863nox D88LKEA HP OmniBook 3 Laptop Next Gen AI 14-hz0865nox D88LLEA HP OmniBook 3 Laptop Next Gen AI 14-hz0867nox D88LNEA HP OmniBook 3 La",
+      "000slx D93RJEA HP OmniBook 3 Laptop AI 17-dg0001slx D93RKEA HP OmniBook 3 Laptop AI 17-dn0000nl D52KKEA HP OmniBook 3 Laptop Next Gen AI 14-hz0000nl D5DW7EA HP OmniBook 3 Laptop Next Gen AI 16-bs0000nl D52K1EA HP OmniBook 3 Laptop Next Gen AI 16-bs0001nl D52K2EA HP OmniBook 3 Lapto"
+    ]
+  },
+  {
+    "name": "HP X3000",
+    "brand": "HP / Lenovo",
+    "url": "https://www.hp.com/us-en/shop/cat/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "HP X500",
+    "brand": "HP / Lenovo",
+    "url": "https://www.hp.com/us-en/shop/cat/mice",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": false,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Dell MS116",
+    "brand": "Dell",
+    "url": "https://www.dell.com/en-us/shop/pc-accessories/ar/7686/mice-keyboards",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "Batteries | Dell USA Skip to main content Sign In Welcome Dell Sites Dell Technologies Premier Sign In Partner Program Sign In Dell Financial Services Support Dell Sites Dell Technologies Premier Sign In Partner Program Sign In Dell Financial Services Suppor",
+      "ewards and discounts Create and access a list of your products Sign In Create an Account Premier Sign In Dell Financial Services Partner Program Sign In Virtual Assistant Contact Us US/EN Cart Your Dell.",
+      "m Screen Resolution Back Screen Resolution 6K Monitors 4K Monitors QHD Monitors HD Monitors Screen Refresh Rate Back Screen Refresh Rate 360Hz Monitors 280Hz Monitors 240Hz Monitors 180Hz Monitors 165Hz Monitors 144Hz Monitors 120Hz Monitors 100Hz Monitors Monitors by Brand Back Mo",
+      "Accessories Back PC Accessories View All PC Accessories Popular Accessories Back Popular Accessories Gaming Keyboard & Mouse Wireless Mouse Ergonomic Mouse Bluetooth Mouse Computer Speakers Microphones Laptop Backpacks Printers 3D Printer Accessories Shredders External Hard Drives PC Acce",
+      "pport Support Support Home Contact Technical Support Returns Connect with Us Connect with Us Community Contact Us X (Twitter) LinkedIn Instagram YouTube Site Map US/EN Our Offerings Our Offerings Artificial Intelligence Products Solutions Services Deals Our Company Our Company Who We",
+      "tors Newsroom Recycling Corporate Impact Customer Stories Our Partners Our Partners Find a Partner Find a Reseller OEM Solutions Partner Program Resources Resources Blog Dell Rewards Events Email Sign-Up Specialty Product Collections Privacy Center Security & Trust Center Trial Softw",
+      "See full program terms at  https://www.",
+      "[ ↑ ] D  To join Dell Rewards, sign into your Dell Account (or create one) and select the box to join the Dell Rewards program.",
+      "This rewards program is provided by Dell and its terms may change at any time."
+    ]
+  },
+  {
+    "name": "Dell WM126",
+    "brand": "Dell",
+    "url": "https://www.dell.com/en-us/shop/pc-accessories/ar/7686/mice-keyboards",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "118 g",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "Batteries | Dell USA Skip to main content Sign In Welcome Dell Sites Dell Technologies Premier Sign In Partner Program Sign In Dell Financial Services Support Dell Sites Dell Technologies Premier Sign In Partner Program Sign In Dell Financial Services Suppor",
+      "ewards and discounts Create and access a list of your products Sign In Create an Account Premier Sign In Dell Financial Services Partner Program Sign In Virtual Assistant Contact Us US/EN Cart Your Dell.",
+      "m Screen Resolution Back Screen Resolution 6K Monitors 4K Monitors QHD Monitors HD Monitors Screen Refresh Rate Back Screen Refresh Rate 360Hz Monitors 280Hz Monitors 240Hz Monitors 180Hz Monitors 165Hz Monitors 144Hz Monitors 120Hz Monitors 100Hz Monitors Monitors by Brand Back Mo",
+      "Accessories Back PC Accessories View All PC Accessories Popular Accessories Back Popular Accessories Gaming Keyboard & Mouse Wireless Mouse Ergonomic Mouse Bluetooth Mouse Computer Speakers Microphones Laptop Backpacks Printers 3D Printer Accessories Shredders External Hard Drives PC Acce",
+      "pport Support Support Home Contact Technical Support Returns Connect with Us Connect with Us Community Contact Us X (Twitter) LinkedIn Instagram YouTube Site Map US/EN Our Offerings Our Offerings Artificial Intelligence Products Solutions Services Deals Our Company Our Company Who We",
+      "tors Newsroom Recycling Corporate Impact Customer Stories Our Partners Our Partners Find a Partner Find a Reseller OEM Solutions Partner Program Resources Resources Blog Dell Rewards Events Email Sign-Up Specialty Product Collections Privacy Center Security & Trust Center Trial Softw",
+      "See full program terms at  https://www.",
+      "[ ↑ ] D  To join Dell Rewards, sign into your Dell Account (or create one) and select the box to join the Dell Rewards program.",
+      "This rewards program is provided by Dell and its terms may change at any time."
+    ]
+  },
+  {
+    "name": "Trust YVI+",
+    "brand": "Trust",
+    "url": "https://www.trust.com/en/product/25512-yvi-silent-wireless-mouse-black",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "1 000 DPI",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": "1600 DPI",
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "What’s more, the Yvi+ also has a speed select button enables you to switch between 800 and 1600 DPI to tackle your tasks with ease."
+    ]
+  },
+  {
+    "name": "ATK Blazing Sky U2 8K",
+    "brand": "Autres marques",
+    "url": "https://www.atk.store/products/atk-blazing-sky-u2-series-wireless-mouse",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "55 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "8000 Hz",
+      "weight": "44 g"
+    },
+    "snippets": [
+      "SE / PAW3395 Ultra / PAW3950 / PAW3950 Ultra MCU: HiSilicon Nearlink / PixArt Flagship / BEKEN(compx) / Nordic 52840 Polling Rate: 125- 8000Hz (Adjustable) Weight: 44g-55g (Varies by Model) Coating: Ice-Feel Dimensions: 123.",
+      "Votre email Soumettre Facebook Instagram Pinterest Tik Tok YouTube Gazouillement Discord Explorer Recherche À propos de nous Contactez-nous Blogue Programme d'affiliation HUB ATK S",
+      "Votre email Soumettre Facebook Instagram Pinterest Tik Tok YouTube Gazouillement Discord Non merci Fermer Modifier l'option this is just a warning Se connecter Fermer Adresse email"
+    ]
+  },
+  {
+    "name": "ATK Gaming Gear VXE R1 Pro Max Wireless",
+    "brand": "Autres marques",
+    "url": "https://vxe.com/products/vxe-dragonfly-r1-series-wireless-mouse",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "4 000 Hz",
+      "Poids": "53 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": "4000 Hz",
+      "weight": "48 g"
+    },
+    "snippets": [
+      "Sensor: PAW3395 SE / PAW3395 MCU: BEKEN(compx) / Nordic 52840 Polling Rate: 125-4 000Hz (Adjustable) Weight: 48g-55g (Varies by Model) Coating: Ice-feeling Dimensions: 120.",
+      "Your email Submit Explore Search About Us Contact Us Blog Affiliate Program Driver Support Shipping Policy Payment Policy Return Policy Warranty Privacy Policy Term & Conditions VXE Studio Redefining gaming gear wit"
+    ]
+  },
+  {
+    "name": "Lamzu Atlantis Mini Wireless",
+    "brand": "Autres marques",
+    "url": "https://lamzu.com/products/lamzu-atlantis-mini-4k-gaming-mouse",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": null,
+    "shapeEvidence": null,
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "Dongle Mouse Feet Mouse Grip Cable Dustproof Seal Download Web Driver Mouse Keyboard Retailers Recruitment FAQ Track Your Order Log in instagram Instagram Facebook YouTube twitter Twitter TikTok Cart icon-X Close cart Subtotal $0.",
+      "vailable\":false,\"name\":\"LAMZU ATLANTIS MINI 4K - Charcoal Black\",\"public_title\":\"Charcoal Black\",\"options\":[\"Charcoal Black\"],\"price\":9999,\"weight\":700,\"compare_at_price\":null,\"inventory_management\":\"shopify\",\"barcode\":\"C.",
+      "99 Products Products LAMZU Mice Accessories Programs Programs Affiliate Program Download Recruitment Review Resource Support Support About Us Contact Us Warranty Terms of Service Shipping Information Community Community",
+      "Enter your email Subscribe icon-email Subscribe instagram Instagram Facebook YouTube twitter Twitter TikTok Discord Discord &copy; 2026 LAMZU icon-X \"Close (esc)\" icon-X icon-chevron icon-X LAMZU ATLANTIS MI"
+    ]
+  },
+  {
+    "name": "MCHOSE K7 Ultra Lightweight",
+    "brand": "Autres marques",
+    "url": "https://www.mchose.store/products/mchose-k7-ultra-lightweight-wireless-gaming-mouse",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "59 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "42000 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "59 g"
+    },
+    "snippets": [
+      "MCHOSE K7 Ultra Lightweight Wireless Gaming Mouse Skip to content Ace 68 GT Is Now Live — Built for Competitive Precision | Shop Now Ace 68 GT Is Now Live — Built for",
+      "9 Series G9 Series S9 Pro S9 Soundbars K20 Pro 0 Your cart is empty Continue shopping Clear Close Zoom MCHOSE Official MCHOSE K7 Ultra Lightweight Wireless Gaming Mouse Sale price $79.",
+      "Realtek Chipset 8K Polling Rate TOPSPEED Wireless Technology Omron Mechanical Switches TTC Gold Wheel Encoder 100% PTFE Skates Up to 42,000 DPI sensitivity Up to 750 IPS tracking speed M HUB Driver (Web + App) 8K Receiver & Magnetic Wireless Charging Dock 2-in-1 Battery: 500 mAh Wei",
+      "Share Share Add to cart MCHOSE Official MCHOSE K7 Ultra Lightweight Wireless Gaming Mouse Sale price $79.",
+      "00 USD Add to cart MCHOSE K7 Ultra Lightweight Wireless Gaming Mouse Sale price $79.",
+      "Featuring the PAW3950 sensor, 8000 Hz polling rate, proprietary wireless technology, and an ultra-lightweight design, every element is engineered for competitive domination.",
+      "With up to 42,000 DPI , 750 IPS tracking speed, and 50G acceleration, every movement is captured instantly and accurately — giving you the edge in every high-spe",
+      "8,000Hz Polling Rate The K7 Ultra supports an 8,000Hz polling rate in both wired and 2.",
+      "Ultra-Lightweight Design Engineered for speed and comfort, the K7 Ultra boasts a lightweight yet durable design—ideal for extended gaming sessions and competitive play.",
+      "Every gram is optimized to reduce fatigue without compromising strength.",
+      "Symmetrical Design, Comfortable Control High-Performance Glass-Like Coating The mouse’s shell is coated with a carefully engineered finish that enhance",
+      "Self-developed M HUB Fine-tune your gameplay with MCHOSE’s intuitive driver—adjust DPI, polling rate, and macros with precision."
+    ]
+  },
+  {
+    "name": "Pulsar X2-H CrazyLight",
+    "brand": "Autres marques",
+    "url": "https://www.pulsar.gg/products/x2h-wired-gaming-mouse",
+    "currentShape": "Ambidextre",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "55 g",
+      "Type": "Sans-fil",
+      "Forme": "Ambidextre"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "26000 DPI",
+      "pollingRate": "1000 Hz",
+      "weight": "51 g"
+    },
+    "snippets": [
+      "ruce Lee 85th Edition Clear Edition Collaboration Compact CrazyLight Series Custom Gears Dongle Download Keyboard Download Mice e-Gift Card Ergonomic right hand eS Keyboad Series eS Mouse Series eS Pad Series eS Series Feinmann Founder's Edition Full Size Gaming Keyboard Gaming Keyboard w",
+      "e Lee Pulsar x Demon Slayer Red Edition RGB LED RRQ Edition SUPERGLIDE Superglide Pad Series Superglide Series Supergrip Grip Tape Switches Symmetrical T1 Edition T1 Edition TenZ The Finals WIRED SERIES Wireless X2 X2 Series X2A Series X2F Series X2H Series X2N Series X3 Series Xboard Serie",
+      "54in (39mm) Weight: 51g (+- 1g) / 1.",
+      "8oz w/o cable Feature Designed for Competitive eSports Narrow Waist / High Hump Symmetrical Shape Recommended for Claw / Palm Claw Grip Ultra-light Weight 51g Fast and Double Click Free OPTICAL SWITCH Pulsar Blue Encoder Super Smoo",
+      "Flagship PAW3395 Sensor Fully customizable sensor setting Fully customizable keys and macros Superflex Paracord Cable Sensor PAW3395 26000 DPI 650 IPS 50g Acceleration 1000Hz/1ms Polling Rate 32bit ARM Processor Product Details Technical Specifications Download HIGHER HUMP, NARROWE",
+      "R WAIST Discover the X2H, featuring an ultra-lightweight enhanced higher hump design compared to the original X2.",
+      "51g ULTRALIGHT WEIGHT SYMMETRICAL SHAPE HIGH HUMP / LOW WAIST OPTICAL SWITCH DOUBLE CLICK FREE PAW3395 FLAGSHIP SENSOR MOTION SYNC ON/OFF SUPER FLEXIBLE PARACORD CABLE ULTRA",
+      "LIGHT WEIGHT “Simple but not simpler.",
+      "ULTRA LIGHT WEIGHT “Simple but not simpler.",
+      "With its impressive capabilities, including high performance at 26000 dpi, 650 IPS, and 50G acceleration, it is optimized to deliver a top-notch competitive gaming experience.",
+      "SUPER FLEXIBLE PARACORD CABLE Paracord cable enhances gaming mouse with its lightweight and flexible design, minimizing drag for smoother movements and improved performance.",
+      "ANTI DRAGGING BENTED HEAD The paracord cable, ideal with Microbungee eS , enhances your gaming mouse with its lightweight, flexible design, reducing drag for smoother movements and improved accuracy."
+    ]
+  },
+  {
+    "name": "Pulsar ZywOo The Chosen",
+    "brand": "Autres marques",
+    "url": "https://www.pulsar.gg/products/zywoo-the-chosen-mouse",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "32 000 DPI",
+      "Polling Rate": "8 000 Hz",
+      "Poids": "59 g",
+      "Type": "Filaire",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ambidextre",
+    "shapeEvidence": "Matched ambidextrous/symmetrical wording on the product page.",
+    "detectedSpecs": {
+      "dpi": "32000 DPI",
+      "pollingRate": "8000 Hz",
+      "weight": "59 g"
+    },
+    "snippets": [
+      "ruce Lee 85th Edition Clear Edition Collaboration Compact CrazyLight Series Custom Gears Dongle Download Keyboard Download Mice e-Gift Card Ergonomic right hand eS Keyboad Series eS Mouse Series eS Pad Series eS Series Feinmann Founder's Edition Full Size Gaming Keyboard Gaming Keyboard w",
+      "e Lee Pulsar x Demon Slayer Red Edition RGB LED RRQ Edition SUPERGLIDE Superglide Pad Series Superglide Series Supergrip Grip Tape Switches Symmetrical T1 Edition T1 Edition TenZ The Finals WIRED SERIES Wireless X2 X2 Series X2A Series X2F Series X2H Series X2N Series X3 Series Xboard Serie",
+      "5mm) Weight: ±59g (2.",
+      "08oz) Benefits Crafted together with ZywOo to offer outstanding support and precision, optimized for palm grip and an ergonomic shape.",
+      "Ergonomic Shape Recommended for Palm Grip Up to 8K Polling Rate Huano Blue Shell Pinkdot v2 delivers crisp, responsive clicks with fast rebound and 8",
+      "lick durability Pulsar Blue Encoder XS-1 Flagship Sensor Web-based software exclusive to ZywOo Fully customizable sensor setting Adjustable DPI in 1-unit Superflex Paracord Cable Equipped with a 5.",
+      "8g weight module, enabling precise adjustment of the mouse’s total weight and center of gravity to match individual performance preferences.",
+      "Sensor XS-1 Flagship Sensor 32,000 DPI 750 IPS 50g Acceleration 8000Hz/1ms Polling Rate 32bit ARM Processor Requirement USB Port Operating System (Windows, Mac, Linux) Internet connection (to download software)",
+      "Engineered with his input, the mouse combines competitive-grade performance with a form factor that mirrors his own playstyle—delivering an ergonomic shape tailored for palm grip users who demand both control and long-lasting comfort.",
+      "Equipped with the cutting-edge XS-1 sensor, 32,000 DPI, 750 IPS, and up to an 8K polling rate, it offers unrivaled responsiveness and precision.",
+      "Pulsar XS-1 Sensor The XS-1 Sensor, exclusive to Pulsar, boasts an impressive 32,000 DPI resolution, 750 IPS tracking speed, and 50g acceleration, delivering unparalleled precision and speed.",
+      "XS-1 FLAGSHIP SENSOR XS-1 FLAGSHIP SENSOR XS-1 FLAGSHIP SENSOR XS-1 FLAGSHIP SENSOR 0 DPI ULTIMATE PRECISION 0 IPS TRACKING SPEED 0 Hz POLLING RATE Hold Like ZywOo Designed in collaboration with ZywOo, this mouse features an ergonomic shape optimized for palm grip users."
+    ]
+  },
+  {
+    "name": "Kensington Ergo Series",
+    "brand": "Autres marques",
+    "url": "https://www.kensington.com/p/products/electronic-control-solutions/computer-mice/pro-fit-ergo-wireless-mouse3/",
+    "currentShape": "Ergonomique",
+    "currentSpecs": {
+      "DPI": "À confirmer",
+      "Polling Rate": "À confirmer",
+      "Poids": "À confirmer",
+      "Type": "Sans-fil",
+      "Forme": "Ergonomique"
+    },
+    "fetched": true,
+    "detectedShape": "Ergonomique",
+    "shapeEvidence": "Matched ergonomic/right-handed wording on the product page.",
+    "detectedSpecs": {
+      "dpi": null,
+      "pollingRate": null,
+      "weight": null
+    },
+    "snippets": [
+      "ideo Conferencing Webcams Lighting and Mounting Accessories Professional Headsets and Accessories Classic Headsets and Headphones Workplace Ergonomics & Wellness angle-down copy 5 Created with Sketch.",
+      "Workplace Ergonomics & Wellness Standing Desk Solutions Foot and Back Rests Seat Cushions Laptop Risers and Monitor Stands Monitor Arms Mouse Pads and Wrist Re",
+      "sts Copyholders Keyboard Drawers Ergonomic Input Devices Closeout Exclusives Business and EDU Solutions angle-down copy 5 Created with Sketch.",
+      "Partner Resources Resellers - Request a Bid Become a Reseller Ambassador Program Where to Buy Security angle-down copy 5 Created with Sketch.",
+      "Accessories Docking Stations Workplace Ergonomics Trackballs Video Conferencing Webcams Headsets Mechanical Keyboard Input Devices and Technology angle-down copy 5 Created with Sketch.",
+      "4 GHz and Bluetooth 4.",
+      "n security, quiet clicking, five buttons (including forward and back), a replaceable receiver*, a three-mode power-saving switch, and three DPI settings (800/1200/1600).",
+      "4 GHz and Bluetooth 4.",
+      "4GHz, Bluetooth, and Off for best battery life.",
+      "Three DPI settings (800/1200/1600) let you dial in the sensitivity and precision of your mouse cursor.",
+      "4 GHz and Bluetooth 4.",
+      "n security, quiet clicking, five buttons (including forward and back), a replaceable receiver*, a three-mode power-saving switch, and three DPI settings (800/1200/1600)."
+    ]
+  }
+]
