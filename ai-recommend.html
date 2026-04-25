@@ -710,6 +710,58 @@
       font-size: 1rem;
     }
 
+    /* FAQ Section */
+    .ai-faq-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 24px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ai-faq-item {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .ai-faq-item:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      border-color: rgba(139, 92, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .ai-faq-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin: 0 0 12px;
+    }
+
+    .ai-faq-item p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.6;
+    }
+
     /* New Recommendation Button */
     .ai-new-btn {
       display: flex;
@@ -942,6 +994,25 @@
           <span>🔄</span>
           Get another recommendation
         </button>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="ai-faq-section" id="ai-faq-section">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="ai-faq-list">
+          <div class="ai-faq-item">
+            <h3>How does the MinSp algorithm work?</h3>
+            <p>MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs.</p>
+          </div>
+          <div class="ai-faq-item">
+            <h3>Is my data stored when I use the recommendation tool?</h3>
+            <p>No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data.</p>
+          </div>
+          <div class="ai-faq-item">
+            <h3>How accurate are the recommendations?</h3>
+            <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
+          </div>
+        </div>
       </div>
 
       <!-- Step 4: Error -->
