@@ -14,6 +14,8 @@ const mouseDatabase = [
     gripStyle: ['claw', 'fingertip'],
     dpi: 25600,
     pollingRate: 1000,
+    rgb: false,
+    buttons: 5,
     description: 'Souris gaming ultra-légère sans fil pour e-sports.',
     actionPlan: 'Parfaite pour FPS compétitifs. Batterie 70h. Capteur HERO 25K.',
     whyForYou: 'Légèreté extrême + performance pro sans fil.',
@@ -328,11 +330,75 @@ function calculateMatch(userProfile, mouse) {
     details.push('✅ Prise: adaptable');
   }
 
-  // Bonus: Poids
+  // 6. Weight matching (0-10 pts)
   const weight = (userProfile.weight || '').toLowerCase();
-  if (weight && weight !== 'any' && mouse.weight === weight) {
+  if (weight && weight !== 'any') {
+    const mouseWeight = mouse.weight.toLowerCase();
+    const weightMap = {
+      'ultralight': ['ultralight'],
+      'light': ['light', 'ultralight'],
+      'medium': ['medium', 'light'],
+      'heavy': ['heavy', 'medium']
+    };
+    
+    if (weightMap[weight] && weightMap[weight].includes(mouseWeight)) {
+      score += 10;
+      details.push(`✅ Poids: ${mouse.weight} correspond`);
+    } else {
+      details.push(`⚠️ Poids: ${mouse.weight} vs ${weight}`);
+    }
+  } else {
     score += 5;
-    details.push(`✅ Poids: ${weight} préféré`);
+    details.push('✅ Poids: indifférent');
+  }
+
+  // 7. Brand matching (0-15 pts)
+  const brand = (userProfile.brand || '').toLowerCase();
+  if (brand && brand !== 'any') {
+    if (mouse.brand.toLowerCase() === brand) {
+      score += 15;
+      details.push(`✅ Marque: ${mouse.brand} préférée`);
+    } else {
+      details.push(`⚠️ Marque: ${mouse.brand} (préf: ${brand})`);
+    }
+  } else {
+    score += 5;
+    details.push('✅ Marque: indifférent');
+  }
+
+  // 8. RGB matching (0-10 pts)
+  const rgb = (userProfile.rgb || '').toLowerCase();
+  if (rgb && rgb !== 'any') {
+    const hasRgb = mouse.tags && mouse.tags.includes('rgb');
+    if (rgb === 'yes' && hasRgb) {
+      score += 10;
+      details.push('✅ RGB: présent');
+    } else if (rgb === 'no' && !hasRgb) {
+      score += 10;
+      details.push('✅ Sans RGB: design simple');
+    } else {
+      details.push(`⚠️ RGB: mismatch (préf: ${rgb})`);
+    }
+  } else {
+    score += 5;
+    details.push('✅ RGB: indifférent');
+  }
+
+  // 9. Buttons matching (0-10 pts)
+  const buttons = parseInt(userProfile.buttons) || 0;
+  if (buttons > 0) {
+    if (mouse.buttons >= buttons) {
+      score += 10;
+      details.push(`✅ Boutons: ${mouse.buttons} ≥ ${buttons}`);
+    } else if (mouse.buttons >= buttons - 2) {
+      score += 5;
+      details.push(`⚠️ Boutons: ${mouse.buttons} proche de ${buttons}`);
+    } else {
+      details.push(`❌ Boutons: ${mouse.buttons} < ${buttons}`);
+    }
+  } else {
+    score += 5;
+    details.push('✅ Boutons: indifférent');
   }
 
   // Normaliser le score

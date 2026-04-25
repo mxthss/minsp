@@ -648,15 +648,62 @@
             </div>
           </div>
 
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-grip-style">Grip Style <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <select id="ai-grip-style" name="gripStyle">
+                <option value="">Any - I don't know / flexible</option>
+                <option value="palm">Palm Grip (whole hand on mouse)</option>
+                <option value="claw">Claw Grip (fingers arched)</option>
+                <option value="fingertip">Fingertip Grip (only fingers touch)</option>
+              </select>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-weight">Weight Preference <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <select id="ai-weight" name="weight">
+                <option value="">No preference</option>
+                <option value="ultralight">Ultra Light (&lt; 60g)</option>
+                <option value="light">Light (60-80g)</option>
+                <option value="medium">Medium (80-100g)</option>
+                <option value="heavy">Heavy (&gt; 100g)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-brand">Preferred Brand <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <select id="ai-brand" name="brand">
+                <option value="">Any brand</option>
+                <option value="Logitech">Logitech</option>
+                <option value="Razer">Razer</option>
+                <option value="SteelSeries">SteelSeries</option>
+                <option value="Zowie">Zowie</option>
+                <option value="Glorious">Glorious</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="Apple">Apple</option>
+              </select>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-rgb">RGB / Lighting <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <select id="ai-rgb" name="rgb">
+                <option value="">No preference</option>
+                <option value="yes">RGB required</option>
+                <option value="no">No RGB / Simple design</option>
+              </select>
+            </div>
+          </div>
+
           <div class="ai-form-group">
-            <label for="ai-grip-style">Grip Style <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
-            <select id="ai-grip-style" name="gripStyle">
-              <option value="">Any - I don't know / flexible</option>
-              <option value="palm">Palm Grip (whole hand on mouse)</option>
-              <option value="claw">Claw Grip (fingers arched)</option>
-              <option value="fingertip">Fingertip Grip (only fingers touch)</option>
+            <label for="ai-buttons">Minimum Buttons <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+            <select id="ai-buttons" name="buttons">
+              <option value="">Any</option>
+              <option value="2">Basic (2 buttons)</option>
+              <option value="5">Standard (5-6 buttons)</option>
+              <option value="8">Advanced (8+ buttons)</option>
+              <option value="11">MMO (11+ buttons)</option>
             </select>
-            <span class="ai-form-hint">How you naturally hold your mouse</span>
+            <span class="ai-form-hint">For MMO/MOBA or macro programming needs</span>
           </div>
 
           <button type="submit" class="ai-submit-btn" id="ai-submit-btn">
@@ -936,7 +983,11 @@
           usage: formData.get('usage'),
           wireless: formData.get('wireless'),
           handSize: formData.get('handSize'),
-          gripStyle: formData.get('gripStyle')
+          gripStyle: formData.get('gripStyle'),
+          weight: formData.get('weight'),
+          brand: formData.get('brand'),
+          rgb: formData.get('rgb'),
+          buttons: formData.get('buttons')
         };
 
         // Show loading
