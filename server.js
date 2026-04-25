@@ -1,8 +1,14 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Startup log: Check if Gemini API key is detected
+console.log('Clé détectée :', !!process.env.GEMINI_API_KEY);
+console.log('Server starting on port:', PORT);
 
 // CORS middleware
 app.use((req, res, next) => {
@@ -57,16 +63,22 @@ app.post('/api/recommend', async (req, res) => {
     };
     console.log('Request body format:', JSON.stringify(requestBody).substring(0, 100) + '...');
     
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestBody)
-      }
-    );
+    let response;
+    try {
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(requestBody)
+        }
+      );
+    } catch (fetchError) {
+      console.error('Fetch error:', fetchError);
+      return res.status(500).json({ error: 'Network error calling Gemini API', details: fetchError.message });
+    }
 
     if (!response.ok) {
       const errorText = await response.text();
