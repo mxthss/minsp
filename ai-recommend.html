@@ -328,6 +328,117 @@
       box-shadow: 0 8px 24px rgba(87, 184, 255, 0.35);
     }
 
+    /* Match Score Badge */
+    .ai-match-score {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(22, 163, 74, 0.1) 100%);
+      border: 2px solid rgba(34, 197, 94, 0.3);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-match-score::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #22c55e, #16a34a, #22c55e);
+    }
+
+    .ai-match-percentage {
+      font-size: 4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .ai-match-level {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #22c55e;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .ai-match-engine {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      font-style: italic;
+    }
+
+    /* Action Plan */
+    .ai-action-card {
+      background: linear-gradient(135deg, rgba(87, 184, 255, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+      border: 1px solid rgba(87, 184, 255, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .ai-action-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #57b8ff;
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-action-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Analysis Details */
+    .ai-details-card {
+      background: rgba(10, 20, 38, 0.5);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .ai-details-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-details-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ai-details-list li {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      border-left: 3px solid rgba(139, 92, 246, 0.5);
+    }
+
     /* Reason */
     .ai-reason-card {
       background: rgba(10, 20, 38, 0.5);
@@ -407,6 +518,17 @@
     .ai-alt-desc {
       font-size: 0.8rem;
       color: var(--text-faint);
+    }
+
+    .ai-alt-score {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 4px;
     }
 
     .ai-alt-price {
