@@ -5042,8 +5042,7 @@
     var bubbleCta = document.getElementById('catalog-bubble-cta');
     if (bubbleCta) {
       bubbleCta.addEventListener('click', function(event) {
-        event.preventDefault();
-        window.location.href = 'about.html';
+        // Let the default link behavior work
       });
     }
 
