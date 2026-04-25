@@ -5043,11 +5043,7 @@
     if (bubbleCta) {
       bubbleCta.addEventListener('click', function(event) {
         event.preventDefault();
-        if (isFileProtocol()) {
-          window.location.href = 'about.html';
-        } else {
-          window.location.href = '/about';
-        }
+        window.location.href = 'about.html';
       });
     }
 
