@@ -703,16 +703,8 @@
 
           var data = await response.json();
           
-          // Convert Netlify format to display format
-          return {
-            best: {
-              name: data.bestChoice.name,
-              reason: data.bestChoice.reason
-            },
-            alternatives: data.alternatives.slice(0, 3).map(function(alt) {
-              return { name: alt.name, reason: 'Alternative option' };
-            })
-          };
+          // Return data directly - MinSp Engine format
+          return data;
         } catch (error) {
           console.error('API error:', error);
           throw new Error('AI service unavailable. Please try again later.');
