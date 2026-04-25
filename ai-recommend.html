@@ -140,27 +140,34 @@
     }
 
     .ai-form-group input {
-      padding: 0 0 12px 0;
-      background: transparent;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
       border: none;
-      border-bottom: 1px solid var(--line);
-      border-radius: 0;
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 400;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
       outline: none;
-      transition: border-color 0.3s ease;
+      transition: all 0.3s ease;
+      cursor: text;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      width: 100%;
+    }
+
+    .ai-form-group input:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
     }
 
     .ai-form-group input:focus {
-      border-color: rgba(59, 130, 246, 0.6);
-      border-bottom-width: 2px;
-      margin-bottom: -1px;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
     }
 
     .ai-form-group input::placeholder {
-      color: var(--text-faint);
-      opacity: 0.5;
+      color: rgba(255, 255, 255, 0.7);
+      opacity: 1;
     }
 
     .ai-form-group select {
@@ -180,25 +187,6 @@
       box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
       width: 100%;
       text-align: left;
-      position: relative;
-    }
-
-    .ai-form-group select::after {
-      content: '';
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid #fff;
-      pointer-events: none;
-    }
-
-    /* Custom arrow using background image */
-    .ai-form-group select {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 16px center;
