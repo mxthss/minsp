@@ -1,5 +1,4 @@
 const express = require('express');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
 const path = require('path');
 
 const app = express();
@@ -20,9 +19,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.static('.'));
 
-// Initialize Gemini
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-
 // API endpoint for recommendations
 app.post('/api/recommend', async (req, res) => {
   try {
@@ -32,7 +28,10 @@ app.post('/api/recommend', async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields: userProfile and miceData' });
     }
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'GEMINI_API_KEY not configured' });
+    }
 
     const prompt = `Tu es l'expert MinSp. Analyse ce profil utilisateur : ${JSON.stringify(userProfile)} 
     et ce catalogue de souris : ${JSON.stringify(miceData)}.
@@ -43,8 +42,29 @@ app.post('/api/recommend', async (req, res) => {
     }
     Interdiction de mettre du texte avant ou après le JSON.`;
 
-    const result = await model.generateContent(prompt);
-    let responseText = result.response.text();
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{ text: prompt }]
+          }]
+        })
+      }
+    );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Gemini API error:', errorText);
+      return res.status(500).json({ error: 'Gemini API error', details: errorText });
+    }
+
+    const data = await response.json();
+    let responseText = data.candidates[0].content.parts[0].text;
     
     // Nettoyage des balises markdown si présentes
     const cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
