@@ -32,7 +32,7 @@ app.post('/api/recommend', async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields: userProfile and miceData' });
     }
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
 
     const prompt = `Tu es l'expert MinSp. Analyse ce profil utilisateur : ${JSON.stringify(userProfile)} 
     et ce catalogue de souris : ${JSON.stringify(miceData)}.
