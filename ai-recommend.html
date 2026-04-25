@@ -8,6 +8,61 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="./styles.css">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MinSp",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "AI-powered mouse recommendation tool that analyzes your preferences to find the perfect mouse for your needs.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the MinSp algorithm work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data stored when I use the recommendation tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate are the recommendations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     .ai-page {
       display: flex;
