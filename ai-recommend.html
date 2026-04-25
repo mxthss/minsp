@@ -22,128 +22,127 @@
     }
 
     .ai-page-header {
-      text-align: center;
-      margin-bottom: 40px;
+      text-align: left;
+      margin-bottom: 48px;
     }
 
     .ai-page-header h1 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin: 0 0 12px;
-      background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 50%, #57b8ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin: 0 0 8px;
+      color: var(--text);
+      letter-spacing: -0.5px;
     }
 
     .ai-page-header p {
-      font-size: 1.15rem;
-      color: var(--text-soft);
+      font-size: 0.9rem;
+      color: var(--text-faint);
       margin: 0;
+      font-weight: 300;
     }
 
     .ai-back-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.95rem;
+      gap: 6px;
+      color: var(--text-faint);
+      font-weight: 400;
+      font-size: 0.8rem;
       text-decoration: none;
-      margin-bottom: 24px;
-      transition: opacity 0.2s;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .ai-back-link:hover {
-      opacity: 0.8;
+      color: var(--text);
     }
 
-    /* Form Card */
+    /* Form Card - Minimalist */
     .ai-form-card {
-      background: linear-gradient(135deg, rgba(12, 22, 40, 0.92) 0%, rgba(8, 16, 32, 0.96) 100%);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(139, 92, 246, 0.06);
+      background: transparent;
+      border: none;
+      padding: 0;
     }
 
     .ai-form-card h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text);
-      margin: 0 0 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .ai-form-card h2 .icon {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      margin: 0 0 32px;
+      letter-spacing: 0.5px;
     }
 
     .ai-form {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
     }
 
     .ai-form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 24px;
     }
 
     @media (max-width: 600px) {
       .ai-form-row {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
 
     .ai-form-group {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-    }
-
-    .ai-form-group label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      display: flex;
-      align-items: center;
       gap: 6px;
     }
 
+    .ai-form-group label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
     .ai-form-group label .required {
-      color: #ef4444;
+      color: #8b5cf6;
+      margin-left: 4px;
     }
 
     .ai-form-group input,
     .ai-form-group select {
-      padding: 14px 16px;
-      background: var(--field);
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      padding: 0 0 12px 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
       color: var(--text);
       font-size: 1rem;
+      font-weight: 400;
       outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: border-color 0.3s ease;
     }
 
     .ai-form-group input:focus,
     .ai-form-group select:focus {
       border-color: #8b5cf6;
-      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+      border-bottom-width: 2px;
+      margin-bottom: -1px;
     }
 
     .ai-form-group input::placeholder {
       color: var(--text-faint);
+      opacity: 0.5;
     }
 
     .ai-form-hint {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--text-faint);
-      margin-top: 4px;
+      margin-top: 6px;
+      opacity: 0.7;
     }
 
     .ai-submit-btn {
@@ -151,34 +150,34 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 16px 32px;
-      margin-top: 12px;
-      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-      border: none;
-      border-radius: 14px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.05rem;
+      padding: 14px 28px;
+      margin-top: 20px;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.9rem;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
     }
 
     .ai-submit-btn:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+      border-color: #8b5cf6;
+      color: #8b5cf6;
     }
 
     .ai-submit-btn:disabled {
-      opacity: 0.6;
+      opacity: 0.4;
       cursor: not-allowed;
     }
 
     .ai-submit-btn .spinner {
-      width: 20px;
-      height: 20px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--text-faint);
+      border-top-color: #8b5cf6;
       border-radius: 50%;
       animation: ai-spin 1s linear infinite;
     }
@@ -328,97 +327,74 @@
       box-shadow: 0 8px 24px rgba(87, 184, 255, 0.35);
     }
 
-    /* Match Score Badge */
+    /* Match Score Badge - Minimalist */
     .ai-match-score {
-      background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(22, 163, 74, 0.1) 100%);
-      border: 2px solid rgba(34, 197, 94, 0.3);
-      border-radius: 20px;
-      padding: 28px;
-      text-align: center;
-      margin-bottom: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ai-match-score::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #22c55e, #16a34a, #22c55e);
+      text-align: left;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
     }
 
     .ai-match-percentage {
-      font-size: 4rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--text);
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .ai-match-level {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #22c55e;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-soft);
+      margin-bottom: 4px;
     }
 
     .ai-match-engine {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--text-faint);
-      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    /* Action Plan */
+    /* Action Plan - Minimalist */
     .ai-action-card {
-      background: linear-gradient(135deg, rgba(87, 184, 255, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
-      border: 1px solid rgba(87, 184, 255, 0.2);
-      border-radius: 16px;
-      padding: 24px;
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 24px 0;
       margin-bottom: 24px;
     }
 
     .ai-action-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #57b8ff;
-      margin: 0 0 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-faint);
+      margin: 0 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .ai-action-card p {
       font-size: 0.95rem;
-      color: var(--text-soft);
+      color: var(--text);
       margin: 0;
       line-height: 1.6;
+      font-weight: 300;
     }
 
-    /* Analysis Details */
+    /* Analysis Details - Minimalist */
     .ai-details-card {
-      background: rgba(10, 20, 38, 0.5);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 24px;
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 24px 0;
       margin-bottom: 24px;
     }
 
     .ai-details-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin: 0 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-faint);
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .ai-details-list {
@@ -427,16 +403,14 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .ai-details-list li {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-soft);
-      padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 10px;
-      border-left: 3px solid rgba(139, 92, 246, 0.5);
+      padding: 0;
+      font-weight: 300;
     }
 
     /* Reason */
