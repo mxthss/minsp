@@ -56,14 +56,15 @@
     }
 
     .ai-back-link:hover {
-      color: var(--text);
+      color: rgba(59, 130, 246, 0.9);
     }
 
-    /* Form Card - Minimalist */
+    /* Form Card - Minimalist with dark blue border */
     .ai-form-card {
-      background: transparent;
-      border: none;
-      padding: 0;
+      background: rgba(8, 16, 32, 0.4);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      border-radius: 16px;
+      padding: 32px;
     }
 
     .ai-form-card h2 {
@@ -128,7 +129,7 @@
 
     .ai-form-group input:focus,
     .ai-form-group select:focus {
-      border-color: #8b5cf6;
+      border-color: rgba(59, 130, 246, 0.6);
       border-bottom-width: 2px;
       margin-bottom: -1px;
     }
@@ -164,8 +165,8 @@
     }
 
     .ai-submit-btn:hover:not(:disabled) {
-      border-color: #8b5cf6;
-      color: #8b5cf6;
+      border-color: rgba(59, 130, 246, 0.8);
+      color: rgba(59, 130, 246, 0.9);
     }
 
     .ai-submit-btn:disabled {
@@ -177,7 +178,7 @@
       width: 18px;
       height: 18px;
       border: 2px solid var(--text-faint);
-      border-top-color: #8b5cf6;
+      border-top-color: rgba(59, 130, 246, 0.8);
       border-radius: 50%;
       animation: ai-spin 1s linear infinite;
     }
@@ -221,11 +222,10 @@
 
     /* Results */
     .ai-results-card {
-      background: linear-gradient(135deg, rgba(12, 22, 40, 0.92) 0%, rgba(8, 16, 32, 0.96) 100%);
-      border: 1px solid var(--line);
-      border-radius: 24px;
+      background: rgba(8, 16, 32, 0.5);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 16px;
       padding: 32px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
     }
 
     .ai-results-header {
@@ -248,9 +248,9 @@
 
     /* Best Choice */
     .ai-best-card {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
-      border: 2px solid rgba(139, 92, 246, 0.3);
-      border-radius: 20px;
+      background: rgba(8, 16, 32, 0.3);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 12px;
       padding: 28px;
       text-align: center;
       margin-bottom: 24px;
