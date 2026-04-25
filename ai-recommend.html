@@ -12,13 +12,17 @@
     .ai-page {
       display: flex;
       justify-content: center;
-      padding: 40px 20px 80px;
+      padding: 60px 40px 80px;
       min-height: calc(100vh - 200px);
     }
 
     .ai-container {
       width: 100%;
       max-width: 700px;
+      background: rgba(8, 16, 32, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 20px;
+      padding: 48px;
     }
 
     .ai-page-header {
@@ -59,12 +63,12 @@
       color: rgba(59, 130, 246, 0.9);
     }
 
-    /* Form Card - Minimalist with dark blue border */
+    /* Form Card - Minimalist without border (container has it) */
     .ai-form-card {
-      background: rgba(8, 16, 32, 0.4);
-      border: 1px solid rgba(59, 130, 246, 0.15);
-      border-radius: 16px;
-      padding: 32px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
     }
 
     .ai-form-card h2 {
@@ -222,10 +226,10 @@
 
     /* Results */
     .ai-results-card {
-      background: rgba(8, 16, 32, 0.5);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: 16px;
-      padding: 32px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
     }
 
     .ai-results-header {
