@@ -745,9 +745,18 @@
 
         var html = '';
 
+        // Match Score Badge
+        html += '<div class="ai-match-score">';
+        html += '<div class="ai-match-percentage">' + best.matchPercentage + '%</div>';
+        html += '<div class="ai-match-level">' + escapeHtml(best.matchLevel) + '</div>';
+        if (recommendation.engine) {
+          html += '<div class="ai-match-engine">Powered by ' + escapeHtml(recommendation.engine) + '</div>';
+        }
+        html += '</div>';
+
         // Best choice card
         html += '<div class="ai-best-card">';
-        html += '<div class="ai-best-badge">Best Choice</div>';
+        html += '<div class="ai-best-badge">🏆 Best Choice</div>';
         html += '<h3 class="ai-best-name">' + escapeHtml(best.name) + '</h3>';
         html += '<div class="ai-best-price">$' + best.price + '</div>';
         
@@ -768,13 +777,33 @@
         }
         html += '</div>';
 
+        // Action Plan card (MinSp Engine feature)
+        if (best.actionPlan) {
+          html += '<div class="ai-action-card">';
+          html += '<h4>📋 Action Plan</h4>';
+          html += '<p>' + escapeHtml(best.actionPlan) + '</p>';
+          html += '</div>';
+        }
+
         // Reason card
         html += '<div class="ai-reason-card">';
         html += '<h4>💡 Why this mouse?</h4>';
         html += '<p>' + escapeHtml(best.reason) + '</p>';
         html += '</div>';
 
-        // Alternatives
+        // Match details (MinSp Engine details)
+        if (best.details && best.details.length > 0) {
+          html += '<div class="ai-details-card">';
+          html += '<h4>🔍 Analysis Details</h4>';
+          html += '<ul class="ai-details-list">';
+          best.details.forEach(function(detail) {
+            html += '<li>' + escapeHtml(detail) + '</li>';
+          });
+          html += '</ul>';
+          html += '</div>';
+        }
+
+        // Alternatives with Match Scores
         if (alternatives.length > 0) {
           html += '<div class="ai-alternatives-card">';
           html += '<h4>🔄 Alternative Options</h4>';
@@ -789,6 +818,9 @@
             }
             html += '<div class="ai-alt-info">';
             html += '<span class="ai-alt-name">' + escapeHtml(alt.name) + '</span>';
+            if (alt.matchScore) {
+              html += '<span class="ai-alt-score">' + alt.matchScore + '% ' + alt.matchLevel + '</span>';
+            }
             if (altMouse) {
               html += '<span class="ai-alt-desc">' + altMouse.brand + ' • ' + (altMouse.wireless ? 'Wireless' : 'Wired') + '</span>';
             }
