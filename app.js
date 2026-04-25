@@ -5039,12 +5039,13 @@
       });
     });
 
-    var bubbleCta = document.getElementById('catalog-bubble-cta');
-    if (bubbleCta) {
-      bubbleCta.addEventListener('click', function(event) {
-        // Let the default link behavior work
-      });
-    }
+    // Remove event listener for catalog-bubble-cta to let default link work
+    // var bubbleCta = document.getElementById('catalog-bubble-cta');
+    // if (bubbleCta) {
+    //   bubbleCta.addEventListener('click', function(event) {
+    //     // Let the default link behavior work
+    //   });
+    // }
 
     window.addEventListener('popstate', function(event) {
       var path = window.location.pathname;
