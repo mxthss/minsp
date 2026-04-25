@@ -34,15 +34,11 @@ app.post('/api/recommend', async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields: userProfile and miceData' });
     }
 
-    // Debug: Check if API key is present (without exposing it)
-    const rawApiKey = process.env.GEMINI_API_KEY;
-    console.log('Clé présente ?', !!rawApiKey);
-    console.log('Clé length:', rawApiKey ? rawApiKey.length : 0);
-    
-    // Trim API key to remove any hidden spaces
-    const apiKey = rawApiKey ? rawApiKey.trim() : null;
+    // API Key with trim to remove hidden spaces
+    const apiKey = (process.env.GEMINI_API_KEY || '').trim();
     
     if (!apiKey) {
+      console.error('GEMINI_API_KEY not configured');
       return res.status(500).json({ error: 'GEMINI_API_KEY not configured' });
     }
 
@@ -56,46 +52,58 @@ app.post('/api/recommend', async (req, res) => {
     Interdiction de mettre du texte avant ou après le JSON.`;
 
     // Strict JSON format for Gemini v1 API
-    const requestBody = {
-      contents: [{
-        parts: [{ text: prompt }]
-      }]
-    };
-    console.log('Request body format:', JSON.stringify(requestBody).substring(0, 100) + '...');
+    const requestBody = { "contents": [{ "parts": [{ "text": prompt }] }] };
     
-    let response;
-    try {
-      response = await fetch(
-        `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(requestBody)
-        }
-      );
-    } catch (fetchError) {
-      console.error('Fetch error:', fetchError);
-      return res.status(500).json({ error: 'Network error calling Gemini API', details: fetchError.message });
-    }
+    console.log('Calling Gemini API...');
+    
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      }
+    );
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Gemini API error:', errorText);
-      return res.status(500).json({ error: 'Gemini API error', details: errorText });
+      let errorData;
+      try {
+        errorData = await response.json();
+      } catch (e) {
+        errorData = { error: await response.text() };
+      }
+      console.error('Gemini API error:', JSON.stringify(errorData));
+      return res.status(500).json({ 
+        error: 'Gemini API error', 
+        status: response.status,
+        details: errorData 
+      });
     }
 
     const data = await response.json();
+    
+    if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+      console.error('Unexpected Gemini response:', JSON.stringify(data));
+      return res.status(500).json({ 
+        error: 'Unexpected response from Gemini', 
+        details: data 
+      });
+    }
+    
     let responseText = data.candidates[0].content.parts[0].text;
     
-    // Nettoyage des balises markdown si présentes
+    // Nettoyage des balises markdown
     const cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
 
     res.json(JSON.parse(cleanJson));
   } catch (error) {
     console.error('Recommendation error:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ 
+      error: error.message,
+      stack: error.stack 
+    });
   }
 });
 
