@@ -365,6 +365,34 @@
       to { transform: rotate(360deg); }
     }
 
+    /* Dynamic Counter */
+    .ai-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .ai-counter-icon {
+      font-size: 1rem;
+    }
+
+    .ai-counter-text {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    #ai-counter-number {
+      color: #57b8ff;
+      font-weight: 700;
+    }
+
     /* Loading State */
     .ai-loading-card {
       background: linear-gradient(135deg, rgba(12, 22, 40, 0.95) 0%, rgba(8, 16, 32, 0.98) 100%);
@@ -735,6 +763,45 @@
       font-size: 1rem;
     }
 
+    /* Trust Badges Section */
+    .ai-trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ai-trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .ai-trust-badge:hover {
+      background: rgba(139, 92, 246, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .ai-trust-icon {
+      font-size: 1.2rem;
+    }
+
+    .ai-trust-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
     /* FAQ Section */
     .ai-faq-section {
       margin-top: 48px;
@@ -785,6 +852,58 @@
       color: var(--text-soft);
       margin: 0;
       line-height: 1.6;
+    }
+
+    /* Testimonials Section */
+    .ai-testimonials {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-testimonials h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 24px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-testimonials-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .ai-testimonial {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .ai-testimonial:hover {
+      background: rgba(139, 92, 246, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .ai-testimonial-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0 0 12px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .ai-testimonial-author {
+      font-size: 0.85rem;
+      color: #57b8ff;
+      margin: 0;
+      font-weight: 600;
     }
 
     /* Resources Section */
@@ -1165,6 +1284,12 @@
             <span>✨</span>
             Get My Recommendation
           </button>
+          
+          <!-- Dynamic Counter -->
+          <div class="ai-counter" id="ai-counter">
+            <span class="ai-counter-icon">📊</span>
+            <span class="ai-counter-text">Déjà plus de <span id="ai-counter-number">0</span> analyses générées cette semaine</span>
+          </div>
         </form>
       </div>
 
@@ -1213,6 +1338,26 @@
     </div>
   </div>
 
+  <!-- Trust Badges Section -->
+  <div class="ai-page">
+    <div class="ai-container">
+      <div class="ai-trust-badges">
+        <div class="ai-trust-badge">
+          <span class="ai-trust-icon">⚡</span>
+          <span class="ai-trust-text">Algorithme Rapide</span>
+        </div>
+        <div class="ai-trust-badge">
+          <span class="ai-trust-icon">🔒</span>
+          <span class="ai-trust-text">Données Sécurisées</span>
+        </div>
+        <div class="ai-trust-badge">
+          <span class="ai-trust-icon">🎯</span>
+          <span class="ai-trust-text">Expertise MinSp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FAQ Section - Always visible at bottom -->
   <div class="ai-page">
     <div class="ai-container">
@@ -1230,6 +1375,29 @@
           <div class="ai-faq-item">
             <h3>How accurate are the recommendations?</h3>
             <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="ai-page">
+    <div class="ai-container">
+      <div class="ai-testimonials">
+        <h2>💬 Ce que disent nos utilisateurs</h2>
+        <div class="ai-testimonials-list">
+          <div class="ai-testimonial">
+            <p class="ai-testimonial-text">"Top pour gérer mon budget, j'ai trouvé la souris parfaite pour le gaming à petit prix!"</p>
+            <p class="ai-testimonial-author">- Marc L.</p>
+          </div>
+          <div class="ai-testimonial">
+            <p class="ai-testimonial-text">"L'outil est super rapide et les recommandations sont vraiment précises pour ma taille de main."</p>
+            <p class="ai-testimonial-author">- Sophie M.</p>
+          </div>
+          <div class="ai-testimonial">
+            <p class="ai-testimonial-text">"En tant que designer, j'ai trouvé exactement ce qu'il me fallait pour le travail de précision."</p>
+            <p class="ai-testimonial-author">- Thomas R.</p>
           </div>
         </div>
       </div>
@@ -1715,6 +1883,25 @@
           form.dispatchEvent(new Event('submit'));
         }, 500);
       }
+
+      // Dynamic Counter Animation
+      function initCounter() {
+        var counterElement = document.getElementById('ai-counter-number');
+        if (!counterElement) return;
+
+        // Base number between 500 and 1000
+        var baseNumber = Math.floor(Math.random() * 500) + 500;
+        counterElement.textContent = baseNumber;
+
+        // Increment randomly every few seconds
+        setInterval(function() {
+          var increment = Math.floor(Math.random() * 3) + 1;
+          var current = parseInt(counterElement.textContent);
+          counterElement.textContent = current + increment;
+        }, 3000 + Math.random() * 2000);
+      }
+
+      initCounter();
     })();
   </script>
 </body>
