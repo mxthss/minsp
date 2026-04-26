@@ -53,6 +53,21 @@
   <title>MinSp - Electronic Product Comparison</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="canonical" href="https://minsp.example.com/">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MinSp",
+    "url": "https://minsp.onrender.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://minsp.onrender.com/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body class="theme-tech">
   <div id="catalog-view" class="spa-view is-visible">
@@ -83,7 +98,7 @@
         </div>
 
         <div class="hero-top">
-        <p class="eyebrow" id="hero-eyebrow">MinSp - Electronic Product Comparison</p>
+        <h1 class="eyebrow" id="hero-eyebrow">MinSp - Electronic Product Comparison</h1>
         <a href="#" class="logo"><span class="notranslate" translate="no">Min<span class="logo-sp">Sp</span></span></a>
         <p class="slogan" id="hero-slogan">MinSp : choose, compare, <span class="highlight">play</span></p>
         <p class="hero-text" id="hero-text">

@@ -47,11 +47,6 @@
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1250"
     }
   }
   </script>
@@ -2104,6 +2099,79 @@
         document.head.appendChild(link);
       }
 
+      // Update JSON-LD with Product and ItemList schemas
+      function updateStructuredData(recommendation, bestMouse) {
+        var existingScript = document.getElementById('ai-results-jsonld');
+        if (existingScript) {
+          existingScript.remove();
+        }
+
+        var productList = [];
+        
+        // Add best product
+        if (bestMouse) {
+          productList.push({
+            "@type": "Product",
+            "name": bestMouse.name,
+            "brand": {
+              "@type": "Brand",
+              "name": bestMouse.brand || "Unknown"
+            },
+            "image": bestMouse.image || "",
+            "description": bestMouse.description || "High-quality mouse for " + (recommendation.userProfile.usage || "general use"),
+            "offers": {
+              "@type": "Offer",
+              "price": bestMouse.price || "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          });
+        }
+
+        // Add alternatives
+        if (recommendation.alternatives && recommendation.alternatives.length > 0) {
+          recommendation.alternatives.forEach(function(alt) {
+            var altMouse = findMouseByName(alt.name);
+            if (altMouse) {
+              productList.push({
+                "@type": "Product",
+                "name": altMouse.name,
+                "brand": {
+                  "@type": "Brand",
+                  "name": altMouse.brand || "Unknown"
+                },
+                "image": altMouse.image || "",
+                "description": altMouse.description || "Alternative mouse option",
+                "offers": {
+                  "@type": "Offer",
+                  "price": alt.price || "0",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                }
+              });
+            }
+          });
+        }
+
+        var structuredData = {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "itemListElement": productList.map(function(product, index) {
+            return {
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": product
+            };
+          })
+        };
+
+        var script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'ai-results-jsonld';
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+      }
+
       function displayResults(recommendation) {
         var best = recommendation.bestChoice;
         var alternatives = recommendation.alternatives || [];
@@ -2113,6 +2181,9 @@
         if (bestMouse && bestMouse.image) {
           preloadImage(bestMouse.image);
         }
+
+        // Update structured data with Product and ItemList schemas
+        updateStructuredData(recommendation, bestMouse);
 
         var html = '';
 
