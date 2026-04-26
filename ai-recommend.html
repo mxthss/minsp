@@ -1526,6 +1526,111 @@
       if (urlParams.has('reset')) {
         resetForm();
       }
+
+      // Dynamic Landing Pages - URL Parameters Support
+      function handleURLParameters() {
+        var params = urlParams;
+        var hasParams = false;
+
+        // Parameter mapping for form fields
+        var paramMapping = {
+          'budget': 'ai-budget',
+          'handSize': 'ai-hand-size',
+          'usage': 'ai-usage',
+          'wireless': 'ai-wireless',
+          'gripStyle': 'ai-grip-style',
+          'weight': 'ai-weight',
+          'brand': 'ai-brand',
+          'rgb': 'ai-rgb',
+          'buttons': 'ai-buttons'
+        };
+
+        // Auto-fill form based on URL parameters
+        for (var param in paramMapping) {
+          if (params.has(param)) {
+            var fieldId = paramMapping[param];
+            var field = document.getElementById(fieldId);
+            if (field) {
+              field.value = params.get(param);
+              hasParams = true;
+            }
+          }
+        }
+
+        // Dynamic titles based on parameters
+        if (hasParams) {
+          updateDynamicTitle(params);
+        }
+
+        return hasParams;
+      }
+
+      function updateDynamicTitle(params) {
+        var titleParts = [];
+        var usage = params.get('usage');
+        var budget = params.get('budget');
+        var wireless = params.get('wireless');
+
+        // Build dynamic title based on parameters
+        if (usage) {
+          var usageLabels = {
+            'gaming': 'Gaming',
+            'fps': 'FPS Gaming',
+            'moba': 'MOBA/MMO',
+            'bureautique': 'Office',
+            'design': 'Design',
+            'mix': 'Mixed Use'
+          };
+          titleParts.push(usageLabels[usage] || usage);
+        }
+
+        if (budget) {
+          var budgetLabels = {
+            '30': 'Under 30€',
+            '50': 'Up to 50€',
+            '80': 'Up to 80€',
+            '100': 'Up to 100€',
+            '150': 'Up to 150€',
+            '200': 'Up to 200€',
+            '300': 'Up to 300€',
+            '400': 'Up to 400€'
+          };
+          titleParts.push(budgetLabels[budget] || budget + '€');
+        }
+
+        if (wireless === 'true') {
+          titleParts.push('Wireless');
+        } else if (wireless === 'false') {
+          titleParts.push('Wired');
+        }
+
+        // Update page title
+        if (titleParts.length > 0) {
+          var dynamicTitle = titleParts.join(' ') + ' Mouse Recommendation';
+          document.title = 'MinSp - ' + dynamicTitle;
+
+          // Update h1
+          var h1 = document.querySelector('.ai-page-header h1');
+          if (h1) {
+            h1.textContent = '🖱️ ' + dynamicTitle;
+          }
+
+          // Update description
+          var p = document.querySelector('.ai-page-header p');
+          if (p) {
+            p.textContent = 'AI-powered mouse recommendation for ' + titleParts.join(' ').toLowerCase() + ' users';
+          }
+        }
+      }
+
+      // Auto-submit if URL parameters are present
+      var hasURLParams = handleURLParameters();
+      if (hasURLParams) {
+        // Small delay to ensure form is filled before submitting
+        setTimeout(function() {
+          form.dispatchEvent(new Event('submit'));
+        }, 500);
+      }
     })();
   </script>
 </body>
