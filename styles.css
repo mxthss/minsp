@@ -21,6 +21,20 @@
   --radius-md: 18px;
   --radius-sm: 14px;
   --font-ui: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --error: #ef4444;
+  --warning: #fbbf24;
+  --success: #10a37f;
+  --info: #60a5fa;
+  --card-bg: #0b1624;
+  --card-bg-light: #1a2a3a;
+  --purple: #8b5cf6;
+  --purple-light: #a78bfa;
+  --brand-color: #444444;
+  --brand-color-light: #cccccc;
+  --gray-text: #888888;
+  --gray-text-light: #aaaaaa;
+  --gray-light: #cccccc;
+  --red-dark: #dc2626;
 }
 
 /* Light mode variables */
@@ -42,6 +56,20 @@
   --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 20px 48px rgba(0, 0, 0, 0.08);
   --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.05);
+  --error: #dc2626;
+  --warning: #d97706;
+  --success: #059669;
+  --info: #2563eb;
+  --card-bg: #f8fafc;
+  --card-bg-light: #f1f5f9;
+  --purple: #7c3aed;
+  --purple-light: #8b5cf6;
+  --brand-color: #cccccc;
+  --brand-color-light: #444444;
+  --gray-text: #64748b;
+  --gray-text-light: #475569;
+  --gray-light: #94a3b8;
+  --red-dark: #b91c1c;
 }
 
 [data-theme="light"] .hero-panel {
