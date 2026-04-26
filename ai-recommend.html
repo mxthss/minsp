@@ -169,6 +169,34 @@
       filter: drop-shadow(0 0 8px rgba(87, 184, 255, 0.5));
     }
 
+    /* Progress Bar */
+    .ai-progress-container {
+      margin-bottom: 24px;
+    }
+
+    .ai-progress-bar {
+      height: 8px;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .ai-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #8b5cf6 0%, #57b8ff 100%);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .ai-progress-text {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      text-align: right;
+      font-weight: 500;
+    }
+
     .ai-form {
       display: flex;
       flex-direction: column;
@@ -971,6 +999,32 @@
       }
     }
 
+    /* Share Button */
+    .ai-share-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      margin-top: 16px;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .ai-share-btn:hover {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%);
+      border-color: rgba(34, 197, 94, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+    }
+
     /* Footer */
     .ai-footer {
       margin-top: 48px;
@@ -1152,6 +1206,70 @@
       background: rgba(239, 68, 68, 0.2);
     }
 
+    /* Tooltips */
+    .ai-tooltip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 50%;
+      color: #8b5cf6;
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: help;
+      margin-left: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .ai-tooltip-icon:hover {
+      background: rgba(139, 92, 246, 0.3);
+      border-color: rgba(139, 92, 246, 0.5);
+    }
+
+    .ai-tooltip-content {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8, 16, 32, 0.98);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      white-space: nowrap;
+      max-width: 250px;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+
+    .ai-tooltip-content::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .ai-tooltip-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .ai-tooltip-wrapper:hover .ai-tooltip-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
     /* Hidden utility */
     .hidden {
       display: none !important;
@@ -1171,6 +1289,15 @@
       <!-- Step 1: Form -->
       <div class="ai-form-card" id="ai-form-section">
         <h2><span class="icon">🎯</span> Your Preferences</h2>
+        
+        <!-- Progress Bar -->
+        <div class="ai-progress-container">
+          <div class="ai-progress-bar" id="ai-progress-bar">
+            <div class="ai-progress-fill" id="ai-progress-fill"></div>
+          </div>
+          <div class="ai-progress-text" id="ai-progress-text">0% completed</div>
+        </div>
+        
         <form class="ai-form" id="ai-form">
           <div class="ai-form-row">
             <div class="ai-form-group">
@@ -1188,7 +1315,12 @@
               </select>
             </div>
             <div class="ai-form-group">
-              <label for="ai-hand-size">Hand Size <span class="required">*</span></label>
+              <label for="ai-hand-size">Hand Size <span class="required">*</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">Measure from wrist to tip of middle finger</span>
+                </span>
+              </label>
               <select id="ai-hand-size" name="handSize" required>
                 <option value="">Select...</option>
                 <option value="small">Small (&lt; 17cm)</option>
@@ -1200,7 +1332,12 @@
 
           <div class="ai-form-row">
             <div class="ai-form-group">
-              <label for="ai-usage">Primary Usage <span class="required">*</span></label>
+              <label for="ai-usage">Primary Usage <span class="required">*</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">Helps us prioritize features like DPI, buttons, ergonomics</span>
+                </span>
+              </label>
               <select id="ai-usage" name="usage" required>
                 <option value="">Select...</option>
                 <option value="gaming">Gaming</option>
@@ -1224,7 +1361,12 @@
 
           <div class="ai-form-row">
             <div class="ai-form-group">
-              <label for="ai-grip-style">Grip Style <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <label for="ai-grip-style">Grip Style <span style="color: var(--text-faint); font-weight: 400;">(optional)</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">How you hold the mouse affects comfort and precision</span>
+                </span>
+              </label>
               <select id="ai-grip-style" name="gripStyle">
                 <option value="">Any - I don't know / flexible</option>
                 <option value="palm">Palm Grip (whole hand on mouse)</option>
@@ -1233,7 +1375,12 @@
               </select>
             </div>
             <div class="ai-form-group">
-              <label for="ai-weight">Weight Preference <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <label for="ai-weight">Weight Preference <span style="color: var(--text-faint); font-weight: 400;">(optional)</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">Lighter mice reduce fatigue, heavier mice offer stability</span>
+                </span>
+              </label>
               <select id="ai-weight" name="weight">
                 <option value="">No preference</option>
                 <option value="ultralight">Ultra Light (&lt; 60g)</option>
@@ -1314,6 +1461,11 @@
         <button type="button" class="ai-new-btn" id="ai-new-btn">
           <span>🔄</span>
           Get another recommendation
+        </button>
+
+        <button type="button" class="ai-share-btn" id="ai-share-btn">
+          <span>📤</span>
+          Partager mon profil
         </button>
 
         <!-- Dynamic Resource Suggestions -->
@@ -1490,6 +1642,9 @@
       var newBtn = document.getElementById('ai-new-btn');
       var errorBtn = document.getElementById('ai-error-btn');
       var errorMessage = document.getElementById('ai-error-message');
+      var progressFill = document.getElementById('ai-progress-fill');
+      var progressText = document.getElementById('ai-progress-text');
+      var shareBtn = document.getElementById('ai-share-btn');
 
       function showSection(section) {
         formSection.classList.add('hidden');
@@ -1500,6 +1655,55 @@
         section.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+
+      // Progress Bar Logic
+      function updateProgress() {
+        var requiredFields = form.querySelectorAll('[required]');
+        var filledCount = 0;
+        
+        requiredFields.forEach(function(field) {
+          if (field.value && field.value !== '') {
+            filledCount++;
+          }
+        });
+        
+        var progress = Math.round((filledCount / requiredFields.length) * 100);
+        progressFill.style.width = progress + '%';
+        progressText.textContent = progress + '% completed';
+      }
+
+      // Add event listeners to form fields for progress tracking
+      form.addEventListener('input', updateProgress);
+      form.addEventListener('change', updateProgress);
+
+      // Share button functionality
+      shareBtn.addEventListener('click', function() {
+        var formData = new FormData(form);
+        var params = new URLSearchParams();
+        
+        if (formData.get('budget')) params.set('budget', formData.get('budget'));
+        if (formData.get('handSize')) params.set('handSize', formData.get('handSize'));
+        if (formData.get('usage')) params.set('usage', formData.get('usage'));
+        if (formData.get('wireless')) params.set('wireless', formData.get('wireless'));
+        if (formData.get('gripStyle')) params.set('gripStyle', formData.get('gripStyle'));
+        if (formData.get('weight')) params.set('weight', formData.get('weight'));
+        if (formData.get('brand')) params.set('brand', formData.get('brand'));
+        if (formData.get('rgb')) params.set('rgb', formData.get('rgb'));
+        if (formData.get('buttons')) params.set('buttons', formData.get('buttons'));
+        
+        var shareUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+        var shareText = '🖱️ Découvre ma souris idéale sur MinSp! ' + shareUrl;
+        
+        navigator.clipboard.writeText(shareText).then(function() {
+          var originalText = shareBtn.innerHTML;
+          shareBtn.innerHTML = '<span>✅</span> Copié!';
+          setTimeout(function() {
+            shareBtn.innerHTML = originalText;
+          }, 2000);
+        }).catch(function() {
+          alert('Lien copié: ' + shareUrl);
+        });
+      });
 
       function buildMiceDataForAI() {
         // Use window.MOUSE_DATA which is exposed by mice.js
