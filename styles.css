@@ -21,20 +21,6 @@
   --radius-md: 18px;
   --radius-sm: 14px;
   --font-ui: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --error: #ef4444;
-  --warning: #fbbf24;
-  --success: #10a37f;
-  --info: #60a5fa;
-  --card-bg: #0b1624;
-  --card-bg-light: #1a2a3a;
-  --purple: #8b5cf6;
-  --purple-light: #a78bfa;
-  --brand-color: #444444;
-  --brand-color-light: #cccccc;
-  --gray-text: #888888;
-  --gray-text-light: #aaaaaa;
-  --gray-light: #cccccc;
-  --red-dark: #dc2626;
 }
 
 * {
@@ -238,7 +224,7 @@ img {
   cursor: pointer;
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.3);
-  color: var(--error);
+  color: #ef4444;
   transition: background 0.2s ease;
 }
 
@@ -758,8 +744,8 @@ h3 {
   width: 100%;
   position: relative;
   isolation: isolate;
-  background: var(--field);
-  border: 4px solid var(--brand-color-light);
+  background: #ffffff;
+  border: 4px solid var(--brand-color, #cccccc);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -833,13 +819,13 @@ h3 {
 }
 
 .card-brand {
-  color: var(--gray-text);
+  color: #888888;
   font-size: 0.85rem;
   margin: 0 0 4px;
 }
 
 .card-title {
-  color: var(--text);
+  color: #ffffff;
   font-size: 0.98rem;
   font-weight: 600;
   margin: 0;
@@ -847,7 +833,7 @@ h3 {
 }
 
 .card-summary {
-  color: var(--gray-text-light);
+  color: #aaaaaa;
   font-size: 0.8rem;
   margin: 0;
   min-height: 4.2em;
@@ -875,8 +861,8 @@ h3 {
 
 .meta-pill,
 .card-specs-inline span {
-  background: var(--brand-color);
-  color: var(--text);
+  background: var(--brand-color, #444444);
+  color: #ffffff;
   padding: 4px 10px;
   border-radius: 8px;
   font-size: 0.74rem;
@@ -1022,7 +1008,7 @@ h3 {
 }
 
 .fav-btn.is-fav {
-  color: var(--warning);
+  color: #fbbf24;
   border-color: rgba(251, 191, 36, 0.3);
   background: rgba(251, 191, 36, 0.08);
 }
@@ -1062,7 +1048,7 @@ h3 {
 }
 
 .card-fav-btn.is-fav {
-  color: var(--warning);
+  color: #fbbf24;
   border-color: rgba(251, 191, 36, 0.3);
   background: rgba(251, 191, 36, 0.1);
 }
@@ -1185,7 +1171,7 @@ h3 {
 .fav-view-btn {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--info);
+  color: #60a5fa;
   background: rgba(30, 58, 95, 0.25);
   border: 1px solid rgba(87, 143, 202, 0.4);
   border-radius: 10px;
@@ -1221,7 +1207,7 @@ h3 {
 .favorites-page .section-head h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--info);
+  color: #60a5fa;
   margin: 0;
 }
 
@@ -1322,8 +1308,8 @@ h3 {
   margin: 0;
   padding: 16px 18px;
   font-size: 1.02rem;
-  color: var(--gray-light);
-  background: var(--card-bg);
+  color: #cccccc;
+  background: #0b1624;
   border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.12);
   line-height: 1.6;
@@ -1343,11 +1329,11 @@ h3 {
 }
 
 .star-full {
-  color: var(--warning);
+  color: #fbbf24;
 }
 
 .star-half {
-  color: var(--warning);
+  color: #fbbf24;
   position: relative;
 }
 
@@ -1410,7 +1396,7 @@ h3 {
 
 .user-comment {
   padding: 16px 18px;
-  background: var(--card-bg);
+  background: #0b1624;
   border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.12);
 }
@@ -1522,7 +1508,7 @@ h3 {
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.3);
   border-radius: 8px;
-  color: var(--error);
+  color: #ef4444;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -1606,7 +1592,7 @@ h3 {
 }
 
 .form-error {
-  color: var(--error);
+  color: #ef4444;
   font-size: 0.9rem;
   min-height: 1.2em;
 }
@@ -1659,7 +1645,7 @@ h3 {
 .form-group input,
 .form-group textarea {
   padding: 14px 16px;
-  background: var(--card-bg);
+  background: #0b1624;
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 12px;
   color: var(--text);
@@ -1699,7 +1685,7 @@ h3 {
 
 .star-btn:hover,
 .star-btn.active {
-  color: var(--warning);
+  color: #fbbf24;
   transform: scale(1.1);
 }
 
@@ -1749,7 +1735,7 @@ h3 {
   gap: 16px;
   padding: 20px;
   border-radius: 20px;
-  background: var(--card-bg);
+  background: #0b1624;
   border: 1px solid rgba(148, 163, 184, 0.15);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -1765,7 +1751,7 @@ h3 {
   padding: 18px;
   border-radius: 20px;
   border: 1px solid rgba(148, 163, 184, 0.18);
-  background: var(--card-bg);
+  background: #0b1624;
   display: grid;
   gap: 12px;
   align-content: space-between;
@@ -1780,7 +1766,7 @@ h3 {
 }
 
 .spec-card:nth-child(2n) {
-  background: var(--card-bg);
+  background: #0b1624;
   border-color: rgba(45, 212, 191, 0.2);
 }
 
@@ -1880,7 +1866,7 @@ h3 {
   padding: 18px 20px;
   border-radius: 20px;
   border: 1px solid rgba(148, 163, 184, 0.18);
-  background: var(--card-bg);
+  background: #0b1624;
   font-size: 0.98rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -1895,27 +1881,27 @@ h3 {
   padding: 18px;
   border-radius: 20px;
   border: 1px solid rgba(148, 163, 184, 0.18);
-  background: var(--card-bg);
+  background: #0b1624;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .review-card-positive {
-  background: var(--card-bg);
+  background: #0b1624;
   border-color: rgba(16, 185, 129, 0.25);
 }
 
 .review-card-caution {
-  background: var(--card-bg);
+  background: #0b1624;
   border-color: rgba(245, 158, 11, 0.25);
 }
 
 .review-card-profile {
-  background: var(--card-bg);
+  background: #0b1624;
   border-color: rgba(59, 130, 246, 0.25);
 }
 
 .review-card-data {
-  background: var(--card-bg);
+  background: #0b1624;
   border-color: rgba(236, 72, 153, 0.25);
 }
 
@@ -2475,7 +2461,7 @@ h3 {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: var(--card-bg-light);
+  background: #1a2a3a;
   overflow: hidden;
   border-radius: inherit;
 }
@@ -2718,7 +2704,7 @@ h3 {
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.2);
   border-radius: 50%;
-  color: var(--error);
+  color: #ef4444;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -2866,7 +2852,7 @@ h3 {
 
 .ai-form-group input:focus,
 .ai-form-group select:focus {
-  border-color: var(--red-dark);
+  border-color: #8b5cf6;
 }
 
 .ai-form-group input::placeholder {
@@ -2970,7 +2956,7 @@ h3 {
 .ai-best-price {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--purple);
+  color: #8b5cf6;
   margin: 0 0 12px;
 }
 
@@ -3091,8 +3077,8 @@ h3 {
 }
 
 .ai-retry-btn:hover {
-  border-color: var(--red-dark);
-  color: var(--purple);
+  border-color: #8b5cf6;
+  color: #8b5cf6;
 }
 
 /* Error State */
