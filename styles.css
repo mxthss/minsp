@@ -26,22 +26,22 @@
 /* Light mode variables */
 [data-theme="light"] {
   color-scheme: light;
-  --bg: #f8fafc;
-  --bg-deep: #f1f5f9;
-  --bg-grid: rgba(87, 184, 255, 0.08);
-  --panel: rgba(255, 255, 255, 0.9);
-  --panel-strong: rgba(255, 255, 255, 0.95);
-  --field: rgba(248, 250, 252, 0.95);
-  --line: rgba(148, 163, 184, 0.25);
-  --line-strong: rgba(87, 184, 255, 0.4);
-  --text: #1e293b;
-  --text-soft: #64748b;
-  --text-faint: #94a3b8;
+  --bg: #ffffff;
+  --bg-deep: #f8fafc;
+  --bg-grid: rgba(87, 184, 255, 0.05);
+  --panel: rgba(255, 255, 255, 0.95);
+  --panel-strong: rgba(255, 255, 255, 1);
+  --field: rgba(255, 255, 255, 1);
+  --line: rgba(148, 163, 184, 0.2);
+  --line-strong: rgba(87, 184, 255, 0.3);
+  --text: #0f172a;
+  --text-soft: #475569;
+  --text-faint: #64748b;
   --accent: #2563eb;
   --accent-strong: #0891b2;
-  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.15);
-  --shadow-md: 0 20px 48px rgba(0, 0, 0, 0.1);
-  --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 20px 48px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -54,7 +54,7 @@ html {
 }
 
 [data-theme="light"] html {
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 46%, #e2e8f0 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 46%, #f1f5f9 100%);
 }
 
 body {
