@@ -110,6 +110,13 @@
       margin-bottom: 48px;
     }
 
+    .ai-header-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
     .ai-page-header h1 {
       font-size: 1.8rem;
       font-weight: 400;
@@ -133,14 +140,11 @@
       font-weight: 400;
       font-size: 0.8rem;
       text-decoration: none;
-      margin-bottom: 32px;
       transition: color 0.2s;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .ai-back-link:hover {
-      color: rgba(59, 130, 246, 0.9);
+      color: var(--accent);
     }
 
     /* Form Card - Minimalist without border (container has it) */
@@ -981,7 +985,12 @@
 <body class="theme-tech">
   <div class="ai-page">
     <div class="ai-container">
-      <a href="index.html" class="ai-back-link">← Back to catalog</a>
+      <div class="ai-header-actions">
+        <a href="index.html" class="ai-back-link">← Back to catalog</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
 
       <div class="ai-page-header">
         <h1>🤖 AI Mouse Recommendation</h1>
@@ -1520,6 +1529,36 @@
       form.addEventListener('submit', handleSubmit);
       newBtn.addEventListener('click', resetForm);
       errorBtn.addEventListener('click', resetForm);
+
+      // Theme toggle
+      var themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        // Load saved theme from localStorage
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+          updateThemeIcon(savedTheme);
+        }
+
+        themeToggle.addEventListener('click', function() {
+          var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+          var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          updateThemeIcon(newTheme);
+        });
+      }
+
+      function updateThemeIcon(theme) {
+        var themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) return;
+        
+        var icon = themeToggle.querySelector('.theme-icon');
+        if (icon) {
+          icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+      }
 
       // Check for URL params (if coming back from product)
       var urlParams = new URLSearchParams(window.location.search);

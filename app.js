@@ -5091,6 +5091,37 @@
 
       }
 
+  function initializeThemeToggle() {
+    var themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+
+    // Load saved theme from localStorage
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+  }
+
+  function updateThemeIcon(theme) {
+    var themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    var icon = themeToggle.querySelector('.theme-icon');
+    if (icon) {
+      icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+  }
+
   function init() {
     var initialLanguage;
     var requiredElements = [
@@ -5117,6 +5148,7 @@
 
     initializeLanguageSelector();
     bindEvents();
+    initializeThemeToggle();
     updateHeaderAuth();
     initialLanguage = DEFAULT_LANGUAGE;
     updateLanguage(initialLanguage);
