@@ -459,7 +459,8 @@ async function getMinSpRecommendation(userProfile, miceData) {
     },
     alternatives: alternatives,
     engine: 'MinSp Engine v1.0',
-    analysisTime: '800ms'
+    analysisTime: '800ms',
+    userProfile: userProfile
   };
 }
 
