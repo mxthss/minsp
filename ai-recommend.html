@@ -897,6 +897,67 @@
       color: #57b8ff;
     }
 
+    .ai-footer-section {
+      margin-top: 32px;
+    }
+
+    .ai-footer-section h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 12px;
+    }
+
+    .ai-footer-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 24px;
+    }
+
+    .ai-footer-categories a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .ai-footer-categories a:hover {
+      color: #57b8ff;
+    }
+
+    .ai-footer-authority {
+      margin-top: 32px;
+      padding: 16px 20px;
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .ai-footer-authority p {
+      color: var(--text-soft);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .ai-footer-sitemap {
+      margin-top: 24px;
+    }
+
+    .ai-footer-sitemap a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .ai-footer-sitemap a:hover {
+      opacity: 1;
+    }
+
     /* New Recommendation Button */
     .ai-new-btn {
       display: flex;
@@ -1186,6 +1247,29 @@
         <a href="pc-components.html">PC Components</a>
         <a href="about.html">About MinSp</a>
         <a href="ai-recommend.html">AI Recommendation</a>
+      </div>
+      
+      <!-- Popular Searches / Categories -->
+      <div class="ai-footer-section">
+        <h4>Popular Recommendations</h4>
+        <div class="ai-footer-categories">
+          <a href="ai-recommend.html?usage=gaming&budget=50">Budget Gaming Mice</a>
+          <a href="ai-recommend.html?usage=fps&wireless=true">Wireless FPS Mice</a>
+          <a href="ai-recommend.html?usage=bureautique&budget=80">Office Mice Under 80€</a>
+          <a href="ai-recommend.html?weight=ultralight&wireless=true">Ultra Light Wireless</a>
+          <a href="ai-recommend.html?brand=Logitech&usage=gaming">Logitech Gaming</a>
+          <a href="ai-recommend.html?hand-size=small&usage=gaming">Small Hand Gaming</a>
+        </div>
+      </div>
+      
+      <!-- Authority Text -->
+      <div class="ai-footer-authority">
+        <p>MinSp is an intelligent recommendation platform powered by advanced algorithms that analyze your preferences to find the perfect electronic equipment. Our AI-driven approach combines technical specifications, user reviews, and ergonomic data to provide personalized product suggestions for gaming, office work, and creative use.</p>
+      </div>
+      
+      <!-- Sitemap Link -->
+      <div class="ai-footer-sitemap">
+        <a href="/sitemap.xml" rel="sitemap">Sitemap</a>
       </div>
     </div>
   </footer>
