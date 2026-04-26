@@ -4831,6 +4831,10 @@
     } else if (isFileProtocol() && !path) {
       routePath = currentRoute;
     }
+    // Handle about.html route - let it navigate normally
+    if (routePath.includes('about.html') || routePath.includes('/about')) {
+      return;
+    }
     var catalogType = getCatalogForRoute(routePath);
     if (catalogType) {
       showCatalog(catalogType, false);
