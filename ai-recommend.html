@@ -567,6 +567,28 @@
       font-weight: 500;
     }
 
+    /* Affiliate Disclosure */
+    .ai-affiliate-disclosure {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255, 193, 7, 0.08);
+      border: 1px solid rgba(255, 193, 7, 0.2);
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .ai-disclosure-icon {
+      font-size: 1rem;
+    }
+
+    .ai-disclosure-text {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
     .ai-view-btn {
       display: inline-flex;
       align-items: center;
@@ -647,6 +669,35 @@
       gap: 8px;
     }
 
+    /* Expert Tip */
+    .ai-expert-tip {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .ai-expert-tip h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8b5cf6;
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ai-expert-tip p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Action Plan */
     .ai-action-card p {
       font-size: 0.9rem;
       color: var(--text);
@@ -932,6 +983,70 @@
       color: #57b8ff;
       margin: 0;
       font-weight: 600;
+    }
+
+    /* Methodology Section */
+    .ai-methodology-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-methodology-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-methodology-section > p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0 0 20px;
+    }
+
+    .ai-methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .ai-methodology-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 8px;
+    }
+
+    .ai-methodology-icon {
+      font-size: 1.2rem;
+    }
+
+    .ai-methodology-text {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .ai-methodology-note {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      font-style: italic;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .ai-methodology-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     /* Resources Section */
@@ -1449,6 +1564,12 @@
 
       <!-- Step 3: Results -->
       <div class="ai-results-card hidden" id="ai-results-section">
+        <!-- Affiliate Disclosure -->
+        <div class="ai-affiliate-disclosure">
+          <span class="ai-disclosure-icon">ℹ️</span>
+          <span class="ai-disclosure-text">MinSp est soutenu par ses lecteurs. Nous pouvons percevoir une commission sur les achats effectués via nos liens.</span>
+        </div>
+        
         <div class="ai-results-header">
           <h2>🎉 Your Perfect Match</h2>
           <p>Based on your preferences, here's what we recommend</p>
@@ -1529,6 +1650,55 @@
             <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Methodology Section -->
+  <div class="ai-page">
+    <div class="ai-container">
+      <div class="ai-methodology-section">
+        <h2>📊 Our Methodology</h2>
+        <p>Our scoring system is based on 15 technical criteria weighted according to your specific use case:</p>
+        <div class="ai-methodology-grid">
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🎯</span>
+            <span class="ai-methodology-text">Budget alignment (20%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🤚</span>
+            <span class="ai-methodology-text">Hand size compatibility (15%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🖐️</span>
+            <span class="ai-methodology-text">Grip style match (15%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🎮</span>
+            <span class="ai-methodology-text">Usage type fit (15%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">📡</span>
+            <span class="ai-methodology-text">Wireless preference (10%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">⚖️</span>
+            <span class="ai-methodology-text">Weight optimization (10%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🏷️</span>
+            <span class="ai-methodology-text">Brand preference (5%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🌈</span>
+            <span class="ai-methodology-text">RGB/Lighting (5%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🔘</span>
+            <span class="ai-methodology-text">Button count (5%)</span>
+          </div>
+        </div>
+        <p class="ai-methodology-note">Weights are dynamically adjusted based on your profile to ensure personalized recommendations.</p>
       </div>
     </div>
   </div>
@@ -1773,6 +1943,56 @@
           .replace(/'/g, '&#039;');
       }
 
+      // Generate expert tip based on mouse and user profile
+      function generateExpertTip(mouse, userProfile) {
+        if (!mouse) return null;
+        
+        var tips = [];
+        
+        // Hand size tip
+        if (userProfile.handSize) {
+          if (userProfile.handSize === 'small' && mouse.shape === 'ambidextrous') {
+            tips.push('Idéal pour les petites mains avec sa forme ambidextre.');
+          } else if (userProfile.handSize === 'medium' && mouse.shape === 'ergonomic') {
+            tips.push('Parfait pour les mains moyennes en Palm Grip grâce à son ergonomie.');
+          } else if (userProfile.handSize === 'large' && mouse.weight > 100) {
+            tips.push('Le poids élevé offre une stabilité supplémentaire pour les grandes mains.');
+          }
+        }
+        
+        // Usage tip
+        if (userProfile.usage === 'fps' && mouse.dpi && mouse.dpi > 16000) {
+          tips.push('Le DPI élevé permet des mouvements précis en FPS compétitif.');
+        } else if (userProfile.usage === 'moba' && mouse.buttons && mouse.buttons > 5) {
+          tips.push('Les boutons supplémentaires sont parfaits pour les macros en MOBA.');
+        } else if (userProfile.usage === 'bureautique' && mouse.wireless) {
+          tips.push('Le sans-fil offre une liberté de mouvement optimale pour le travail.');
+        }
+        
+        // Grip style tip
+        if (userProfile.gripStyle === 'palm' && mouse.shape === 'ergonomic') {
+          tips.push('La forme ergonomique est conçue pour le Palm Grip confortable.');
+        } else if (userProfile.gripStyle === 'claw' && mouse.weight && mouse.weight < 80) {
+          tips.push('Le poids léger facilite les mouvements rapides en Claw Grip.');
+        } else if (userProfile.gripStyle === 'fingertip' && mouse.shape === 'ambidextrous') {
+          tips.push('La forme plate est idéale pour le Fingertip Grip.');
+        }
+        
+        // Weight tip
+        if (mouse.weight && mouse.weight < 60) {
+          tips.push('Ultra léger, parfait pour les sessions de gaming prolongées.');
+        } else if (mouse.weight && mouse.weight > 100) {
+          tips.push('Le poids important offre une sensation de stabilité et de contrôle.');
+        }
+        
+        // Default tip if no specific tip generated
+        if (tips.length === 0) {
+          tips.push('Un excellent choix équilibré pour votre profil d\'utilisation.');
+        }
+        
+        return tips[0]; // Return the first relevant tip
+      }
+
       // Count-up animation with ease-out easing
       function animateCounter(element, targetValue, duration) {
         var startValue = 0;
@@ -1843,6 +2063,15 @@
           html += '<a href="' + productUrl + '" class="ai-view-btn">View Product Details</a>';
         }
         html += '</div>';
+
+        // Expert Tip card
+        var expertTip = generateExpertTip(bestMouse, recommendation.userProfile);
+        if (expertTip) {
+          html += '<div class="ai-expert-tip">';
+          html += '<h4>💡 Expert Tip</h4>';
+          html += '<p>' + expertTip + '</p>';
+          html += '</div>';
+        }
 
         // Action Plan card (MinSp Engine feature)
         if (best.actionPlan) {
