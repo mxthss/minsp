@@ -2113,6 +2113,10 @@
     
     // Fermer le dropdown en cliquant ailleurs
     document.addEventListener("click", function(e) {
+      // Allow CTA link to work normally
+      if (e.target.closest('#catalog-bubble-cta')) {
+        return;
+      }
       if (!languageToggle.contains(e.target) && !languageDropdown.contains(e.target)) {
         languageToggle.classList.remove("active");
         languageDropdown.classList.remove("active");
@@ -2564,6 +2568,10 @@
     });
 
     document.addEventListener("click", function (event) {
+      // Allow CTA link to work normally
+      if (event.target.closest('#catalog-bubble-cta')) {
+        return;
+      }
       if (!languagePicker.contains(event.target)) {
         closeLanguageMenu();
       }
@@ -5039,13 +5047,7 @@
       });
     });
 
-    // Remove event listener for catalog-bubble-cta to let default link work
-    // var bubbleCta = document.getElementById('catalog-bubble-cta');
-    // if (bubbleCta) {
-    //   bubbleCta.addEventListener('click', function(event) {
-    //     // Let the default link behavior work
-    //   });
-    // }
+    // CTA link works as standard HTML link - no event listener needed
 
     window.addEventListener('popstate', function(event) {
       var path = window.location.pathname;
