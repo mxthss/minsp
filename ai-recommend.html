@@ -767,6 +767,116 @@
       line-height: 1.6;
     }
 
+    /* Resources Section */
+    .ai-resources-section {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-resources-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 20px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .ai-resource-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .ai-resource-card:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      border-color: rgba(139, 92, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .ai-resource-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .ai-resource-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin: 0 0 8px;
+    }
+
+    .ai-resource-card p {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      .ai-resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer */
+    .ai-footer {
+      margin-top: 48px;
+      padding: 32px 0;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(87, 184, 255, 0.02) 100%);
+    }
+
+    .ai-footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .ai-footer h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .ai-footer-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .ai-footer-links a:hover {
+      color: #57b8ff;
+    }
+
     /* New Recommendation Button */
     .ai-new-btn {
       display: flex;
@@ -999,6 +1109,14 @@
           <span>🔄</span>
           Get another recommendation
         </button>
+
+        <!-- Dynamic Resource Suggestions -->
+        <div class="ai-resources-section" id="ai-resources-section">
+          <h2>📚 Pour aller plus loin avec votre profil</h2>
+          <div class="ai-resources-grid" id="ai-resources-grid">
+            <!-- Dynamic cards injected here -->
+          </div>
+        </div>
       </div>
 
       <!-- Step 4: Error -->
@@ -1036,6 +1154,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Footer with Quick Links -->
+  <footer class="ai-footer">
+    <div class="ai-footer-content">
+      <h3>Quick Links</h3>
+      <div class="ai-footer-links">
+        <a href="index.html">Home</a>
+        <a href="mice.html">Mice Catalog</a>
+        <a href="keyboards.html">Keyboards Catalog</a>
+        <a href="pc-components.html">PC Components</a>
+        <a href="about.html">About MinSp</a>
+        <a href="ai-recommend.html">AI Recommendation</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="./data/mice.js"></script>
   <script>
@@ -1184,6 +1317,9 @@
         html += '<div class="ai-best-card">';
         html += '<div class="ai-best-badge">🏆 Best Choice</div>';
         html += '<h3 class="ai-best-name">' + escapeHtml(best.name) + '</h3>';
+
+        // Display resource suggestions based on profile
+        displayResourceSuggestions(recommendation.userProfile);
         html += '<div class="ai-best-price">$' + best.price + '</div>';
         
         if (bestMouse) {
@@ -1306,6 +1442,58 @@
       function resetForm() {
         form.reset();
         showSection(formSection);
+      }
+
+      function displayResourceSuggestions(userProfile) {
+        var resourcesGrid = document.getElementById('ai-resources-grid');
+        if (!resourcesGrid) return;
+
+        var resources = [];
+
+        // Determine profile type based on budget and usage
+        var budget = userProfile.budget || 0;
+        var usage = userProfile.usage || '';
+
+        if (budget <= 50) {
+          // Budget profile
+          resources = [
+            { icon: '💰', title: 'Best Budget Mice Under 50€', desc: 'Top affordable gaming mice reviewed', link: 'mice.html' },
+            { icon: '🎯', title: 'Value-for-Money Guide', desc: 'How to choose quality on a budget', link: 'about.html' },
+            { icon: '📊', title: 'Budget Comparison', desc: 'Compare specs vs price effectively', link: 'mice.html' }
+          ];
+        } else if (usage === 'fps' || usage === 'moba') {
+          // Gaming profile
+          resources = [
+            { icon: '🎮', title: 'Pro Gaming Mice', desc: 'What esports players use', link: 'mice.html' },
+            { icon: '⚡', title: 'High DPI Settings', desc: 'Optimize sensitivity for FPS', link: 'about.html' },
+            { icon: '🏆', title: 'Tournament Gear', desc: 'Equipment for competitive play', link: 'mice.html' }
+          ];
+        } else if (usage === 'bureautique' || usage === 'design') {
+          // Productivity profile
+          resources = [
+            { icon: '💼', title: 'Ergonomic Office Mice', desc: 'Comfort for long work sessions', link: 'mice.html' },
+            { icon: '🎨', title: 'Creative Tools', desc: 'Precision for design work', link: 'keyboards.html' },
+            { icon: '⌨️', title: 'Productivity Setup', desc: 'Complete workspace optimization', link: 'about.html' }
+          ];
+        } else {
+          // General profile
+          resources = [
+            { icon: '🖱️', title: 'Complete Mouse Guide', desc: 'Everything you need to know', link: 'mice.html' },
+            { icon: '⌨️', title: 'Keyboard Selection', desc: 'Find your perfect typing companion', link: 'keyboards.html' },
+            { icon: '🖥️', title: 'PC Building Guide', desc: 'Component selection tips', link: 'pc-components.html' }
+          ];
+        }
+
+        var html = '';
+        resources.forEach(function(resource) {
+          html += '<a href="' + resource.link + '" class="ai-resource-card">';
+          html += '<div class="icon">' + resource.icon + '</div>';
+          html += '<h3>' + escapeHtml(resource.title) + '</h3>';
+          html += '<p>' + escapeHtml(resource.desc) + '</p>';
+          html += '</a>';
+        });
+
+        resourcesGrid.innerHTML = html;
       }
 
       // Event listeners
