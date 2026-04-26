@@ -5051,15 +5051,7 @@
       });
     });
 
-    // CTA link - direct navigation to bypass routing
-    var bubbleCta = document.getElementById('catalog-bubble-cta');
-    if (bubbleCta) {
-      bubbleCta.addEventListener('click', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        window.location.href = 'about.html';
-      });
-    }
+    // CTA link - let it work naturally without JavaScript intervention
 
     window.addEventListener('popstate', function(event) {
       var path = window.location.pathname;
