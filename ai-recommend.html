@@ -1773,6 +1773,34 @@
           .replace(/'/g, '&#039;');
       }
 
+      // Count-up animation with ease-out easing
+      function animateCounter(element, targetValue, duration) {
+        var startValue = 0;
+        var startTime = null;
+        
+        function easeOutQuad(t) {
+          return t * (2 - t);
+        }
+        
+        function animation(currentTime) {
+          if (!startTime) startTime = currentTime;
+          var elapsed = currentTime - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var easedProgress = easeOutQuad(progress);
+          
+          var currentValue = Math.floor(startValue + (targetValue - startValue) * easedProgress);
+          element.textContent = currentValue;
+          
+          if (progress < 1) {
+            requestAnimationFrame(animation);
+          } else {
+            element.textContent = targetValue;
+          }
+        }
+        
+        requestAnimationFrame(animation);
+      }
+
       function displayResults(recommendation) {
         var best = recommendation.bestChoice;
         var alternatives = recommendation.alternatives || [];
@@ -1782,7 +1810,7 @@
 
         // Match Score Badge
         html += '<div class="ai-match-score">';
-        html += '<div class="ai-match-percentage">' + best.matchPercentage + '%</div>';
+        html += '<div class="ai-match-percentage"><span id="ai-match-percentage-counter">0</span>%</div>';
         html += '<div class="ai-match-level">' + escapeHtml(best.matchLevel) + '</div>';
         if (recommendation.engine) {
           html += '<div class="ai-match-engine">Powered by ' + escapeHtml(recommendation.engine) + '</div>';
@@ -1801,10 +1829,11 @@
         if (bestMouse) {
           html += '<div class="ai-best-specs">';
           if (bestMouse.dpi || bestMouse.dpiMax) {
-            html += '<span>📊 ' + (bestMouse.dpi || bestMouse.dpiMax) + ' DPI</span>';
+            var dpiValue = bestMouse.dpi || bestMouse.dpiMax;
+            html += '<span>📊 <span class="ai-counter-anim" data-value="' + dpiValue + '">0</span> DPI</span>';
           }
           if (bestMouse.weight) {
-            html += '<span>⚖️ ' + bestMouse.weight + 'g</span>';
+            html += '<span>⚖️ <span class="ai-counter-anim" data-value="' + bestMouse.weight + '">0</span>g</span>';
           }
           html += '<span>' + (bestMouse.wireless ? '📡 Wireless' : '🔌 Wired') + '</span>';
           html += '</div>';
@@ -1857,7 +1886,7 @@
             html += '<div class="ai-alt-info">';
             html += '<span class="ai-alt-name">' + escapeHtml(alt.name) + '</span>';
             if (alt.matchScore) {
-              html += '<span class="ai-alt-score">' + alt.matchScore + '% ' + alt.matchLevel + '</span>';
+              html += '<span class="ai-alt-score"><span class="ai-counter-anim" data-value="' + alt.matchScore + '">0</span>% ' + alt.matchLevel + '</span>';
             }
             if (altMouse) {
               html += '<span class="ai-alt-desc">' + altMouse.brand + ' • ' + (altMouse.wireless ? 'Wireless' : 'Wired') + '</span>';
@@ -1871,6 +1900,24 @@
         }
 
         resultsContent.innerHTML = html;
+        
+        // Trigger count-up animations
+        setTimeout(function() {
+          // Animate match percentage
+          var matchCounter = document.getElementById('ai-match-percentage-counter');
+          if (matchCounter && best.matchPercentage) {
+            animateCounter(matchCounter, parseInt(best.matchPercentage), 1500);
+          }
+          
+          // Animate all counters with data-value attribute
+          var counters = resultsContent.querySelectorAll('.ai-counter-anim');
+          counters.forEach(function(counter) {
+            var targetValue = parseInt(counter.getAttribute('data-value'), 10);
+            if (!isNaN(targetValue)) {
+              animateCounter(counter, targetValue, 1200);
+            }
+          });
+        }, 100);
       }
 
       async function handleSubmit(e) {
