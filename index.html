@@ -16,6 +16,10 @@
   <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
   <!-- OpenGraph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
@@ -246,7 +250,27 @@
             aria-live="polite"
             aria-label="Mouse product grid"
             role="region"
-          ></div>
+          >
+            <!-- Skeleton Loading -->
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-title"></div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-title"></div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-title"></div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
+            </div>
+          </div>
         </section>
 
         <section class="favorites-page panel-surface hidden" id="favorites-page">
@@ -365,6 +389,18 @@
       </div>
     </div>
   </footer>
+
+  <!-- Keep-alive script to counter Render Cold Start -->
+  <script>
+    (function() {
+      // Keep connection warm with periodic pings
+      setInterval(function() {
+        if (navigator.onLine) {
+          fetch(window.location.href, { method: 'HEAD', cache: 'no-store' }).catch(function() {});
+        }
+      }, 300000); // Every 5 minutes
+    })();
+  </script>
 
   <script>
     // Check AI access - redirects to login if not authenticated
