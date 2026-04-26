@@ -37,53 +37,6 @@
   --red-dark: #dc2626;
 }
 
-/* Light mode variables */
-[data-theme="light"] {
-  color-scheme: light;
-  --bg: #ffffff;
-  --bg-deep: #ffffff;
-  --bg-grid: rgba(87, 184, 255, 0.05);
-  --panel: #ffffff;
-  --panel-strong: #ffffff;
-  --field: #ffffff;
-  --line: rgba(0, 0, 0, 0.1);
-  --line-strong: rgba(87, 184, 255, 0.3);
-  --text: #0f172a;
-  --text-soft: #475569;
-  --text-faint: #64748b;
-  --accent: #2563eb;
-  --accent-strong: #0891b2;
-  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 20px 48px rgba(0, 0, 0, 0.08);
-  --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.05);
-  --error: #dc2626;
-  --warning: #d97706;
-  --success: #059669;
-  --info: #2563eb;
-  --card-bg: #f8fafc;
-  --card-bg-light: #f1f5f9;
-  --purple: #7c3aed;
-  --purple-light: #8b5cf6;
-  --brand-color: #cccccc;
-  --brand-color-light: #444444;
-  --gray-text: #64748b;
-  --gray-text-light: #475569;
-  --gray-light: #94a3b8;
-  --red-dark: #b91c1c;
-}
-
-[data-theme="light"] .hero-panel {
-  background: var(--field);
-}
-
-[data-theme="light"] .panel-surface {
-  background: var(--field);
-}
-
-[data-theme="light"] .panel-surface::before {
-  background: linear-gradient(180deg, rgba(87, 184, 255, 0.05) 0%, transparent 100%);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -91,10 +44,6 @@
 html {
   min-height: 100%;
   background: linear-gradient(180deg, #07111f 0%, #050b16 46%, #03060c 100%);
-}
-
-[data-theme="light"] html {
-  background: var(--field);
 }
 
 body {
@@ -263,35 +212,6 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 2px solid var(--line-strong);
-  border-radius: 12px;
-  background: var(--panel);
-  color: var(--text);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.4rem;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.theme-toggle:hover {
-  background: var(--panel-strong);
-  border-color: var(--accent);
-  transform: scale(1.05);
-}
-
-.theme-toggle .theme-icon {
-  display: block;
-  transition: transform 0.3s ease;
 }
 
 .user-section {
