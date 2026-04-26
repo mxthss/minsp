@@ -5051,7 +5051,15 @@
       });
     });
 
-    // CTA link works as standard HTML link - no event listener needed
+    // CTA link - direct navigation to bypass routing
+    var bubbleCta = document.getElementById('catalog-bubble-cta');
+    if (bubbleCta) {
+      bubbleCta.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.href = 'about.html';
+      });
+    }
 
     window.addEventListener('popstate', function(event) {
       var path = window.location.pathname;
