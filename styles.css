@@ -27,12 +27,12 @@
 [data-theme="light"] {
   color-scheme: light;
   --bg: #ffffff;
-  --bg-deep: #f8fafc;
+  --bg-deep: #ffffff;
   --bg-grid: rgba(87, 184, 255, 0.05);
-  --panel: rgba(255, 255, 255, 0.95);
-  --panel-strong: rgba(255, 255, 255, 1);
-  --field: rgba(255, 255, 255, 1);
-  --line: rgba(148, 163, 184, 0.2);
+  --panel: #ffffff;
+  --panel-strong: #ffffff;
+  --field: #ffffff;
+  --line: rgba(0, 0, 0, 0.1);
   --line-strong: rgba(87, 184, 255, 0.3);
   --text: #0f172a;
   --text-soft: #475569;
@@ -42,6 +42,18 @@
   --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 20px 48px rgba(0, 0, 0, 0.08);
   --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .hero-panel {
+  background: #ffffff;
+}
+
+[data-theme="light"] .panel-surface {
+  background: #ffffff;
+}
+
+[data-theme="light"] .panel-surface::before {
+  background: linear-gradient(180deg, rgba(87, 184, 255, 0.05) 0%, transparent 100%);
 }
 
 * {
@@ -54,7 +66,7 @@ html {
 }
 
 [data-theme="light"] html {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 46%, #f1f5f9 100%);
+  background: #ffffff;
 }
 
 body {
