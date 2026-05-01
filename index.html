@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="MinSp - Electronic Product Comparison">
-  <meta name="description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, précis et sans inscription !">
-  <meta name="keywords" content="MinSp, gaming mouse, office mouse, computer mouse, mouse comparison, DPI, polling rate, lightweight mouse, ergonomic mouse">
+  <title>MinSp — Comparateur de produits tech | Souris, Claviers, PC</title>
+  <meta name="description" content="Comparez gratuitement les meilleurs souris gaming, claviers mécaniques et composants PC. Analyse IA, filtres avancés, sans inscription.">
+  <meta name="keywords" content="comparateur souris, souris gaming, clavier mécanique, composants PC, comparaison produit, DPI, polling rate, MinSp">
   <meta name="author" content="MinSP">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="CV6NEJikamETphSj5twGac7Mi7tFtxIYhvDU10gUAG8" />
@@ -20,6 +20,9 @@
   <!-- Preload critical resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  
+  <!-- Critical CSS Inline -->
+  <style>/* [CRITICAL_CSS_INDEX] */</style>
 
   <!-- OpenGraph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
@@ -54,9 +57,18 @@
     href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
   />
 
-  <title>MinSp - Electronic Product Comparison</title>
+  <!-- WCAG Compliant Colors -->
+  <link rel="stylesheet" href="./wcag-colors.css">
+  <!-- Improved Skeleton Screens -->
+  <link rel="stylesheet" href="./skeleton-improved.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
+  <!-- I18n System -->
+  <script src="./i18n.js"></script>
+  <!-- Performance Optimizations -->
+  <script src="./app-optimizations.js"></script>
+  <!-- Mobile Filters Drawer -->
+  <script src="./mobile-filters.js"></script>
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -77,7 +89,6 @@
     <div class="page-shell app-shell">
       <header class="hero-panel panel-surface">
         <div class="header-actions">
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
           <div class="user-section" id="user-section"></div>
         <div class="language-picker" id="language-picker">
             <button
@@ -251,24 +262,51 @@
             aria-label="Product grid"
             role="region"
           >
-            <!-- Skeleton Loading -->
+            <!-- Skeleton Loading - Structure exacte des vraies cartes -->
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text-short"></div>
+              <div class="skeleton skeleton-summary"></div>
+              <div class="skeleton skeleton-summary-short"></div>
+              <div class="skeleton-pills">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-pill"></div>
+              </div>
+              <div class="skeleton-specs">
+                <div class="skeleton skeleton-spec"></div>
+                <div class="skeleton skeleton-spec"></div>
+              </div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text-short"></div>
+              <div class="skeleton skeleton-summary"></div>
+              <div class="skeleton skeleton-summary-short"></div>
+              <div class="skeleton-pills">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-pill"></div>
+              </div>
+              <div class="skeleton-specs">
+                <div class="skeleton skeleton-spec"></div>
+                <div class="skeleton skeleton-spec"></div>
+              </div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text-short"></div>
+              <div class="skeleton skeleton-summary"></div>
+              <div class="skeleton skeleton-summary-short"></div>
+              <div class="skeleton-pills">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-pill"></div>
+              </div>
+              <div class="skeleton-specs">
+                <div class="skeleton skeleton-spec"></div>
+                <div class="skeleton skeleton-spec"></div>
+              </div>
             </div>
           </div>
         </section>

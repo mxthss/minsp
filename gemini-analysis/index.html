@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSp — Catalogue Claviers | Mécaniques, Gaming, TKL</title>
-  <meta name="description" content="Découvrez notre catalogue de claviers mécaniques et gaming. Comparez switches, layout, taille et fonctionnalités. Recommandation IA disponible.">
-  <meta name="keywords" content="clavier mécanique, clavier gaming, comparateur clavier, switches, TKL, clavier sans-fil">
+  <meta name="title" content="MinSp - Electronic Product Comparison">
+  <meta name="description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, précis et sans inscription !">
+  <meta name="keywords" content="MinSp, gaming mouse, office mouse, computer mouse, mouse comparison, DPI, polling rate, lightweight mouse, ergonomic mouse">
   <meta name="author" content="MinSP">
   <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="CV6NEJikamETphSj5twGac7Mi7tFtxIYhvDU10gUAG8" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://minsp.onrender.com/">
   
   <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,46 +23,61 @@
 
   <!-- OpenGraph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://minsp.onrender.com/keyboards.html">
-  <meta property="og:title" content="Keyboards Catalog - MinSp">
-  <meta property="og:description" content="Browse our complete catalog of mechanical and gaming keyboards. Compare switches, layout, and features.">
+  <meta property="og:url" content="https://minsp.onrender.com/">
+  <meta property="og:title" content="MinSp - Electronic Product Comparison">
+  <meta property="og:description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, précis et sans inscription !">
   <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="MinSP">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://minsp.onrender.com/keyboards.html">
-  <meta name="twitter:title" content="Keyboards Catalog - MinSp">
-  <meta name="twitter:description" content="Browse our complete catalog of mechanical and gaming keyboards.">
+  <meta name="twitter:url" content="https://minsp.onrender.com/">
+  <meta name="twitter:title" content="MinSp - Electronic Product Comparison">
+  <meta name="twitter:description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, précis et sans inscription !">
+  <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
 
+  <!-- Discord (utilise OpenGraph) -->
   <meta name="theme-color" content="#57b8ff">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" href="/favicon.ico?v=2" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
+  />
 
-  <!-- WCAG Compliant Colors -->
-  <link rel="stylesheet" href="./wcag-colors.css">
-  <!-- Improved Skeleton Screens -->
-  <link rel="stylesheet" href="./skeleton-improved.css">
+  <title>MinSp - Electronic Product Comparison</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
-  <!-- I18n System -->
-  <script src="./i18n.js"></script>
-  <!-- Performance Optimizations -->
-  <script src="./app-optimizations.js"></script>
-  <!-- Mobile Filters Drawer -->
-  <script src="./mobile-filters.js"></script>
-  <link rel="canonical" href="https://minsp.onrender.com/keyboards.html">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MinSp",
+    "url": "https://minsp.onrender.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://minsp.onrender.com/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body class="theme-tech">
   <div id="catalog-view" class="spa-view is-visible">
     <div class="page-shell app-shell">
       <header class="hero-panel panel-surface">
         <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
           <div class="user-section" id="user-section"></div>
         <div class="language-picker" id="language-picker">
             <button
@@ -84,13 +103,13 @@
 
         <div class="hero-top">
         <h1 class="eyebrow" id="hero-eyebrow">MinSp - Electronic Product Comparison</h1>
-        <a href="index.html" class="logo"><span class="notranslate" translate="no">Min<span class="logo-sp">Sp</span></span></a>
+        <a href="#" class="logo"><span class="notranslate" translate="no">Min<span class="logo-sp">Sp</span></span></a>
         <p class="slogan" id="hero-slogan">MinSp : choose, compare, <span class="highlight">play</span></p>
         <p class="hero-text" id="hero-text">
-          <span id="hero-intro">A clean, standardized catalog to compare mechanical and gaming keyboards.</span>
+          <span id="hero-intro">A clean, standardized catalog to compare gaming and office mouse.</span>
           <span id="hero-count-prefix">Each product includes an image, sources, and exactly</span>
           <span id="standardized-count">0</span>
-          <span id="hero-count-suffix">profiles built around core specs.</span>
+          <span id="hero-count-suffix">profiles built around 5 core specs.</span>
         </p>
       </div>
 
@@ -116,6 +135,47 @@
         </section>
       </header>
 
+      <section class="catalog-bubble-section" id="catalog-bubble-section">
+        <div class="catalog-bubble">
+          <h2 class="catalog-bubble-title">Catalog</h2>
+          <p class="catalog-bubble-subtitle">Explore our product categories</p>
+          <div class="catalog-bubble-grid">
+            <a href="mice.html" class="catalog-bubble-card" data-catalog="mice">
+              <span class="catalog-bubble-card-icon">🖱️</span>
+              <span class="catalog-bubble-card-name">Mice</span>
+              <span class="catalog-bubble-card-desc">Gaming & office</span>
+            </a>
+            <a href="keyboards.html" class="catalog-bubble-card" data-catalog="keyboard">
+              <span class="catalog-bubble-card-icon">⌨️</span>
+              <span class="catalog-bubble-card-name">Keyboards</span>
+              <span class="catalog-bubble-card-desc">Mechanical & gaming</span>
+            </a>
+            <a href="pc-components.html" class="catalog-bubble-card" data-catalog="pc-component">
+              <span class="catalog-bubble-card-icon">🖥️</span>
+              <span class="catalog-bubble-card-name">PC Components</span>
+              <span class="catalog-bubble-card-desc">Graphics cards, RAM…</span>
+            </a>
+            <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
+              <span class="catalog-bubble-card-icon">📱</span>
+              <span class="catalog-bubble-card-name">Smartphones</span>
+              <span class="catalog-bubble-card-desc">Coming soon</span>
+            </a>
+            <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
+              <span class="catalog-bubble-card-icon">🎧</span>
+              <span class="catalog-bubble-card-name">Audio</span>
+              <span class="catalog-bubble-card-desc">Coming soon</span>
+            </a>
+            <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
+              <span class="catalog-bubble-card-icon">🔌</span>
+              <span class="catalog-bubble-card-name">Accessoires</span>
+              <span class="catalog-bubble-card-desc">Coming soon</span>
+            </a>
+          </div>
+          <a href="about.html" class="catalog-bubble-cta">Learn more</a>
+        </div>
+      </section>
+
+
       <section class="toolbar-panel toolbar-grid hidden" id="toolbar-panel" aria-label="Search and filters">
         <label class="search-field">
           <span class="field-label" id="search-label">Search</span>
@@ -124,14 +184,14 @@
             <input
               id="search-input"
               type="search"
-              placeholder="Search: mechanical, gaming, switches, layout, wireless..."
+              placeholder="Search: gaming, office, wireless, color, weight, features..."
               autocomplete="off"
               aria-labelledby="search-label"
               aria-describedby="search-help"
               role="searchbox"
             >
           </div>
-          <span id="search-help" class="sr-only">Use this field to search keyboard by name, brand, or features.</span>
+          <span id="search-help" class="sr-only">Use this field to search products by name, brand, or features.</span>
         </label>
 
         <label class="filter-field">
@@ -144,7 +204,7 @@
           >
             <option value="all">All brands</option>
           </select>
-          <span id="brand-help" class="sr-only">Filter results by keyboard brand.</span>
+          <span id="brand-help" class="sr-only">Filter results by product brand.</span>
         </label>
 
         <label class="filter-field">
@@ -157,7 +217,7 @@
           >
             <option value="all">All types</option>
           </select>
-          <span id="type-help" class="sr-only">Filter results by keyboard type, mechanical or gaming.</span>
+          <span id="type-help" class="sr-only">Filter results by product type, gaming or office.</span>
         </label>
 
         <button class="reset-button" type="button" id="reset-filters" aria-label="Reset all search filters">
@@ -172,11 +232,15 @@
           <div class="section-head">
             <div>
               <p class="section-kicker" id="catalog-kicker">Catalog</p>
-              <h2 id="catalog-title">Keyboards Catalog</h2>
+              <h2 id="catalog-title">Product selection</h2>
             </div>
             <div class="section-actions">
               <button type="button" class="back-home-btn" id="back-home-btn">← 🏠 <span data-translate="Home">Home</span></button>
               <button type="button" class="fav-view-btn" id="fav-view-btn">★ <span id="fav-btn-text">Favorites</span></button>
+              <a href="ai-recommend.html" class="ai-recommend-btn" id="ai-recommend-btn" title="Get AI mouse recommendation (login required)" onclick="return checkAIAccess();">
+                <span class="ai-btn-icon">✨</span>
+                <span class="ai-btn-text">AI</span>
+              </a>
             </div>
           </div>
 
@@ -184,54 +248,27 @@
             class="catalog-grid"
             id="catalog-grid"
             aria-live="polite"
-            aria-label="Keyboard product grid"
+            aria-label="Product grid"
             role="region"
           >
-            <!-- Skeleton Loading - Structure exacte des vraies cartes -->
+            <!-- Skeleton Loading -->
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
-              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-summary"></div>
-              <div class="skeleton skeleton-summary-short"></div>
-              <div class="skeleton-pills">
-                <div class="skeleton skeleton-pill"></div>
-                <div class="skeleton skeleton-pill"></div>
-              </div>
-              <div class="skeleton-specs">
-                <div class="skeleton skeleton-spec"></div>
-                <div class="skeleton skeleton-spec"></div>
-              </div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
-              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-summary"></div>
-              <div class="skeleton skeleton-summary-short"></div>
-              <div class="skeleton-pills">
-                <div class="skeleton skeleton-pill"></div>
-                <div class="skeleton skeleton-pill"></div>
-              </div>
-              <div class="skeleton-specs">
-                <div class="skeleton skeleton-spec"></div>
-                <div class="skeleton skeleton-spec"></div>
-              </div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
-              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-summary"></div>
-              <div class="skeleton skeleton-summary-short"></div>
-              <div class="skeleton-pills">
-                <div class="skeleton skeleton-pill"></div>
-                <div class="skeleton skeleton-pill"></div>
-              </div>
-              <div class="skeleton-specs">
-                <div class="skeleton skeleton-spec"></div>
-                <div class="skeleton skeleton-spec"></div>
-              </div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
             </div>
           </div>
         </section>
@@ -240,7 +277,7 @@
           <div class="section-head">
             <div>
               <p class="section-kicker" id="fav-kicker">Favorites</p>
-              <h2 id="fav-page-title" data-translate="Your favorite keyboard">Your favorite keyboard</h2>
+              <h2 id="fav-page-title" data-translate="Your favorite mouse">Your favorite mouse</h2>
             </div>
             <button type="button" class="back-btn" id="back-to-catalog">← Back to catalog</button>
           </div>
@@ -269,9 +306,9 @@
       >
         <div class="detail-empty">
           <p class="section-kicker">Product details</p>
-          <h2>Choose a keyboard</h2>
+          <h2>Choose a product</h2>
           <p>
-            Click a card to open the image, the standardized specs,
+            Click a card to open the image, the 5 standardized specs,
             and the related sources.
           </p>
         </div>
@@ -298,30 +335,11 @@
     }
   </style>
 
-  <script>
-    (function() {
-      setInterval(function() {
-        if (navigator.onLine) {
-          fetch(window.location.href, { method: 'HEAD', cache: 'no-store' }).catch(function() {});
-        }
-      }, 300000);
-    })();
-  </script>
-
   <script src="./data/mice.js"></script>
   <script src="./data/keyboards.js"></script>
   <script src="./data/pc-components.js"></script>
   <script src="./app.js"></script>
   <script>
-    // Auto-filter for keyboards category on page load
-    window.addEventListener('DOMContentLoaded', function() {
-      // Trigger catalog filter for keyboards
-      const catalogBubble = document.querySelector('[data-catalog="keyboard"]');
-      if (catalogBubble) {
-        setTimeout(() => catalogBubble.click(), 100);
-      }
-    });
-
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
         {
@@ -372,5 +390,39 @@
       </div>
     </div>
   </footer>
+
+  <!-- Keep-alive script to counter Render Cold Start -->
+  <script>
+    (function() {
+      // Keep connection warm with periodic pings
+      setInterval(function() {
+        if (navigator.onLine) {
+          fetch(window.location.href, { method: 'HEAD', cache: 'no-store' }).catch(function() {});
+        }
+      }, 300000); // Every 5 minutes
+    })();
+  </script>
+
+  <script>
+    // Check AI access - redirects to login if not authenticated
+    function checkAIAccess() {
+      var SESSION_KEY = 'currentUser';
+      var currentUser = null;
+      try {
+        var data = localStorage.getItem(SESSION_KEY);
+        currentUser = data ? JSON.parse(data) : null;
+      } catch(e) {
+        currentUser = null;
+      }
+      
+      if (!currentUser) {
+        alert('🔒 Please log in to use AI recommendations\n\nCreate a free account to unlock personalized mouse recommendations powered by AI.');
+        window.location.href = 'login.html?return=ai-recommend.html';
+        return false;
+      }
+      
+      return true;
+    }
+  </script>
 </body>
 </html>

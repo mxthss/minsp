@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSp — Catalogue Claviers | Mécaniques, Gaming, TKL</title>
-  <meta name="description" content="Découvrez notre catalogue de claviers mécaniques et gaming. Comparez switches, layout, taille et fonctionnalités. Recommandation IA disponible.">
-  <meta name="keywords" content="clavier mécanique, clavier gaming, comparateur clavier, switches, TKL, clavier sans-fil">
+  <meta name="title" content="PC Components Catalog - MinSp">
+  <meta name="description" content="Browse our complete catalog of PC components. Graphics cards, RAM, processors, motherboards, and more.">
+  <meta name="keywords" content="PC components, graphics card, GPU, RAM, processor, CPU, motherboard, SSD, power supply">
   <meta name="author" content="MinSP">
   <meta name="robots" content="index, follow">
   
@@ -19,17 +19,17 @@
 
   <!-- OpenGraph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://minsp.onrender.com/keyboards.html">
-  <meta property="og:title" content="Keyboards Catalog - MinSp">
-  <meta property="og:description" content="Browse our complete catalog of mechanical and gaming keyboards. Compare switches, layout, and features.">
+  <meta property="og:url" content="https://minsp.onrender.com/pc-components.html">
+  <meta property="og:title" content="PC Components Catalog - MinSp">
+  <meta property="og:description" content="Browse our complete catalog of PC components. Graphics cards, RAM, processors, motherboards, and more.">
   <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
   <meta property="og:site_name" content="MinSP">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://minsp.onrender.com/keyboards.html">
-  <meta name="twitter:title" content="Keyboards Catalog - MinSp">
-  <meta name="twitter:description" content="Browse our complete catalog of mechanical and gaming keyboards.">
+  <meta name="twitter:url" content="https://minsp.onrender.com/pc-components.html">
+  <meta name="twitter:title" content="PC Components Catalog - MinSp">
+  <meta name="twitter:description" content="Browse our complete catalog of PC components.">
 
   <meta name="theme-color" content="#57b8ff">
 
@@ -40,25 +40,17 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
 
-  <!-- WCAG Compliant Colors -->
-  <link rel="stylesheet" href="./wcag-colors.css">
-  <!-- Improved Skeleton Screens -->
-  <link rel="stylesheet" href="./skeleton-improved.css">
+  <title>PC Components Catalog - MinSp</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
-  <!-- I18n System -->
-  <script src="./i18n.js"></script>
-  <!-- Performance Optimizations -->
-  <script src="./app-optimizations.js"></script>
-  <!-- Mobile Filters Drawer -->
-  <script src="./mobile-filters.js"></script>
-  <link rel="canonical" href="https://minsp.onrender.com/keyboards.html">
+  <link rel="canonical" href="https://minsp.onrender.com/pc-components.html">
 </head>
 <body class="theme-tech">
   <div id="catalog-view" class="spa-view is-visible">
     <div class="page-shell app-shell">
       <header class="hero-panel panel-surface">
         <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
           <div class="user-section" id="user-section"></div>
         <div class="language-picker" id="language-picker">
             <button
@@ -87,7 +79,7 @@
         <a href="index.html" class="logo"><span class="notranslate" translate="no">Min<span class="logo-sp">Sp</span></span></a>
         <p class="slogan" id="hero-slogan">MinSp : choose, compare, <span class="highlight">play</span></p>
         <p class="hero-text" id="hero-text">
-          <span id="hero-intro">A clean, standardized catalog to compare mechanical and gaming keyboards.</span>
+          <span id="hero-intro">A clean, standardized catalog to compare PC components.</span>
           <span id="hero-count-prefix">Each product includes an image, sources, and exactly</span>
           <span id="standardized-count">0</span>
           <span id="hero-count-suffix">profiles built around core specs.</span>
@@ -124,14 +116,14 @@
             <input
               id="search-input"
               type="search"
-              placeholder="Search: mechanical, gaming, switches, layout, wireless..."
+              placeholder="Search: GPU, RAM, CPU, motherboard, SSD, power supply..."
               autocomplete="off"
               aria-labelledby="search-label"
               aria-describedby="search-help"
               role="searchbox"
             >
           </div>
-          <span id="search-help" class="sr-only">Use this field to search keyboard by name, brand, or features.</span>
+          <span id="search-help" class="sr-only">Use this field to search PC components by name, brand, or features.</span>
         </label>
 
         <label class="filter-field">
@@ -144,7 +136,7 @@
           >
             <option value="all">All brands</option>
           </select>
-          <span id="brand-help" class="sr-only">Filter results by keyboard brand.</span>
+          <span id="brand-help" class="sr-only">Filter results by component brand.</span>
         </label>
 
         <label class="filter-field">
@@ -157,7 +149,7 @@
           >
             <option value="all">All types</option>
           </select>
-          <span id="type-help" class="sr-only">Filter results by keyboard type, mechanical or gaming.</span>
+          <span id="type-help" class="sr-only">Filter results by component type.</span>
         </label>
 
         <button class="reset-button" type="button" id="reset-filters" aria-label="Reset all search filters">
@@ -172,7 +164,7 @@
           <div class="section-head">
             <div>
               <p class="section-kicker" id="catalog-kicker">Catalog</p>
-              <h2 id="catalog-title">Keyboards Catalog</h2>
+              <h2 id="catalog-title">PC Components Catalog</h2>
             </div>
             <div class="section-actions">
               <button type="button" class="back-home-btn" id="back-home-btn">← 🏠 <span data-translate="Home">Home</span></button>
@@ -184,54 +176,27 @@
             class="catalog-grid"
             id="catalog-grid"
             aria-live="polite"
-            aria-label="Keyboard product grid"
+            aria-label="PC component product grid"
             role="region"
           >
-            <!-- Skeleton Loading - Structure exacte des vraies cartes -->
+            <!-- Skeleton Loading -->
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
-              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-summary"></div>
-              <div class="skeleton skeleton-summary-short"></div>
-              <div class="skeleton-pills">
-                <div class="skeleton skeleton-pill"></div>
-                <div class="skeleton skeleton-pill"></div>
-              </div>
-              <div class="skeleton-specs">
-                <div class="skeleton skeleton-spec"></div>
-                <div class="skeleton skeleton-spec"></div>
-              </div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
-              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-summary"></div>
-              <div class="skeleton skeleton-summary-short"></div>
-              <div class="skeleton-pills">
-                <div class="skeleton skeleton-pill"></div>
-                <div class="skeleton skeleton-pill"></div>
-              </div>
-              <div class="skeleton-specs">
-                <div class="skeleton skeleton-spec"></div>
-                <div class="skeleton skeleton-spec"></div>
-              </div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
-              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-summary"></div>
-              <div class="skeleton skeleton-summary-short"></div>
-              <div class="skeleton-pills">
-                <div class="skeleton skeleton-pill"></div>
-                <div class="skeleton skeleton-pill"></div>
-              </div>
-              <div class="skeleton-specs">
-                <div class="skeleton skeleton-spec"></div>
-                <div class="skeleton skeleton-spec"></div>
-              </div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text-short"></div>
             </div>
           </div>
         </section>
@@ -240,7 +205,7 @@
           <div class="section-head">
             <div>
               <p class="section-kicker" id="fav-kicker">Favorites</p>
-              <h2 id="fav-page-title" data-translate="Your favorite keyboard">Your favorite keyboard</h2>
+              <h2 id="fav-page-title" data-translate="Your favorite components">Your favorite components</h2>
             </div>
             <button type="button" class="back-btn" id="back-to-catalog">← Back to catalog</button>
           </div>
@@ -269,7 +234,7 @@
       >
         <div class="detail-empty">
           <p class="section-kicker">Product details</p>
-          <h2>Choose a keyboard</h2>
+          <h2>Choose a component</h2>
           <p>
             Click a card to open the image, the standardized specs,
             and the related sources.
@@ -298,6 +263,7 @@
     }
   </style>
 
+  <!-- Keep-alive script to counter Render Cold Start -->
   <script>
     (function() {
       setInterval(function() {
@@ -313,10 +279,10 @@
   <script src="./data/pc-components.js"></script>
   <script src="./app.js"></script>
   <script>
-    // Auto-filter for keyboards category on page load
+    // Auto-filter for PC components category on page load
     window.addEventListener('DOMContentLoaded', function() {
-      // Trigger catalog filter for keyboards
-      const catalogBubble = document.querySelector('[data-catalog="keyboard"]');
+      // Trigger catalog filter for PC components
+      const catalogBubble = document.querySelector('[data-catalog="pc-component"]');
       if (catalogBubble) {
         setTimeout(() => catalogBubble.click(), 100);
       }

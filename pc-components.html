@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="PC Components Catalog - MinSp">
-  <meta name="description" content="Browse our complete catalog of PC components. Graphics cards, RAM, processors, motherboards, and more.">
-  <meta name="keywords" content="PC components, graphics card, GPU, RAM, processor, CPU, motherboard, SSD, power supply">
+  <title>MinSp — Catalogue Composants PC | GPU, CPU, RAM, Carte mère</title>
+  <meta name="description" content="Comparez les meilleurs composants PC : cartes graphiques, processeurs, RAM, cartes mères et plus. Filtres avancés et fiche technique détaillée.">
+  <meta name="keywords" content="composants PC, carte graphique, GPU, RAM, processeur, CPU, carte mère, SSD, alimentation">
   <meta name="author" content="MinSP">
   <meta name="robots" content="index, follow">
   
@@ -40,9 +40,18 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
 
-  <title>PC Components Catalog - MinSp</title>
+  <!-- WCAG Compliant Colors -->
+  <link rel="stylesheet" href="./wcag-colors.css">
+  <!-- Improved Skeleton Screens -->
+  <link rel="stylesheet" href="./skeleton-improved.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
+  <!-- I18n System -->
+  <script src="./i18n.js"></script>
+  <!-- Performance Optimizations -->
+  <script src="./app-optimizations.js"></script>
+  <!-- Mobile Filters Drawer -->
+  <script src="./mobile-filters.js"></script>
   <link rel="canonical" href="https://minsp.onrender.com/pc-components.html">
 </head>
 <body class="theme-tech">
@@ -50,7 +59,6 @@
     <div class="page-shell app-shell">
       <header class="hero-panel panel-surface">
         <div class="header-actions">
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
           <div class="user-section" id="user-section"></div>
         <div class="language-picker" id="language-picker">
             <button
@@ -179,24 +187,51 @@
             aria-label="PC component product grid"
             role="region"
           >
-            <!-- Skeleton Loading -->
+            <!-- Skeleton Loading - Structure exacte des vraies cartes -->
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text-short"></div>
+              <div class="skeleton skeleton-summary"></div>
+              <div class="skeleton skeleton-summary-short"></div>
+              <div class="skeleton-pills">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-pill"></div>
+              </div>
+              <div class="skeleton-specs">
+                <div class="skeleton skeleton-spec"></div>
+                <div class="skeleton skeleton-spec"></div>
+              </div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text-short"></div>
+              <div class="skeleton skeleton-summary"></div>
+              <div class="skeleton skeleton-summary-short"></div>
+              <div class="skeleton-pills">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-pill"></div>
+              </div>
+              <div class="skeleton-specs">
+                <div class="skeleton skeleton-spec"></div>
+                <div class="skeleton skeleton-spec"></div>
+              </div>
             </div>
             <div class="skeleton-card">
               <div class="skeleton skeleton-image"></div>
+              <div class="skeleton skeleton-brand"></div>
               <div class="skeleton skeleton-title"></div>
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text-short"></div>
+              <div class="skeleton skeleton-summary"></div>
+              <div class="skeleton skeleton-summary-short"></div>
+              <div class="skeleton-pills">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-pill"></div>
+              </div>
+              <div class="skeleton-specs">
+                <div class="skeleton skeleton-spec"></div>
+                <div class="skeleton skeleton-spec"></div>
+              </div>
             </div>
           </div>
         </section>

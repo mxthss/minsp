@@ -13,6 +13,7 @@
   <meta name="twitter:title" content="MinSp - À propos | Comparateur d'objets électroniques">
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="./styles.css">
+  <script src="./theme-toggle.js"></script>
   <style>
     .about-page {
       display: flex;
@@ -143,6 +144,9 @@
     }
     @media (max-width: 420px) {
       .about-card-grid { grid-template-columns: 1fr; }
+    }
+    [data-theme="light"] .about-card-item {
+      background: rgba(248, 250, 252, 0.7);
     }
   </style>
 </head>

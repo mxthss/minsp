@@ -1,0 +1,385 @@
+/**
+ * MinSp Improved Skeleton Screens
+ * Skeletons qui correspondent exactement aux cartes finales
+ * Version: 1.0.0 - WCAG Compliant
+ */
+
+/* ==========================================
+   SKELETON BASE
+   ========================================== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==========================================
+   SKELETON CARD - Exactement comme .mouse-card
+   ========================================== */
+.skeleton-card {
+  /* Même structure que .mouse-card - true black */
+  display: flex;
+  flex-direction: column;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 16px;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+/* Image skeleton - même ratio que .mouse-frame */
+.skeleton-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  animation: skeleton-shimmer 2s infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Brand pill skeleton */
+.skeleton-brand {
+  width: 60px;
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+/* Title skeleton */
+.skeleton-title {
+  width: 85%;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* Summary lines */
+.skeleton-summary {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+}
+
+.skeleton-summary-short {
+  width: 70%;
+  height: 14px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+}
+
+/* Type/Shape pills skeleton */
+.skeleton-pills {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.skeleton-pill {
+  width: 60px;
+  height: 22px;
+  border-radius: 11px;
+}
+
+/* Specs inline skeleton */
+.skeleton-specs {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.skeleton-spec {
+  flex: 1;
+  height: 18px;
+  border-radius: 3px;
+}
+
+/* ==========================================
+   SKELETON STATES
+   ========================================== */
+
+/* État de chargement initial */
+.skeleton-card.is-loading {
+  animation: skeleton-fade-in 0.3s ease;
+}
+
+@keyframes skeleton-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Skeleton avec glow subtil */
+.skeleton-card.glow-effect {
+  box-shadow: 0 0 30px rgba(125, 211, 252, 0.05);
+}
+
+/* Skeleton pulse variantes */
+.skeleton.pulse-slow {
+  animation-duration: 2s;
+}
+
+.skeleton.pulse-fast {
+  animation-duration: 1s;
+}
+
+/* ==========================================
+   SKELETON CATALOG GRID
+   ========================================== */
+
+/* Grille de skeletons identique à la vraie grille */
+.catalog-grid.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 16px 0;
+}
+
+/* ==========================================
+   DETAIL PANEL SKELETON
+   ========================================== */
+
+.detail-skeleton {
+  background: rgba(8, 17, 31, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 22px;
+  padding: 24px;
+  min-height: 400px;
+}
+
+.detail-skeleton-image {
+  width: 100%;
+  height: 240px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.detail-skeleton-title {
+  width: 70%;
+  height: 28px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.detail-skeleton-text {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+}
+
+.detail-skeleton-text:nth-child(2) { width: 90%; }
+.detail-skeleton-text:nth-child(3) { width: 80%; }
+.detail-skeleton-text:nth-child(4) { width: 60%; }
+
+/* ==========================================
+   STATS SKELETON
+   ========================================== */
+
+.stat-skeleton {
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+/* ==========================================
+   ACCESSIBILITÉ - Reduced Motion
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton,
+  .skeleton-image::after {
+    animation: none;
+  }
+  
+  .skeleton {
+    background: rgba(125, 211, 252, 0.1);
+  }
+}
+
+/* ==========================================
+   HIGH CONTRAST MODE
+   ========================================== */
+
+@media (prefers-contrast: more) {
+  .skeleton {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .skeleton-card {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* ==========================================
+   DARK MODE (déjà actif par défaut)
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      rgba(125, 211, 252, 0.06) 0%,
+      rgba(125, 211, 252, 0.12) 50%,
+      rgba(125, 211, 252, 0.06) 100%
+    );
+    background-size: 200% 100%;
+  }
+}
+
+/* ==========================================
+   SKELETON ANIMATION DELAYS (stagger)
+   ========================================== */
+
+.skeleton-card:nth-child(1) .skeleton { animation-delay: 0ms; }
+.skeleton-card:nth-child(2) .skeleton { animation-delay: 100ms; }
+.skeleton-card:nth-child(3) .skeleton { animation-delay: 200ms; }
+.skeleton-card:nth-child(4) .skeleton { animation-delay: 300ms; }
+.skeleton-card:nth-child(5) .skeleton { animation-delay: 400ms; }
+.skeleton-card:nth-child(6) .skeleton { animation-delay: 500ms; }
+
+/* ==========================================
+   MOBILE SKELETONS
+   ========================================== */
+
+@media (max-width: 768px) {
+  .skeleton-card {
+    min-height: 280px;
+    padding: 12px;
+  }
+  
+  .skeleton-image {
+    height: 150px;
+  }
+  
+  .skeleton-title {
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton-card {
+    min-height: 260px;
+  }
+  
+  .skeleton-image {
+    height: 140px;
+  }
+}
+
+/* ==========================================
+   AI RECOMMEND PAGE SKELETONS
+   ========================================== */
+
+.ai-skeleton-card {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 24px;
+  min-height: 300px;
+}
+
+.ai-skeleton-badge {
+  width: 120px;
+  height: 24px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+}
+
+.ai-skeleton-title {
+  width: 60%;
+  height: 32px;
+  margin: 0 auto 16px;
+  border-radius: 4px;
+}
+
+.ai-skeleton-price {
+  width: 80px;
+  height: 28px;
+  margin: 0 auto 20px;
+  border-radius: 4px;
+}
+
+.ai-skeleton-specs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.ai-skeleton-spec {
+  width: 80px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.ai-skeleton-button {
+  width: 200px;
+  height: 44px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* ==========================================
+   LIGHT MODE STYLES
+   ========================================== */
+[data-theme="light"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(148, 163, 184, 0.15) 0%,
+    rgba(148, 163, 184, 0.3) 50%,
+    rgba(148, 163, 184, 0.15) 100%
+  );
+}
+
+[data-theme="light"] .skeleton-card {
+  background: rgba(241, 245, 249, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="light"] .detail-skeleton {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="light"] .ai-skeleton-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}

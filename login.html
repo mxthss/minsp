@@ -7,6 +7,7 @@
   <meta name="description" content="Login to MinSp to access AI recommendations and personalized features.">
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="./styles.css">
+  <script src="./theme-toggle.js"></script>
   <style>
     .login-page {
       display: flex;
@@ -259,6 +260,22 @@
       font-weight: 600;
       cursor: pointer;
       text-decoration: underline;
+    }
+    [data-theme="light"] .login-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.96) 100%);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(37, 99, 235, 0.06);
+    }
+    [data-theme="light"] .login-tabs {
+      background: rgba(0, 0, 0, 0.03);
+    }
+    [data-theme="light"] .login-tab.active {
+      background: rgba(37, 99, 235, 0.08);
+    }
+    [data-theme="light"] .login-features li::before {
+      background: rgba(37, 99, 235, 0.1);
+    }
+    [data-theme="light"] .login-form-group input:focus {
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
   </style>
 </head>
