@@ -1811,6 +1811,114 @@
             <!-- Dynamic cards injected here -->
           </div>
         </div>
+
+        <!-- Info Panel with Tabs - Only visible after AI results -->
+        <div class="ai-info-panel" style="margin-top: 48px;">
+          <!-- Tab Navigation -->
+          <div class="ai-info-tabs">
+            <button class="ai-info-tab active" data-tab="faq" type="button">
+              <span>❓</span> FAQ
+            </button>
+            <button class="ai-info-tab" data-tab="methodology" type="button">
+              <span>📊</span> Methodology
+            </button>
+            <button class="ai-info-tab" data-tab="testimonials" type="button">
+              <span>💬</span> Reviews
+            </button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="ai-info-content">
+            <!-- FAQ Tab -->
+            <div class="ai-info-page active" id="tab-faq">
+              <div class="ai-faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="ai-faq-list">
+                  <div class="ai-faq-item">
+                    <h3>How does the MinSp algorithm work?</h3>
+                    <p>MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs.</p>
+                  </div>
+                  <div class="ai-faq-item">
+                    <h3>Is my data stored when I use the recommendation tool?</h3>
+                    <p>No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data.</p>
+                  </div>
+                  <div class="ai-faq-item">
+                    <h3>How accurate are the recommendations?</h3>
+                    <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Methodology Tab -->
+            <div class="ai-info-page" id="tab-methodology">
+              <div class="ai-methodology-section">
+                <h2>Our Methodology</h2>
+                <p>Our scoring system is based on 15 technical criteria weighted according to your specific use case:</p>
+                <div class="ai-methodology-grid">
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">🎯</span>
+                    <span class="ai-methodology-text">Budget alignment (20%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">🤚</span>
+                    <span class="ai-methodology-text">Hand size compatibility (15%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">🖐️</span>
+                    <span class="ai-methodology-text">Grip style match (15%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">🎮</span>
+                    <span class="ai-methodology-text">Usage type fit (15%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">📡</span>
+                    <span class="ai-methodology-text">Wireless preference (10%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">⚖️</span>
+                    <span class="ai-methodology-text">Weight optimization (10%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">🏷️</span>
+                    <span class="ai-methodology-text">Brand preference (5%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">🌈</span>
+                    <span class="ai-methodology-text">RGB/Lighting (5%)</span>
+                  </div>
+                  <div class="ai-methodology-item">
+                    <span class="ai-methodology-icon">�</span>
+                    <span class="ai-methodology-text">Button count (5%)</span>
+                  </div>
+                </div>
+                <p class="ai-methodology-note">Weights are dynamically adjusted based on your profile to ensure personalized recommendations.</p>
+              </div>
+            </div>
+
+            <!-- Testimonials Tab -->
+            <div class="ai-info-page" id="tab-testimonials">
+              <div class="ai-testimonials">
+                <h2>Ce que disent nos utilisateurs</h2>
+                <div class="ai-testimonials-list">
+                  <div class="ai-testimonial">
+                    <p class="ai-testimonial-text">"Top pour gérer mon budget, j'ai trouvé la souris parfaite pour le gaming à petit prix!"</p>
+                    <p class="ai-testimonial-author">- Marc L.</p>
+                  </div>
+                  <div class="ai-testimonial">
+                    <p class="ai-testimonial-text">"L'outil est super rapide et les recommandations sont vraiment précises pour ma taille de main."</p>
+                    <p class="ai-testimonial-author">- Sophie M.</p>
+                  </div>
+                  <div class="ai-testimonial">
+                    <p class="ai-testimonial-text">"En tant que designer, j'ai trouvé exactement ce qu'il me fallait pour le travail de précision."</p>
+                    <p class="ai-testimonial-author">- Thomas R.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Step 4: Error -->
@@ -1824,138 +1932,6 @@
         </button>
       </div>
     </div>
-  </div>
-
-  <!-- Trust Badges Section -->
-  <div class="ai-page">
-    <div class="ai-container">
-      <div class="ai-trust-badges">
-        <div class="ai-trust-badge">
-          <span class="ai-trust-icon">⚡</span>
-          <span class="ai-trust-text">Algorithme Rapide</span>
-        </div>
-        <div class="ai-trust-badge">
-          <span class="ai-trust-icon">🔒</span>
-          <span class="ai-trust-text">Données Sécurisées</span>
-        </div>
-        <div class="ai-trust-badge">
-          <span class="ai-trust-icon">🎯</span>
-          <span class="ai-trust-text">Expertise MinSp</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Info Panel with Tabs - Grouping FAQ, Methodology, and Testimonials -->
-  <div class="ai-page">
-    <div class="ai-container">
-      <div class="ai-info-panel">
-        <!-- Tab Navigation -->
-        <div class="ai-info-tabs">
-          <button class="ai-info-tab active" data-tab="faq" type="button">
-            <span>❓</span> FAQ
-          </button>
-          <button class="ai-info-tab" data-tab="methodology" type="button">
-            <span>📊</span> Methodology
-          </button>
-          <button class="ai-info-tab" data-tab="testimonials" type="button">
-            <span>💬</span> Reviews
-          </button>
-        </div>
-
-        <!-- Tab Content -->
-        <div class="ai-info-content">
-          <!-- FAQ Tab -->
-          <div class="ai-info-page active" id="tab-faq">
-            <div class="ai-faq-section">
-              <h2>Frequently Asked Questions</h2>
-              <div class="ai-faq-list">
-                <div class="ai-faq-item">
-                  <h3>How does the MinSp algorithm work?</h3>
-                  <p>MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs.</p>
-                </div>
-                <div class="ai-faq-item">
-                  <h3>Is my data stored when I use the recommendation tool?</h3>
-                  <p>No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data.</p>
-                </div>
-                <div class="ai-faq-item">
-                  <h3>How accurate are the recommendations?</h3>
-                  <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Methodology Tab -->
-          <div class="ai-info-page" id="tab-methodology">
-            <div class="ai-methodology-section">
-              <h2>Our Methodology</h2>
-              <p>Our scoring system is based on 15 technical criteria weighted according to your specific use case:</p>
-              <div class="ai-methodology-grid">
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">🎯</span>
-                  <span class="ai-methodology-text">Budget alignment (20%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">🤚</span>
-                  <span class="ai-methodology-text">Hand size compatibility (15%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">🖐️</span>
-                  <span class="ai-methodology-text">Grip style match (15%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">🎮</span>
-                  <span class="ai-methodology-text">Usage type fit (15%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">📡</span>
-                  <span class="ai-methodology-text">Wireless preference (10%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">⚖️</span>
-                  <span class="ai-methodology-text">Weight optimization (10%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">🏷️</span>
-                  <span class="ai-methodology-text">Brand preference (5%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">🌈</span>
-                  <span class="ai-methodology-text">RGB/Lighting (5%)</span>
-                </div>
-                <div class="ai-methodology-item">
-                  <span class="ai-methodology-icon">🔘</span>
-                  <span class="ai-methodology-text">Button count (5%)</span>
-                </div>
-              </div>
-              <p class="ai-methodology-note">Weights are dynamically adjusted based on your profile to ensure personalized recommendations.</p>
-            </div>
-          </div>
-
-          <!-- Testimonials Tab -->
-          <div class="ai-info-page" id="tab-testimonials">
-            <div class="ai-testimonials">
-              <h2>Ce que disent nos utilisateurs</h2>
-        <div class="ai-testimonials-list">
-          <div class="ai-testimonial">
-            <p class="ai-testimonial-text">"Top pour gérer mon budget, j'ai trouvé la souris parfaite pour le gaming à petit prix!"</p>
-            <p class="ai-testimonial-author">- Marc L.</p>
-          </div>
-          <div class="ai-testimonial">
-            <p class="ai-testimonial-text">"L'outil est super rapide et les recommandations sont vraiment précises pour ma taille de main."</p>
-            <p class="ai-testimonial-author">- Sophie M.</p>
-          </div>
-          <div class="ai-testimonial">
-            <p class="ai-testimonial-text">"En tant que designer, j'ai trouvé exactement ce qu'il me fallait pour le travail de précision."</p>
-            <p class="ai-testimonial-author">- Thomas R.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
   </div>
 
   <!-- Footer with Quick Links -->
