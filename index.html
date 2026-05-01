@@ -57,8 +57,6 @@
   <title>MinSp - Electronic Product Comparison</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
-  <link rel="canonical" href="https://minsp.example.com/">
-
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -193,7 +191,7 @@
               role="searchbox"
             >
           </div>
-          <span id="search-help" class="sr-only">Use this field to search mouse by name, brand, or features.</span>
+          <span id="search-help" class="sr-only">Use this field to search products by name, brand, or features.</span>
         </label>
 
         <label class="filter-field">
@@ -206,7 +204,7 @@
           >
             <option value="all">All brands</option>
           </select>
-          <span id="brand-help" class="sr-only">Filter results by mouse brand.</span>
+          <span id="brand-help" class="sr-only">Filter results by product brand.</span>
         </label>
 
         <label class="filter-field">
@@ -219,7 +217,7 @@
           >
             <option value="all">All types</option>
           </select>
-          <span id="type-help" class="sr-only">Filter results by mouse type, gaming or office.</span>
+          <span id="type-help" class="sr-only">Filter results by product type, gaming or office.</span>
         </label>
 
         <button class="reset-button" type="button" id="reset-filters" aria-label="Reset all search filters">
@@ -250,7 +248,7 @@
             class="catalog-grid"
             id="catalog-grid"
             aria-live="polite"
-            aria-label="Mouse product grid"
+            aria-label="Product grid"
             role="region"
           >
             <!-- Skeleton Loading -->
@@ -308,7 +306,7 @@
       >
         <div class="detail-empty">
           <p class="section-kicker">Product details</p>
-          <h2>Choose a mouse</h2>
+          <h2>Choose a product</h2>
           <p>
             Click a card to open the image, the 5 standardized specs,
             and the related sources.
