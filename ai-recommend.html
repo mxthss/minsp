@@ -33,6 +33,7 @@
   <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
   
   <link rel="stylesheet" href="./styles.css">
+  <script src="./theme-toggle.js"></script>
   
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -1445,9 +1446,55 @@
     .hidden {
       display: none !important;
     }
+    [data-theme="light"] .ai-container {
+      background: rgba(255, 255, 255, 0.6);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+    [data-theme="light"] .ai-form-card {
+      border-bottom-color: rgba(37, 99, 235, 0.15);
+    }
+    [data-theme="light"] .ai-form-group select option {
+      background: rgba(248, 250, 252, 0.98);
+    }
+    [data-theme="light"] .ai-form-group select option:hover,
+    [data-theme="light"] .ai-form-group select option:checked {
+      color: #1e293b;
+    }
+    [data-theme="light"] .ai-loading-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%);
+    }
+    [data-theme="light"] .ai-skeleton-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(37, 99, 235, 0.02) 100%);
+      border-color: rgba(139, 92, 246, 0.1);
+    }
+    [data-theme="light"] .ai-best-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(37, 99, 235, 0.03) 100%);
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+    [data-theme="light"] .ai-result-card {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: rgba(148, 163, 184, 0.18);
+    }
+    [data-theme="light"] .ai-back-link:hover {
+      color: rgba(37, 99, 235, 0.9);
+    }
+    [data-theme="light"] .ai-counter {
+      background: rgba(139, 92, 246, 0.03);
+      border-color: rgba(139, 92, 246, 0.08);
+    }
+    [data-theme="light"] #ai-counter-number {
+      color: #2563eb;
+    }
+    [data-theme="light"] .ai-form-group label {
+      color: #2563eb;
+    }
+    [data-theme="light"] .ai-form-group label::before {
+      background: #2563eb;
+    }
   </style>
 </head>
 <body class="theme-tech">
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme" style="position:fixed;top:20px;right:20px;z-index:100;">🌙</button>
   <div class="ai-page">
     <div class="ai-container">
       <a href="index.html" class="ai-back-link">← Back to catalog</a>
@@ -1805,6 +1852,7 @@
         <a href="keyboards.html">Keyboards Catalog</a>
         <a href="pc-components.html">PC Components</a>
         <a href="about.html">About MinSp</a>
+        <a href="methodology.html">Methodology</a>
         <a href="ai-recommend.html">AI Recommendation</a>
       </div>
       
@@ -2227,7 +2275,7 @@
         var expertTip = generateExpertTip(bestMouse, recommendation.userProfile);
         if (expertTip) {
           html += '<div class="ai-expert-tip">';
-          html += '<h4>💡 Expert Tip</h4>';
+          html += '<h4>🧑‍� L\'avis de l\'expert</h4>';
           html += '<p>' + expertTip + '</p>';
           html += '</div>';
         }
