@@ -946,6 +946,69 @@
       color: var(--text);
     }
 
+    /* Info Panel - Tabbed Interface (like detail panel) */
+    .ai-info-panel {
+      margin-top: 48px;
+      background: rgba(26, 26, 26, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .ai-info-tabs {
+      display: flex;
+      background: rgba(17, 17, 17, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ai-info-tab {
+      flex: 1;
+      padding: 16px 20px;
+      background: transparent;
+      border: none;
+      color: #a1a1aa;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .ai-info-tab:hover {
+      color: #fff;
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .ai-info-tab.active {
+      color: #38bdf8;
+      border-bottom-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .ai-info-content {
+      padding: 32px;
+      min-height: 300px;
+    }
+
+    .ai-info-page {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .ai-info-page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* FAQ Section */
     .ai-faq-section {
       margin-top: 48px;
@@ -958,7 +1021,7 @@
       font-weight: 700;
       color: var(--text);
       margin: 0 0 24px;
-      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      background: linear-gradient(135deg, #8b5cf6 0%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -971,7 +1034,7 @@
     }
 
     .ai-faq-item {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(56, 189, 248, 0.03) 100%);
       border: 1px solid rgba(139, 92, 246, 0.15);
       border-radius: 12px;
       padding: 20px;
@@ -979,7 +1042,7 @@
     }
 
     .ai-faq-item:hover {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
       border-color: rgba(139, 92, 246, 0.3);
       transform: translateY(-2px);
     }
@@ -1010,7 +1073,7 @@
       font-weight: 700;
       color: var(--text);
       margin: 0 0 24px;
-      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      background: linear-gradient(135deg, #8b5cf6 0%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1023,7 +1086,7 @@
     }
 
     .ai-testimonial {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(56, 189, 248, 0.03) 100%);
       border: 1px solid rgba(139, 92, 246, 0.15);
       border-radius: 12px;
       padding: 20px;
@@ -1045,24 +1108,18 @@
 
     .ai-testimonial-author {
       font-size: 0.85rem;
-      color: #57b8ff;
+      color: #38bdf8;
       margin: 0;
       font-weight: 600;
     }
 
-    /* Methodology Section */
-    .ai-methodology-section {
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(139, 92, 246, 0.2);
-    }
-
+    /* Methodology Section - inside tab */
     .ai-methodology-section h2 {
       font-size: 1.4rem;
       font-weight: 700;
       color: var(--text);
       margin: 0 0 16px;
-      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      background: linear-gradient(135deg, #8b5cf6 0%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1086,7 +1143,7 @@
       align-items: center;
       gap: 8px;
       padding: 12px 16px;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(56, 189, 248, 0.03) 100%);
       border: 1px solid rgba(139, 92, 246, 0.15);
       border-radius: 8px;
     }
@@ -1499,6 +1556,41 @@
     [data-theme="light"] .ai-form-group label::before {
       background: #2563eb;
     }
+
+    /* Light mode for tabbed info panel */
+    [data-theme="light"] .ai-info-panel {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(148, 163, 184, 0.2);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.1);
+    }
+    [data-theme="light"] .ai-info-tabs {
+      background: rgba(241, 245, 249, 0.8);
+      border-bottom-color: rgba(148, 163, 184, 0.2);
+    }
+    [data-theme="light"] .ai-info-tab {
+      color: #64748b;
+    }
+    [data-theme="light"] .ai-info-tab:hover {
+      color: #1e293b;
+      background: rgba(37, 99, 235, 0.08);
+    }
+    [data-theme="light"] .ai-info-tab.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+      background: rgba(37, 99, 235, 0.12);
+    }
+    [data-theme="light"] .ai-faq-item {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(37, 99, 235, 0.02) 100%);
+      border-color: rgba(139, 92, 246, 0.1);
+    }
+    [data-theme="light"] .ai-methodology-item {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(37, 99, 235, 0.02) 100%);
+      border-color: rgba(139, 92, 246, 0.1);
+    }
+    [data-theme="light"] .ai-testimonial {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(37, 99, 235, 0.02) 100%);
+      border-color: rgba(139, 92, 246, 0.1);
+    }
   </style>
 </head>
 <body class="theme-tech">
@@ -1754,83 +1846,97 @@
     </div>
   </div>
 
-  <!-- FAQ Section - Always visible at bottom -->
+  <!-- Info Panel with Tabs - Grouping FAQ, Methodology, and Testimonials -->
   <div class="ai-page">
     <div class="ai-container">
-      <div class="ai-faq-section" id="ai-faq-section">
-        <h2>❓ Frequently Asked Questions</h2>
-        <div class="ai-faq-list">
-          <div class="ai-faq-item">
-            <h3>How does the MinSp algorithm work?</h3>
-            <p>MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs.</p>
-          </div>
-          <div class="ai-faq-item">
-            <h3>Is my data stored when I use the recommendation tool?</h3>
-            <p>No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data.</p>
-          </div>
-          <div class="ai-faq-item">
-            <h3>How accurate are the recommendations?</h3>
-            <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
-          </div>
+      <div class="ai-info-panel">
+        <!-- Tab Navigation -->
+        <div class="ai-info-tabs">
+          <button class="ai-info-tab active" data-tab="faq" type="button">
+            <span>❓</span> FAQ
+          </button>
+          <button class="ai-info-tab" data-tab="methodology" type="button">
+            <span>📊</span> Methodology
+          </button>
+          <button class="ai-info-tab" data-tab="testimonials" type="button">
+            <span>💬</span> Reviews
+          </button>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Methodology Section -->
-  <div class="ai-page">
-    <div class="ai-container">
-      <div class="ai-methodology-section">
-        <h2>📊 Our Methodology</h2>
-        <p>Our scoring system is based on 15 technical criteria weighted according to your specific use case:</p>
-        <div class="ai-methodology-grid">
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">🎯</span>
-            <span class="ai-methodology-text">Budget alignment (20%)</span>
+        <!-- Tab Content -->
+        <div class="ai-info-content">
+          <!-- FAQ Tab -->
+          <div class="ai-info-page active" id="tab-faq">
+            <div class="ai-faq-section">
+              <h2>Frequently Asked Questions</h2>
+              <div class="ai-faq-list">
+                <div class="ai-faq-item">
+                  <h3>How does the MinSp algorithm work?</h3>
+                  <p>MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs.</p>
+                </div>
+                <div class="ai-faq-item">
+                  <h3>Is my data stored when I use the recommendation tool?</h3>
+                  <p>No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data.</p>
+                </div>
+                <div class="ai-faq-item">
+                  <h3>How accurate are the recommendations?</h3>
+                  <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">🤚</span>
-            <span class="ai-methodology-text">Hand size compatibility (15%)</span>
-          </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">🖐️</span>
-            <span class="ai-methodology-text">Grip style match (15%)</span>
-          </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">🎮</span>
-            <span class="ai-methodology-text">Usage type fit (15%)</span>
-          </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">📡</span>
-            <span class="ai-methodology-text">Wireless preference (10%)</span>
-          </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">⚖️</span>
-            <span class="ai-methodology-text">Weight optimization (10%)</span>
-          </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">🏷️</span>
-            <span class="ai-methodology-text">Brand preference (5%)</span>
-          </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">🌈</span>
-            <span class="ai-methodology-text">RGB/Lighting (5%)</span>
-          </div>
-          <div class="ai-methodology-item">
-            <span class="ai-methodology-icon">🔘</span>
-            <span class="ai-methodology-text">Button count (5%)</span>
-          </div>
-        </div>
-        <p class="ai-methodology-note">Weights are dynamically adjusted based on your profile to ensure personalized recommendations.</p>
-      </div>
-    </div>
-  </div>
 
-  <!-- Testimonials Section -->
-  <div class="ai-page">
-    <div class="ai-container">
-      <div class="ai-testimonials">
-        <h2>💬 Ce que disent nos utilisateurs</h2>
+          <!-- Methodology Tab -->
+          <div class="ai-info-page" id="tab-methodology">
+            <div class="ai-methodology-section">
+              <h2>Our Methodology</h2>
+              <p>Our scoring system is based on 15 technical criteria weighted according to your specific use case:</p>
+              <div class="ai-methodology-grid">
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">🎯</span>
+                  <span class="ai-methodology-text">Budget alignment (20%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">🤚</span>
+                  <span class="ai-methodology-text">Hand size compatibility (15%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">🖐️</span>
+                  <span class="ai-methodology-text">Grip style match (15%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">🎮</span>
+                  <span class="ai-methodology-text">Usage type fit (15%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">📡</span>
+                  <span class="ai-methodology-text">Wireless preference (10%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">⚖️</span>
+                  <span class="ai-methodology-text">Weight optimization (10%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">🏷️</span>
+                  <span class="ai-methodology-text">Brand preference (5%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">🌈</span>
+                  <span class="ai-methodology-text">RGB/Lighting (5%)</span>
+                </div>
+                <div class="ai-methodology-item">
+                  <span class="ai-methodology-icon">🔘</span>
+                  <span class="ai-methodology-text">Button count (5%)</span>
+                </div>
+              </div>
+              <p class="ai-methodology-note">Weights are dynamically adjusted based on your profile to ensure personalized recommendations.</p>
+            </div>
+          </div>
+
+          <!-- Testimonials Tab -->
+          <div class="ai-info-page" id="tab-testimonials">
+            <div class="ai-testimonials">
+              <h2>Ce que disent nos utilisateurs</h2>
         <div class="ai-testimonials-list">
           <div class="ai-testimonial">
             <p class="ai-testimonial-text">"Top pour gérer mon budget, j'ai trouvé la souris parfaite pour le gaming à petit prix!"</p>
@@ -1847,6 +1953,9 @@
         </div>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 
   <!-- Footer with Quick Links -->
@@ -1921,6 +2030,31 @@
         if (!text) return '';
         return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       }
+    })();
+
+    // Tab Navigation for Info Panel
+    (function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        var tabs = document.querySelectorAll('.ai-info-tab');
+        var pages = document.querySelectorAll('.ai-info-page');
+
+        tabs.forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            var targetTab = this.getAttribute('data-tab');
+
+            // Remove active class from all tabs and pages
+            tabs.forEach(function(t) { t.classList.remove('active'); });
+            pages.forEach(function(p) { p.classList.remove('active'); });
+
+            // Add active class to clicked tab and corresponding page
+            this.classList.add('active');
+            var targetPage = document.getElementById('tab-' + targetTab);
+            if (targetPage) {
+              targetPage.classList.add('active');
+            }
+          });
+        });
+      });
     })();
 
     // AI Recommendation Page Logic
