@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinSp — Recommandation IA | Choisissez votre catégorie</title>
+  <meta name="description" content="Obtenez une recommandation personnalisée par IA pour souris, claviers ou composants PC. Analysez votre profil et trouvez le produit idéal.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://minsp.onrender.com/ai-landing.html">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MinSp - AI Recommendation">
+  <meta property="og:description" content="Découvrez gratuitement votre produit idéal avec notre IA en 30 secondes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minsp.onrender.com/ai-landing.html">
+  <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MinSp - AI Recommendation">
+  <meta name="twitter:description" content="Découvrez gratuitement votre produit idéal avec notre IA.">
+  <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
+
+  <!-- Critical CSS -->
+  <link rel="stylesheet" href="./wcag-colors.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+  <script src="./theme-toggle.js"></script>
+  <!-- Premium Sticky Nav -->
+  <script src="./nav-header.js"></script>
+
+  <style>
+    .ai-landing-page {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px 80px;
+      min-height: calc(100vh - 80px);
+    }
+
+    .ai-landing-container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .ai-landing-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-faint);
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      transition: color 0.2s ease;
+    }
+
+    .ai-landing-back:hover {
+      color: var(--accent);
+    }
+
+    .ai-landing-hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .ai-landing-hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin: 0 0 12px;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-landing-hero p {
+      font-size: 1.15rem;
+      color: var(--text-faint);
+      margin: 0;
+    }
+
+    .ai-category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .ai-category-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 40px 24px;
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.92) 0%, rgba(17, 17, 17, 0.96) 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      text-decoration: none;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      cursor: pointer;
+    }
+
+    .ai-category-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .ai-category-icon {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(45, 212, 191, 0.05));
+      border-radius: 20px;
+      color: var(--accent);
+    }
+
+    .ai-category-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ai-category-card:hover .ai-category-icon {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(45, 212, 191, 0.1));
+      transform: scale(1.05);
+    }
+
+    .ai-category-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .ai-category-desc {
+      font-size: 0.9rem;
+      color: var(--text-faint);
+      text-align: center;
+    }
+
+    .ai-category-btn {
+      margin-top: 8px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, var(--accent) 0%, #0ea5e9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .ai-category-card:hover .ai-category-btn {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    @media (max-width: 768px) {
+      .ai-category-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .ai-landing-hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .ai-category-card {
+        padding: 32px 20px;
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+      }
+
+      .ai-category-icon {
+        width: 56px;
+        height: 56px;
+        flex-shrink: 0;
+      }
+
+      .ai-category-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .ai-category-content {
+        flex: 1;
+      }
+    }
+
+    [data-theme="light"] .ai-category-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .ai-category-card:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+
+    [data-theme="light"] .ai-category-icon {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(45, 212, 191, 0.08));
+    }
+  </style>
+</head>
+<body class="theme-tech">
+  <!-- ═══ Premium Sticky Nav ═══ -->
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <!-- Left: Logo + Slogan -->
+      <div class="nav-logo-wrap">
+        <a href="index.html" class="nav-logo"><span class="notranslate" translate="no">Min<span class="nav-logo-sp">Sp</span></span></a>
+        <p class="nav-slogan-inline">choose, compare, <span class="highlight">play</span></p>
+      </div>
+      <!-- Center: Navigation Links -->
+      <div class="nav-center">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="mice.html" class="nav-link">Mice</a>
+          <a href="keyboards.html" class="nav-link">Keyboards</a>
+          <a href="pc-components.html" class="nav-link">PC Components</a>
+          <a href="ai-landing.html" class="nav-link nav-link-ai is-active">AI Recommendation</a>
+        </nav>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Favoris</span></button>
+        <div class="nav-lang-picker" id="nav-lang-picker">
+          <button class="nav-lang-trigger" id="nav-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choisir la langue">
+            <span class="fi fi-us" id="nav-lang-flag" aria-hidden="true"></span>
+            <span class="nav-lang-label" id="nav-lang-label">US</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-lang-menu" id="nav-lang-menu" role="listbox" aria-label="Choisir la langue">
+            <button class="nav-lang-option is-active" type="button" role="option" data-lang="en" aria-selected="true">
+              <span class="fi fi-us" aria-hidden="true"></span>
+              <span>English (US)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="fr" aria-selected="false">
+              <span class="fi fi-fr" aria-hidden="true"></span>
+              <span>Français (FR)</span>
+            </button>
+          </div>
+        </div>
+        <a href="login.html" class="nav-account-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Se connecter</span></a>
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ai-landing-page">
+    <div class="ai-landing-container">
+      <a href="index.html" class="ai-landing-back">← Back to home</a>
+
+      <div class="ai-landing-hero">
+        <h1>🤖 AI Recommendation</h1>
+        <p>Choose a category and let our AI find your perfect product</p>
+      </div>
+
+      <div class="ai-category-grid">
+        <!-- Mice -->
+        <a href="ai-recommend.html" class="ai-category-card">
+          <div class="ai-category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9z"/><path d="M9 2v3"/><path d="M15 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/></svg>
+          </div>
+          <div class="ai-category-content">
+            <span class="ai-category-name">Mice</span>
+            <span class="ai-category-desc">Gaming, office, wireless, ergonomic</span>
+          </div>
+          <span class="ai-category-btn">Get recommendation</span>
+        </a>
+
+        <!-- Keyboards -->
+        <a href="ai-keyboards.html" class="ai-category-card">
+          <div class="ai-category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>
+          </div>
+          <div class="ai-category-content">
+            <span class="ai-category-name">Keyboards</span>
+            <span class="ai-category-desc">Mechanical, membrane, 60%, full-size</span>
+          </div>
+          <span class="ai-category-btn">Get recommendation</span>
+        </a>
+
+        <!-- PC Components -->
+        <a href="ai-pc-components.html" class="ai-category-card">
+          <div class="ai-category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3M9 9h.01M15 9h.01M9 15h.01M15 15h.01"/></svg>
+          </div>
+          <div class="ai-category-content">
+            <span class="ai-category-name">PC Components</span>
+            <span class="ai-category-desc">GPU, CPU, RAM, motherboard, SSD</span>
+          </div>
+          <span class="ai-category-btn">Get recommendation</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple entrance animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.ai-category-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 100 * index);
+      });
+    });
+  </script>
+</body>
+</html>

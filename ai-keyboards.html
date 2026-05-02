@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinSp — Recommandation IA Claviers | Trouvez votre clavier idéal</title>
+  <meta name="description" content="Obtenez une recommandation de clavier personnalisée par IA en 30 secondes. Analysez votre usage, switch préféré, budget et plus. Gratuit et sans inscription.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://minsp.onrender.com/ai-keyboards.html">
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta property="og:title" content="MinSp - AI Keyboard Recommendation">
+  <meta property="og:description" content="Découvrez votre clavier idéal avec notre IA en 30 secondes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minsp.onrender.com/ai-keyboards.html">
+  <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MinSp - AI Keyboard Recommendation">
+  <meta name="twitter:description" content="Découvrez votre clavier idéal avec notre IA.">
+  <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
+
+  <link rel="stylesheet" href="./critical-ai-recommend.css">
+  <link rel="stylesheet" href="./wcag-colors.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+  <script src="./theme-toggle.js"></script>
+  <!-- Premium Sticky Nav -->
+  <script src="./nav-header.js"></script>
+  <script src="./app-optimizations.js"></script>
+</head>
+<body class="theme-tech">
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <div class="nav-logo-wrap">
+        <a href="index.html" class="nav-logo"><span class="notranslate" translate="no">Min<span class="nav-logo-sp">Sp</span></span></a>
+        <p class="nav-slogan-inline">choose, compare, <span class="highlight">play</span></p>
+      </div>
+      <!-- Center: Navigation Links -->
+      <div class="nav-center">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="mice.html" class="nav-link">Mice</a>
+          <a href="keyboards.html" class="nav-link">Keyboards</a>
+          <a href="pc-components.html" class="nav-link">PC Components</a>
+          <a href="ai-landing.html" class="nav-link nav-link-ai is-active">AI Recommendation</a>
+        </nav>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Favoris</span></button>
+        <div class="nav-lang-picker" id="nav-lang-picker">
+          <button class="nav-lang-trigger" id="nav-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choisir la langue">
+            <span class="fi fi-us" id="nav-lang-flag" aria-hidden="true"></span>
+            <span class="nav-lang-label" id="nav-lang-label">US</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-lang-menu" id="nav-lang-menu" role="listbox" aria-label="Choisir la langue">
+            <button class="nav-lang-option is-active" type="button" role="option" data-lang="en" aria-selected="true">
+              <span class="fi fi-us" aria-hidden="true"></span>
+              <span>English (US)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="fr" aria-selected="false">
+              <span class="fi fi-fr" aria-hidden="true"></span>
+              <span>Français (FR)</span>
+            </button>
+          </div>
+        </div>
+        <a href="login.html" class="nav-account-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Se connecter</span></a>
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ai-page">
+    <div class="ai-container">
+      <a href="keyboards.html" class="ai-back-link">← Back to keyboards</a>
+
+      <div class="ai-page-header">
+        <h1>⌨️ AI Keyboard Recommendation</h1>
+        <p>Answer a few questions and let our AI find your perfect keyboard</p>
+      </div>
+
+      <div class="ai-form-card" id="ai-form-section">
+        <h2><span class="icon">🎯</span> Your Preferences</h2>
+
+        <div class="ai-progress-container">
+          <div class="ai-progress-bar" id="ai-progress-bar">
+            <div class="ai-progress-fill" id="ai-progress-fill"></div>
+          </div>
+          <div class="ai-progress-text" id="ai-progress-text">0% completed</div>
+        </div>
+
+        <form class="ai-form" id="ai-form">
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-budget">Budget <span class="required">*</span></label>
+              <select id="ai-budget" name="budget" required>
+                <option value="">Select...</option>
+                <option value="50">Under 50€</option>
+                <option value="100">Up to 100€</option>
+                <option value="150">Up to 150€</option>
+                <option value="200">Up to 200€</option>
+                <option value="300">Up to 300€+</option>
+              </select>
+            </div>
+
+            <div class="ai-form-group">
+              <label for="ai-usage">Usage Type <span class="required">*</span></label>
+              <select id="ai-usage" name="usage" required>
+                <option value="">Select...</option>
+                <option value="gaming">Gaming</option>
+                <option value="typing">Typing/Office</option>
+                <option value="mixed">Mixed usage</option>
+                <option value="programming">Programming</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-switch">Switch Type <span class="required">*</span></label>
+              <select id="ai-switch" name="switch" required>
+                <option value="">Select...</option>
+                <option value="linear">Linear (smooth)</option>
+                <option value="tactile">Tactile (bump)</option>
+                <option value="clicky">Clicky (audible)</option>
+                <option value="silent">Silent/Quiet</option>
+                <option value="no-preference">No preference</option>
+              </select>
+            </div>
+
+            <div class="ai-form-group">
+              <label for="ai-size">Keyboard Size <span class="required">*</span></label>
+              <select id="ai-size" name="size" required>
+                <option value="">Select...</option>
+                <option value="full">Full-size (100%)</option>
+                <option value="tkl">TKL (80%)</option>
+                <option value="75">75%</option>
+                <option value="60">60%</option>
+                <option value="65">65%</option>
+                <option value="compact">Compact/40%</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-connection">Connection Type</label>
+              <select id="ai-connection" name="connection">
+                <option value="">Select...</option>
+                <option value="wired">Wired (USB)</option>
+                <option value="wireless">Wireless (2.4G)</option>
+                <option value="bluetooth">Bluetooth</option>
+                <option value="hybrid">Hybrid (multiple)</option>
+              </select>
+            </div>
+
+            <div class="ai-form-group">
+              <label for="ai-rgb">RGB Lighting</label>
+              <select id="ai-rgb" name="rgb">
+                <option value="">Select...</option>
+                <option value="yes">Yes, I want RGB</option>
+                <option value="no">No RGB needed</option>
+                <option value="no-preference">No preference</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-group" style="margin-top: 24px;">
+            <button type="submit" class="ai-submit-btn" id="ai-submit-btn">
+              <span class="btn-text">✨ Get My Recommendation</span>
+              <span class="btn-loader" style="display: none;">
+                <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="60" stroke-dashoffset="20"/></svg>
+                Analyzing...
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="ai-result-card" id="ai-result-section" style="display: none;">
+        <h2>🎉 Your Perfect Keyboard Match</h2>
+        <div id="ai-result-content"></div>
+        <button class="ai-reset-btn" id="ai-reset-btn" type="button">Start Over</button>
+      </div>
+
+      <div class="ai-info-grid">
+        <div class="ai-info-card">
+          <h3>🧠 How It Works</h3>
+          <p>Our AI analyzes your preferences against our database of keyboards to find the perfect match for your needs.</p>
+        </div>
+        <div class="ai-info-card">
+          <h3>⚡ Real-time Analysis</h3>
+          <p>Get instant recommendations based on current market availability and pricing.</p>
+        </div>
+        <div class="ai-info-card">
+          <h3>🔒 No Data Stored</h3>
+          <p>Your preferences are processed in real-time and never stored on our servers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./ai-keyboard-engine.js"></script>
+  <script>
+    // Check authentication first - same as ai-recommend.html
+    (function() {
+      var SESSION_KEY = 'currentUser';
+      var currentUser = null;
+      try {
+        var data = localStorage.getItem(SESSION_KEY);
+        currentUser = data ? JSON.parse(data) : null;
+      } catch(e) {
+        currentUser = null;
+      }
+
+      if (!currentUser) {
+        // Redirect to login with return URL
+        window.location.href = 'login.html?return=' + encodeURIComponent(window.location.pathname.split('/').pop());
+        return;
+      }
+
+      // Show user greeting
+      document.addEventListener('DOMContentLoaded', function() {
+        var backLink = document.querySelector('.ai-back-link');
+        if (backLink && currentUser.pseudo) {
+          backLink.insertAdjacentHTML('afterend',
+            '<p style="color: var(--text-faint); font-size: 0.9rem; margin: -16px 0 16px;">Welcome, <strong>' +
+            escapeHtml(currentUser.pseudo) + '</strong> ✨</p>');
+        }
+      });
+
+      function escapeHtml(text) {
+        if (!text) return '';
+        return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+    })();
+  </script>
+</body>
+</html>

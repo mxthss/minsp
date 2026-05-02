@@ -56,11 +56,11 @@
     });
   }
 
-  /* ── 3. Language picker ── */
+  /* ── 3. Language picker (Google Translate Widget) ── */
+  // Le widget Google Translate gère automatiquement la traduction
+  // Ce code garde juste le comportement du dropdown visuel si présent
   var langTrigger = document.getElementById('nav-lang-trigger');
   var langMenu = document.getElementById('nav-lang-menu');
-  var langFlag = document.getElementById('nav-lang-flag');
-  var langLabel = document.getElementById('nav-lang-label');
 
   if (langTrigger && langMenu) {
     langTrigger.addEventListener('click', function (e) {
@@ -68,50 +68,6 @@
       var isExpanded = langTrigger.getAttribute('aria-expanded') === 'true';
       langTrigger.setAttribute('aria-expanded', !isExpanded);
       langMenu.classList.toggle('is-open', !isExpanded);
-    });
-
-    // Language option click
-    var langOptions = langMenu.querySelectorAll('.nav-lang-option');
-    langOptions.forEach(function (option) {
-      option.addEventListener('click', function () {
-        // Update active state
-        langOptions.forEach(function (o) {
-          o.classList.remove('is-active');
-          o.setAttribute('aria-selected', 'false');
-        });
-        option.classList.add('is-active');
-        option.setAttribute('aria-selected', 'true');
-
-        // Update trigger display
-        var flagSpan = option.querySelector('.fi');
-        var nameSpan = option.querySelector('span:last-child');
-        if (flagSpan && langFlag) {
-          // Copy flag classes
-          langFlag.className = flagSpan.className;
-        }
-        if (nameSpan && langLabel) {
-          var langCode = option.getAttribute('data-lang') || '';
-          langLabel.textContent = langCode.toUpperCase();
-        }
-
-        // Close menu
-        langTrigger.setAttribute('aria-expanded', 'false');
-        langMenu.classList.remove('is-open');
-
-        // Trigger language change
-        var langCode = option.getAttribute('data-lang');
-        
-        // Use the new I18n system (no page reload)
-        if (window.I18n && typeof window.I18n.updateLanguage === 'function') {
-          window.I18n.updateLanguage(langCode);
-        } else if (typeof window.setLanguage === 'function') {
-          // Legacy fallback
-          window.setLanguage(langCode);
-        }
-        
-        // Save to localStorage for persistence
-        localStorage.setItem('minsp_language_v2', langCode);
-      });
     });
 
     // Close on outside click

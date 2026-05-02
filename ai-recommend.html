@@ -38,8 +38,8 @@
   <link rel="stylesheet" href="./wcag-colors.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
-  <!-- I18n System -->
-  <script src="./i18n.js"></script>
+  <!-- Premium Sticky Nav -->
+  <script src="./nav-header.js"></script>
   <!-- Performance Optimizations -->
   <script src="./app-optimizations.js"></script>
   
@@ -1594,6 +1594,47 @@
   </style>
 </head>
 <body class="theme-tech">
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <!-- Left: Logo + Slogan -->
+      <div class="nav-logo-wrap">
+        <a href="index.html" class="nav-logo"><span class="notranslate" translate="no">Min<span class="nav-logo-sp">Sp</span></span></a>
+        <p class="nav-slogan-inline">choose, compare, <span class="highlight">play</span></p>
+      </div>
+      <!-- Center: Navigation Links -->
+      <div class="nav-center">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="mice.html" class="nav-link">Mice</a>
+          <a href="keyboards.html" class="nav-link">Keyboards</a>
+          <a href="pc-components.html" class="nav-link">PC Components</a>
+          <a href="ai-landing.html" class="nav-link nav-link-ai is-active">AI Recommendation</a>
+        </nav>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Favoris</span></button>
+        <div class="nav-lang-picker" id="nav-lang-picker">
+          <button class="nav-lang-trigger" id="nav-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choisir la langue">
+            <span class="fi fi-us" id="nav-lang-flag" aria-hidden="true"></span>
+            <span class="nav-lang-label" id="nav-lang-label">US</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-lang-menu" id="nav-lang-menu" role="listbox" aria-label="Choisir la langue">
+            <button class="nav-lang-option is-active" type="button" role="option" data-lang="en" aria-selected="true">
+              <span class="fi fi-us" aria-hidden="true"></span>
+              <span>English (US)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="fr" aria-selected="false">
+              <span class="fi fi-fr" aria-hidden="true"></span>
+              <span>Français (FR)</span>
+            </button>
+          </div>
+        </div>
+        <a href="login.html" class="nav-account-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Se connecter</span></a>
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+      </div>
+    </div>
+  </nav>
   <div class="ai-page">
     <div class="ai-container">
       <a href="index.html" class="ai-back-link">← Back to catalog</a>

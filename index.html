@@ -59,8 +59,6 @@
   <link rel="stylesheet" href="./skeleton-improved.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
-  <!-- I18n System -->
-  <script src="./i18n.js"></script>
   <!-- Performance Optimizations -->
   <script src="./app-optimizations.js"></script>
   <!-- Mobile Filters Drawer -->
@@ -68,7 +66,7 @@
   <!-- Premium Sticky Nav -->
   <script src="./nav-header.js"></script>
   <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json" data-i18n="jsonld">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -112,38 +110,9 @@
           <span data-i18n="navFavorites">Favoris</span>
         </button>
 
-        <div class="nav-lang-picker" id="nav-lang-picker">
-          <button class="nav-lang-trigger" id="nav-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="navLanguageLabel">
-            <span class="fi fi-us" id="nav-lang-flag" aria-hidden="true"></span>
-            <span class="nav-lang-label" id="nav-lang-label">US</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="nav-lang-menu" id="nav-lang-menu" role="listbox" aria-label="Choisir la langue">
-            <button class="nav-lang-option is-active" type="button" role="option" data-lang="en" aria-selected="true">
-              <span class="fi fi-us" aria-hidden="true"></span>
-              <span data-i18n="langEnglishUS">English (US)</span>
-            </button>
-            <button class="nav-lang-option" type="button" role="option" data-lang="fr" aria-selected="false">
-              <span class="fi fi-fr" aria-hidden="true"></span>
-              <span data-i18n="langFrench">Français (FR)</span>
-            </button>
-            <button class="nav-lang-option" type="button" role="option" data-lang="es" aria-selected="false">
-              <span class="fi fi-es" aria-hidden="true"></span>
-              <span data-i18n="langSpanish">Español (ES)</span>
-            </button>
-            <button class="nav-lang-option" type="button" role="option" data-lang="de" aria-selected="false">
-              <span class="fi fi-de" aria-hidden="true"></span>
-              <span data-i18n="langGerman">Deutsch (DE)</span>
-            </button>
-            <button class="nav-lang-option" type="button" role="option" data-lang="it" aria-selected="false">
-              <span class="fi fi-it" aria-hidden="true"></span>
-              <span data-i18n="langItalian">Italiano (IT)</span>
-            </button>
-            <button class="nav-lang-option" type="button" role="option" data-lang="uk" aria-selected="false">
-              <span class="fi fi-gb" aria-hidden="true"></span>
-              <span data-i18n="langEnglishUK">English (UK)</span>
-            </button>
-          </div>
+        <!-- Google Translate Widget -->
+        <div class="nav-lang-picker">
+          <div id="google_translate_element"></div>
         </div>
 
         <a href="login.html" class="nav-account-btn">
@@ -394,37 +363,46 @@
     </div>
   </div>
 
-  <div id="google_translate_element" class="hidden" aria-hidden="true"></div>
-
   <style>
-    /* Hide Google Translate toolbar completely */
-    .goog-te-banner-frame, .goog-te-banner, .skiptranslate,
-    .goog-te-menu-frame, .goog-te-balloon-frame, .goog-tooltip,
-    .goog-te-gadget-icon, .goog-te-ftab, .goog-te-menu, .goog-te-menu2,
-    .goog-te-combo, .goog-te-gadget-simple, #goog-gt-tt {
+    /* Google Translate Widget Styling */
+    .goog-te-banner-frame {
       display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      height: 0 !important;
-      width: 0 !important;
-      position: absolute !important;
-      top: -9999px !important;
-      left: -9999px !important;
     }
     body {
       top: 0 !important;
-      position: static !important;
-      margin-top: 0 !important;
     }
-    .goog-te-gadget {
-      display: none !important;
-      height: 0 !important;
+    /* Style the translate dropdown to match our design */
+    .goog-te-gadget-simple {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      font-family: inherit !important;
+      font-size: 14px !important;
+      color: #fff !important;
     }
-    .VIpgJd-ZVi9od-xlHa4e-LfGMzb {
+    .goog-te-menu-value {
+      color: #fff !important;
+    }
+    .goog-te-menu-value span {
+      color: #fff !important;
+      border: none !important;
+    }
+    /* Hide the icon and "Powered by" text */
+    .goog-te-gadget-icon {
       display: none !important;
     }
-    .goog-logo-link, .goog-te-gadget span {
+    .goog-logo-link {
       display: none !important;
+    }
+    .goog-te-gadget span {
+      display: none !important;
+    }
+    /* Show only the language selector */
+    .goog-te-gadget-simple .goog-te-menu-value:first-child {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 8px;
     }
   </style>
 
@@ -435,10 +413,9 @@
   <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
-        pageLanguage: 'fr',
-        includedLanguages: 'fr,en,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
   </script>

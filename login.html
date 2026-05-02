@@ -7,7 +7,10 @@
   <meta name="description" content="Login to MinSp to access AI recommendations and personalized features.">
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
   <script src="./theme-toggle.js"></script>
+  <!-- Premium Sticky Nav -->
+  <script src="./nav-header.js"></script>
   <style>
     .login-page {
       display: flex;
@@ -280,19 +283,37 @@
   </style>
 </head>
 <body class="theme-tech">
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <!-- Left: Logo + Slogan -->
+      <div class="nav-logo-wrap">
+        <a href="index.html" class="nav-logo"><span class="notranslate" translate="no">Min<span class="nav-logo-sp">Sp</span></span></a>
+        <p class="nav-slogan-inline">choose, compare, <span class="highlight">play</span></p>
+      </div>
+      <div class="nav-center"></div>
+      <div class="nav-actions">
+        <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Favoris</span></button>
+        <!-- Google Translate Widget -->
+        <div class="nav-lang-picker">
+          <div id="google_translate_element"></div>
+        </div>
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+      </div>
+    </div>
+  </nav>
   <div class="login-page">
     <div class="login-container">
-      <a href="index.html" class="login-back">← Back to home</a>
+      <a href="index.html" class="login-back" data-i18n="backToHome">← Back to home</a>
 
       <div class="login-card">
         <div class="login-header">
-          <h1>Welcome to MinSp</h1>
-          <p>Sign in to unlock personalized features</p>
+          <h1 data-i18n="welcomeToMinSp">Welcome to MinSp</h1>
+          <p data-i18n="signInToUnlock">Sign in to unlock personalized features</p>
         </div>
 
         <div class="login-tabs">
-          <button type="button" class="login-tab active" id="tab-login" onclick="switchTab('login')">Sign In</button>
-          <button type="button" class="login-tab" id="tab-register" onclick="switchTab('register')">Create Account</button>
+          <button type="button" class="login-tab active" id="tab-login" onclick="switchTab('login')" data-i18n="signIn">Sign In</button>
+          <button type="button" class="login-tab" id="tab-register" onclick="switchTab('register')" data-i18n="createAccount">Create Account</button>
         </div>
 
         <div class="login-error" id="login-error"></div>
@@ -302,14 +323,14 @@
         <div class="login-form-section active" id="section-login">
           <form class="login-form" id="login-form">
             <div class="login-form-group">
-              <label for="login-email">Email</label>
+              <label for="login-email" data-i18n="email">Email</label>
               <input type="email" id="login-email" name="email" placeholder="your@email.com" required autocomplete="email">
             </div>
             <div class="login-form-group">
-              <label for="login-password">Password</label>
-              <input type="password" id="login-password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+              <label for="login-password" data-i18n="password">Password</label>
+              <input type="password" id="login-password" name="password" placeholder="Enter your password" data-i18n-placeholder="enterYourPassword" required autocomplete="current-password">
             </div>
-            <button type="submit" class="login-btn" id="login-btn">
+            <button type="submit" class="login-btn" id="login-btn" data-i18n="signIn">
               Sign In
             </button>
           </form>
@@ -319,30 +340,30 @@
         <div class="login-form-section" id="section-register">
           <form class="login-form" id="register-form">
             <div class="login-form-group">
-              <label for="register-pseudo">Username</label>
-              <input type="text" id="register-pseudo" name="pseudo" placeholder="Choose a username" required autocomplete="username">
+              <label for="register-pseudo" data-i18n="username">Username</label>
+              <input type="text" id="register-pseudo" name="pseudo" placeholder="Choose a username" data-i18n-placeholder="chooseUsername" required autocomplete="username">
             </div>
             <div class="login-form-group">
-              <label for="register-email">Email</label>
+              <label for="register-email" data-i18n="email">Email</label>
               <input type="email" id="register-email" name="email" placeholder="your@email.com" required autocomplete="email">
             </div>
             <div class="login-form-group">
-              <label for="register-password">Password</label>
-              <input type="password" id="register-password" name="password" placeholder="Create a password (min 6 chars)" required autocomplete="new-password" minlength="6">
+              <label for="register-password" data-i18n="password">Password</label>
+              <input type="password" id="register-password" name="password" placeholder="Create a password (min 6 chars)" data-i18n-placeholder="createPassword" required autocomplete="new-password" minlength="6">
             </div>
-            <button type="submit" class="login-btn" id="register-btn">
+            <button type="submit" class="login-btn" id="register-btn" data-i18n="createAccount">
               Create Account
             </button>
           </form>
         </div>
 
         <div class="login-features">
-          <h3>✨ Member Benefits</h3>
+          <h3 data-i18n="memberBenefits">✨ Member Benefits</h3>
           <ul>
-            <li>AI-powered mouse recommendations</li>
-            <li>Save favorites across sessions</li>
-            <li>Personalized comparison lists</li>
-            <li>Early access to new features</li>
+            <li data-i18n="benefitAIRecommendations">AI-powered mouse recommendations</li>
+            <li data-i18n="benefitSaveFavorites">Save favorites across sessions</li>
+            <li data-i18n="benefitCompareProducts">Personalized comparison lists</li>
+            <li data-i18n="benefitExclusiveDeals">Early access to new features</li>
           </ul>
         </div>
       </div>
@@ -558,5 +579,33 @@
       });
     })();
   </script>
+
+  <style>
+    /* Google Translate Widget Styling */
+    .goog-te-banner-frame { display: none !important; }
+    body { top: 0 !important; }
+    .goog-te-gadget-simple {
+      background: transparent !important; border: none !important;
+      padding: 0 !important; margin: 0 !important;
+      font-family: inherit !important; font-size: 14px !important; color: #fff !important;
+    }
+    .goog-te-menu-value { color: #fff !important; }
+    .goog-te-menu-value span { color: #fff !important; border: none !important; }
+    .goog-te-gadget-icon, .goog-logo-link, .goog-te-gadget span { display: none !important; }
+    .goog-te-gadget-simple .goog-te-menu-value:first-child {
+      display: inline-flex !important; align-items: center; gap: 8px;
+    }
+  </style>
+
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

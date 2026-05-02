@@ -3263,6 +3263,17 @@
     // resultsSummary.textContent = filteredMice.length === catalogMice.length
     //   ? filteredMice.length + " " + t(shownKey)
     //   : filteredMice.length + " " + t(shownOutOfKey) + " " + catalogMice.length;
+    
+    // Update window.statsData for nav-header.js animation
+    window.statsData = {
+      'total-models': catalogMice.length,
+      'total-brands': catalogBrandCount,
+      'official-images': catalogImageCount,
+      'visible-results': filteredMice.length
+    };
+    
+    // Dispatch event to trigger stats animation
+    window.dispatchEvent(new CustomEvent('statsUpdated'));
   }
 
   /**
@@ -4542,6 +4553,7 @@
 
     clearViewTransitionTimer();
     catalogView.setAttribute("aria-hidden", "true");
+    if (toolbarPanel) toolbarPanel.classList.add("hidden");
     detailView.classList.remove("hidden");
     detailView.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -4575,6 +4587,7 @@
     viewTransitionTimer = setTimeout(function () {
       detailView.classList.add("hidden");
       catalogView.setAttribute("aria-hidden", "false");
+      if (toolbarPanel) toolbarPanel.classList.remove("hidden");
       document.body.style.overflow = previousBodyOverflow;
       // Retourner à la position exacte de la carte sélectionnée
       window.scrollTo(0, savedScrollPosition);
@@ -4677,7 +4690,7 @@
     state.query = "";
     state.brand = "all";
     state.type = "all";
-    state.catalog = "all";
+    // Ne pas reset state.catalog - garder le catalogue actuel
     state.gamme = "all";
     state.connectivite = "all";
     state.ergonomie = "all";

@@ -38,83 +38,92 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-
-  <!-- WCAG Compliant Colors -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"></noscript>
+  <link rel="stylesheet" href="./critical-keyboards.css">
   <link rel="stylesheet" href="./wcag-colors.css">
-  <!-- Improved Skeleton Screens -->
-  <link rel="stylesheet" href="./skeleton-improved.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
-  <!-- I18n System -->
-  <script src="./i18n.js"></script>
   <!-- Performance Optimizations -->
   <script src="./app-optimizations.js"></script>
   <!-- Mobile Filters Drawer -->
   <script src="./mobile-filters.js"></script>
+  <!-- Premium Sticky Nav -->
+  <script src="./nav-header.js"></script>
   <link rel="canonical" href="https://minsp.onrender.com/keyboards.html">
 </head>
 <body class="theme-tech">
-  <div id="catalog-view" class="spa-view is-visible">
-    <div class="page-shell app-shell">
-      <header class="hero-panel panel-surface">
-        <div class="header-actions">
-          <div class="user-section" id="user-section"></div>
-        <div class="language-picker" id="language-picker">
-            <button
-              class="language-trigger"
-              id="language-trigger"
-              type="button"
-              aria-haspopup="listbox"
-              aria-expanded="false"
-              aria-label="Choose the catalog language."
-            >
-              <span class="language-flag">
-                <span id="current-language-flag" class="fi fi-us" aria-hidden="true"></span>
-              </span>
-              <span class="language-trigger-copy">
-                <span class="language-trigger-kicker" id="language-trigger-kicker">Language</span>
-                <span class="language-trigger-label" id="current-language-label">English (US)</span>
-              </span>
-              <span class="language-trigger-chevron" aria-hidden="true">&#9662;</span>
-            </button>
-            <div class="language-menu hidden" id="language-menu" role="listbox" aria-label="Choose the catalog language."></div>
-          </div>
-        </div>
-
-        <div class="hero-top">
-        <h1 class="eyebrow" id="hero-eyebrow">MinSp - Electronic Product Comparison</h1>
-        <a href="index.html" class="logo"><span class="notranslate" translate="no">Min<span class="logo-sp">Sp</span></span></a>
-        <p class="slogan" id="hero-slogan">MinSp : choose, compare, <span class="highlight">play</span></p>
-        <p class="hero-text" id="hero-text">
-          <span id="hero-intro">A clean, standardized catalog to compare mechanical and gaming keyboards.</span>
-          <span id="hero-count-prefix">Each product includes an image, sources, and exactly</span>
-          <span id="standardized-count">0</span>
-          <span id="hero-count-suffix">profiles built around core specs.</span>
-        </p>
+  <!-- ═══ Premium Sticky Nav ═══ -->
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <!-- Left: Logo + Slogan -->
+      <div class="nav-logo-wrap">
+        <a href="index.html" class="nav-logo">
+          <span class="notranslate" translate="no">Min<span class="nav-logo-sp">Sp</span></span>
+        </a>
+        <p class="nav-slogan-inline">choose, compare, <span class="highlight">play</span></p>
       </div>
 
-        <div class="hero-rule" aria-hidden="true"></div>
+      <!-- Center: Navigation Links -->
+      <div class="nav-center">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="mice.html" class="nav-link">Mice</a>
+          <a href="keyboards.html" class="nav-link is-active">Keyboards</a>
+          <a href="pc-components.html" class="nav-link">PC Components</a>
+          <a href="ai-landing.html" class="nav-link nav-link-ai">AI Recommendation</a>
+        </nav>
+      </div>
 
-        <section class="hero-stats" aria-label="Catalog stats">
-          <article class="stat-card">
-            <span class="stat-label" id="models-label">Models</span>
-            <strong class="stat-value" id="total-models">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label" id="brands-label">Brands</span>
-            <strong class="stat-value" id="total-brands">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label" id="images-label">Images</span>
-            <strong class="stat-value" id="official-images">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label" id="results-label">Results</span>
-            <strong class="stat-value" id="visible-results">0</strong>
-          </article>
-        </section>
-      </header>
+      <!-- Right: Actions -->
+      <div class="nav-actions">
+        <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Favoris</span>
+        </button>
+
+        <!-- Google Translate Widget -->
+        <div class="nav-lang-picker">
+          <div id="google_translate_element"></div>
+        </div>
+
+        <a href="login.html" class="nav-account-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Se connecter</span>
+        </a>
+
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ Stats Section (Below Header) ═══ -->
+  <section class="stats-section" aria-label="Catalog statistics">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-value" id="total-models" data-value="0"></span>
+        <span class="stat-label" id="models-label">Models</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="total-brands" data-value="0"></span>
+        <span class="stat-label" id="brands-label">Brands</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="official-images" data-value="0"></span>
+        <span class="stat-label" id="images-label">Images</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="visible-results" data-value="0"></span>
+        <span class="stat-label" id="results-label">Results</span>
+      </div>
+    </div>
+  </section>
+
+  <div id="catalog-view" class="spa-view is-visible">
+    <div class="page-shell app-shell">
 
       <section class="toolbar-panel toolbar-grid hidden" id="toolbar-panel" aria-label="Search and filters">
         <label class="search-field">
@@ -323,13 +332,11 @@
     });
 
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          autoDisplay: false
-        },
-        "google_translate_element"
-      );
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
