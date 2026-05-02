@@ -85,9 +85,41 @@
           <span>Favoris</span>
         </button>
 
-        <!-- Google Translate Widget -->
-        <div class="nav-lang-picker">
-          <div id="google_translate_element"></div>
+        <!-- Language Selector with Flags -->
+        <div class="nav-lang-picker" id="nav-lang-picker">
+          <button class="nav-lang-trigger" id="nav-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose language">
+            <span class="fi" id="nav-lang-flag" aria-hidden="true"></span>
+            <span class="nav-lang-label" id="nav-lang-label">EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-lang-menu" id="nav-lang-menu" role="listbox" aria-label="Choose language">
+            <button class="nav-lang-option" type="button" role="option" data-lang="en" data-flag="fi-us" aria-selected="false">
+              <span class="fi fi-us" aria-hidden="true"></span>
+              <span>English (US)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="fr" data-flag="fi-fr" aria-selected="false">
+              <span class="fi fi-fr" aria-hidden="true"></span>
+              <span>Français (FR)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="es" data-flag="fi-es" aria-selected="false">
+              <span class="fi fi-es" aria-hidden="true"></span>
+              <span>Español (ES)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="de" data-flag="fi-de" aria-selected="false">
+              <span class="fi fi-de" aria-hidden="true"></span>
+              <span>Deutsch (DE)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="it" data-flag="fi-it" aria-selected="false">
+              <span class="fi fi-it" aria-hidden="true"></span>
+              <span>Italiano (IT)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="pt" data-flag="fi-pt" aria-selected="false">
+              <span class="fi fi-pt" aria-hidden="true"></span>
+              <span>Português (PT)</span>
+            </button>
+          </div>
+          <!-- Hidden Google Translate element -->
+          <div id="google_translate_element" style="display:none;"></div>
         </div>
 
         <a href="login.html" class="nav-account-btn">
@@ -334,13 +366,107 @@
       }
     });
 
+    // Google Translate initialization
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
         includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
       }, 'google_translate_element');
     }
+
+    // Custom Language Selector
+    (function() {
+      var STORAGE_KEY = 'minsp_language';
+      var langTrigger = document.getElementById('nav-lang-trigger');
+      var langMenu = document.getElementById('nav-lang-menu');
+      var langFlag = document.getElementById('nav-lang-flag');
+      var langLabel = document.getElementById('nav-lang-label');
+      var langOptions = document.querySelectorAll('.nav-lang-option');
+
+      var langConfig = {
+        'en': { flag: 'fi-us', label: 'EN', name: 'English (US)' },
+        'fr': { flag: 'fi-fr', label: 'FR', name: 'Français (FR)' },
+        'es': { flag: 'fi-es', label: 'ES', name: 'Español (ES)' },
+        'de': { flag: 'fi-de', label: 'DE', name: 'Deutsch (DE)' },
+        'it': { flag: 'fi-it', label: 'IT', name: 'Italiano (IT)' },
+        'pt': { flag: 'fi-pt', label: 'PT', name: 'Português (PT)' }
+      };
+
+      function getStoredLanguage() {
+        try {
+          var stored = localStorage.getItem(STORAGE_KEY);
+          if (stored && langConfig[stored]) return stored;
+        } catch(e) {}
+        var browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang) {
+          var shortLang = browserLang.split('-')[0].toLowerCase();
+          if (langConfig[shortLang]) return shortLang;
+        }
+        return 'en';
+      }
+
+      function updateLanguageUI(lang) {
+        var config = langConfig[lang];
+        if (!config) return;
+        langFlag.className = 'fi ' + config.flag;
+        langLabel.textContent = config.label;
+        langOptions.forEach(function(opt) {
+          var isSelected = opt.getAttribute('data-lang') === lang;
+          opt.classList.toggle('is-active', isSelected);
+          opt.setAttribute('aria-selected', isSelected);
+        });
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch(e) {}
+      }
+
+      function triggerGoogleTranslate(lang) {
+        if (lang === 'en') {
+          var url = new URL(window.location.href);
+          url.searchParams.delete('lang');
+          window.location.href = url.toString();
+          return;
+        }
+        var domain = window.location.hostname;
+        document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
+        document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
+        window.location.reload();
+      }
+
+      if (langTrigger && langMenu) {
+        langTrigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isExpanded = langTrigger.getAttribute('aria-expanded') === 'true';
+          langTrigger.setAttribute('aria-expanded', !isExpanded);
+          langMenu.classList.toggle('is-open', !isExpanded);
+        });
+        document.addEventListener('click', function(e) {
+          if (!langTrigger.contains(e.target) && !langMenu.contains(e.target)) {
+            langTrigger.setAttribute('aria-expanded', 'false');
+            langMenu.classList.remove('is-open');
+          }
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            langTrigger.setAttribute('aria-expanded', 'false');
+            langMenu.classList.remove('is-open');
+          }
+        });
+        langOptions.forEach(function(option) {
+          option.addEventListener('click', function() {
+            var selectedLang = this.getAttribute('data-lang');
+            updateLanguageUI(selectedLang);
+            langTrigger.setAttribute('aria-expanded', 'false');
+            langMenu.classList.remove('is-open');
+            triggerGoogleTranslate(selectedLang);
+          });
+        });
+      }
+      var currentLang = getStoredLanguage();
+      updateLanguageUI(currentLang);
+    })();
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
