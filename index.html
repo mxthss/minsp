@@ -486,12 +486,38 @@
   <!-- Keep-alive script to counter Render Cold Start -->
   <script>
     (function() {
-      // Keep connection warm with periodic pings
+      // Configuration
+      var BACKEND_URL = 'https://minsp.onrender.com'; // Change this to your Render backend URL
+      var PING_INTERVAL = 14 * 60 * 1000; // 14 minutes in milliseconds
+      
+      // Keep connection warm with periodic pings to /ping endpoint
       setInterval(function() {
         if (navigator.onLine) {
-          fetch(window.location.href, { method: 'HEAD', cache: 'no-store' }).catch(function() {});
+          fetch(BACKEND_URL + '/ping', { 
+            method: 'GET',
+            cache: 'no-store',
+            headers: {
+              'X-Keep-Alive': 'true'
+            }
+          }).then(function(response) {
+            if (response.ok) {
+              console.log('[Keep-Alive] Ping successful at', new Date().toLocaleTimeString());
+            }
+          }).catch(function(error) {
+            console.log('[Keep-Alive] Ping failed:', error);
+          });
         }
-      }, 300000); // Every 5 minutes
+      }, PING_INTERVAL);
+      
+      // Initial ping on page load (with delay to let page fully load)
+      setTimeout(function() {
+        if (navigator.onLine) {
+          fetch(BACKEND_URL + '/ping', { 
+            method: 'GET',
+            cache: 'no-store'
+          }).catch(function() {});
+        }
+      }, 5000);
     })();
   </script>
 

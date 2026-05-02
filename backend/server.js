@@ -174,6 +174,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Ultra-light ping endpoint for keep-alive (Render Cold Start prevention)
+app.get('/ping', (req, res) => {
+  // Anti-cache headers to ensure Render sees the activity
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  res.setHeader('X-Ping-Timestamp', Date.now().toString());
+  res.setHeader('Content-Type', 'text/plain');
+  res.status(200).send('OK');
+});
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: 'Endpoint not found' });
@@ -190,4 +201,5 @@ app.listen(PORT, () => {
   console.log(`API endpoints:`);
   console.log(`  - POST http://localhost:${PORT}/api/recommend`);
   console.log(`  - GET  http://localhost:${PORT}/api/health`);
+  console.log(`  - GET  http://localhost:${PORT}/ping (keep-alive)`);
 });
