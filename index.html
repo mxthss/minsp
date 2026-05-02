@@ -52,14 +52,10 @@
   <link rel="icon" href="/favicon.ico?v=2" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
-  />
-
-  <!-- WCAG Compliant Colors -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"></noscript>
   <link rel="stylesheet" href="./wcag-colors.css">
-  <!-- Improved Skeleton Screens -->
   <link rel="stylesheet" href="./skeleton-improved.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="./theme-toggle.js"></script>
@@ -69,8 +65,10 @@
   <script src="./app-optimizations.js"></script>
   <!-- Mobile Filters Drawer -->
   <script src="./mobile-filters.js"></script>
+  <!-- Premium Sticky Nav -->
+  <script src="./nav-header.js"></script>
   <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-i18n="jsonld">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -85,116 +83,156 @@
   </script>
 </head>
 <body class="theme-tech">
-  <div id="catalog-view" class="spa-view is-visible">
-    <div class="page-shell app-shell">
-      <header class="hero-panel panel-surface">
-        <div class="header-actions">
-          <div class="user-section" id="user-section"></div>
-        <div class="language-picker" id="language-picker">
-            <button
-              class="language-trigger"
-              id="language-trigger"
-              type="button"
-              aria-haspopup="listbox"
-              aria-expanded="false"
-              aria-label="Choose the catalog language."
-            >
-              <span class="language-flag">
-                <span id="current-language-flag" class="fi fi-us" aria-hidden="true"></span>
-              </span>
-              <span class="language-trigger-copy">
-                <span class="language-trigger-kicker" id="language-trigger-kicker">Language</span>
-                <span class="language-trigger-label" id="current-language-label">English (US)</span>
-              </span>
-              <span class="language-trigger-chevron" aria-hidden="true">&#9662;</span>
+  <!-- ═══ Premium Sticky Nav ═══ -->
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <!-- Left: Logo + Slogan -->
+      <div class="nav-logo-wrap">
+        <a href="index.html" class="nav-logo">
+          <span class="notranslate" translate="no">Min<span class="nav-logo-sp">Sp</span></span>
+        </a>
+        <p class="nav-slogan-inline">choose, compare, <span class="highlight">play</span></p>
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <div class="nav-center">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html" class="nav-link is-active" data-i18n="navHome">Home</a>
+          <a href="mice.html" class="nav-link" data-i18n="navMice">Mice</a>
+          <a href="keyboards.html" class="nav-link" data-i18n="navKeyboards">Keyboards</a>
+          <a href="pc-components.html" class="nav-link" data-i18n="navPCComponents">PC Components</a>
+          <a href="ai-landing.html" class="nav-link nav-link-ai" data-i18n="navAIRecommendation">AI Recommendation</a>
+        </nav>
+      </div>
+
+      <!-- Right: Actions -->
+      <div class="nav-actions">
+        <button class="nav-fav-btn" id="nav-fav-btn" type="button" data-i18n-aria="navFavorites">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span data-i18n="navFavorites">Favoris</span>
+        </button>
+
+        <div class="nav-lang-picker" id="nav-lang-picker">
+          <button class="nav-lang-trigger" id="nav-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="navLanguageLabel">
+            <span class="fi fi-us" id="nav-lang-flag" aria-hidden="true"></span>
+            <span class="nav-lang-label" id="nav-lang-label">US</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-lang-menu" id="nav-lang-menu" role="listbox" aria-label="Choisir la langue">
+            <button class="nav-lang-option is-active" type="button" role="option" data-lang="en" aria-selected="true">
+              <span class="fi fi-us" aria-hidden="true"></span>
+              <span data-i18n="langEnglishUS">English (US)</span>
             </button>
-            <div class="language-menu hidden" id="language-menu" role="listbox" aria-label="Choose the catalog language."></div>
+            <button class="nav-lang-option" type="button" role="option" data-lang="fr" aria-selected="false">
+              <span class="fi fi-fr" aria-hidden="true"></span>
+              <span data-i18n="langFrench">Français (FR)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="es" aria-selected="false">
+              <span class="fi fi-es" aria-hidden="true"></span>
+              <span data-i18n="langSpanish">Español (ES)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="de" aria-selected="false">
+              <span class="fi fi-de" aria-hidden="true"></span>
+              <span data-i18n="langGerman">Deutsch (DE)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="it" aria-selected="false">
+              <span class="fi fi-it" aria-hidden="true"></span>
+              <span data-i18n="langItalian">Italiano (IT)</span>
+            </button>
+            <button class="nav-lang-option" type="button" role="option" data-lang="uk" aria-selected="false">
+              <span class="fi fi-gb" aria-hidden="true"></span>
+              <span data-i18n="langEnglishUK">English (UK)</span>
+            </button>
           </div>
         </div>
 
-        <div class="hero-top">
-        <h1 class="eyebrow" id="hero-eyebrow">MinSp - Electronic Product Comparison</h1>
-        <a href="#" class="logo"><span class="notranslate" translate="no">Min<span class="logo-sp">Sp</span></span></a>
-        <p class="slogan" id="hero-slogan">MinSp : choose, compare, <span class="highlight">play</span></p>
-        <p class="hero-text" id="hero-text">
-          <span id="hero-intro">A clean, standardized catalog to compare gaming and office mouse.</span>
-          <span id="hero-count-prefix">Each product includes an image, sources, and exactly</span>
-          <span id="standardized-count">0</span>
-          <span id="hero-count-suffix">profiles built around 5 core specs.</span>
-        </p>
+        <a href="login.html" class="nav-account-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span data-i18n="navLogin">Se connecter</span>
+        </a>
+
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
       </div>
+    </div>
+  </nav>
 
-        <div class="hero-rule" aria-hidden="true"></div>
+  <!-- ═══ Stats Section (Below Header) ═══ -->
+  <section class="stats-section" aria-label="Catalog statistics">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-value" id="total-models" data-value="0"></span>
+        <span class="stat-label" id="models-label" data-i18n="statModels">Models</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="total-brands" data-value="0"></span>
+        <span class="stat-label" id="brands-label" data-i18n="statBrands">Brands</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="official-images" data-value="0"></span>
+        <span class="stat-label" id="images-label" data-i18n="statImages">Images</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="visible-results" data-value="0"></span>
+        <span class="stat-label" id="results-label" data-i18n="statResults">Results</span>
+      </div>
+    </div>
+  </section>
 
-        <section class="hero-stats" aria-label="Catalog stats">
-          <article class="stat-card">
-            <span class="stat-label" id="models-label">Models</span>
-            <strong class="stat-value" id="total-models">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label" id="brands-label">Brands</span>
-            <strong class="stat-value" id="total-brands">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label" id="images-label">Images</span>
-            <strong class="stat-value" id="official-images">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label" id="results-label">Results</span>
-            <strong class="stat-value" id="visible-results">0</strong>
-          </article>
-        </section>
-      </header>
+  <div id="catalog-view" class="spa-view is-visible">
+    <div class="page-shell app-shell">
 
       <section class="catalog-bubble-section" id="catalog-bubble-section">
         <div class="catalog-bubble">
-          <h2 class="catalog-bubble-title">Catalog</h2>
-          <p class="catalog-bubble-subtitle">Explore our product categories</p>
+          <h2 class="catalog-bubble-title" data-i18n="catalogTitle">Catalog</h2>
+          <p class="catalog-bubble-subtitle" data-i18n="catalogSubtitle">Explore our product categories</p>
           <div class="catalog-bubble-grid">
             <a href="mice.html" class="catalog-bubble-card" data-catalog="mice">
-              <span class="catalog-bubble-card-icon">🖱️</span>
-              <span class="catalog-bubble-card-name">Mice</span>
-              <span class="catalog-bubble-card-desc">Gaming & office</span>
+              <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9z"/><path d="M9 2v3"/><path d="M15 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/></svg></span>
+              <span class="catalog-bubble-card-name" data-i18n="catMiceName">Mice</span>
+              <span class="catalog-bubble-card-desc" data-i18n="catMiceDesc">Gaming & office</span>
             </a>
             <a href="keyboards.html" class="catalog-bubble-card" data-catalog="keyboard">
-              <span class="catalog-bubble-card-icon">⌨️</span>
-              <span class="catalog-bubble-card-name">Keyboards</span>
-              <span class="catalog-bubble-card-desc">Mechanical & gaming</span>
+              <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg></span>
+              <span class="catalog-bubble-card-name" data-i18n="catKeyboardsName">Keyboards</span>
+              <span class="catalog-bubble-card-desc" data-i18n="catKeyboardsDesc">Mechanical & gaming</span>
             </a>
             <a href="pc-components.html" class="catalog-bubble-card" data-catalog="pc-component">
-              <span class="catalog-bubble-card-icon">🖥️</span>
-              <span class="catalog-bubble-card-name">PC Components</span>
-              <span class="catalog-bubble-card-desc">Graphics cards, RAM…</span>
+              <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3M9 9h.01M15 9h.01M9 15h.01M15 15h.01"/></svg></span>
+              <span class="catalog-bubble-card-name" data-i18n="catPCComponentsName">PC Components</span>
+              <span class="catalog-bubble-card-desc" data-i18n="catPCComponentsDesc">Graphics cards, RAM…</span>
             </a>
             <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
-              <span class="catalog-bubble-card-icon">📱</span>
-              <span class="catalog-bubble-card-name">Smartphones</span>
-              <span class="catalog-bubble-card-desc">Coming soon</span>
+              <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+              <span class="catalog-bubble-card-name" data-i18n="catSmartphonesName">Smartphones</span>
+              <span class="catalog-bubble-card-desc" data-i18n="catSmartphonesDesc">Coming soon</span>
             </a>
             <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
-              <span class="catalog-bubble-card-icon">🎧</span>
-              <span class="catalog-bubble-card-name">Audio</span>
-              <span class="catalog-bubble-card-desc">Coming soon</span>
+              <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+              <span class="catalog-bubble-card-name" data-i18n="catAudioName">Audio</span>
+              <span class="catalog-bubble-card-desc" data-i18n="catAudioDesc">Coming soon</span>
             </a>
             <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
-              <span class="catalog-bubble-card-icon">🔌</span>
-              <span class="catalog-bubble-card-name">Accessoires</span>
-              <span class="catalog-bubble-card-desc">Coming soon</span>
+              <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 18v4M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M18 12h4M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg></span>
+              <span class="catalog-bubble-card-name" data-i18n="catAccessoriesName">Accessoires</span>
+              <span class="catalog-bubble-card-desc" data-i18n="catAccessoriesDesc">Coming soon</span>
             </a>
           </div>
-          <a href="about.html" class="catalog-bubble-cta">Learn more</a>
+          <a href="about.html" class="catalog-bubble-cta" data-i18n="catalogCTA">Learn more</a>
         </div>
       </section>
 
 
       <section class="toolbar-panel toolbar-grid hidden" id="toolbar-panel" aria-label="Search and filters">
         <label class="search-field">
-          <span class="field-label" id="search-label">Search</span>
+          <span class="field-label" id="search-label" data-i18n="labelSearch">Search</span>
           <div class="field-shell">
             <span class="field-icon" aria-hidden="true">&#8981;</span>
             <input
               id="search-input"
               type="search"
+              data-i18n-placeholder="placeholderSearch"
               placeholder="Search: gaming, office, wireless, color, weight, features..."
               autocomplete="off"
               aria-labelledby="search-label"
@@ -202,36 +240,38 @@
               role="searchbox"
             >
           </div>
-          <span id="search-help" class="sr-only">Use this field to search products by name, brand, or features.</span>
+          <span id="search-help" class="sr-only" data-i18n="searchHelp">Use this field to search products by name, brand, or features.</span>
         </label>
 
         <label class="filter-field">
-          <span class="field-label" id="brand-label">Brand</span>
+          <span class="field-label" id="brand-label" data-i18n="labelBrand">Brand</span>
           <select
             id="brand-filter"
             aria-labelledby="brand-label"
             aria-describedby="brand-help"
             aria-label="Filter by brand"
+            data-i18n-options="optionAllBrands"
           >
             <option value="all">All brands</option>
           </select>
-          <span id="brand-help" class="sr-only">Filter results by product brand.</span>
+          <span id="brand-help" class="sr-only" data-i18n="brandHelp">Filter results by product brand.</span>
         </label>
 
         <label class="filter-field">
-          <span class="field-label" id="type-label">Type</span>
+          <span class="field-label" id="type-label" data-i18n="labelType">Type</span>
           <select
             id="type-filter"
             aria-labelledby="type-label"
             aria-describedby="type-help"
             aria-label="Filter by type"
+            data-i18n-options="optionAllTypes"
           >
             <option value="all">All types</option>
           </select>
-          <span id="type-help" class="sr-only">Filter results by product type, gaming or office.</span>
+          <span id="type-help" class="sr-only" data-i18n="typeHelp">Filter results by product type, gaming or office.</span>
         </label>
 
-        <button class="reset-button" type="button" id="reset-filters" aria-label="Reset all search filters">
+        <button class="reset-button" type="button" id="reset-filters" data-i18n="buttonReset">
           Reset
         </button>
       </section>
@@ -242,15 +282,15 @@
         <section class="catalog-panel panel-surface" id="catalog-panel">
           <div class="section-head">
             <div>
-              <p class="section-kicker" id="catalog-kicker">Catalog</p>
-              <h2 id="catalog-title">Product selection</h2>
+              <p class="section-kicker" id="catalog-kicker" data-i18n="sectionCatalogKicker">Catalog</p>
+              <h2 id="catalog-title" data-i18n="sectionCatalogTitle">Product selection</h2>
             </div>
             <div class="section-actions">
-              <button type="button" class="back-home-btn" id="back-home-btn">← 🏠 <span data-translate="Home">Home</span></button>
-              <button type="button" class="fav-view-btn" id="fav-view-btn">★ <span id="fav-btn-text">Favorites</span></button>
-              <a href="ai-recommend.html" class="ai-recommend-btn" id="ai-recommend-btn" title="Get AI mouse recommendation (login required)" onclick="return checkAIAccess();">
+              <button type="button" class="back-home-btn" id="back-home-btn">← <span data-i18n="buttonBackHome">🏠 Home</span></button>
+              <button type="button" class="fav-view-btn" id="fav-view-btn">★ <span id="fav-btn-text" data-i18n="buttonFavorites">Favorites</span></button>
+              <a href="ai-recommend.html" class="ai-recommend-btn" id="ai-recommend-btn" data-i18n-aria="aiTooltip" title="Get AI mouse recommendation (login required)" onclick="return checkAIAccess();">
                 <span class="ai-btn-icon">✨</span>
-                <span class="ai-btn-text">AI</span>
+                <span class="ai-btn-text" data-i18n="buttonAI">AI</span>
               </a>
             </div>
           </div>
@@ -314,10 +354,10 @@
         <section class="favorites-page panel-surface hidden" id="favorites-page">
           <div class="section-head">
             <div>
-              <p class="section-kicker" id="fav-kicker">Favorites</p>
-              <h2 id="fav-page-title" data-translate="Your favorite mouse">Your favorite mouse</h2>
+              <p class="section-kicker" id="fav-kicker" data-i18n="favKicker">Favorites</p>
+              <h2 id="fav-page-title" data-i18n="favTitle">Your favorites</h2>
             </div>
-            <button type="button" class="back-btn" id="back-to-catalog">← Back to catalog</button>
+            <button type="button" class="back-btn" id="back-to-catalog" data-i18n="buttonBackToCatalog">← Back to catalog</button>
           </div>
           <div class="catalog-grid" id="favorites-grid"></div>
         </section>
@@ -329,11 +369,11 @@
     id="detail-view"
     class="spa-view hidden"
     aria-hidden="true"
-    aria-label="Selected product details"
+    data-i18n-aria="buttonCloseDetails"
     role="dialog"
     aria-modal="true"
   >
-    <button id="close-btn" type="button" aria-label="Close product details">&times;</button>
+    <button id="close-btn" type="button" data-i18n-aria="buttonCloseDetails">&times;</button>
     <div class="detail-view-shell">
       <aside
         class="detail-panel panel-surface"
@@ -343,9 +383,9 @@
         role="complementary"
       >
         <div class="detail-empty">
-          <p class="section-kicker">Product details</p>
-          <h2>Choose a product</h2>
-          <p>
+          <p class="section-kicker" data-i18n="detailEmptyKicker">Product details</p>
+          <h2 data-i18n="detailEmptyTitle">Choose a product</h2>
+          <p data-i18n="detailEmptyText">
             Click a card to open the image, the 5 standardized specs,
             and the related sources.
           </p>
@@ -357,18 +397,33 @@
   <div id="google_translate_element" class="hidden" aria-hidden="true"></div>
 
   <style>
-    .goog-te-banner-frame, .goog-te-banner, .skiptranslate {
+    /* Hide Google Translate toolbar completely */
+    .goog-te-banner-frame, .goog-te-banner, .skiptranslate,
+    .goog-te-menu-frame, .goog-te-balloon-frame, .goog-tooltip,
+    .goog-te-gadget-icon, .goog-te-ftab, .goog-te-menu, .goog-te-menu2,
+    .goog-te-combo, .goog-te-gadget-simple, #goog-gt-tt {
       display: none !important;
       visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      position: absolute !important;
+      top: -9999px !important;
+      left: -9999px !important;
     }
     body {
       top: 0 !important;
       position: static !important;
-    }
-    #goog-gt-tt, .goog-te-balloon-frame {
-      display: none !important;
+      margin-top: 0 !important;
     }
     .goog-te-gadget {
+      display: none !important;
+      height: 0 !important;
+    }
+    .VIpgJd-ZVi9od-xlHa4e-LfGMzb {
+      display: none !important;
+    }
+    .goog-logo-link, .goog-te-gadget span {
       display: none !important;
     }
   </style>
@@ -379,13 +434,12 @@
   <script src="./app.js"></script>
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          autoDisplay: false
-        },
-        "google_translate_element"
-      );
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'fr,en,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
     }
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -393,27 +447,27 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-content">
-      <h3>Quick Links</h3>
+      <h3 data-i18n="footerQuickLinks">Quick Links</h3>
       <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="mice.html">Mice Catalog</a>
-        <a href="keyboards.html">Keyboards Catalog</a>
-        <a href="pc-components.html">PC Components</a>
-        <a href="about.html">About MinSp</a>
-        <a href="methodology.html">Methodology</a>
-        <a href="ai-recommend.html">AI Recommendation</a>
+        <a href="index.html" data-i18n="footerLinkHome">Home</a>
+        <a href="mice.html" data-i18n="footerLinkMice">Mice Catalog</a>
+        <a href="keyboards.html" data-i18n="footerLinkKeyboards">Keyboards Catalog</a>
+        <a href="pc-components.html" data-i18n="footerLinkPCComponents">PC Components</a>
+        <a href="about.html" data-i18n="footerLinkAbout">About MinSp</a>
+        <a href="methodology.html" data-i18n="footerLinkMethodology">Methodology</a>
+        <a href="ai-recommend.html" data-i18n="footerLinkAI">AI Recommendation</a>
       </div>
       
       <!-- Popular Searches / Categories -->
       <div class="footer-section">
-        <h4>Popular Recommendations</h4>
+        <h4 data-i18n="footerPopularRecs">Popular Recommendations</h4>
         <div class="footer-categories">
-          <a href="ai-recommend.html?usage=gaming&budget=50">Budget Gaming Mice</a>
-          <a href="ai-recommend.html?usage=fps&wireless=true">Wireless FPS Mice</a>
-          <a href="ai-recommend.html?usage=bureautique&budget=80">Office Mice Under 80€</a>
-          <a href="ai-recommend.html?weight=ultralight&wireless=true">Ultra Light Wireless</a>
-          <a href="ai-recommend.html?brand=Logitech&usage=gaming">Logitech Gaming</a>
-          <a href="ai-recommend.html?hand-size=small&usage=gaming">Small Hand Gaming</a>
+          <a href="ai-recommend.html?usage=gaming&budget=50" data-i18n="footerBudgetGaming">Budget Gaming Mice</a>
+          <a href="ai-recommend.html?usage=fps&wireless=true" data-i18n="footerWirelessFPS">Wireless FPS Mice</a>
+          <a href="ai-recommend.html?usage=bureautique&budget=80" data-i18n="footerOfficeUnder80">Office Mice Under €80</a>
+          <a href="ai-recommend.html?weight=ultralight&wireless=true" data-i18n="footerUltraLight">Ultra Light Wireless</a>
+          <a href="ai-recommend.html?brand=Logitech&usage=gaming" data-i18n="footerLogitechGaming">Logitech Gaming</a>
+          <a href="ai-recommend.html?hand-size=small&usage=gaming" data-i18n="footerSmallHand">Small Hand Gaming</a>
         </div>
       </div>
       
