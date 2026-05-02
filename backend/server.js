@@ -185,6 +185,223 @@ app.get('/ping', (req, res) => {
   res.status(200).send('OK');
 });
 
+// API endpoint for AI keyboard recommendations
+app.post('/api/recommend/keyboards', rateLimit, async (req, res) => {
+  try {
+    const { userProfile, keyboardsData } = req.body;
+    
+    if (!userProfile || !keyboardsData) {
+      return res.status(400).json({ 
+        error: 'Missing required fields: userProfile and keyboardsData' 
+      });
+    }
+
+    const apiKey = process.env.GEMINI_API_KEY;
+    
+    if (!apiKey) {
+      console.error('GEMINI_API_KEY not set in environment');
+      return res.status(500).json({ 
+        error: 'Server configuration error' 
+      });
+    }
+
+    const prompt = {
+      contents: [{
+        parts: [{
+          text: `You are an AI keyboard recommendation assistant for MinSp, a keyboard comparison website.
+
+USER PROFILE:
+- Budget: $${userProfile.budget}
+- Usage: ${userProfile.usage}
+- Switch preference: ${userProfile.switch}
+- Size preference: ${userProfile.size || 'Any'}
+- Connection: ${userProfile.connection || 'Any'}
+- RGB preference: ${userProfile.rgb || 'No preference'}
+
+AVAILABLE KEYBOARDS (from database):
+${JSON.stringify(keyboardsData, null, 2)}
+
+TASK: Analyze the user profile and available keyboards. Return ONLY a JSON object in this exact format:
+{
+  "bestChoice": {
+    "name": "Exact product name from database",
+    "price": price_number,
+    "reason": "2-3 sentences explaining why this is the best match for the user's profile"
+  },
+  "alternatives": [
+    {"name": "Alternative 1 name", "price": price_number},
+    {"name": "Alternative 2 name", "price": price_number}
+  ]
+}
+
+RULES:
+1. ONLY recommend keyboards from the provided database
+2. Best choice must fit within budget (or close to it)
+3. Consider usage type, switch preference, size, and connection type
+4. If no keyboard matches well, say "No perfect match found" in the reason
+5. Return ONLY valid JSON, no markdown, no explanation`
+        }]
+      }]
+    };
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(prompt)
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.text();
+      console.error('Gemini API error:', errorData);
+      return res.status(502).json({ 
+        error: 'AI service temporarily unavailable. Please try again later.' 
+      });
+    }
+
+    const data = await response.json();
+    const text = data.candidates[0].content.parts[0].text;
+
+    // Extract JSON from response
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.error('Invalid response format from AI:', text);
+      return res.status(502).json({ 
+        error: 'Invalid response from AI service' 
+      });
+    }
+
+    const recommendation = JSON.parse(jsonMatch[0]);
+    
+    // Validate response structure
+    if (!recommendation.bestChoice || !recommendation.bestChoice.name) {
+      return res.status(502).json({ 
+        error: 'Invalid recommendation format' 
+      });
+    }
+
+    res.json(recommendation);
+    
+  } catch (error) {
+    console.error('Keyboard recommendation error:', error);
+    res.status(500).json({ 
+      error: 'Failed to generate recommendation. Please try again.' 
+    });
+  }
+});
+
+// API endpoint for AI PC components recommendations
+app.post('/api/recommend/pc-components', rateLimit, async (req, res) => {
+  try {
+    const { userProfile, componentsData } = req.body;
+    
+    if (!userProfile || !componentsData) {
+      return res.status(400).json({ 
+        error: 'Missing required fields: userProfile and componentsData' 
+      });
+    }
+
+    const apiKey = process.env.GEMINI_API_KEY;
+    
+    if (!apiKey) {
+      console.error('GEMINI_API_KEY not set in environment');
+      return res.status(500).json({ 
+        error: 'Server configuration error' 
+      });
+    }
+
+    const prompt = {
+      contents: [{
+        parts: [{
+          text: `You are an AI PC components recommendation assistant for MinSp, a PC components comparison website.
+
+USER PROFILE:
+- Budget: $${userProfile.budget}
+- Usage: ${userProfile.usage}
+- Component type: ${userProfile.componentType || 'Any'}
+- Performance priority: ${userProfile.performance || 'Balanced'}
+- Brand preference: ${userProfile.brand || 'No preference'}
+
+AVAILABLE PC COMPONENTS (from database):
+${JSON.stringify(componentsData, null, 2)}
+
+TASK: Analyze the user profile and available components. Return ONLY a JSON object in this exact format:
+{
+  "bestChoice": {
+    "name": "Exact product name from database",
+    "price": price_number,
+    "reason": "2-3 sentences explaining why this is the best match for the user's profile"
+  },
+  "alternatives": [
+    {"name": "Alternative 1 name", "price": price_number},
+    {"name": "Alternative 2 name", "price": price_number}
+  ]
+}
+
+RULES:
+1. ONLY recommend components from the provided database
+2. Best choice must fit within budget (or close to it)
+3. Consider usage type, component type, and performance needs
+4. If no component matches well, say "No perfect match found" in the reason
+5. Return ONLY valid JSON, no markdown, no explanation`
+        }]
+      }]
+    };
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(prompt)
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.text();
+      console.error('Gemini API error:', errorData);
+      return res.status(502).json({ 
+        error: 'AI service temporarily unavailable. Please try again later.' 
+      });
+    }
+
+    const data = await response.json();
+    const text = data.candidates[0].content.parts[0].text;
+
+    // Extract JSON from response
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.error('Invalid response format from AI:', text);
+      return res.status(502).json({ 
+        error: 'Invalid response from AI service' 
+      });
+    }
+
+    const recommendation = JSON.parse(jsonMatch[0]);
+    
+    // Validate response structure
+    if (!recommendation.bestChoice || !recommendation.bestChoice.name) {
+      return res.status(502).json({ 
+        error: 'Invalid recommendation format' 
+      });
+    }
+
+    res.json(recommendation);
+    
+  } catch (error) {
+    console.error('PC components recommendation error:', error);
+    res.status(500).json({ 
+      error: 'Failed to generate recommendation. Please try again.' 
+    });
+  }
+});
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: 'Endpoint not found' });
@@ -200,6 +417,8 @@ app.listen(PORT, () => {
   console.log(`MinSp Backend running on http://localhost:${PORT}`);
   console.log(`API endpoints:`);
   console.log(`  - POST http://localhost:${PORT}/api/recommend`);
+  console.log(`  - POST http://localhost:${PORT}/api/recommend/keyboards`);
+  console.log(`  - POST http://localhost:${PORT}/api/recommend/pc-components`);
   console.log(`  - GET  http://localhost:${PORT}/api/health`);
   console.log(`  - GET  http://localhost:${PORT}/ping (keep-alive)`);
 });
