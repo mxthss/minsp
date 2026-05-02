@@ -443,6 +443,24 @@
   <script src="./data/pc-components.js"></script>
   <script src="./app.js"></script>
   <script>
+    // Read googtrans cookie to get current language
+    function getCookie(name) {
+      var value = '; ' + document.cookie;
+      var parts = value.split('; ' + name + '=');
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    // Get language from cookie (googtrans format: /en/fr)
+    function getLangFromCookie() {
+      var googtrans = getCookie('googtrans');
+      if (googtrans) {
+        var parts = googtrans.split('/');
+        if (parts.length >= 3) return parts[2];
+      }
+      return null;
+    }
+
     // Google Translate initialization
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
@@ -472,12 +490,19 @@
         'pt': { flag: 'fi-pt', label: 'PT', name: 'Português (PT)' }
       };
 
-      // Get stored language or default to browser language or 'en'
-      function getStoredLanguage() {
+      // Get current language from cookie, localStorage, or browser
+      function getCurrentLanguage() {
+        // First check cookie (active translation)
+        var cookieLang = getLangFromCookie();
+        if (cookieLang && langConfig[cookieLang]) return cookieLang;
+
+        // Then check localStorage
         try {
           var stored = localStorage.getItem(STORAGE_KEY);
           if (stored && langConfig[stored]) return stored;
         } catch(e) {}
+
+        // Finally check browser language
         var browserLang = navigator.language || navigator.userLanguage;
         if (browserLang) {
           var shortLang = browserLang.split('-')[0].toLowerCase();
@@ -491,40 +516,43 @@
         var config = langConfig[lang];
         if (!config) return;
 
-        // Update button
         langFlag.className = 'fi ' + config.flag;
         langLabel.textContent = config.label;
 
-        // Update active state in menu
         langOptions.forEach(function(opt) {
           var isSelected = opt.getAttribute('data-lang') === lang;
           opt.classList.toggle('is-active', isSelected);
           opt.setAttribute('aria-selected', isSelected);
         });
 
-        // Store preference
         try {
           localStorage.setItem(STORAGE_KEY, lang);
         } catch(e) {}
       }
 
-      // Trigger Google Translate
+      // Trigger Google Translate via combo change
       function triggerGoogleTranslate(lang) {
         if (lang === 'en') {
-          // Reset to original - reload without translate
-          var url = new URL(window.location.href);
-          url.searchParams.delete('lang');
-          window.location.href = url.toString();
+          // Clear cookies and reload to original
+          var domain = window.location.hostname;
+          document.cookie = 'googtrans=; path=/; domain=.' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+          document.cookie = 'googtrans=; path=/; domain=' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+          window.location.reload();
           return;
         }
 
-        // Set Google Translate cookie and reload
-        var domain = window.location.hostname;
-        document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
-        document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
-        
-        // Reload to apply translation
-        window.location.reload();
+        // Try to use the Google Translate widget directly if available
+        var combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event('change'));
+        } else {
+          // Fallback: set cookie and reload
+          var domain = window.location.hostname;
+          document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
+          document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
+          window.location.reload();
+        }
       }
 
       // Toggle dropdown
@@ -536,7 +564,6 @@
           langMenu.classList.toggle('is-open', !isExpanded);
         });
 
-        // Close on outside click
         document.addEventListener('click', function(e) {
           if (!langTrigger.contains(e.target) && !langMenu.contains(e.target)) {
             langTrigger.setAttribute('aria-expanded', 'false');
@@ -544,7 +571,6 @@
           }
         });
 
-        // Close on Escape
         document.addEventListener('keydown', function(e) {
           if (e.key === 'Escape') {
             langTrigger.setAttribute('aria-expanded', 'false');
@@ -552,7 +578,6 @@
           }
         });
 
-        // Handle language selection
         langOptions.forEach(function(option) {
           option.addEventListener('click', function() {
             var selectedLang = this.getAttribute('data-lang');
@@ -565,14 +590,8 @@
       }
 
       // Initialize on load
-      var currentLang = getStoredLanguage();
+      var currentLang = getCurrentLanguage();
       updateLanguageUI(currentLang);
-
-      // Check if we need to restore translation on page load
-      if (currentLang !== 'en') {
-        // Translation will be applied by Google Translate on load
-        // Just update the UI to show the selected language
-      }
     })();
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

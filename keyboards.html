@@ -363,6 +363,22 @@
       }
     });
 
+    // Read googtrans cookie to get current language
+    function getCookie(name) {
+      var value = '; ' + document.cookie;
+      var parts = value.split('; ' + name + '=');
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+    function getLangFromCookie() {
+      var googtrans = getCookie('googtrans');
+      if (googtrans) {
+        var parts = googtrans.split('/');
+        if (parts.length >= 3) return parts[2];
+      }
+      return null;
+    }
+
     // Google Translate initialization
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
@@ -391,7 +407,9 @@
         'pt': { flag: 'fi-pt', label: 'PT', name: 'Português (PT)' }
       };
 
-      function getStoredLanguage() {
+      function getCurrentLanguage() {
+        var cookieLang = getLangFromCookie();
+        if (cookieLang && langConfig[cookieLang]) return cookieLang;
         try {
           var stored = localStorage.getItem(STORAGE_KEY);
           if (stored && langConfig[stored]) return stored;
@@ -421,15 +439,22 @@
 
       function triggerGoogleTranslate(lang) {
         if (lang === 'en') {
-          var url = new URL(window.location.href);
-          url.searchParams.delete('lang');
-          window.location.href = url.toString();
+          var domain = window.location.hostname;
+          document.cookie = 'googtrans=; path=/; domain=.' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+          document.cookie = 'googtrans=; path=/; domain=' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+          window.location.reload();
           return;
         }
-        var domain = window.location.hostname;
-        document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
-        document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
-        window.location.reload();
+        var combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event('change'));
+        } else {
+          var domain = window.location.hostname;
+          document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
+          document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
+          window.location.reload();
+        }
       }
 
       if (langTrigger && langMenu) {
@@ -461,7 +486,7 @@
           });
         });
       }
-      var currentLang = getStoredLanguage();
+      var currentLang = getCurrentLanguage();
       updateLanguageUI(currentLang);
     })();
   </script>
