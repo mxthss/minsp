@@ -119,26 +119,71 @@
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
   }
 
-  // Trigger Google Translate
+  // Trigger Google Translate with retry mechanism
   function triggerGoogleTranslate(lang) {
     if (lang === 'en') {
-      var domain = window.location.hostname;
-      document.cookie = 'googtrans=; path=/; domain=.' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-      document.cookie = 'googtrans=; path=/; domain=' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      clearGoogleTranslateCookies();
       window.location.reload();
       return;
     }
-    // Try Google Translate combo
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo) {
-      combo.value = lang;
-      combo.dispatchEvent(new Event('change', { bubbles: true }));
-    } else {
-      // Fallback: set cookie and reload
-      var domain = window.location.hostname;
-      document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
-      document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
-      window.location.reload();
+
+    // Try to use Google Translate combo (wait for it to be ready)
+    var attempts = 0;
+    var maxAttempts = 50; // 5 seconds total
+
+    function tryTranslate() {
+      var combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change', { bubbles: true }));
+        return;
+      }
+
+      // Also try direct Google Translate API if available
+      if (window.google && google.translate && google.translate.TranslateElement) {
+        var gtElement = document.getElementById('google_translate_element');
+        if (gtElement && gtElement._gtElement) {
+          gtElement._gtElement.showBanner(lang);
+          return;
+        }
+      }
+
+      attempts++;
+      if (attempts < maxAttempts) {
+        setTimeout(tryTranslate, 100);
+      } else {
+        // Final fallback: cookie method
+        setGoogleTranslateCookie(lang);
+        window.location.reload();
+      }
+    }
+
+    tryTranslate();
+  }
+
+  // Clear GT cookies (for returning to English)
+  function clearGoogleTranslateCookies() {
+    var domain = window.location.hostname;
+    var expires = 'expires=Thu, 01 Jan 1970 00:00:01 GMT';
+    // Clear all possible domain variations
+    document.cookie = 'googtrans=; path=/; ' + expires;
+    document.cookie = 'googtrans=; path=/; domain=' + domain + '; ' + expires;
+    document.cookie = 'googtrans=; path=/; domain=.' + domain + '; ' + expires;
+    document.cookie = 'googtrans=; path=/; domain=www.' + domain + '; ' + expires;
+    // Also clear without domain
+    document.cookie = 'googtrans=; path=/; ' + expires;
+  }
+
+  // Set GT cookie for translation
+  function setGoogleTranslateCookie(lang) {
+    var domain = window.location.hostname;
+    var cookieValue = '/en/' + lang;
+    var cookieOptions = 'path=/; max-age=86400'; // 24 hours
+    // Set for multiple domain variations to be safe
+    document.cookie = 'googtrans=' + cookieValue + '; ' + cookieOptions;
+    if (domain && domain !== 'localhost') {
+      document.cookie = 'googtrans=' + cookieValue + '; domain=' + domain + '; ' + cookieOptions;
+      document.cookie = 'googtrans=' + cookieValue + '; domain=.' + domain + '; ' + cookieOptions;
     }
   }
 
@@ -174,7 +219,19 @@
         updateLanguageUI(selectedLang);
         langTrigger.setAttribute('aria-expanded', 'false');
         langMenu.classList.remove('is-open');
+
+        // Show loading state on button
+        var originalLabel = langLabel ? langLabel.textContent : '';
+        if (langLabel) langLabel.textContent = '...';
+        if (langTrigger) langTrigger.style.opacity = '0.6';
+
         triggerGoogleTranslate(selectedLang);
+
+        // Restore button after a delay
+        setTimeout(function() {
+          if (langLabel && originalLabel) langLabel.textContent = originalLabel;
+          if (langTrigger) langTrigger.style.opacity = '1';
+        }, 2000);
       });
     });
 
