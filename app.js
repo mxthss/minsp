@@ -240,6 +240,15 @@
     "Forme": "Shape"
   };
 
+  // Fonctions fantômes (pass-through) pour compatibilité - Google Translate gère les vraies traductions
+  function t(text) { return text; }
+  function translateText(text, lang) { return text; }
+  function localizeCatalogText(value, lang) { return value; }
+  function localizeMouse(mouse, lang) { return mouse; }
+  function getLanguageConfig(lang) { return { htmlLang: 'en-US', name: 'English', flag: '🇬🇧' }; }
+  function translatePage() { /* Ne rien faire, Google Translate gère */ }
+  function normalizeLanguageCode(lang) { return lang || 'en-gb'; }
+
   function normalizeText(value) {
     return String(value || "")
       .normalize("NFD")
@@ -413,27 +422,15 @@
   }
 
   function setLanguage(langCode) {
-    // Map language codes to Google Translate format
-    var googleLangMap = {
-      "fr": "fr",
-      "en-gb": "en",
-      "en-us": "en",
-      "it": "it",
-      "es": "es",
-      "de": "de"
-    };
-    var targetLang = googleLangMap[langCode] || "en";
-    var domain = window.location.hostname;
+    // Map des langues pour Google
+    var googleLangMap = { 'fr': 'fr', 'en-us': 'en', 'en-gb': 'en', 'it': 'it', 'es': 'es', 'de': 'de' };
+    var targetLang = googleLangMap[langCode.toLowerCase()] || 'en';
 
     // Set Google Translate cookie
-    document.cookie = "googtrans=/en/" + targetLang + "; path=/; domain=" + domain;
-    // Also set for root domain if subdomain
-    if (domain.split(".").length > 2) {
-      var rootDomain = domain.split(".").slice(-2).join(".");
-      document.cookie = "googtrans=/en/" + targetLang + "; path=/; domain=" + rootDomain;
-    }
+    document.cookie = 'googtrans=/en/' + targetLang + '; path=/; domain=' + window.location.hostname;
+    document.cookie = 'googtrans=/en/' + targetLang + '; path=/;'; // fallback
 
-    // Reload page to let Google Translate take over
+    // Reload pour appliquer la traduction
     window.location.reload();
   }
 
@@ -3040,27 +3037,25 @@
 
   function init() {
     var initialLanguage;
-    var requiredElements = [
-      searchInput,
-      brandFilter,
-      typeFilter,
-      resetFilters,
-      catalogGrid,
-      detailPanel,
-      totalModels,
-      totalBrands,
-      officialImages,
-      visibleResults
-    ];
 
-    if (requiredElements.some(function (element) { return !element; })) {
-      console.error("Elements DOM requis manquants.");
-      return;
+    // Log which elements are missing but don't block initialization
+    var missingElements = [];
+    if (!searchInput) missingElements.push('searchInput');
+    if (!catalogGrid) missingElements.push('catalogGrid');
+    if (!detailPanel) missingElements.push('detailPanel');
+
+    if (missingElements.length > 0) {
+      console.warn('[App] Some elements not found on this page:', missingElements.join(', '));
     }
 
-    catalogGrid.setAttribute("tabindex", "0");
-    catalogGrid.setAttribute("aria-busy", "false");
-    detailPanel.setAttribute("tabindex", "0");
+    // Set up elements that do exist
+    if (catalogGrid) {
+      catalogGrid.setAttribute("tabindex", "0");
+      catalogGrid.setAttribute("aria-busy", "false");
+    }
+    if (detailPanel) {
+      detailPanel.setAttribute("tabindex", "0");
+    }
 
     initializeLanguageSelector();
     bindEvents();
