@@ -252,6 +252,7 @@ body {
 /* Language Picker — LUMINOUS style like old header */
 .nav-lang-picker {
   position: relative;
+  z-index: 10000;
 }
 
 .nav-lang-trigger {
@@ -269,9 +270,33 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: var(--shadow-sm);
-  pointer-events: auto;
+  pointer-events: auto !important;
   position: relative;
-  z-index: 1001;
+  z-index: 10001;
+}
+
+.nav-lang-menu {
+  z-index: 10002;
+}
+
+/* Hide Google Translate overlays that block clicks */
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-spinner-pos,
+.goog-te-bottom-bar,
+.skiptranslate {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
+
+body {
+  top: 0 !important;
 }
 
 .nav-lang-trigger:hover {

@@ -396,12 +396,40 @@
   </div>
 
   <style>
-    /* Google Translate Widget Styling */
+    /* Google Translate Widget Styling - HIDE ALL GOOGLE TRANSLATE UI */
     .goog-te-banner-frame {
       display: none !important;
     }
     body {
       top: 0 !important;
+    }
+    /* Hide the Google Translate iframe overlay that blocks clicks */
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    .goog-te-spinner-pos,
+    .goog-te-bottom-bar,
+    .skiptranslate {
+      display: none !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+      position: absolute !important;
+      z-index: -9999 !important;
+    }
+    /* Ensure our custom language picker is always above everything */
+    .nav-lang-picker {
+      position: relative;
+      z-index: 10000 !important;
+    }
+    .nav-lang-trigger {
+      pointer-events: auto !important;
+      z-index: 10001 !important;
+      position: relative !important;
+    }
+    .nav-lang-menu {
+      z-index: 10002 !important;
     }
     /* Style the translate dropdown to match our design */
     .goog-te-gadget-simple {
