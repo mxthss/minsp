@@ -326,13 +326,15 @@
               <span>Português (PT)</span>
             </button>
           </div>
-          <!-- Hidden Google Translate element -->
-          <div id="google_translate_element" style="display:none;"></div>
         </div>
         <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
       </div>
     </div>
   </nav>
+
+  <!-- Google Translate element (outside nav to avoid blocking clicks) -->
+  <div id="google_translate_element" style="display:none;position:absolute;left:-9999px;"></div>
+
   <div class="login-page">
     <div class="login-container">
       <a href="index.html" class="login-back" data-i18n="backToHome">← Back to home</a>
@@ -624,139 +626,8 @@
     .goog-te-menu-value { color: #fff !important; }
     .goog-te-menu-value span { color: #fff !important; border: none !important; }
     .goog-te-gadget-icon, .goog-logo-link, .goog-te-gadget span { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value:first-child {
-      display: inline-flex !important; align-items: center; gap: 8px;
-    }
   </style>
 
-  <script>
-    // Read googtrans cookie to get current language
-    function getCookie(name) {
-      var value = '; ' + document.cookie;
-      var parts = value.split('; ' + name + '=');
-      if (parts.length === 2) return parts.pop().split(';').shift();
-      return null;
-    }
-    function getLangFromCookie() {
-      var googtrans = getCookie('googtrans');
-      if (googtrans) {
-        var parts = googtrans.split('/');
-        if (parts.length >= 3) return parts[2];
-      }
-      return null;
-    }
-
-    // Google Translate initialization
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-
-    // Custom Language Selector
-    (function() {
-      var STORAGE_KEY = 'minsp_language';
-      var langTrigger = document.getElementById('nav-lang-trigger');
-      var langMenu = document.getElementById('nav-lang-menu');
-      var langFlag = document.getElementById('nav-lang-flag');
-      var langLabel = document.getElementById('nav-lang-label');
-      var langOptions = document.querySelectorAll('.nav-lang-option');
-
-      var langConfig = {
-        'en': { flag: 'fi-us', label: 'EN', name: 'English (US)' },
-        'fr': { flag: 'fi-fr', label: 'FR', name: 'Français (FR)' },
-        'es': { flag: 'fi-es', label: 'ES', name: 'Español (ES)' },
-        'de': { flag: 'fi-de', label: 'DE', name: 'Deutsch (DE)' },
-        'it': { flag: 'fi-it', label: 'IT', name: 'Italiano (IT)' },
-        'pt': { flag: 'fi-pt', label: 'PT', name: 'Português (PT)' }
-      };
-
-      function getCurrentLanguage() {
-        var cookieLang = getLangFromCookie();
-        if (cookieLang && langConfig[cookieLang]) return cookieLang;
-        try {
-          var stored = localStorage.getItem(STORAGE_KEY);
-          if (stored && langConfig[stored]) return stored;
-        } catch(e) {}
-        var browserLang = navigator.language || navigator.userLanguage;
-        if (browserLang) {
-          var shortLang = browserLang.split('-')[0].toLowerCase();
-          if (langConfig[shortLang]) return shortLang;
-        }
-        return 'en';
-      }
-
-      function updateLanguageUI(lang) {
-        var config = langConfig[lang];
-        if (!config) return;
-        langFlag.className = 'fi ' + config.flag;
-        langLabel.textContent = config.label;
-        langOptions.forEach(function(opt) {
-          var isSelected = opt.getAttribute('data-lang') === lang;
-          opt.classList.toggle('is-active', isSelected);
-          opt.setAttribute('aria-selected', isSelected);
-        });
-        try {
-          localStorage.setItem(STORAGE_KEY, lang);
-        } catch(e) {}
-      }
-
-      function triggerGoogleTranslate(lang) {
-        if (lang === 'en') {
-          var domain = window.location.hostname;
-          document.cookie = 'googtrans=; path=/; domain=.' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-          document.cookie = 'googtrans=; path=/; domain=' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-          window.location.reload();
-          return;
-        }
-        var combo = document.querySelector('.goog-te-combo');
-        if (combo) {
-          combo.value = lang;
-          combo.dispatchEvent(new Event('change'));
-        } else {
-          var domain = window.location.hostname;
-          document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
-          document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
-          window.location.reload();
-        }
-      }
-
-      if (langTrigger && langMenu) {
-        langTrigger.addEventListener('click', function(e) {
-          e.stopPropagation();
-          var isExpanded = langTrigger.getAttribute('aria-expanded') === 'true';
-          langTrigger.setAttribute('aria-expanded', !isExpanded);
-          langMenu.classList.toggle('is-open', !isExpanded);
-        });
-        document.addEventListener('click', function(e) {
-          if (!langTrigger.contains(e.target) && !langMenu.contains(e.target)) {
-            langTrigger.setAttribute('aria-expanded', 'false');
-            langMenu.classList.remove('is-open');
-          }
-        });
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            langTrigger.setAttribute('aria-expanded', 'false');
-            langMenu.classList.remove('is-open');
-          }
-        });
-        langOptions.forEach(function(option) {
-          option.addEventListener('click', function() {
-            var selectedLang = this.getAttribute('data-lang');
-            updateLanguageUI(selectedLang);
-            langTrigger.setAttribute('aria-expanded', 'false');
-            langMenu.classList.remove('is-open');
-            triggerGoogleTranslate(selectedLang);
-          });
-        });
-      }
-      var currentLang = getCurrentLanguage();
-      updateLanguageUI(currentLang);
-    })();
-  </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

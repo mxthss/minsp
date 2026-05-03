@@ -57,16 +57,97 @@
   }
 
   /* ── 3. Language picker (Google Translate Widget) ── */
-  // Le widget Google Translate gère automatiquement la traduction
-  // Ce code garde juste le comportement du dropdown visuel si présent
   var langTrigger = document.getElementById('nav-lang-trigger');
   var langMenu = document.getElementById('nav-lang-menu');
+  var langFlag = document.getElementById('nav-lang-flag');
+  var langLabel = document.getElementById('nav-lang-label');
+  var langOptions = document.querySelectorAll('.nav-lang-option');
+
+  var STORAGE_KEY = 'minsp_language';
+
+  var langConfig = {
+    'en': { flag: 'fi-us', label: 'EN', name: 'English (US)' },
+    'fr': { flag: 'fi-fr', label: 'FR', name: 'Français (FR)' },
+    'es': { flag: 'fi-es', label: 'ES', name: 'Español (ES)' },
+    'de': { flag: 'fi-de', label: 'DE', name: 'Deutsch (DE)' },
+    'it': { flag: 'fi-it', label: 'IT', name: 'Italiano (IT)' },
+    'pt': { flag: 'fi-pt', label: 'PT', name: 'Português (PT)' }
+  };
+
+  // Read googtrans cookie
+  function getLangFromCookie() {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var c = cookies[i].trim();
+      if (c.startsWith('googtrans=')) {
+        var val = c.substring('googtrans='.length);
+        var parts = val.split('/');
+        if (parts.length >= 3) {
+          var lang = parts[2].split('-')[0].toLowerCase();
+          return lang;
+        }
+      }
+    }
+    return null;
+  }
+
+  // Get current language from cookie, localStorage, or browser
+  function getCurrentLanguage() {
+    var cookieLang = getLangFromCookie();
+    if (cookieLang && langConfig[cookieLang]) return cookieLang;
+    try {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored && langConfig[stored]) return stored;
+    } catch (e) {}
+    var browserLang = navigator.language || navigator.userLanguage || 'en';
+    var shortLang = browserLang.split('-')[0].toLowerCase();
+    if (langConfig[shortLang]) return shortLang;
+    return 'en';
+  }
+
+  // Update UI for selected language
+  function updateLanguageUI(lang) {
+    var config = langConfig[lang];
+    if (!config) return;
+    if (langFlag) langFlag.className = 'fi ' + config.flag;
+    if (langLabel) langLabel.textContent = config.label;
+    langOptions.forEach(function (opt) {
+      var isSelected = opt.getAttribute('data-lang') === lang;
+      opt.classList.toggle('is-active', isSelected);
+      opt.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+    });
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  // Trigger Google Translate
+  function triggerGoogleTranslate(lang) {
+    if (lang === 'en') {
+      var domain = window.location.hostname;
+      document.cookie = 'googtrans=; path=/; domain=.' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie = 'googtrans=; path=/; domain=' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      window.location.reload();
+      return;
+    }
+    // Try Google Translate combo
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change', { bubbles: true }));
+    } else {
+      // Fallback: set cookie and reload
+      var domain = window.location.hostname;
+      document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=.' + domain + ';';
+      document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain + ';';
+      window.location.reload();
+    }
+  }
 
   if (langTrigger && langMenu) {
     langTrigger.addEventListener('click', function (e) {
+      e.preventDefault();
       e.stopPropagation();
       var isExpanded = langTrigger.getAttribute('aria-expanded') === 'true';
-      langTrigger.setAttribute('aria-expanded', !isExpanded);
+      langTrigger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
       langMenu.classList.toggle('is-open', !isExpanded);
     });
 
@@ -85,6 +166,44 @@
         langMenu.classList.remove('is-open');
       }
     });
+
+    // Language option clicks
+    langOptions.forEach(function (option) {
+      option.addEventListener('click', function () {
+        var selectedLang = this.getAttribute('data-lang');
+        updateLanguageUI(selectedLang);
+        langTrigger.setAttribute('aria-expanded', 'false');
+        langMenu.classList.remove('is-open');
+        triggerGoogleTranslate(selectedLang);
+      });
+    });
+
+    // Initialize UI
+    var currentLang = getCurrentLanguage();
+    updateLanguageUI(currentLang);
+  }
+
+  // Initialize Google Translate widget if element exists
+  function initGoogleTranslate() {
+    var el = document.getElementById('google_translate_element');
+    if (el && typeof google !== 'undefined' && google.translate) {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  }
+
+  // Make init function globally available for the Google Translate script callback
+  window.googleTranslateElementInit = function () {
+    initGoogleTranslate();
+  };
+
+  // If Google Translate script already loaded, init now
+  if (typeof google !== 'undefined' && google.translate) {
+    initGoogleTranslate();
   }
 
   /* ── 4. Favorites button → scroll to / show favorites ── */
