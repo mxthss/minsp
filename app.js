@@ -29,6 +29,9 @@ if (typeof window.normalizeLanguageCode !== 'function') {
   console.log('[DEBUG] MinSp - Démarrage de l\'application');
   console.log('[DEBUG] URL actuelle:', window.location.href);
   console.log('[DEBUG] User Agent:', navigator.userAgent);
+  console.log('[DEBUG] Détection du protocole - file://', window.location.protocol === 'file:');
+  console.log('[DEBUG] Détection du protocole - http://', window.location.protocol === 'http:');
+  console.log('[DEBUG] Détection du protocole - https://', window.location.protocol === 'https:');
 
   // Système d'authentification utilisateur (localStorage)
   var UserAuth = (function() {
@@ -3212,6 +3215,32 @@ if (typeof window.normalizeLanguageCode !== 'function') {
   });
 
   function init() {
+    console.log('[DEBUG] Initialisation de l\'application');
+    console.log('[DEBUG] Éléments DOM requis:', {
+      searchInput: !!searchInput,
+      brandFilter: !!brandFilter,
+      typeFilter: !!typeFilter,
+      catalogGrid: !!catalogGrid,
+      detailPanel: !!detailPanel,
+      closeBtn: !!closeBtn,
+      backHomeBtn: !!backHomeBtn,
+      favViewBtn: !!favViewBtn,
+      aiRecommendBtn: !!aiRecommendBtn,
+      languagePicker: !!languagePicker,
+      languageTrigger: !!languageTrigger,
+      languageMenu: !!languageMenu,
+      navLangFlag: !!navLangFlag,
+      navLangLabel: !!navLangLabel,
+      navLangMenu: !!navLangMenu,
+      navLangOptions: !!navLangOptions,
+      navMobileToggle: !!navMobileToggle,
+      navMobileMenu: !!navMobileMenu,
+      navMobileLinks: !!navMobileLinks,
+      navMobileOverlay: !!navMobileOverlay,
+      themeToggle: !!themeToggle,
+      themeToggleIcon: !!themeToggleIcon
+    });
+    
     var initialLanguage;
 
     // Log which elements are missing but don't block initialization

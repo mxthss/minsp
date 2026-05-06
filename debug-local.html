@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Local MinSp</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #1a1a1a; color: white; }
+    .debug-section { margin: 20px 0; padding: 15px; background: #2a2a2a; border-radius: 8px; }
+    .success { color: #4ade80; }
+    .error { color: #f87171; }
+    .warning { color: #fbbf24; }
+    .flag-test { width: 32px; height: 24px; border: 1px solid #444; margin: 5px; }
+    .stat-value { font-size: 24px; font-weight: bold; color: #3b82f6; }
+  </style>
+</head>
+<body>
+  <h1>🔍 Debug Local MinSp</h1>
+  
+  <div class="debug-section">
+    <h2>📁 Chargement des fichiers</h2>
+    <div id="file-status">Vérification...</div>
+  </div>
+
+  <div class="debug-section">
+    <h2>🇺🇸 Test des drapeaux</h2>
+    <div id="flag-test">
+      <img src="./assets/flags/flag-us.svg" class="flag-test" alt="US">
+      <img src="./assets/flags/flag-fr.svg" class="flag-test" alt="FR">
+      <img src="./assets/flags/flag-es.svg" class="flag-test" alt="ES">
+    </div>
+    <div id="flag-status">Test...</div>
+  </div>
+
+  <div class="debug-section">
+    <h2>📊 Test des statistiques</h2>
+    <div>
+      <span class="stat-value" id="total-models">0</span> modèles | 
+      <span class="stat-value" id="total-brands">0</span> marques | 
+      <span class="stat-value" id="official-images">0</span> images
+    </div>
+    <div id="stats-status">Test...</div>
+  </div>
+
+  <div class="debug-section">
+    <h2>🔧 Erreurs JavaScript</h2>
+    <div id="error-log">Aucune erreur détectée</div>
+  </div>
+
+  <!-- Test de chargement des données -->
+  <script src="./data/mice.js"></script>
+  <script>
+    console.log('[DEBUG] Test de chargement des données mice');
+    
+    function updateStatus(id, message, type = 'success') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.innerHTML = `<span class="${type}">${message}</span>`;
+      }
+    }
+
+    // Test des données mice
+    if (typeof mice !== 'undefined' && mice.length > 0) {
+      updateStatus('file-status', `✅ mice.js chargé - ${mice.length} produits`);
+      
+      // Test des statistiques
+      document.getElementById('total-models').textContent = mice.length;
+      document.getElementById('total-brands').textContent = new Set(mice.map(m => m.brand)).size;
+      document.getElementById('official-images').textContent = mice.filter(m => m.imageStatus === 'local').length;
+      updateStatus('stats-status', '✅ Statistiques mises à jour');
+    } else {
+      updateStatus('file-status', '❌ mice.js non chargé', 'error');
+    }
+  </script>
+
+  <!-- Test des drapeaux -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('[DEBUG] DOM chargé');
+      
+      const flagImages = document.querySelectorAll('.flag-test');
+      let loadedFlags = 0;
+      
+      flagImages.forEach(img => {
+        img.onload = function() {
+          loadedFlags++;
+          console.log('[DEBUG] Drapeau chargé:', img.src);
+        };
+        img.onerror = function() {
+          console.error('[DEBUG] Erreur chargement drapeau:', img.src);
+          updateStatus('flag-status', `❌ Erreur: ${img.alt} non trouvé`, 'error');
+        };
+      });
+
+      setTimeout(() => {
+        if (loadedFlags === flagImages.length) {
+          updateStatus('flag-status', `✅ ${loadedFlags}/${flagImages.length} drapeaux chargés`);
+        } else {
+          updateStatus('flag-status', `⚠️ ${loadedFlags}/${flagImages.length} drapeaux chargés`, 'warning');
+        }
+      }, 2000);
+    });
+  </script>
+
+  <!-- Capture des erreurs -->
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error('[DEBUG] Erreur JavaScript:', e.error);
+      const errorLog = document.getElementById('error-log');
+      errorLog.innerHTML += `<div class="error">❌ ${e.error.message}</div>`;
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+      console.error('[DEBUG] Erreur Promise:', e.reason);
+      const errorLog = document.getElementById('error-log');
+      errorLog.innerHTML += `<div class="error">❌ Promise rejetée: ${e.reason}</div>`;
+    });
+  </script>
+</body>
+</html>
