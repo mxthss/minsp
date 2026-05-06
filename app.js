@@ -26,6 +26,10 @@ if (typeof window.normalizeLanguageCode !== 'function') {
 (function () {
   "use strict";
 
+  console.log('[DEBUG] MinSp - Démarrage de l\'application');
+  console.log('[DEBUG] URL actuelle:', window.location.href);
+  console.log('[DEBUG] User Agent:', navigator.userAgent);
+
   // Système d'authentification utilisateur (localStorage)
   var UserAuth = (function() {
     var STORAGE_KEY = 'users';
@@ -3285,7 +3289,7 @@ if (typeof window.normalizeLanguageCode !== 'function') {
       renderCatalog();
       // Mettre à jour les statistiques après le chargement
       syncStats(mice);
-      console.log("MinSp : Catalogue chargé avec succès");
+      console.log("MinSp : Catalogue chargé avec succès -", mice.length, "produits trouvés");
     } else {
       console.error("MinSp Error : Les données 'mice' sont introuvables !");
     }

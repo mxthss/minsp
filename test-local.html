@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Local MinSp</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div style="padding: 20px; font-family: Arial, sans-serif;">
+    <h1>Test Local MinSp</h1>
+    <p>Vérification du chargement des scripts...</p>
+    <div id="test-results"></div>
+  </div>
+
+  <script>
+    console.log('[TEST] Page HTML chargée');
+    document.getElementById('test-results').innerHTML = '<p>✅ HTML chargé</p>';
+  </script>
+
+  <script src="./data/mice.js"></script>
+  <script>
+    console.log('[TEST] mice.js chargé:', typeof mice !== 'undefined' ? mice.length : 'non défini');
+    if (typeof mice !== 'undefined') {
+      document.getElementById('test-results').innerHTML += '<p>✅ mice.js chargé - ' + mice.length + ' produits</p>';
+    } else {
+      document.getElementById('test-results').innerHTML += '<p>❌ mice.js non chargé</p>';
+    }
+  </script>
+
+  <script src="./app.js"></script>
+  <script>
+    console.log('[TEST] app.js chargé');
+    setTimeout(function() {
+      document.getElementById('test-results').innerHTML += '<p>✅ Scripts chargés - Vérifiez la console</p>';
+    }, 1000);
+  </script>
+</body>
+</html>
