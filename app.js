@@ -3269,8 +3269,12 @@ if (typeof window.normalizeLanguageCode !== 'function') {
         handleRoute(routeToHandle, initialHash);
         console.log('[Route] Loaded catalog from URL:', routeToHandle);
       } else if (routeToHandle === '/') {
-        // Page d'accueil - mettre à jour les statistiques
-        syncStats(mice);
+        // Page d'accueil - mettre à jour les statistiques avec délai
+        setTimeout(function() {
+          if (typeof mice !== 'undefined' && mice.length > 0) {
+            syncStats(mice);
+          }
+        }, 100);
       }
     }
 
@@ -3279,6 +3283,8 @@ if (typeof window.normalizeLanguageCode !== 'function') {
     // Sécuriser le rendu initial du catalogue
     if (typeof mice !== 'undefined' && mice.length > 0) {
       renderCatalog();
+      // Mettre à jour les statistiques après le chargement
+      syncStats(mice);
       console.log("MinSp : Catalogue chargé avec succès");
     } else {
       console.error("MinSp Error : Les données 'mice' sont introuvables !");
