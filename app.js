@@ -2688,7 +2688,7 @@ if (typeof window.normalizeLanguageCode !== 'function') {
     }
 
     catalogGrid.setAttribute("aria-busy", "true");
-    syncStats(filteredMice);
+    syncStats(visibleMice);
 
     var catalogHTML = visibleMice.length
       ? visibleMice.map(function (mouse, index) {

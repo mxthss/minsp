@@ -368,6 +368,18 @@ body {
   backface-visibility: hidden;
 }
 
+.nav-lang-option img {
+  width: 32px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 3px;
+  transition: transform 0.15s ease;
+}
+
+.nav-lang-trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
 .nav-lang-trigger svg {
   width: 14px;
   height: 14px;
@@ -377,9 +389,6 @@ body {
   transition: transform 0.2s ease;
 }
 
-.nav-lang-trigger[aria-expanded="true"] svg {
-  transform: rotate(180deg);
-}
 
 .nav-lang-menu {
   position: absolute;

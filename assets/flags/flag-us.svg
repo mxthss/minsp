@@ -1,9 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" width="24" height="18">
-  <rect width="24" height="18" fill="#B22234"/>
-  <rect y="2" width="24" height="2" fill="white"/>
-  <rect y="5" width="24" height="2" fill="white"/>
-  <rect y="8" width="24" height="2" fill="white"/>
-  <rect y="11" width="24" height="2" fill="white"/>
-  <rect y="14" width="24" height="2" fill="white"/>
-  <rect width="10" height="10" fill="#3C3B6E"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="32" height="16">
+  <clipPath id="a">
+    <path d="M0 0v30h60V0z"/>
+  </clipPath>
+  <clipPath id="b">
+    <path d="M30 15v15H0V0h60v30zm0 0v15h30v-15z"/>
+  </clipPath>
+  <g clip-path="url(#a)">
+    <path d="M0 0h60v30H0z" fill="#B22234"/>
+    <g stroke="#fff" stroke-width="2">
+      <path d="M0 6h60M0 12h60M0 18h60M0 24h60M0 30h60" clip-path="url(#b)"/>
+    </g>
+    <path d="M0 0h30v15H0z" fill="#3C3B6E"/>
+    <g fill="#fff">
+      <path d="M3.5 3.8l.6 1.1.6 1.1.6-1.1L3.5 7.4l-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l4.9 7.4l-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l6.3 7.4-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l7.7 7.4-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l9.1 7.4-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l10.5 7.4-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l11.9 7.4-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l13.3 7.4-.6-1.1-.6 1.1-.6 1.1zm1.4 5.8l.6 1.1.6 1.1.6-1.1l14.6 7.4-.6-1.1-.6 1.1-.6 1.1z"/>
+    </g>
+  </g>
 </svg>
