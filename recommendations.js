@@ -1,471 +1,384 @@
-// MinSp Engine - Système de recommandation propriétaire
-// Base de données de solutions (souris) avec scoring intelligent
+// MinSp Engine v2.0 - Système de recommandation propriétaire
+// Utilise les données globales (window.MOUSE_DATA, KEYBOARD_DATA, PC_COMPONENT_DATA)
+// Plus de base de données interne : une seule source de vérité
 
-const mouseDatabase = [
-  {
-    id: 'logitech-gpro-x',
-    name: 'Logitech G Pro X Superlight',
-    brand: 'Logitech',
-    price: 149,
-    category: 'gaming',
-    weight: 'light',
-    wireless: true,
-    handSize: 'medium',
-    gripStyle: ['claw', 'fingertip'],
-    dpi: 25600,
-    pollingRate: 1000,
-    rgb: false,
-    buttons: 5,
-    description: 'Souris gaming ultra-légère sans fil pour e-sports.',
-    actionPlan: 'Parfaite pour FPS compétitifs. Batterie 70h. Capteur HERO 25K.',
-    whyForYou: 'Légèreté extrême + performance pro sans fil.',
-    tags: ['fps', 'competitive', 'wireless', 'lightweight']
-  },
-  {
-    id: 'razer-deathadder-v3',
-    name: 'Razer DeathAdder V3 Pro',
-    brand: 'Razer',
-    price: 159,
-    category: 'gaming',
-    weight: 'medium',
-    wireless: true,
-    handSize: 'large',
-    gripStyle: ['palm', 'claw'],
-    dpi: 30000,
-    pollingRate: 1000,
-    description: 'Souris ergonomique sans fil pour gaming.',
-    actionPlan: 'Confort maximal pour sessions longues. Capteur Focus Pro 30K.',
-    whyForYou: 'Ergonomie premium + capteur ultra-précis.',
-    tags: ['ergonomic', 'moba', 'wireless', 'palm-grip']
-  },
-  {
-    id: 'logitech-g502',
-    name: 'Logitech G502 HERO',
-    brand: 'Logitech',
-    price: 79,
-    category: 'gaming',
-    weight: 'heavy',
-    wireless: false,
-    handSize: 'large',
-    gripStyle: ['palm'],
-    dpi: 25600,
-    pollingRate: 1000,
-    description: 'Souris gaming filaire avec 11 boutons programmables.',
-    actionPlan: 'MMO/MOBA avec macros. Poids ajustable.',
-    whyForYou: 'Polyvalence extrême + personnalisation totale.',
-    tags: ['mmo', 'moba', 'wired', 'heavy', 'many-buttons']
-  },
-  {
-    id: 'steelseries-rival-3',
-    name: 'SteelSeries Rival 3',
-    brand: 'SteelSeries',
-    price: 29,
-    category: 'gaming',
-    weight: 'light',
-    wireless: false,
-    handSize: 'small',
-    gripStyle: ['claw', 'fingertip'],
-    dpi: 8500,
-    pollingRate: 1000,
-    description: 'Souris gaming abordable et légère.',
-    actionPlan: 'Entrée de gamme performante. Capteur TrueMove Core.',
-    whyForYou: 'Rapport qualité/prix imbattable pour débuter.',
-    tags: ['budget', 'fps', 'wired', 'starter']
-  },
-  {
-    id: 'glorious-model-o',
-    name: 'Glorious Model O',
-    brand: 'Glorious',
-    price: 59,
-    category: 'gaming',
-    weight: 'light',
-    wireless: false,
-    handSize: 'medium',
-    gripStyle: ['palm', 'claw', 'fingertip'],
-    dpi: 12000,
-    pollingRate: 1000,
-    description: 'Souris honeycomb ultra-légère pour gaming.',
-    actionPlan: 'Design perforé pour ventilation. Câble paracorde.',
-    whyForYou: 'Légèreté + style unique honeycomb.',
-    tags: ['fps', 'lightweight', 'wired', 'rgb']
-  },
-  {
-    id: 'logitech-mx-master-3s',
-    name: 'Logitech MX Master 3S',
-    brand: 'Logitech',
-    price: 99,
-    category: 'office',
-    weight: 'heavy',
-    wireless: true,
-    handSize: 'large',
-    gripStyle: ['palm'],
-    dpi: 8000,
-    pollingRate: 125,
-    description: 'Souris bureautique premium pour productivité.',
-    actionPlan: 'Scroll magnétique, boutons programmables, multi-device.',
-    whyForYou: 'Productivité maximale + confort bureautique.',
-    tags: ['office', 'productivity', 'wireless', 'ergonomic', 'professional']
-  },
-  {
-    id: 'microsoft-sculpt',
-    name: 'Microsoft Sculpt Ergonomic',
-    brand: 'Microsoft',
-    price: 59,
-    category: 'office',
-    weight: 'medium',
-    wireless: true,
-    handSize: 'medium',
-    gripStyle: ['palm'],
-    dpi: 1000,
-    pollingRate: 125,
-    description: 'Souris ergonomique en forme de galet.',
-    actionPlan: 'Réduit la tension du poignet. Design vertical.',
-    whyForYou: 'Confort ergonomique pour longues journées de travail.',
-    tags: ['office', 'ergonomic', 'wireless', 'health', 'comfort']
-  },
-  {
-    id: 'logitech-pebble',
-    name: 'Logitech Pebble M350',
-    brand: 'Logitech',
-    price: 29,
-    category: 'office',
-    weight: 'light',
-    wireless: true,
-    handSize: 'small',
-    gripStyle: ['claw', 'fingertip'],
-    dpi: 1000,
-    pollingRate: 125,
-    description: 'Souris portable silencieuse et design.',
-    actionPlan: 'Clics silencieux, forme plate pour transport.',
-    whyForYou: 'Style minimaliste + portabilité maximale.',
-    tags: ['office', 'portable', 'wireless', 'silent', 'travel']
-  },
-  {
-    id: 'razer-viper-v2',
-    name: 'Razer Viper V2 Pro',
-    brand: 'Razer',
-    price: 149,
-    category: 'gaming',
-    weight: 'light',
-    wireless: true,
-    handSize: 'medium',
-    gripStyle: ['claw', 'fingertip'],
-    dpi: 30000,
-    pollingRate: 1000,
-    description: 'Souris esports sans fil la plus légère.',
-    actionPlan: '58g seulement. Capteur Focus Pro 30K. 80h batterie.',
-    whyForYou: 'Performance extrême + légèreté record.',
-    tags: ['fps', 'esports', 'wireless', 'ultralight', 'competitive']
-  },
-  {
-    id: 'zowie-ec2-c',
-    name: 'Zowie EC2-C',
-    brand: 'Zowie',
-    price: 69,
-    category: 'gaming',
-    weight: 'medium',
-    wireless: false,
-    handSize: 'medium',
-    gripStyle: ['palm', 'claw'],
-    dpi: 3200,
-    pollingRate: 1000,
-    description: 'Souris FPS professionnelle plug-and-play.',
-    actionPlan: 'Aucun software nécessaire. Forme ergonomique pro.',
-    whyForYou: 'Simplicité pro + forme éprouvée par les pros.',
-    tags: ['fps', 'professional', 'wired', 'no-software', 'esports']
-  },
-  {
-    id: 'logitech-g305',
-    name: 'Logitech G305 Lightspeed',
-    brand: 'Logitech',
-    price: 49,
-    category: 'gaming',
-    weight: 'light',
-    wireless: true,
-    handSize: 'small',
-    gripStyle: ['claw', 'fingertip'],
-    dpi: 12000,
-    pollingRate: 1000,
-    description: 'Souris gaming sans fil abordable.',
-    actionPlan: '250h batterie. Capteur HERO. Récepteur USB.',
-    whyForYou: 'Sans fil accessible + autonomie record.',
-    tags: ['budget', 'wireless', 'fps', 'long-battery']
-  },
-  {
-    id: 'apple-magic-mouse',
-    name: 'Apple Magic Mouse',
-    brand: 'Apple',
-    price: 79,
-    category: 'office',
-    weight: 'light',
-    wireless: true,
-    handSize: 'small',
-    gripStyle: ['fingertip'],
-    dpi: 1300,
-    pollingRate: 125,
-    description: 'Souris multi-touch design pour Mac.',
-    actionPlan: 'Gestes tactiles, design minimaliste, intégration macOS.',
-    whyForYou: 'Intégration parfaite avec écosystème Apple.',
-    tags: ['office', 'mac', 'wireless', 'touch', 'design']
+/**
+ * Extrait un poids en grammes depuis une chaîne (ex: "63 g", "moins de 63 g", "89 g")
+ */
+function extractWeightGrams(weightStr) {
+  if (!weightStr || typeof weightStr !== 'string') return null;
+  var match = weightStr.match(/(\d+(?:[.,]\d+)?)/);
+  return match ? parseFloat(match[1].replace(',', '.')) : null;
+}
+
+/**
+ * Extrait un DPI max depuis une chaîne (ex: "100 - 25 600", "25600", "8 000")
+ */
+function extractDpiMax(dpiStr) {
+  if (!dpiStr || typeof dpiStr !== 'string') return null;
+  var numbers = dpiStr.replace(/\s/g, '').match(/(\d+)/g);
+  if (!numbers || numbers.length === 0) return null;
+  return Math.max.apply(null, numbers.map(Number));
+}
+
+/**
+ * Extrait un polling rate en Hz depuis une chaîne (ex: "1000 Hz", "8000")
+ */
+function extractPollingHz(pollingStr) {
+  if (!pollingStr || typeof pollingStr !== 'string') return null;
+  var match = pollingStr.match(/(\d+)/);
+  return match ? parseInt(match[1], 10) : null;
+}
+
+/**
+ * Détermine si le produit est sans fil à partir de typeValue ou specMap.Type
+ */
+function isWirelessProduct(product) {
+  var typeValue = product.typeValue || '';
+  var specType = (product.specMap && product.specMap.Type) || '';
+  var combined = (typeValue + ' ' + specType).toLowerCase();
+  return /sans.?fil|wireless|lightspeed|bluetooth|2\.4\s*ghz|logi.?bolt|rf/i.test(combined);
+}
+
+/**
+ * Classe le poids en catégorie
+ */
+function weightCategory(weightG) {
+  if (weightG === null) return 'unknown';
+  if (weightG < 70) return 'ultralight';
+  if (weightG < 85) return 'light';
+  if (weightG <= 105) return 'medium';
+  return 'heavy';
+}
+
+/**
+ * Détermine le profil d'usage principal d'un produit à partir de segment / specMap
+ */
+function getUsageCategory(product) {
+  var segment = (product.segment || '').toLowerCase();
+  var name = (product.name || '').toLowerCase();
+  var combined = segment + ' ' + name;
+
+  if (/gaming|esport|fps|mmo|moba|competitive|g pro|g502|viper|deathadder|basilisk|superlight|model [od]|ec[123]|fk|za|xm[12]|scimitar|naga/i.test(combined)) {
+    return 'gaming';
   }
-];
-
-// Système de scoring MinSp Engine
-function calculateMatch(userProfile, mouse) {
-  let score = 0;
-  const maxScore = 100;
-  const details = [];
-
-  // 1. Budget matching (0-25 pts)
-  const userBudget = parseInt(userProfile.budget) || 100;
-  const priceDiff = userBudget - mouse.price;
-  
-  if (priceDiff >= 0) {
-    // Dans le budget
-    const budgetScore = Math.min(25, 15 + (priceDiff / userBudget) * 10);
-    score += budgetScore;
-    details.push(`✅ Budget: ${mouse.price}$ (dans limite ${userBudget}$)`);
-  } else {
-    // Hors budget
-    const overBudget = Math.abs(priceDiff) / userBudget;
-    if (overBudget <= 0.1) {
-      score += 15; // 10% au-dessus toléré
-      details.push(`⚠️ Budget: +10% (${mouse.price}$ vs ${userBudget}$)`);
-    } else if (overBudget <= 0.2) {
-      score += 8; // 20% au-dessus
-      details.push(`⚠️ Budget: +20% (${mouse.price}$ vs ${userBudget}$)`);
-    } else {
-      details.push(`❌ Budget: trop cher (${mouse.price}$ vs ${userBudget}$)`);
-    }
+  if (/bureautique|office|productivit|mx master|mx anywhere|signature|pebble|m[123]\d|m705|lift|vertical|ergo|triathlon/i.test(combined)) {
+    return 'office';
   }
+  return 'versatile';
+}
 
-  // 2. Usage/Category matching (0-30 pts)
-  const usage = (userProfile.usage || '').toLowerCase();
-  const isGaming = mouse.category === 'gaming';
-  const isOffice = mouse.category === 'office';
-  
+/**
+ * Charge dynamiquement les produits depuis les données globales
+ * Fonctionne côté navigateur (window) et côté serveur (données passées en argument)
+ */
+function loadProductData(externalData) {
+  if (Array.isArray(externalData) && externalData.length > 0) {
+    return externalData;
+  }
+  if (typeof window !== 'undefined') {
+    var mice = Array.isArray(window.MOUSE_DATA) ? window.MOUSE_DATA : [];
+    var keyboards = Array.isArray(window.KEYBOARD_DATA) ? window.KEYBOARD_DATA : [];
+    var pcComponents = Array.isArray(window.PC_COMPONENT_DATA) ? window.PC_COMPONENT_DATA : [];
+    return mice.concat(keyboards).concat(pcComponents);
+  }
+  return [];
+}
+
+/**
+ * Système de scoring dynamique MinSp Engine v2.0
+ * S'adapte aux propriétés réellement présentes dans les données (specMap)
+ */
+function calculateMatch(userProfile, product) {
+  var score = 0;
+  var maxScore = 0;
+  var details = [];
+
+  var specMap = product.specMap || {};
+  var weightG = extractWeightGrams(specMap.Poids);
+  var dpiMax = extractDpiMax(specMap.DPI);
+  var pollingHz = extractPollingHz(specMap['Polling Rate']);
+  var wireless = isWirelessProduct(product);
+  var usageCat = getUsageCategory(product);
+  var shapeValue = (product.shapeValue || specMap.Forme || '').toLowerCase();
+  var wCat = weightCategory(weightG);
+
+  // 1. Usage / Segment matching (0-30 pts)
+  maxScore += 30;
+  var usage = (userProfile.usage || '').toLowerCase();
   if (usage.includes('gaming') || usage.includes('fps') || usage.includes('esport')) {
-    if (isGaming) {
+    if (usageCat === 'gaming') {
       score += 30;
       details.push('✅ Gaming: parfait pour compétition');
+    } else if (usageCat === 'versatile') {
+      score += 15;
+      details.push('⚠️ Gaming: polyvalent, utilisable');
     } else {
       details.push('❌ Gaming: souris bureautique non adaptée');
     }
   } else if (usage.includes('bureau') || usage.includes('office') || usage.includes('travail')) {
-    if (isOffice) {
+    if (usageCat === 'office') {
       score += 30;
       details.push('✅ Bureautique: optimisée productivité');
+    } else if (usageCat === 'versatile') {
+      score += 20;
+      details.push('✅ Bureautique: polyvalent, compatible');
     } else {
-      score += 15; // Gaming peut faire office
-      details.push('⚠️ Bureautique: gaming utilisable');
+      score += 12;
+      details.push('⚠️ Bureautique: gaming utilisable mais pas optimal');
     }
   } else if (usage.includes('mixte') || usage.includes('polyvalent')) {
-    score += isGaming ? 25 : 20;
+    score += usageCat === 'versatile' ? 28 : usageCat === 'gaming' ? 22 : 20;
     details.push('✅ Mixte: adaptée aux deux usages');
   } else {
-    score += 20; // Default
+    score += 20;
     details.push('✅ Usage: compatible');
   }
 
-  // 3. Wireless preference (0-15 pts)
-  const wirelessPref = (userProfile.wireless || '').toLowerCase();
-  
+  // 2. Wireless preference (0-15 pts)
+  maxScore += 15;
+  var wirelessPref = (userProfile.wireless || '').toLowerCase();
   if (wirelessPref === 'yes' || wirelessPref === 'oui' || wirelessPref === 'true') {
-    if (mouse.wireless) {
+    if (wireless) {
       score += 15;
       details.push('✅ Sans fil: correspond à votre préférence');
     } else {
       details.push('❌ Sans fil: filaire non souhaité');
     }
   } else if (wirelessPref === 'no' || wirelessPref === 'non' || wirelessPref === 'false') {
-    if (!mouse.wireless) {
+    if (!wireless) {
       score += 15;
       details.push('✅ Filaire: correspond à votre préférence');
     } else {
-      score += 5; // Sans fil peut être utilisé filaire
-      details.push('⚠️ Sans fil: mais fonctionne en filaire');
+      score += 5;
+      details.push('⚠️ Sans fil: mais peut fonctionner en filaire');
     }
   } else {
-    // Pas de préférence
     score += 10;
     details.push('✅ Connectivité: indifférent');
   }
 
-  // 4. Hand size matching (0-15 pts)
-  const handSize = (userProfile.handSize || '').toLowerCase();
-  
-  if (handSize && handSize !== 'any') {
-    if (mouse.handSize === handSize) {
-      score += 15;
-      details.push(`✅ Taille main: ${handSize} correspond`);
-    } else if (
-      (handSize === 'medium' && mouse.handSize === 'large') ||
-      (handSize === 'small' && mouse.handSize === 'medium')
-    ) {
-      score += 8; // Taille proche
-      details.push(`⚠️ Taille main: proche (${mouse.handSize})`);
-    } else {
-      details.push(`❌ Taille main: mismatch (${handSize} vs ${mouse.handSize})`);
-    }
-  } else {
-    score += 10;
-    details.push('✅ Taille: universelle');
-  }
-
-  // 5. Grip style matching (0-15 pts)
-  const gripStyle = (userProfile.gripStyle || '').toLowerCase();
-  
+  // 3. Shape / Grip matching (0-15 pts)
+  maxScore += 15;
+  var gripStyle = (userProfile.gripStyle || '').toLowerCase();
   if (gripStyle && gripStyle !== 'any') {
-    if (mouse.gripStyle.includes(gripStyle)) {
+    if (gripStyle === 'palm' && shapeValue.includes('ergonomique')) {
       score += 15;
-      details.push(`✅ Prise en main: ${gripStyle} supportée`);
-    } else if (mouse.gripStyle.length >= 2) {
-      score += 8; // Polyvalent
-      details.push(`⚠️ Prise: ${gripStyle} possible mais pas optimal`);
+      details.push('✅ Prise palm: ergonomique idéale');
+    } else if (gripStyle === 'claw' && (wCat === 'ultralight' || wCat === 'light')) {
+      score += 15;
+      details.push('✅ Prise claw: léger et réactif');
+    } else if (gripStyle === 'fingertip' && (shapeValue.includes('symétrique') || wCat === 'ultralight')) {
+      score += 15;
+      details.push('✅ Prise fingertip: symétrique et léger');
+    } else if (gripStyle === 'palm' && shapeValue.includes('symétrique')) {
+      score += 8;
+      details.push('⚠️ Prise palm: symétrique acceptable');
+    } else if (gripStyle === 'claw') {
+      score += 8;
+      details.push('⚠️ Prise claw: compatible');
     } else {
-      details.push(`❌ Prise: ${gripStyle} non supportée`);
+      score += 4;
+      details.push('⚠️ Prise: pas optimal pour ' + gripStyle);
     }
   } else {
     score += 10;
     details.push('✅ Prise: adaptable');
   }
 
-  // 6. Weight matching (0-10 pts)
-  const weight = (userProfile.weight || '').toLowerCase();
-  if (weight && weight !== 'any') {
-    const mouseWeight = mouse.weight.toLowerCase();
-    const weightMap = {
+  // 4. Weight matching (0-15 pts)
+  maxScore += 15;
+  var weightPref = (userProfile.weight || '').toLowerCase();
+  if (weightPref && weightPref !== 'any') {
+    var weightMatchMap = {
       'ultralight': ['ultralight'],
       'light': ['light', 'ultralight'],
       'medium': ['medium', 'light'],
       'heavy': ['heavy', 'medium']
     };
-    
-    if (weightMap[weight] && weightMap[weight].includes(mouseWeight)) {
-      score += 10;
-      details.push(`✅ Poids: ${mouse.weight} correspond`);
+    if (weightMatchMap[weightPref] && weightMatchMap[weightPref].indexOf(wCat) !== -1) {
+      score += 15;
+      details.push('✅ Poids: ' + (specMap.Poids || wCat) + ' correspond');
+    } else if (wCat !== 'unknown') {
+      score += 5;
+      details.push('⚠️ Poids: ' + (specMap.Poids || wCat) + ' vs ' + weightPref);
     } else {
-      details.push(`⚠️ Poids: ${mouse.weight} vs ${weight}`);
+      score += 5;
+      details.push('⚠️ Poids: non spécifié');
     }
   } else {
-    score += 5;
+    score += 10;
     details.push('✅ Poids: indifférent');
   }
 
-  // 7. Brand matching (0-15 pts)
-  const brand = (userProfile.brand || '').toLowerCase();
-  if (brand && brand !== 'any') {
-    if (mouse.brand.toLowerCase() === brand) {
-      score += 15;
-      details.push(`✅ Marque: ${mouse.brand} préférée`);
+  // 5. DPI / Precision matching (0-10 pts)
+  maxScore += 10;
+  var usageForDpi = (userProfile.usage || '').toLowerCase();
+  if (dpiMax !== null) {
+    if (usageForDpi.includes('fps') || usageForDpi.includes('esport')) {
+      if (dpiMax >= 16000) {
+        score += 10;
+        details.push('✅ DPI: ' + specMap.DPI + ' (haute précision FPS)');
+      } else if (dpiMax >= 8000) {
+        score += 7;
+        details.push('✅ DPI: ' + specMap.DPI + ' (suffisant pour FPS)');
+      } else {
+        score += 3;
+        details.push('⚠️ DPI: ' + specMap.DPI + ' (bas pour FPS)');
+      }
+    } else if (usageForDpi.includes('design') || usageForDpi.includes('créatif')) {
+      if (dpiMax >= 8000) {
+        score += 10;
+        details.push('✅ DPI: ' + specMap.DPI + ' (précision design)');
+      } else {
+        score += 5;
+        details.push('⚠️ DPI: ' + specMap.DPI);
+      }
     } else {
-      details.push(`⚠️ Marque: ${mouse.brand} (préf: ${brand})`);
+      score += 7;
+      details.push('✅ DPI: ' + specMap.DPI);
+    }
+  } else {
+    score += 5;
+    details.push('✅ DPI: non spécifié');
+  }
+
+  // 6. Brand matching (0-10 pts)
+  maxScore += 10;
+  var brand = (userProfile.brand || '').toLowerCase();
+  if (brand && brand !== 'any') {
+    if (product.brand && product.brand.toLowerCase().includes(brand)) {
+      score += 10;
+      details.push('✅ Marque: ' + product.brand + ' préférée');
+    } else {
+      details.push('⚠️ Marque: ' + (product.brand || '?') + ' (préf: ' + brand + ')');
     }
   } else {
     score += 5;
     details.push('✅ Marque: indifférent');
   }
 
-  // 8. RGB matching (0-10 pts)
-  const rgb = (userProfile.rgb || '').toLowerCase();
-  if (rgb && rgb !== 'any') {
-    const hasRgb = mouse.tags && mouse.tags.includes('rgb');
-    if (rgb === 'yes' && hasRgb) {
-      score += 10;
-      details.push('✅ RGB: présent');
-    } else if (rgb === 'no' && !hasRgb) {
-      score += 10;
-      details.push('✅ Sans RGB: design simple');
+  // 7. Polling rate matching (0-5 pts)
+  maxScore += 5;
+  if (pollingHz !== null) {
+    if (usageForDpi.includes('fps') || usageForDpi.includes('esport')) {
+      if (pollingHz >= 4000) {
+        score += 5;
+        details.push('✅ Polling: ' + pollingHz + ' Hz (compétitif)');
+      } else if (pollingHz >= 1000) {
+        score += 4;
+        details.push('✅ Polling: ' + pollingHz + ' Hz (standard gaming)');
+      } else {
+        score += 2;
+        details.push('⚠️ Polling: ' + pollingHz + ' Hz (bas pour gaming)');
+      }
     } else {
-      details.push(`⚠️ RGB: mismatch (préf: ${rgb})`);
+      score += 3;
+      details.push('✅ Polling: ' + pollingHz + ' Hz');
     }
   } else {
-    score += 5;
-    details.push('✅ RGB: indifférent');
+    score += 3;
+    details.push('✅ Polling: non spécifié');
   }
 
-  // 9. Buttons matching (0-10 pts)
-  const buttons = parseInt(userProfile.buttons) || 0;
-  if (buttons > 0) {
-    if (mouse.buttons >= buttons) {
-      score += 10;
-      details.push(`✅ Boutons: ${mouse.buttons} ≥ ${buttons}`);
-    } else if (mouse.buttons >= buttons - 2) {
-      score += 5;
-      details.push(`⚠️ Boutons: ${mouse.buttons} proche de ${buttons}`);
-    } else {
-      details.push(`❌ Boutons: ${mouse.buttons} < ${buttons}`);
-    }
-  } else {
-    score += 5;
-    details.push('✅ Boutons: indifférent');
-  }
+  var rawPercentage = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
+  var finalScore = Math.min(rawPercentage, 100);
 
-  // Normaliser le score
-  const finalScore = Math.min(Math.round(score), 100);
-  
   return {
     score: finalScore,
     details: details,
-    matchLevel: finalScore >= 90 ? 'Excellent' : 
-                finalScore >= 75 ? 'Très bon' : 
-                finalScore >= 60 ? 'Bon' : 
+    matchLevel: finalScore >= 90 ? 'Excellent' :
+                finalScore >= 75 ? 'Très bon' :
+                finalScore >= 60 ? 'Bon' :
                 finalScore >= 40 ? 'Moyen' : 'Faible'
   };
 }
 
-// Fonction principale du MinSp Engine
-async function getMinSpRecommendation(userProfile, miceData) {
-  // Simuler un temps d'analyse (800ms)
-  await new Promise(resolve => setTimeout(resolve, 800));
-  
-  // Calculer les scores pour toutes les souris
-  const scoredMice = mouseDatabase.map(mouse => {
-    const match = calculateMatch(userProfile, mouse);
+/**
+ * Fonction principale du MinSp Engine v2.0
+ * @param {Object} userProfile - Profil utilisateur
+ * @param {Array} externalData - Données produits (optionnel, sinon utilise window global data)
+ */
+async function getMinSpRecommendation(userProfile, externalData) {
+  await new Promise(function(resolve) { setTimeout(resolve, 800); });
+
+  var allProducts = loadProductData(externalData);
+
+  if (allProducts.length === 0) {
     return {
-      ...mouse,
+      bestChoice: null,
+      alternatives: [],
+      engine: 'MinSp Engine v2.0',
+      analysisTime: '800ms',
+      userProfile: userProfile,
+      error: 'Aucune donnée produit disponible'
+    };
+  }
+
+  var scoredProducts = allProducts.map(function(product) {
+    var match = calculateMatch(userProfile, product);
+    return {
+      product: product,
       matchScore: match.score,
       matchDetails: match.details,
       matchLevel: match.matchLevel
     };
   });
-  
-  // Trier par score décroissant
-  scoredMice.sort((a, b) => b.matchScore - a.matchScore);
-  
-  // Meilleur choix
-  const bestChoice = scoredMice[0];
-  
-  // Alternatives (2ème et 3ème)
-  const alternatives = scoredMice.slice(1, 3).map(m => ({
-    name: m.name,
-    price: `$${m.price}`,
-    matchScore: m.matchScore,
-    matchLevel: m.matchLevel
-  }));
-  
+
+  scoredProducts.sort(function(a, b) { return b.matchScore - a.matchScore; });
+
+  var best = scoredProducts[0];
+  if (!best) {
+    return {
+      bestChoice: null,
+      alternatives: [],
+      engine: 'MinSp Engine v2.0',
+      analysisTime: '800ms',
+      userProfile: userProfile,
+      error: 'Aucun produit compatible trouvé'
+    };
+  }
+
+  var bestProduct = best.product;
+  var review = bestProduct.review || {};
+  var buyReasons = review.buyReasons || [];
+
+  var alternatives = scoredProducts.slice(1, 4).map(function(s) {
+    return {
+      name: s.product.name,
+      brand: s.product.brand,
+      matchScore: s.matchScore,
+      matchLevel: s.matchLevel,
+      image: s.product.image || '',
+      typeValue: s.product.typeValue || '',
+      shapeValue: s.product.shapeValue || ''
+    };
+  });
+
   return {
     bestChoice: {
-      name: bestChoice.name,
-      price: bestChoice.price,
-      reason: `${bestChoice.whyForYou} (${bestChoice.matchScore}% compatibilité - ${bestChoice.matchLevel})`,
-      matchPercentage: bestChoice.matchScore,
-      matchLevel: bestChoice.matchLevel,
-      actionPlan: bestChoice.actionPlan,
-      details: bestChoice.matchDetails,
-      brand: bestChoice.brand,
-      category: bestChoice.category,
-      wireless: bestChoice.wireless
+      name: bestProduct.name,
+      brand: bestProduct.brand,
+      reason: best.matchDetails.slice(0, 3).join('. ') + ' (' + best.matchScore + '% compatibilité - ' + best.matchLevel + ')',
+      matchPercentage: best.matchScore,
+      matchLevel: best.matchLevel,
+      details: best.matchDetails,
+      image: bestProduct.image || '',
+      segment: bestProduct.segment || '',
+      typeValue: bestProduct.typeValue || '',
+      shapeValue: bestProduct.shapeValue || '',
+      wireless: isWirelessProduct(bestProduct),
+      buyReasons: buyReasons,
+      summary: bestProduct.summary || ''
     },
     alternatives: alternatives,
-    engine: 'MinSp Engine v1.0',
+    engine: 'MinSp Engine v2.0',
     analysisTime: '800ms',
     userProfile: userProfile
   };
 }
 
 module.exports = {
-  mouseDatabase,
   calculateMatch,
   getMinSpRecommendation
 };

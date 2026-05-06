@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,7 @@
   <script src="./theme-toggle.js"></script>
   <!-- Premium Sticky Nav -->
   <script src="./nav-header.js"></script>
+  <script src="./i18n.js"></script>
   <style>
     .login-page {
       display: flex;
@@ -167,7 +168,7 @@
     }
 
     .login-features li::before {
-      content: '✓';
+      content: 'âœ“';
       display: flex;
       align-items: center;
       justify-content: center;
@@ -307,11 +308,11 @@
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="fr" data-flag="fi-fr" aria-selected="false">
               <span class="fi fi-fr" aria-hidden="true"></span>
-              <span>Français (FR)</span>
+              <span>FranÃ§ais (FR)</span>
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="es" data-flag="fi-es" aria-selected="false">
               <span class="fi fi-es" aria-hidden="true"></span>
-              <span>Español (ES)</span>
+              <span>EspaÃ±ol (ES)</span>
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="de" data-flag="fi-de" aria-selected="false">
               <span class="fi fi-de" aria-hidden="true"></span>
@@ -323,7 +324,7 @@
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="pt" data-flag="fi-pt" aria-selected="false">
               <span class="fi fi-pt" aria-hidden="true"></span>
-              <span>Português (PT)</span>
+              <span>PortuguÃªs (PT)</span>
             </button>
           </div>
         </div>
@@ -331,13 +332,9 @@
       </div>
     </div>
   </nav>
-
-  <!-- Google Translate element (outside nav to avoid blocking clicks) -->
-  <div id="google_translate_element" style="display:none;position:absolute;left:-9999px;"></div>
-
-  <div class="login-page">
+<div class="login-page">
     <div class="login-container">
-      <a href="index.html" class="login-back" data-i18n="backToHome">← Back to home</a>
+      <a href="index.html" class="login-back" data-i18n="backToHome">â† Back to home</a>
 
       <div class="login-card">
         <div class="login-header">
@@ -392,7 +389,7 @@
         </div>
 
         <div class="login-features">
-          <h3 data-i18n="memberBenefits">✨ Member Benefits</h3>
+          <h3 data-i18n="memberBenefits">âœ¨ Member Benefits</h3>
           <ul>
             <li data-i18n="benefitAIRecommendations">AI-powered mouse recommendations</li>
             <li data-i18n="benefitSaveFavorites">Save favorites across sessions</li>
@@ -613,21 +610,6 @@
       });
     })();
   </script>
-
-  <style>
-    /* Google Translate Widget Styling */
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0 !important; }
-    .goog-te-gadget-simple {
-      background: transparent !important; border: none !important;
-      padding: 0 !important; margin: 0 !important;
-      font-family: inherit !important; font-size: 14px !important; color: #fff !important;
-    }
-    .goog-te-menu-value { color: #fff !important; }
-    .goog-te-menu-value span { color: #fff !important; border: none !important; }
-    .goog-te-gadget-icon, .goog-logo-link, .goog-te-gadget span { display: none !important; }
-  </style>
-
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+

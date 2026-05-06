@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinSp - AI Mouse Recommendation</title>
+  <meta name="description" content="Découvrez gratuitement votre plan personnalisé MinSp en 30 secondes. Rapide, précis et sans inscription !">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://minsp.onrender.com/ai-recommend.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="MinSp - AI Mouse Recommendation">
+  <meta property="og:description" content="Découvrez gratuitement votre plan personnalisé MinSp en 30 secondes. Rapide, précis et sans inscription !">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://minsp.onrender.com/ai-recommend.html">
+  <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MinSp - AI Mouse Recommendation">
+  <meta name="twitter:description" content="Découvrez gratuitement votre plan personnalisé MinSp en 30 secondes. Rapide, précis et sans inscription !">
+  <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
+  
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./theme-toggle.js"></script>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MinSp",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "AI-powered mouse recommendation tool that analyzes your preferences to find the perfect mouse for your needs.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the MinSp algorithm work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data stored when I use the recommendation tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate are the recommendations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .ai-page {
+      display: flex;
+      justify-content: center;
+      padding: 60px 40px 80px;
+      min-height: calc(100vh - 200px);
+    }
+
+    .ai-container {
+      width: 100%;
+      max-width: 700px;
+      background: rgba(8, 16, 32, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 20px;
+      padding: 48px;
+    }
+
+    .ai-page-header {
+      text-align: left;
+      margin-bottom: 48px;
+    }
+
+    .ai-page-header h1 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin: 0 0 8px;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .ai-page-header p {
+      font-size: 0.9rem;
+      color: var(--text-faint);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .ai-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-faint);
+      font-weight: 400;
+      font-size: 0.8rem;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ai-back-link:hover {
+      color: rgba(59, 130, 246, 0.9);
+    }
+
+    /* Form Card - Minimalist without border (container has it) */
+    .ai-form-card {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .ai-form-card h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 32px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(87, 184, 255, 0.2);
+    }
+
+    .ai-form-card h2 .icon {
+      font-size: 1.4rem;
+      filter: drop-shadow(0 0 8px rgba(87, 184, 255, 0.5));
+    }
+
+    /* Progress Bar */
+    .ai-progress-container {
+      margin-bottom: 24px;
+    }
+
+    .ai-progress-bar {
+      height: 8px;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .ai-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #8b5cf6 0%, #57b8ff 100%);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .ai-progress-text {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      text-align: right;
+      font-weight: 500;
+    }
+
+    .ai-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .ai-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .ai-form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .ai-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ai-form-group label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #57b8ff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ai-form-group label::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: #57b8ff;
+      border-radius: 50%;
+    }
+
+    .ai-form-group label .required {
+      color: #8b5cf6;
+      margin-left: 4px;
+      font-weight: 700;
+    }
+
+    .ai-form-group input {
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.3s ease;
+      cursor: text;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      width: 100%;
+    }
+
+    .ai-form-group input:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+    }
+
+    .ai-form-group input:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+    }
+
+    .ai-form-group input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+      opacity: 1;
+    }
+
+    .ai-form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding: 16px 48px 16px 20px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      width: 100%;
+      text-align: left;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+
+    .ai-form-group select:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+      background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+    }
+
+    .ai-form-group select:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+    }
+
+    .ai-form-group select option {
+      background: rgba(8, 16, 32, 0.98);
+      color: var(--text);
+      padding: 12px 16px;
+      font-weight: 500;
+      border: none;
+    }
+
+    .ai-form-group select option:hover,
+    .ai-form-group select option:checked {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(87, 184, 255, 0.2) 100%);
+      color: #fff;
+    }
+
+    .ai-form-hint {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      margin-top: 6px;
+      opacity: 0.7;
+    }
+
+    .ai-submit-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      margin-top: 24px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .ai-submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+    }
+
+    .ai-submit-btn:hover:not(:disabled)::before {
+      left: 100%;
+    }
+
+    .ai-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+      box-shadow: none;
+    }
+
+    .ai-submit-btn .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: ai-spin 1s linear infinite;
+    }
+
+    @keyframes ai-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Dynamic Counter */
+    .ai-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .ai-counter-icon {
+      font-size: 1rem;
+    }
+
+    .ai-counter-text {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    #ai-counter-number {
+      color: #57b8ff;
+      font-weight: 700;
+    }
+
+    /* Loading State */
+    .ai-loading-card {
+      background: linear-gradient(135deg, rgba(12, 22, 40, 0.95) 0%, rgba(8, 16, 32, 0.98) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 20px;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .ai-loading-card .ai-loading-spinner {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 24px;
+      border: 3px solid rgba(139, 92, 246, 0.15);
+      border-top-color: #8b5cf6;
+      border-right-color: #57b8ff;
+      border-radius: 50%;
+      animation: ai-spin 1.2s linear infinite;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-loading-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 12px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-loading-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* Skeleton Loading */
+    .ai-skeleton {
+      background: linear-gradient(90deg, rgba(139, 92, 246, 0.1) 25%, rgba(87, 184, 255, 0.15) 50%, rgba(139, 92, 246, 0.1) 75%);
+      background-size: 200% 100%;
+      animation: ai-skeleton-pulse 1.5s ease-in-out infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes ai-skeleton-pulse {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .ai-skeleton-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+      min-height: 300px;
+    }
+
+    .ai-skeleton-badge {
+      width: 120px;
+      height: 24px;
+      margin: 0 auto 20px;
+    }
+
+    .ai-skeleton-title {
+      width: 60%;
+      height: 32px;
+      margin: 0 auto 16px;
+    }
+
+    .ai-skeleton-price {
+      width: 80px;
+      height: 28px;
+      margin: 0 auto 20px;
+    }
+
+    .ai-skeleton-specs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .ai-skeleton-spec {
+      width: 80px;
+      height: 32px;
+    }
+
+    .ai-skeleton-button {
+      width: 200px;
+      height: 44px;
+      margin: 0 auto;
+    }
+
+    /* Results */
+    .ai-results-card {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .ai-results-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .ai-results-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 8px;
+    }
+
+    .ai-results-header p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* Best Choice */
+    .ai-best-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+    }
+
+    .ai-best-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #8b5cf6, #57b8ff);
+    }
+
+    .ai-best-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #57b8ff 100%);
+      border-radius: 20px;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    }
+
+    .ai-best-badge::before {
+      content: '🏆';
+    }
+
+    .ai-best-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 12px;
+      background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-best-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #57b8ff;
+      margin: 0 0 20px;
+      text-shadow: 0 0 20px rgba(87, 184, 255, 0.3);
+    }
+
+    .ai-best-specs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .ai-best-specs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: rgba(87, 184, 255, 0.1);
+      border: 1px solid rgba(87, 184, 255, 0.2);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #57b8ff;
+      font-weight: 500;
+    }
+
+    /* Affiliate Disclosure */
+    .ai-affiliate-disclosure {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255, 193, 7, 0.08);
+      border: 1px solid rgba(255, 193, 7, 0.2);
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .ai-disclosure-icon {
+      font-size: 1rem;
+    }
+
+    .ai-disclosure-text {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .ai-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+    }
+
+    .ai-view-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+    }
+
+    /* Match Score Badge */
+    .ai-match-score {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(22, 163, 74, 0.05) 100%);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 16px;
+    }
+
+    .ai-match-percentage {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+      text-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+    }
+
+    .ai-match-level {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #22c55e;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .ai-match-engine {
+      font-size: 0.7rem;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Action Plan */
+    .ai-action-card {
+      background: linear-gradient(135deg, rgba(87, 184, 255, 0.08) 0%, rgba(59, 130, 246, 0.03) 100%);
+      border: 1px solid rgba(87, 184, 255, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .ai-action-card h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #57b8ff;
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Expert Tip */
+    .ai-expert-tip {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .ai-expert-tip h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8b5cf6;
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ai-expert-tip p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Action Plan */
+    .ai-action-card p {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Analysis Details */
+    .ai-details-card {
+      background: rgba(10, 20, 38, 0.4);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .ai-details-card h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin: 0 0 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ai-details-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ai-details-list li {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      padding: 10px 12px;
+      background: rgba(139, 92, 246, 0.05);
+      border-left: 3px solid rgba(139, 92, 246, 0.4);
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Reason */
+    .ai-reason-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(124, 58, 237, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      min-height: 100px;
+    }
+
+    .ai-reason-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-reason-card p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Alternatives */
+    .ai-alternatives-card {
+      background: linear-gradient(135deg, rgba(10, 20, 38, 0.6) 0%, rgba(8, 16, 32, 0.4) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .ai-alternatives-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-alt-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ai-alt-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(87, 184, 255, 0.1);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .ai-alt-item:hover {
+      background: rgba(87, 184, 255, 0.08);
+      border-color: rgba(87, 184, 255, 0.25);
+      transform: translateX(4px);
+    }
+
+    .ai-alt-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ai-alt-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .ai-alt-desc {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+    }
+
+    .ai-alt-score {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.12);
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .ai-alt-price {
+      color: #57b8ff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* Trust Badges Section */
+    .ai-trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ai-trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .ai-trust-badge:hover {
+      background: rgba(139, 92, 246, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .ai-trust-icon {
+      font-size: 1.2rem;
+    }
+
+    .ai-trust-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* FAQ Section */
+    .ai-faq-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 24px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ai-faq-item {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .ai-faq-item:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      border-color: rgba(139, 92, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .ai-faq-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin: 0 0 12px;
+    }
+
+    .ai-faq-item p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Testimonials Section */
+    .ai-testimonials {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-testimonials h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 24px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-testimonials-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .ai-testimonial {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .ai-testimonial:hover {
+      background: rgba(139, 92, 246, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .ai-testimonial-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0 0 12px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .ai-testimonial-author {
+      font-size: 0.85rem;
+      color: #57b8ff;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    /* Methodology Section */
+    .ai-methodology-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-methodology-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-methodology-section > p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin: 0 0 20px;
+    }
+
+    .ai-methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .ai-methodology-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 8px;
+    }
+
+    .ai-methodology-icon {
+      font-size: 1.2rem;
+    }
+
+    .ai-methodology-text {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .ai-methodology-note {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      font-style: italic;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .ai-methodology-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Resources Section */
+    .ai-resources-section {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .ai-resources-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 20px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .ai-resource-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(87, 184, 255, 0.03) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .ai-resource-card:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.05) 100%);
+      border-color: rgba(139, 92, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .ai-resource-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .ai-resource-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin: 0 0 8px;
+    }
+
+    .ai-resource-card p {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      .ai-resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Share Button */
+    .ai-share-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      margin-top: 16px;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 12px;
+      color: #22c55e;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .ai-share-btn:hover {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%);
+      border-color: rgba(34, 197, 94, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+    }
+
+    /* Footer */
+    .ai-footer {
+      margin-top: 48px;
+      padding: 32px 0;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(87, 184, 255, 0.02) 100%);
+    }
+
+    .ai-footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .ai-footer h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #57b8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .ai-footer-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .ai-footer-links a:hover {
+      color: #57b8ff;
+    }
+
+    .ai-footer-section {
+      margin-top: 32px;
+    }
+
+    .ai-footer-section h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 12px;
+    }
+
+    .ai-footer-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 24px;
+    }
+
+    .ai-footer-categories a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .ai-footer-categories a:hover {
+      color: #57b8ff;
+    }
+
+    .ai-footer-authority {
+      margin-top: 32px;
+      padding: 16px 20px;
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .ai-footer-authority p {
+      color: var(--text-soft);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .ai-footer-sitemap {
+      margin-top: 24px;
+    }
+
+    .ai-footer-sitemap a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .ai-footer-sitemap a:hover {
+      opacity: 1;
+    }
+
+    /* New Recommendation Button */
+    .ai-new-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      margin-top: 24px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(87, 184, 255, 0.1) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 12px;
+      color: #8b5cf6;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .ai-new-btn:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(87, 184, 255, 0.2) 100%);
+      border-color: rgba(139, 92, 246, 0.5);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+    }
+
+    /* Error Card */
+    .ai-error-card {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(220, 38, 38, 0.05) 100%);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 16px;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .ai-error-icon {
+      font-size: 3.5rem;
+      margin: 0 0 16px;
+      filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4));
+    }
+
+    .ai-error-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ef4444;
+      margin: 0 0 12px;
+    }
+
+    .ai-error-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      color: var(--text-soft);
+      margin: 0 0 24px;
+    }
+
+    .ai-retry-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      color: #ef4444;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ai-retry-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+    }
+
+    /* Tooltips */
+    .ai-tooltip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 50%;
+      color: #8b5cf6;
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: help;
+      margin-left: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .ai-tooltip-icon:hover {
+      background: rgba(139, 92, 246, 0.3);
+      border-color: rgba(139, 92, 246, 0.5);
+    }
+
+    .ai-tooltip-content {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8, 16, 32, 0.98);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      white-space: nowrap;
+      max-width: 250px;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+
+    .ai-tooltip-content::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .ai-tooltip-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .ai-tooltip-wrapper:hover .ai-tooltip-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hidden utility */
+    .hidden {
+      display: none !important;
+    }
+    [data-theme="light"] .ai-container {
+      background: rgba(255, 255, 255, 0.6);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+    [data-theme="light"] .ai-form-card {
+      border-bottom-color: rgba(37, 99, 235, 0.15);
+    }
+    [data-theme="light"] .ai-form-group select option {
+      background: rgba(248, 250, 252, 0.98);
+    }
+    [data-theme="light"] .ai-form-group select option:hover,
+    [data-theme="light"] .ai-form-group select option:checked {
+      color: #1e293b;
+    }
+    [data-theme="light"] .ai-loading-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%);
+    }
+    [data-theme="light"] .ai-skeleton-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(37, 99, 235, 0.02) 100%);
+      border-color: rgba(139, 92, 246, 0.1);
+    }
+    [data-theme="light"] .ai-best-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(37, 99, 235, 0.03) 100%);
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+    [data-theme="light"] .ai-result-card {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: rgba(148, 163, 184, 0.18);
+    }
+    [data-theme="light"] .ai-back-link:hover {
+      color: rgba(37, 99, 235, 0.9);
+    }
+    [data-theme="light"] .ai-counter {
+      background: rgba(139, 92, 246, 0.03);
+      border-color: rgba(139, 92, 246, 0.08);
+    }
+    [data-theme="light"] #ai-counter-number {
+      color: #2563eb;
+    }
+    [data-theme="light"] .ai-form-group label {
+      color: #2563eb;
+    }
+    [data-theme="light"] .ai-form-group label::before {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body class="theme-tech">
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme" style="position:fixed;top:20px;right:20px;z-index:100;">🌙</button>
+  <div class="ai-page">
+    <div class="ai-container">
+      <a href="index.html" class="ai-back-link">← Back to catalog</a>
+
+      <div class="ai-page-header">
+        <h1>🤖 AI Mouse Recommendation</h1>
+        <p>Answer a few questions and let our AI find your perfect mouse</p>
+      </div>
+
+      <!-- Step 1: Form -->
+      <div class="ai-form-card" id="ai-form-section">
+        <h2><span class="icon">🎯</span> Your Preferences</h2>
+        
+        <!-- Progress Bar -->
+        <div class="ai-progress-container">
+          <div class="ai-progress-bar" id="ai-progress-bar">
+            <div class="ai-progress-fill" id="ai-progress-fill"></div>
+          </div>
+          <div class="ai-progress-text" id="ai-progress-text">0% completed</div>
+        </div>
+        
+        <form class="ai-form" id="ai-form">
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-budget">Budget <span class="required">*</span></label>
+              <select id="ai-budget" name="budget" required>
+                <option value="">Select...</option>
+                <option value="30">Under 30€</option>
+                <option value="50">Up to 50€</option>
+                <option value="80">Up to 80€</option>
+                <option value="100">Up to 100€</option>
+                <option value="150">Up to 150€</option>
+                <option value="200">Up to 200€</option>
+                <option value="300">Up to 300€</option>
+                <option value="400">Up to 400€</option>
+              </select>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-hand-size">Hand Size <span class="required">*</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">Measure from wrist to tip of middle finger</span>
+                </span>
+              </label>
+              <select id="ai-hand-size" name="handSize" required>
+                <option value="">Select...</option>
+                <option value="small">Small (&lt; 17cm)</option>
+                <option value="medium">Medium (17-19cm)</option>
+                <option value="large">Large (&gt; 19cm)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-usage">Primary Usage <span class="required">*</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">Helps us prioritize features like DPI, buttons, ergonomics</span>
+                </span>
+              </label>
+              <select id="ai-usage" name="usage" required>
+                <option value="">Select...</option>
+                <option value="gaming">Gaming</option>
+                <option value="fps">FPS Gaming</option>
+                <option value="moba">MOBA / MMO</option>
+                <option value="bureautique">Office / Work</option>
+                <option value="design">Design / Creative</option>
+                <option value="mix">Mixed Usage</option>
+              </select>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-wireless">Connection <span class="required">*</span></label>
+              <select id="ai-wireless" name="wireless" required>
+                <option value="">Select...</option>
+                <option value="true">Wireless only</option>
+                <option value="false">Wired only</option>
+                <option value="any">No preference</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-grip-style">Grip Style <span style="color: var(--text-faint); font-weight: 400;">(optional)</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">How you hold the mouse affects comfort and precision</span>
+                </span>
+              </label>
+              <select id="ai-grip-style" name="gripStyle">
+                <option value="">Any - I don't know / flexible</option>
+                <option value="palm">Palm Grip (whole hand on mouse)</option>
+                <option value="claw">Claw Grip (fingers arched)</option>
+                <option value="fingertip">Fingertip Grip (only fingers touch)</option>
+              </select>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-weight">Weight Preference <span style="color: var(--text-faint); font-weight: 400;">(optional)</span>
+                <span class="ai-tooltip-wrapper">
+                  <span class="ai-tooltip-icon">i</span>
+                  <span class="ai-tooltip-content">Lighter mice reduce fatigue, heavier mice offer stability</span>
+                </span>
+              </label>
+              <select id="ai-weight" name="weight">
+                <option value="">No preference</option>
+                <option value="ultralight">Ultra Light (&lt; 60g)</option>
+                <option value="light">Light (60-80g)</option>
+                <option value="medium">Medium (80-100g)</option>
+                <option value="heavy">Heavy (&gt; 100g)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-row">
+            <div class="ai-form-group">
+              <label for="ai-brand">Preferred Brand <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <select id="ai-brand" name="brand">
+                <option value="">Any brand</option>
+                <option value="Logitech">Logitech</option>
+                <option value="Razer">Razer</option>
+                <option value="SteelSeries">SteelSeries</option>
+                <option value="Zowie">Zowie</option>
+                <option value="Glorious">Glorious</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="Apple">Apple</option>
+              </select>
+            </div>
+            <div class="ai-form-group">
+              <label for="ai-rgb">RGB / Lighting <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+              <select id="ai-rgb" name="rgb">
+                <option value="">No preference</option>
+                <option value="yes">RGB required</option>
+                <option value="no">No RGB / Simple design</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ai-form-group">
+            <label for="ai-buttons">Minimum Buttons <span style="color: var(--text-faint); font-weight: 400;">(optional)</span></label>
+            <select id="ai-buttons" name="buttons">
+              <option value="">Any</option>
+              <option value="2">Basic (2 buttons)</option>
+              <option value="5">Standard (5-6 buttons)</option>
+              <option value="8">Advanced (8+ buttons)</option>
+              <option value="11">MMO (11+ buttons)</option>
+            </select>
+            <span class="ai-form-hint">For MMO/MOBA or macro programming needs</span>
+          </div>
+
+          <button type="submit" class="ai-submit-btn" id="ai-submit-btn">
+            <span>✨</span>
+            Get My Recommendation
+          </button>
+          
+          <!-- Dynamic Counter -->
+          <div class="ai-counter" id="ai-counter">
+            <span class="ai-counter-icon">📊</span>
+            <span class="ai-counter-text">Déjà plus de <span id="ai-counter-number">0</span> analyses générées cette semaine</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 2: Loading -->
+      <div class="ai-loading-card hidden" id="ai-loading-section">
+        <div class="ai-loading-spinner"></div>
+        <h3>Analyzing your profile...</h3>
+        <p>Our AI is comparing your needs with our database of mice</p>
+        
+        <!-- Skeleton Loading -->
+        <div class="ai-skeleton-card">
+          <div class="ai-skeleton ai-skeleton-badge"></div>
+          <div class="ai-skeleton ai-skeleton-title"></div>
+          <div class="ai-skeleton ai-skeleton-price"></div>
+          <div class="ai-skeleton-specs">
+            <div class="ai-skeleton ai-skeleton-spec"></div>
+            <div class="ai-skeleton ai-skeleton-spec"></div>
+            <div class="ai-skeleton ai-skeleton-spec"></div>
+          </div>
+          <div class="ai-skeleton ai-skeleton-button"></div>
+        </div>
+      </div>
+
+      <!-- Step 3: Results -->
+      <div class="ai-results-card hidden" id="ai-results-section">
+        <!-- Affiliate Disclosure -->
+        <div class="ai-affiliate-disclosure">
+          <span class="ai-disclosure-icon">ℹ️</span>
+          <span class="ai-disclosure-text">MinSp est soutenu par ses lecteurs. Nous pouvons percevoir une commission sur les achats effectués via nos liens.</span>
+        </div>
+        
+        <div class="ai-results-header">
+          <h2>🎉 Your Perfect Match</h2>
+          <p>Based on your preferences, here's what we recommend</p>
+        </div>
+
+        <div id="ai-results-content">
+          <!-- Results injected here -->
+        </div>
+
+        <button type="button" class="ai-new-btn" id="ai-new-btn">
+          <span>🔄</span>
+          Get another recommendation
+        </button>
+
+        <button type="button" class="ai-share-btn" id="ai-share-btn">
+          <span>📤</span>
+          Partager mon profil
+        </button>
+
+        <!-- Dynamic Resource Suggestions -->
+        <div class="ai-resources-section" id="ai-resources-section">
+          <h2>📚 Pour aller plus loin avec votre profil</h2>
+          <div class="ai-resources-grid" id="ai-resources-grid">
+            <!-- Dynamic cards injected here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Error -->
+      <div class="ai-error-card hidden" id="ai-error-section">
+        <div class="ai-error-icon">⚠️</div>
+        <h3>Oops! Something went wrong</h3>
+        <p id="ai-error-message">We couldn't get a recommendation. Please try again.</p>
+        <button type="button" class="ai-retry-btn" id="ai-error-btn">
+          <span>🔄</span>
+          Try Again
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Badges Section -->
+  <div class="ai-page">
+    <div class="ai-container">
+      <div class="ai-trust-badges">
+        <div class="ai-trust-badge">
+          <span class="ai-trust-icon">⚡</span>
+          <span class="ai-trust-text">Algorithme Rapide</span>
+        </div>
+        <div class="ai-trust-badge">
+          <span class="ai-trust-icon">🔒</span>
+          <span class="ai-trust-text">Données Sécurisées</span>
+        </div>
+        <div class="ai-trust-badge">
+          <span class="ai-trust-icon">🎯</span>
+          <span class="ai-trust-text">Expertise MinSp</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section - Always visible at bottom -->
+  <div class="ai-page">
+    <div class="ai-container">
+      <div class="ai-faq-section" id="ai-faq-section">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="ai-faq-list">
+          <div class="ai-faq-item">
+            <h3>How does the MinSp algorithm work?</h3>
+            <p>MinSp Engine analyzes your preferences (budget, hand size, grip style, usage, wireless preference, weight, brand, RGB, and button count) and calculates a match score for each mouse in our database. The algorithm uses weighted scoring across 9 criteria to find the best match for your needs.</p>
+          </div>
+          <div class="ai-faq-item">
+            <h3>Is my data stored when I use the recommendation tool?</h3>
+            <p>No, your preferences are processed in real-time and are not stored. The MinSp Engine runs locally on our server and only uses your input to generate recommendations without keeping any personal data.</p>
+          </div>
+          <div class="ai-faq-item">
+            <h3>How accurate are the recommendations?</h3>
+            <p>Our recommendations are based on a comprehensive database of mice with detailed specifications. The MinSp Engine considers multiple factors including ergonomics, performance metrics, and user reviews to provide match scores. While highly accurate, we recommend reading full reviews before purchasing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Methodology Section -->
+  <div class="ai-page">
+    <div class="ai-container">
+      <div class="ai-methodology-section">
+        <h2>📊 Our Methodology</h2>
+        <p>Our scoring system is based on 15 technical criteria weighted according to your specific use case:</p>
+        <div class="ai-methodology-grid">
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🎯</span>
+            <span class="ai-methodology-text">Budget alignment (20%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🤚</span>
+            <span class="ai-methodology-text">Hand size compatibility (15%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🖐️</span>
+            <span class="ai-methodology-text">Grip style match (15%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🎮</span>
+            <span class="ai-methodology-text">Usage type fit (15%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">📡</span>
+            <span class="ai-methodology-text">Wireless preference (10%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">⚖️</span>
+            <span class="ai-methodology-text">Weight optimization (10%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🏷️</span>
+            <span class="ai-methodology-text">Brand preference (5%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🌈</span>
+            <span class="ai-methodology-text">RGB/Lighting (5%)</span>
+          </div>
+          <div class="ai-methodology-item">
+            <span class="ai-methodology-icon">🔘</span>
+            <span class="ai-methodology-text">Button count (5%)</span>
+          </div>
+        </div>
+        <p class="ai-methodology-note">Weights are dynamically adjusted based on your profile to ensure personalized recommendations.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="ai-page">
+    <div class="ai-container">
+      <div class="ai-testimonials">
+        <h2>💬 Ce que disent nos utilisateurs</h2>
+        <div class="ai-testimonials-list">
+          <div class="ai-testimonial">
+            <p class="ai-testimonial-text">"Top pour gérer mon budget, j'ai trouvé la souris parfaite pour le gaming à petit prix!"</p>
+            <p class="ai-testimonial-author">- Marc L.</p>
+          </div>
+          <div class="ai-testimonial">
+            <p class="ai-testimonial-text">"L'outil est super rapide et les recommandations sont vraiment précises pour ma taille de main."</p>
+            <p class="ai-testimonial-author">- Sophie M.</p>
+          </div>
+          <div class="ai-testimonial">
+            <p class="ai-testimonial-text">"En tant que designer, j'ai trouvé exactement ce qu'il me fallait pour le travail de précision."</p>
+            <p class="ai-testimonial-author">- Thomas R.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with Quick Links -->
+  <footer class="ai-footer">
+    <div class="ai-footer-content">
+      <h3>Quick Links</h3>
+      <div class="ai-footer-links">
+        <a href="index.html">Home</a>
+        <a href="mice.html">Mice Catalog</a>
+        <a href="keyboards.html">Keyboards Catalog</a>
+        <a href="pc-components.html">PC Components</a>
+        <a href="about.html">About MinSp</a>
+        <a href="ai-recommend.html">AI Recommendation</a>
+      </div>
+      
+      <!-- Popular Searches / Categories -->
+      <div class="ai-footer-section">
+        <h4>Popular Recommendations</h4>
+        <div class="ai-footer-categories">
+          <a href="ai-recommend.html?usage=gaming&budget=50">Budget Gaming Mice</a>
+          <a href="ai-recommend.html?usage=fps&wireless=true">Wireless FPS Mice</a>
+          <a href="ai-recommend.html?usage=bureautique&budget=80">Office Mice Under 80€</a>
+          <a href="ai-recommend.html?weight=ultralight&wireless=true">Ultra Light Wireless</a>
+          <a href="ai-recommend.html?brand=Logitech&usage=gaming">Logitech Gaming</a>
+          <a href="ai-recommend.html?hand-size=small&usage=gaming">Small Hand Gaming</a>
+        </div>
+      </div>
+      
+      <!-- Authority Text -->
+      <div class="ai-footer-authority">
+        <p>MinSp is an intelligent recommendation platform powered by advanced algorithms that analyze your preferences to find the perfect electronic equipment. Our AI-driven approach combines technical specifications, user reviews, and ergonomic data to provide personalized product suggestions for gaming, office work, and creative use.</p>
+      </div>
+      
+      <!-- Sitemap Link -->
+      <div class="ai-footer-sitemap">
+        <a href="/sitemap.xml" rel="sitemap">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./data/mice.js"></script>
+  <script>
+    // Check authentication first
+    (function() {
+      var SESSION_KEY = 'currentUser';
+      var currentUser = null;
+      try {
+        var data = localStorage.getItem(SESSION_KEY);
+        currentUser = data ? JSON.parse(data) : null;
+      } catch(e) {
+        currentUser = null;
+      }
+      
+      if (!currentUser) {
+        // Redirect to login with return URL
+        window.location.href = 'login.html?return=' + encodeURIComponent(window.location.pathname.split('/').pop());
+        return;
+      }
+      
+      // Show user greeting
+      document.addEventListener('DOMContentLoaded', function() {
+        var backLink = document.querySelector('.ai-back-link');
+        if (backLink && currentUser.pseudo) {
+          backLink.insertAdjacentHTML('afterend', 
+            '<p style="color: var(--text-faint); font-size: 0.9rem; margin: -16px 0 16px;">Welcome, <strong>' + 
+            escapeHtml(currentUser.pseudo) + '</strong> ✨</p>');
+        }
+      });
+      
+      function escapeHtml(text) {
+        if (!text) return '';
+        return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+    })();
+
+    // AI Recommendation Page Logic
+    (function() {
+      // DOM Elements
+      var formSection = document.getElementById('ai-form-section');
+      var loadingSection = document.getElementById('ai-loading-section');
+      var resultsSection = document.getElementById('ai-results-section');
+      var errorSection = document.getElementById('ai-error-section');
+      var form = document.getElementById('ai-form');
+      var submitBtn = document.getElementById('ai-submit-btn');
+      var resultsContent = document.getElementById('ai-results-content');
+      var newBtn = document.getElementById('ai-new-btn');
+      var errorBtn = document.getElementById('ai-error-btn');
+      var errorMessage = document.getElementById('ai-error-message');
+      var progressFill = document.getElementById('ai-progress-fill');
+      var progressText = document.getElementById('ai-progress-text');
+      var shareBtn = document.getElementById('ai-share-btn');
+
+      function showSection(section) {
+        formSection.classList.add('hidden');
+        loadingSection.classList.add('hidden');
+        resultsSection.classList.add('hidden');
+        errorSection.classList.add('hidden');
+        
+        section.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Progress Bar Logic
+      function updateProgress() {
+        var requiredFields = form.querySelectorAll('[required]');
+        var filledCount = 0;
+        
+        requiredFields.forEach(function(field) {
+          if (field.value && field.value !== '') {
+            filledCount++;
+          }
+        });
+        
+        var progress = Math.round((filledCount / requiredFields.length) * 100);
+        progressFill.style.width = progress + '%';
+        progressText.textContent = progress + '% completed';
+      }
+
+      // Add event listeners to form fields for progress tracking
+      form.addEventListener('input', updateProgress);
+      form.addEventListener('change', updateProgress);
+
+      // Share button functionality
+      shareBtn.addEventListener('click', function() {
+        var formData = new FormData(form);
+        var params = new URLSearchParams();
+        
+        if (formData.get('budget')) params.set('budget', formData.get('budget'));
+        if (formData.get('handSize')) params.set('handSize', formData.get('handSize'));
+        if (formData.get('usage')) params.set('usage', formData.get('usage'));
+        if (formData.get('wireless')) params.set('wireless', formData.get('wireless'));
+        if (formData.get('gripStyle')) params.set('gripStyle', formData.get('gripStyle'));
+        if (formData.get('weight')) params.set('weight', formData.get('weight'));
+        if (formData.get('brand')) params.set('brand', formData.get('brand'));
+        if (formData.get('rgb')) params.set('rgb', formData.get('rgb'));
+        if (formData.get('buttons')) params.set('buttons', formData.get('buttons'));
+        
+        var shareUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+        var shareText = '🖱️ Découvre ma souris idéale sur MinSp! ' + shareUrl;
+        
+        navigator.clipboard.writeText(shareText).then(function() {
+          var originalText = shareBtn.innerHTML;
+          shareBtn.innerHTML = '<span>✅</span> Copié!';
+          setTimeout(function() {
+            shareBtn.innerHTML = originalText;
+          }, 2000);
+        }).catch(function() {
+          alert('Lien copié: ' + shareUrl);
+        });
+      });
+
+      function buildMiceDataForAI() {
+        // Use window.MOUSE_DATA which is exposed by mice.js
+        var data = window.MOUSE_DATA || [];
+        return data.slice(0, 50).map(function(mouse) {
+          return {
+            name: mouse.name,
+            brand: mouse.brand,
+            price: mouse.price || 'N/A',
+            dpi: mouse.dpi || mouse.dpiMax || 'N/A',
+            wireless: mouse.wireless || mouse.connectivity === 'wireless' || false,
+            weight: mouse.weight || 'N/A',
+            shape: mouse.shape || 'N/A',
+            type: mouse.type || 'N/A',
+            grip: mouse.grip || 'N/A',
+            usageTags: [mouse.segment || 'general']
+          };
+        });
+      }
+
+      // API endpoint - relative path works for both local and Render
+      var API_URL = '/api/recommend';
+
+      async function getRecommendation(userProfile) {
+        var miceData = buildMiceDataForAI();
+
+        try {
+          var response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userProfile, miceData })
+          });
+
+          if (!response.ok) {
+            var errorData = await response.json().catch(function() {
+              return { error: 'Server error: ' + response.status };
+            });
+            throw new Error(errorData.error || 'Request failed');
+          }
+
+          var data = await response.json();
+          
+          // Return data directly - MinSp Engine format
+          return data;
+        } catch (error) {
+          console.error('API error:', error);
+          throw new Error('AI service unavailable. Please try again later.');
+        }
+      }
+
+      function findMouseByName(name) {
+        var data = window.MOUSE_DATA || [];
+        return data.find(function(m) {
+          return m.name.toLowerCase() === name.toLowerCase() ||
+                 name.toLowerCase().includes(m.name.toLowerCase()) ||
+                 m.name.toLowerCase().includes(name.toLowerCase());
+        });
+      }
+
+      function escapeHtml(text) {
+        if (!text) return '';
+        return text
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      // Generate expert tip based on mouse and user profile
+      function generateExpertTip(mouse, userProfile) {
+        if (!mouse) return null;
+        
+        var tips = [];
+        
+        // Hand size tip
+        if (userProfile.handSize) {
+          if (userProfile.handSize === 'small' && mouse.shape === 'ambidextrous') {
+            tips.push('Idéal pour les petites mains avec sa forme ambidextre.');
+          } else if (userProfile.handSize === 'medium' && mouse.shape === 'ergonomic') {
+            tips.push('Parfait pour les mains moyennes en Palm Grip grâce à son ergonomie.');
+          } else if (userProfile.handSize === 'large' && mouse.weight > 100) {
+            tips.push('Le poids élevé offre une stabilité supplémentaire pour les grandes mains.');
+          }
+        }
+        
+        // Usage tip
+        if (userProfile.usage === 'fps' && mouse.dpi && mouse.dpi > 16000) {
+          tips.push('Le DPI élevé permet des mouvements précis en FPS compétitif.');
+        } else if (userProfile.usage === 'moba' && mouse.buttons && mouse.buttons > 5) {
+          tips.push('Les boutons supplémentaires sont parfaits pour les macros en MOBA.');
+        } else if (userProfile.usage === 'bureautique' && mouse.wireless) {
+          tips.push('Le sans-fil offre une liberté de mouvement optimale pour le travail.');
+        }
+        
+        // Grip style tip
+        if (userProfile.gripStyle === 'palm' && mouse.shape === 'ergonomic') {
+          tips.push('La forme ergonomique est conçue pour le Palm Grip confortable.');
+        } else if (userProfile.gripStyle === 'claw' && mouse.weight && mouse.weight < 80) {
+          tips.push('Le poids léger facilite les mouvements rapides en Claw Grip.');
+        } else if (userProfile.gripStyle === 'fingertip' && mouse.shape === 'ambidextrous') {
+          tips.push('La forme plate est idéale pour le Fingertip Grip.');
+        }
+        
+        // Weight tip
+        if (mouse.weight && mouse.weight < 60) {
+          tips.push('Ultra léger, parfait pour les sessions de gaming prolongées.');
+        } else if (mouse.weight && mouse.weight > 100) {
+          tips.push('Le poids important offre une sensation de stabilité et de contrôle.');
+        }
+        
+        // Default tip if no specific tip generated
+        if (tips.length === 0) {
+          tips.push('Un excellent choix équilibré pour votre profil d\'utilisation.');
+        }
+        
+        return tips[0]; // Return the first relevant tip
+      }
+
+      // Count-up animation with ease-out easing
+      function animateCounter(element, targetValue, duration) {
+        var startValue = 0;
+        var startTime = null;
+        
+        function easeOutQuad(t) {
+          return t * (2 - t);
+        }
+        
+        function animation(currentTime) {
+          if (!startTime) startTime = currentTime;
+          var elapsed = currentTime - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var easedProgress = easeOutQuad(progress);
+          
+          var currentValue = Math.floor(startValue + (targetValue - startValue) * easedProgress);
+          element.textContent = currentValue;
+          
+          if (progress < 1) {
+            requestAnimationFrame(animation);
+          } else {
+            element.textContent = targetValue;
+          }
+        }
+        
+        requestAnimationFrame(animation);
+      }
+
+      // Preload image function
+      function preloadImage(imageUrl) {
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = imageUrl;
+        document.head.appendChild(link);
+      }
+
+      // Update JSON-LD with Product and ItemList schemas
+      function updateStructuredData(recommendation, bestMouse) {
+        var existingScript = document.getElementById('ai-results-jsonld');
+        if (existingScript) {
+          existingScript.remove();
+        }
+
+        var productList = [];
+        
+        // Add best product
+        if (bestMouse) {
+          productList.push({
+            "@type": "Product",
+            "name": bestMouse.name,
+            "brand": {
+              "@type": "Brand",
+              "name": bestMouse.brand || "Unknown"
+            },
+            "image": bestMouse.image || "",
+            "description": bestMouse.description || "High-quality mouse for " + (recommendation.userProfile.usage || "general use"),
+            "offers": {
+              "@type": "Offer",
+              "price": bestMouse.price || "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          });
+        }
+
+        // Add alternatives
+        if (recommendation.alternatives && recommendation.alternatives.length > 0) {
+          recommendation.alternatives.forEach(function(alt) {
+            var altMouse = findMouseByName(alt.name);
+            if (altMouse) {
+              productList.push({
+                "@type": "Product",
+                "name": altMouse.name,
+                "brand": {
+                  "@type": "Brand",
+                  "name": altMouse.brand || "Unknown"
+                },
+                "image": altMouse.image || "",
+                "description": altMouse.description || "Alternative mouse option",
+                "offers": {
+                  "@type": "Offer",
+                  "price": alt.price || "0",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                }
+              });
+            }
+          });
+        }
+
+        var structuredData = {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "itemListElement": productList.map(function(product, index) {
+            return {
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": product
+            };
+          })
+        };
+
+        var script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'ai-results-jsonld';
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+      }
+
+      function displayResults(recommendation) {
+        var best = recommendation.bestChoice;
+        var alternatives = recommendation.alternatives || [];
+        var bestMouse = findMouseByName(best.name);
+
+        // Preload image for the recommended product
+        if (bestMouse && bestMouse.image) {
+          preloadImage(bestMouse.image);
+        }
+
+        // Update structured data with Product and ItemList schemas
+        updateStructuredData(recommendation, bestMouse);
+
+        var html = '';
+
+        // Match Score Badge
+        html += '<div class="ai-match-score">';
+        html += '<div class="ai-match-percentage"><span id="ai-match-percentage-counter">0</span>%</div>';
+        html += '<div class="ai-match-level">' + escapeHtml(best.matchLevel) + '</div>';
+        if (recommendation.engine) {
+          html += '<div class="ai-match-engine">Powered by ' + escapeHtml(recommendation.engine) + '</div>';
+        }
+        html += '</div>';
+
+        // Best choice card
+        html += '<div class="ai-best-card">';
+        html += '<div class="ai-best-badge">🏆 Best Choice</div>';
+        html += '<h3 class="ai-best-name">' + escapeHtml(best.name) + '</h3>';
+
+        // Display resource suggestions based on profile
+        displayResourceSuggestions(recommendation.userProfile);
+        html += '<div class="ai-best-price">$' + best.price + '</div>';
+        
+        if (bestMouse) {
+          html += '<div class="ai-best-specs">';
+          if (bestMouse.dpi || bestMouse.dpiMax) {
+            var dpiValue = bestMouse.dpi || bestMouse.dpiMax;
+            html += '<span>📊 <span class="ai-counter-anim" data-value="' + dpiValue + '">0</span> DPI</span>';
+          }
+          if (bestMouse.weight) {
+            html += '<span>⚖️ <span class="ai-counter-anim" data-value="' + bestMouse.weight + '">0</span>g</span>';
+          }
+          html += '<span>' + (bestMouse.wireless ? '📡 Wireless' : '🔌 Wired') + '</span>';
+          html += '</div>';
+          
+          // Create product URL
+          var productUrl = 'index.html?product=' + bestMouse.id;
+          html += '<a href="' + productUrl + '" class="ai-view-btn">View Product Details</a>';
+        }
+        html += '</div>';
+
+        // Expert Tip card
+        var expertTip = generateExpertTip(bestMouse, recommendation.userProfile);
+        if (expertTip) {
+          html += '<div class="ai-expert-tip">';
+          html += '<h4>💡 Expert Tip</h4>';
+          html += '<p>' + expertTip + '</p>';
+          html += '</div>';
+        }
+
+        // Action Plan card (MinSp Engine feature)
+        if (best.actionPlan) {
+          html += '<div class="ai-action-card">';
+          html += '<h4>📋 Action Plan</h4>';
+          html += '<p>' + escapeHtml(best.actionPlan) + '</p>';
+          html += '</div>';
+        }
+
+        // Reason card
+        html += '<div class="ai-reason-card">';
+        html += '<h4>💡 Why this mouse?</h4>';
+        html += '<p>' + escapeHtml(best.reason) + '</p>';
+        html += '</div>';
+
+        // Match details (MinSp Engine details)
+        if (best.details && best.details.length > 0) {
+          html += '<div class="ai-details-card">';
+          html += '<h4>🔍 Analysis Details</h4>';
+          html += '<ul class="ai-details-list">';
+          best.details.forEach(function(detail) {
+            html += '<li>' + escapeHtml(detail) + '</li>';
+          });
+          html += '</ul>';
+          html += '</div>';
+        }
+
+        // Alternatives with Match Scores
+        if (alternatives.length > 0) {
+          html += '<div class="ai-alternatives-card">';
+          html += '<h4>🔄 Alternative Options</h4>';
+          html += '<div class="ai-alt-list">';
+          
+          alternatives.forEach(function(alt) {
+            var altMouse = findMouseByName(alt.name);
+            if (altMouse) {
+              html += '<a href="index.html?product=' + altMouse.id + '" class="ai-alt-item">';
+            } else {
+              html += '<div class="ai-alt-item">';
+            }
+            html += '<div class="ai-alt-info">';
+            html += '<span class="ai-alt-name">' + escapeHtml(alt.name) + '</span>';
+            if (alt.matchScore) {
+              html += '<span class="ai-alt-score"><span class="ai-counter-anim" data-value="' + alt.matchScore + '">0</span>% ' + alt.matchLevel + '</span>';
+            }
+            if (altMouse) {
+              html += '<span class="ai-alt-desc">' + altMouse.brand + ' • ' + (altMouse.wireless ? 'Wireless' : 'Wired') + '</span>';
+            }
+            html += '</div>';
+            html += '<span class="ai-alt-price">$' + alt.price + '</span>';
+            html += altMouse ? '</a>' : '</div>';
+          });
+          
+          html += '</div></div>';
+        }
+
+        resultsContent.innerHTML = html;
+        
+        // Trigger count-up animations
+        setTimeout(function() {
+          // Animate match percentage
+          var matchCounter = document.getElementById('ai-match-percentage-counter');
+          if (matchCounter && best.matchPercentage) {
+            animateCounter(matchCounter, parseInt(best.matchPercentage), 1500);
+          }
+          
+          // Animate all counters with data-value attribute
+          var counters = resultsContent.querySelectorAll('.ai-counter-anim');
+          counters.forEach(function(counter) {
+            var targetValue = parseInt(counter.getAttribute('data-value'), 10);
+            if (!isNaN(targetValue)) {
+              animateCounter(counter, targetValue, 1200);
+            }
+          });
+        }, 100);
+      }
+
+      async function handleSubmit(e) {
+        e.preventDefault();
+
+        var formData = new FormData(form);
+        var userProfile = {
+          budget: parseInt(formData.get('budget'), 10),
+          usage: formData.get('usage'),
+          wireless: formData.get('wireless'),
+          handSize: formData.get('handSize'),
+          gripStyle: formData.get('gripStyle'),
+          weight: formData.get('weight'),
+          brand: formData.get('brand'),
+          rgb: formData.get('rgb'),
+          buttons: formData.get('buttons')
+        };
+
+        // Show loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<div class="spinner"></div> Processing...';
+        showSection(loadingSection);
+
+        try {
+          var recommendation = await getRecommendation(userProfile);
+          displayResults(recommendation);
+          showSection(resultsSection);
+        } catch (error) {
+          console.error('Failed:', error);
+          var errorMsg = error.message || 'Failed to get recommendation.';
+          
+          // Detect if backend is not running
+          if (errorMsg.includes('Failed to fetch') || errorMsg.includes('NetworkError') || errorMsg.includes('connexion') || errorMsg.includes('network')) {
+            errorMsg = '🔧 Backend server is not running.\n\nPlease start the backend:\n1. Open terminal\n2. cd backend\n3. npm install (first time)\n4. npm start';
+          }
+          
+          errorMessage.innerHTML = errorMsg.replace(/\n/g, '<br>');
+          showSection(errorSection);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>✨</span> Get My Recommendation';
+        }
+      }
+
+      function resetForm() {
+        form.reset();
+        showSection(formSection);
+      }
+
+      function displayResourceSuggestions(userProfile) {
+        var resourcesGrid = document.getElementById('ai-resources-grid');
+        if (!resourcesGrid) return;
+
+        var resources = [];
+
+        // Determine profile type based on budget and usage
+        var budget = userProfile.budget || 0;
+        var usage = userProfile.usage || '';
+
+        if (budget <= 50) {
+          // Budget profile
+          resources = [
+            { icon: '💰', title: 'Best Budget Mice Under 50€', desc: 'Top affordable gaming mice reviewed', link: 'mice.html' },
+            { icon: '🎯', title: 'Value-for-Money Guide', desc: 'How to choose quality on a budget', link: 'about.html' },
+            { icon: '📊', title: 'Budget Comparison', desc: 'Compare specs vs price effectively', link: 'mice.html' }
+          ];
+        } else if (usage === 'fps' || usage === 'moba') {
+          // Gaming profile
+          resources = [
+            { icon: '🎮', title: 'Pro Gaming Mice', desc: 'What esports players use', link: 'mice.html' },
+            { icon: '⚡', title: 'High DPI Settings', desc: 'Optimize sensitivity for FPS', link: 'about.html' },
+            { icon: '🏆', title: 'Tournament Gear', desc: 'Equipment for competitive play', link: 'mice.html' }
+          ];
+        } else if (usage === 'bureautique' || usage === 'design') {
+          // Productivity profile
+          resources = [
+            { icon: '💼', title: 'Ergonomic Office Mice', desc: 'Comfort for long work sessions', link: 'mice.html' },
+            { icon: '🎨', title: 'Creative Tools', desc: 'Precision for design work', link: 'keyboards.html' },
+            { icon: '⌨️', title: 'Productivity Setup', desc: 'Complete workspace optimization', link: 'about.html' }
+          ];
+        } else {
+          // General profile
+          resources = [
+            { icon: '🖱️', title: 'Complete Mouse Guide', desc: 'Everything you need to know', link: 'mice.html' },
+            { icon: '⌨️', title: 'Keyboard Selection', desc: 'Find your perfect typing companion', link: 'keyboards.html' },
+            { icon: '🖥️', title: 'PC Building Guide', desc: 'Component selection tips', link: 'pc-components.html' }
+          ];
+        }
+
+        var html = '';
+        resources.forEach(function(resource) {
+          html += '<a href="' + resource.link + '" class="ai-resource-card">';
+          html += '<div class="icon">' + resource.icon + '</div>';
+          html += '<h3>' + escapeHtml(resource.title) + '</h3>';
+          html += '<p>' + escapeHtml(resource.desc) + '</p>';
+          html += '</a>';
+        });
+
+        resourcesGrid.innerHTML = html;
+      }
+
+      // Event listeners
+      form.addEventListener('submit', handleSubmit);
+      newBtn.addEventListener('click', resetForm);
+      errorBtn.addEventListener('click', resetForm);
+
+      // Check for URL params (if coming back from product)
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('reset')) {
+        resetForm();
+      }
+
+      // Dynamic Landing Pages - URL Parameters Support
+      function handleURLParameters() {
+        var params = urlParams;
+        var hasParams = false;
+
+        // Parameter mapping for form fields
+        var paramMapping = {
+          'budget': 'ai-budget',
+          'handSize': 'ai-hand-size',
+          'usage': 'ai-usage',
+          'wireless': 'ai-wireless',
+          'gripStyle': 'ai-grip-style',
+          'weight': 'ai-weight',
+          'brand': 'ai-brand',
+          'rgb': 'ai-rgb',
+          'buttons': 'ai-buttons'
+        };
+
+        // Auto-fill form based on URL parameters
+        for (var param in paramMapping) {
+          if (params.has(param)) {
+            var fieldId = paramMapping[param];
+            var field = document.getElementById(fieldId);
+            if (field) {
+              field.value = params.get(param);
+              hasParams = true;
+            }
+          }
+        }
+
+        // Dynamic titles based on parameters
+        if (hasParams) {
+          updateDynamicTitle(params);
+        }
+
+        return hasParams;
+      }
+
+      function updateDynamicTitle(params) {
+        var titleParts = [];
+        var usage = params.get('usage');
+        var budget = params.get('budget');
+        var wireless = params.get('wireless');
+
+        // Build dynamic title based on parameters
+        if (usage) {
+          var usageLabels = {
+            'gaming': 'Gaming',
+            'fps': 'FPS Gaming',
+            'moba': 'MOBA/MMO',
+            'bureautique': 'Office',
+            'design': 'Design',
+            'mix': 'Mixed Use'
+          };
+          titleParts.push(usageLabels[usage] || usage);
+        }
+
+        if (budget) {
+          var budgetLabels = {
+            '30': 'Under 30€',
+            '50': 'Up to 50€',
+            '80': 'Up to 80€',
+            '100': 'Up to 100€',
+            '150': 'Up to 150€',
+            '200': 'Up to 200€',
+            '300': 'Up to 300€',
+            '400': 'Up to 400€'
+          };
+          titleParts.push(budgetLabels[budget] || budget + '€');
+        }
+
+        if (wireless === 'true') {
+          titleParts.push('Wireless');
+        } else if (wireless === 'false') {
+          titleParts.push('Wired');
+        }
+
+        // Update page title
+        if (titleParts.length > 0) {
+          var dynamicTitle = titleParts.join(' ') + ' Mouse Recommendation';
+          document.title = 'MinSp - ' + dynamicTitle;
+
+          // Update h1
+          var h1 = document.querySelector('.ai-page-header h1');
+          if (h1) {
+            h1.textContent = '🖱️ ' + dynamicTitle;
+          }
+
+          // Update description
+          var p = document.querySelector('.ai-page-header p');
+          if (p) {
+            p.textContent = 'AI-powered mouse recommendation for ' + titleParts.join(' ').toLowerCase() + ' users';
+          }
+        }
+      }
+
+      // Auto-submit if URL parameters are present
+      var hasURLParams = handleURLParameters();
+      if (hasURLParams) {
+        // Small delay to ensure form is filled before submitting
+        setTimeout(function() {
+          form.dispatchEvent(new Event('submit'));
+        }, 500);
+      }
+
+      // Dynamic Counter Animation
+      function initCounter() {
+        var counterElement = document.getElementById('ai-counter-number');
+        if (!counterElement) return;
+
+        // Base number between 500 and 1000
+        var baseNumber = Math.floor(Math.random() * 500) + 500;
+        counterElement.textContent = baseNumber;
+
+        // Increment randomly every few seconds
+        setInterval(function() {
+          var increment = Math.floor(Math.random() * 3) + 1;
+          var current = parseInt(counterElement.textContent);
+          counterElement.textContent = current + increment;
+        }, 3000 + Math.random() * 2000);
+      }
+
+      initCounter();
+    })();
+  </script>
+</body>
+</html>

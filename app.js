@@ -2,6 +2,27 @@
  * ElectronicsPalace
  * Catalogue de souris avec recherche, filtres et panneau détail.
  */
+
+// Fonctions de secours globales (fallback) pour compatibilité
+if (typeof window.t !== 'function') {
+  window.t = function(text) { return text; };
+}
+if (typeof window.translateText !== 'function') {
+  window.translateText = function(text) { return text; };
+}
+if (typeof window.localizeCatalogText !== 'function') {
+  window.localizeCatalogText = function(value) { return value; };
+}
+if (typeof window.localizeMouse !== 'function') {
+  window.localizeMouse = function(mouse) { return mouse; };
+}
+if (typeof window.getLanguageConfig !== 'function') {
+  window.getLanguageConfig = function() { return { htmlLang: 'en-US', name: 'English (US)' }; };
+}
+if (typeof window.normalizeLanguageCode !== 'function') {
+  window.normalizeLanguageCode = function(lang) { return lang || 'en'; };
+}
+
 (function () {
   "use strict";
 
@@ -240,15 +261,6 @@
     "Forme": "Shape"
   };
 
-  // Fonctions fantômes (pass-through) pour compatibilité - Google Translate gère les vraies traductions
-  function t(text) { return text; }
-  function translateText(text, lang) { return text; }
-  function localizeCatalogText(value, lang) { return value; }
-  function localizeMouse(mouse, lang) { return mouse; }
-  function getLanguageConfig(lang) { return { htmlLang: 'en-US', name: 'English', flag: '🇬🇧' }; }
-  function translatePage() { /* Ne rien faire, Google Translate gère */ }
-  function normalizeLanguageCode(lang) { return lang || 'en-gb'; }
-
   function normalizeText(value) {
     return String(value || "")
       .normalize("NFD")
@@ -256,6 +268,14 @@
       .toLowerCase()
       .trim();
   }
+
+  // Variables de langue globales
+  var DEFAULT_LANGUAGE = normalizeLanguageCode(
+    window.MinSPI18n && typeof window.MinSPI18n.getCurrentLanguage === 'function'
+      ? window.MinSPI18n.getCurrentLanguage()
+      : 'en'
+  );
+  var CURRENT_LANGUAGE = DEFAULT_LANGUAGE;
 
   function debounce(func, delay) {
     var timeoutId;
@@ -285,9 +305,8 @@
     // Les souris ont typeValue et shapeValue, mais pas les autres produits
     // Les claviers et composants PC ont des specs différentes
     var hasValidSpecs = Array.isArray(mouse.specs) && mouse.specs.length > 0;
-    var hasValidImage = typeof mouse.image === "string" && mouse.image.trim() !== "";
 
-    return hasAllRequired && hasValidSpecs && hasValidImage;
+    return hasAllRequired && hasValidSpecs;
   }
 
   function hslToHex(h, s, l) {
@@ -405,7 +424,11 @@
   }
 
   function specLabelForDisplay(label) {
-    return SPEC_DISPLAY_LABELS[label] || label;
+    if (typeof window.specLabelForDisplay === 'function') {
+      return window.specLabelForDisplay(label);
+    }
+
+    return window.t(SPEC_DISPLAY_LABELS[label] || label);
   }
 
   function closeLanguageMenu() {
@@ -422,16 +445,12 @@
   }
 
   function setLanguage(langCode) {
-    // Map des langues pour Google
-    var googleLangMap = { 'fr': 'fr', 'en-us': 'en', 'en-gb': 'en', 'it': 'it', 'es': 'es', 'de': 'de' };
-    var targetLang = googleLangMap[langCode.toLowerCase()] || 'en';
+    if (window.MinSPI18n && typeof window.MinSPI18n.setLanguage === 'function') {
+      window.MinSPI18n.setLanguage(langCode);
+      return;
+    }
 
-    // Set Google Translate cookie
-    document.cookie = 'googtrans=/en/' + targetLang + '; path=/; domain=' + window.location.hostname;
-    document.cookie = 'googtrans=/en/' + targetLang + '; path=/;'; // fallback
-
-    // Reload pour appliquer la traduction
-    window.location.reload();
+    updateLanguage(langCode);
   }
 
   function syncLanguageTrigger(activeLang) {
@@ -521,14 +540,36 @@
   function updateLanguage(lang) {
     var normalizedLang = normalizeLanguageCode(lang);
     var config = getLanguageConfig(normalizedLang);
+    var selectedMouse;
+    var isHomeView;
 
     CURRENT_LANGUAGE = normalizedLang;
     document.documentElement.lang = config.htmlLang;
-    document.title = "MinSp - Electronic Product Comparison";
 
     syncLanguageTrigger(normalizedLang);
     renderLanguageMenu(normalizedLang);
     closeLanguageMenu();
+
+    mice = buildLocalizedMice(normalizedLang);
+    window.mice = mice;
+    refreshFilterOptions();
+    updateHeaderAuth();
+    renderCatalog();
+    isHomeView = catalogBubbleSection && !catalogBubbleSection.classList.contains('hidden');
+
+    if (state.selectedId) {
+      selectedMouse = mice.find(function (mouse) {
+        return mouse.id === state.selectedId;
+      });
+    }
+
+    if (selectedMouse) {
+      renderDetail(selectedMouse);
+      updateProductSEO(selectedMouse);
+    } else {
+      renderDetail(null);
+      document.title = isHomeView ? getHomeTitle() : getCatalogPageTitle(state.catalog);
+    }
   }
 
   function extractSearchKeywords(mouse) {
@@ -739,50 +780,68 @@
       return allProducts;
     }
 
-    function buildLocalizedMice(sourceData) {
+    function buildLocalizedMice(sourceData, lang) {
       try {
         if (!Array.isArray(sourceData)) {
-          throw new Error("Source data must be an array");
+          throw new Error("Les données source doivent être un tableau");
         }
 
         return sourceData.map(function (mouse) {
           try {
+            var localized = localizeMouse(mouse, lang);
+            var englishVersion = localizeMouse(mouse, "en");
             var originalSearchText = mouse.searchText || [
               mouse.name,
               mouse.brand,
               mouse.segment,
               mouse.summary
             ].join(" ");
-            var highlightsText = Array.isArray(mouse.highlights) ? mouse.highlights.join(" ") : "";
-            var keywords = extractSearchKeywords(mouse);
+            var localizedSearchText = [
+              localized.name,
+              localized.brand,
+              localized.segment,
+              localized.summary,
+              Array.isArray(localized.highlights) ? localized.highlights.join(" ") : "",
+              localized.typeValue,
+              localized.shapeValue
+            ].join(" ");
+            var englishSearchText = [
+              englishVersion.name,
+              englishVersion.brand,
+              englishVersion.segment,
+              englishVersion.summary,
+              Array.isArray(englishVersion.highlights) ? englishVersion.highlights.join(" ") : "",
+              englishVersion.typeValue,
+              englishVersion.shapeValue
+            ].join(" ");
+            var keywords = extractSearchKeywords(englishVersion);
             var allKeywords = keywords.join(" ");
-
-            // Add specs to search text
             var specsText = "";
-            if (Array.isArray(mouse.specs)) {
-              specsText = mouse.specs.map(function(spec) {
+
+            if (Array.isArray(localized.specs)) {
+              specsText = localized.specs.map(function(spec) {
                 return (spec.label || "") + " " + (spec.value || "");
               }).join(" ");
             }
 
-            return Object.assign({}, mouse, {
+            return Object.assign({}, localized, {
               searchIndex: normalizeText(
-                originalSearchText + " " + highlightsText + " " + allKeywords + " " + specsText
+                originalSearchText + " " + englishSearchText + " " + localizedSearchText + " " + allKeywords + " " + specsText
               ),
               keywords: keywords,
-              // Keep price and rating for filtering
               price: typeof mouse.price === "number" ? mouse.price : null,
               rating: typeof mouse.rating === "number" ? mouse.rating : null,
-              // Keep category for catalog filtering
-              category: mouse.category || "mice"
+              category: mouse.category || "mice",
+              id: mouse.id,
+              order: mouse.order
             });
           } catch (mouseError) {
-            console.error("Error processing mouse:", mouse.id || "unknown", mouseError);
+            console.error("Erreur lors du traitement du produit:", mouse && mouse.id ? mouse.id : "unknown", mouseError);
             return null;
           }
         }).filter(Boolean);
       } catch (error) {
-        console.error("Error building localized mice:", error);
+        console.error("Erreur lors de la localisation des produits:", error);
         return [];
       }
     }
@@ -800,11 +859,11 @@
   console.log('[App] Total source products:', sourceMice.length);
   console.log('[App] Categories:', sourceMice.map(function(m) { return m.category || 'mice'; }).filter(function(v, i, a) { return a.indexOf(v) === i; }));
 
-  function buildLocalizedMice() {
-    return DataLoader.localize(sourceMice);
+  function buildLocalizedMice(lang) {
+    return DataLoader.localize(sourceMice, lang || CURRENT_LANGUAGE);
   }
 
-  var mice = buildLocalizedMice();
+  var mice = buildLocalizedMice(CURRENT_LANGUAGE);
   console.log('[App] Localized products:', mice.length);
   
   // Expose globally for AI recommendation page and other external pages
@@ -1196,10 +1255,30 @@
     }
 
     function generateImageHTML(mouse, shouldPrioritize) {
+      var productType = mouse.category === 'keyboard' ? 'clavier' : mouse.category === 'pc-component' ? 'composant PC' : 'souris';
+
+      // Si aucune image n'est disponible, afficher un placeholder SVG
+      if (!mouse.image || typeof mouse.image !== 'string' || mouse.image.trim() === '') {
+        var brandColor = getBrandColor(mouse.brand || '');
+        var placeholderSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">'
+          + '<rect width="500" height="500" fill="' + hexToRgba(brandColor, 0.1) + '"/>'
+          + '<rect x="190" y="160" width="120" height="100" rx="8" fill="none" stroke="' + hexToRgba(brandColor, 0.4) + '" stroke-width="4"/>'
+          + '<circle cx="230" cy="195" r="12" fill="none" stroke="' + hexToRgba(brandColor, 0.4) + '" stroke-width="4"/>'
+          + '<polyline points="190,260 240,210 270,240 300,210 310,220 310,260" fill="none" stroke="' + hexToRgba(brandColor, 0.4) + '" stroke-width="4"/>'
+          + '<text x="250" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="' + hexToRgba(brandColor, 0.6) + '">' + escapeHtml(mouse.brand || '') + '</text>'
+          + '<text x="250" y="335" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="' + hexToRgba(brandColor, 0.4) + '">Image non disponible</text>'
+          + '</svg>';
+        var dataUri = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(placeholderSvg);
+        return '<img class="mouse-photo" loading="lazy" decoding="async" width="500" height="500" src="'
+          + dataUri
+          + '" alt="MinSp ' + productType + ' '
+          + escapeHtml(mouse.name)
+          + ' (placeholder)">';
+      }
+
       // Priorité au format WebP pour optimiser le chargement
       var webpImage = getWebPPath(mouse.image);
       var originalFallback = mouse.placeholderImage || mouse.image;
-      var productType = mouse.category === 'keyboard' ? 'clavier' : mouse.category === 'pc-component' ? 'composant PC' : 'souris';
 
       return '<img class="mouse-photo" loading="'
         + (shouldPrioritize ? "eager" : "lazy")
@@ -1241,6 +1320,17 @@
     }
 
     return '<div class="detail-image-wrapper mouse-frame is-loading">' + skeletonHTML + imageHTML + "</div>";
+  }
+
+  // Extrait le domaine d'une URL pour l'affichage
+  function extractDomain(url) {
+    if (!url) return '';
+    try {
+      var match = url.match(/^https?:\/\/([^\/]+)/);
+      return match ? match[1].replace(/^www\./, '') : '';
+    } catch (e) {
+      return '';
+    }
   }
 
   function sourceLinksMarkup(mouse) {
@@ -1807,6 +1897,28 @@
     }
   }
 
+  function detailHighlightsMarkup(mouse) {
+    var highlights = Array.isArray(mouse.highlights)
+      ? mouse.highlights.filter(Boolean).slice(0, 4)
+      : [];
+
+    if (!highlights.length) {
+      return (
+        '<ul class="highlight-list">' +
+          "<li>" + escapeHtml("Detailed highlights are still being refined for this mouse.") + "</li>" +
+        "</ul>"
+      );
+    }
+
+    return (
+      '<ul class="highlight-list">' +
+        highlights.map(function (item) {
+          return "<li>" + escapeHtml(item) + "</li>";
+        }).join("") +
+      "</ul>"
+    );
+  }
+
   function detailSpecMarkup(mouse) {
     return (
       '<div class="spec-grid">' +
@@ -1903,7 +2015,22 @@
           return;
         }
 
-        // Tous les fallbacks ont échoué, marquer comme prêt (affichera l'icône cassée)
+        // Tous les fallbacks ont échoué, afficher un placeholder SVG
+        var altText = image.alt || '';
+        var brandMatch = altText.match(/MinSp\s+\S+\s+(.+?)(?:\s+\(placeholder\))?$/);
+        var brandName = brandMatch ? brandMatch[1].split(' ')[0] : '';
+        var brandColor = getBrandColor(brandName);
+        var placeholderSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">'
+          + '<rect width="500" height="500" fill="' + hexToRgba(brandColor, 0.1) + '"/>'
+          + '<rect x="190" y="160" width="120" height="100" rx="8" fill="none" stroke="' + hexToRgba(brandColor, 0.4) + '" stroke-width="4"/>'
+          + '<circle cx="230" cy="195" r="12" fill="none" stroke="' + hexToRgba(brandColor, 0.4) + '" stroke-width="4"/>'
+          + '<polyline points="190,260 240,210 270,240 300,210 310,220 310,260" fill="none" stroke="' + hexToRgba(brandColor, 0.4) + '" stroke-width="4"/>'
+          + '<text x="250" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="' + hexToRgba(brandColor, 0.6) + '">' + escapeHtml(brandName) + '</text>'
+          + '<text x="250" y="335" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="' + hexToRgba(brandColor, 0.4) + '">Image non disponible</text>'
+          + '</svg>';
+        image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(placeholderSvg);
+        image.removeAttribute("data-fallback");
+        image.removeAttribute("data-original");
         setImageReadyState(image, true);
       }
 
@@ -2297,11 +2424,14 @@
     document.body.appendChild(modal);
 
     // Fermer la modale
-    modal.querySelector('#close-auth-modal').addEventListener('click', function() {
+    modal.querySelector('#close-auth-modal').addEventListener('click', function(e) {
+      e.stopPropagation();
       modal.remove();
     });
     modal.addEventListener('click', function(e) {
-      if (e.target === modal) modal.remove();
+      if (e.target === modal) {
+        modal.remove();
+      }
     });
 
     // Basculer login/register
@@ -2450,14 +2580,43 @@
   }
 
   function showProduct(id) {
+    // 1. Chercher d'abord dans mice (données déjà chargées)
     var mouse = mice.find(function (item) {
       return item.id === id;
     });
-    var detailAlreadyOpen = !detailView.classList.contains("hidden");
 
+    // 2. Si non trouvé, chercher dans window.MOUSE_DATA
+    if (!mouse && Array.isArray(window.MOUSE_DATA)) {
+      mouse = window.MOUSE_DATA.find(function (item) {
+        return item.id === id;
+      });
+    }
+
+    // 3. Chercher aussi dans window.KEYBOARD_DATA et window.PCCOMPONENT_DATA
+    if (!mouse && Array.isArray(window.KEYBOARD_DATA)) {
+      mouse = window.KEYBOARD_DATA.find(function (item) {
+        return item.id === id;
+      });
+    }
+    if (!mouse && Array.isArray(window.PCCOMPONENT_DATA)) {
+      mouse = window.PCCOMPONENT_DATA.find(function (item) {
+        return item.id === id;
+      });
+    }
+
+    // 4. Null check avec log d'erreur
     if (!mouse) {
+      console.error('[showProduct] Produit non trouvé pour l\'ID:', id);
+      console.error('[showProduct] IDs disponibles dans mice:', mice.map(function(m) { return m.id; }).slice(0, 10), '...');
+      setDetailMarkup(
+        "Product not found",
+        "The product you're looking for could not be loaded. Please try again or select another product."
+      );
+      detailView.classList.remove("hidden");
       return;
     }
+
+    var detailAlreadyOpen = !detailView.classList.contains("hidden");
 
     state.selectedId = mouse.id;
     updateProductSEO(mouse);
@@ -2471,7 +2630,7 @@
 
     clearViewTransitionTimer();
     catalogView.setAttribute("aria-hidden", "true");
-    if (toolbarPanel) toolbarPanel.classList.add("hidden");
+    if (toolbarPanel) toolbarPanel.classList.add("is-blurred");
     detailView.classList.remove("hidden");
     detailView.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -2505,7 +2664,7 @@
     viewTransitionTimer = setTimeout(function () {
       detailView.classList.add("hidden");
       catalogView.setAttribute("aria-hidden", "false");
-      if (toolbarPanel) toolbarPanel.classList.remove("hidden");
+      if (toolbarPanel) toolbarPanel.classList.remove("is-blurred");
       document.body.style.overflow = previousBodyOverflow;
       // Retourner à la position exacte de la carte sélectionnée
       window.scrollTo(0, savedScrollPosition);
@@ -2793,10 +2952,10 @@
     var brandsLabel = document.getElementById('brands-label');
     var imagesLabel = document.getElementById('images-label');
     var resultsLabel = document.getElementById('results-label');
-    if (modelsLabel) modelsLabel.textContent = labels.models;
-    if (brandsLabel) brandsLabel.textContent = labels.brands;
-    if (imagesLabel) imagesLabel.textContent = labels.images;
-    if (resultsLabel) resultsLabel.textContent = labels.results;
+    if (modelsLabel) modelsLabel.textContent = window.t(labels.models);
+    if (brandsLabel) brandsLabel.textContent = window.t(labels.brands);
+    if (imagesLabel) imagesLabel.textContent = window.t(labels.images);
+    if (resultsLabel) resultsLabel.textContent = window.t(labels.results);
   }
 
   function showCatalog(catalogType, shouldUpdateRoute) {
@@ -2818,7 +2977,7 @@
     refreshFilterOptions();
     renderCatalog();
     var catalogName = state.catalog === 'all' ? 'All catalog' : (state.catalog === 'pc-component' ? 'Pc Component' : state.catalog === 'keyboard' ? 'Keyboard' : 'Mice');
-    announceToScreenReader('Catalog opened: ' + catalogName);
+    announceToScreenReader(window.t('Catalog opened:') + ' ' + window.t(catalogName));
   }
 
   function showHome(shouldUpdateRoute) {
@@ -3007,6 +3166,8 @@
         }
 
         var newSelectedId = card.getAttribute("data-id");
+        console.log('[Catalog Click] ID récupéré de la carte:', newSelectedId);
+        console.log('[Catalog Click] Premier ID dans mice:', mice.length > 0 ? mice[0].id : 'aucun');
         showProduct(newSelectedId);
       });
     }
@@ -3035,6 +3196,17 @@
     });
   }
 
+  window.addEventListener('minsp:languagechange', function (event) {
+    var nextLanguage = event && event.detail ? event.detail.language : null;
+    var normalizedLanguage = normalizeLanguageCode(nextLanguage);
+
+    if (!nextLanguage || normalizedLanguage === CURRENT_LANGUAGE) {
+      return;
+    }
+
+    updateLanguage(normalizedLanguage);
+  });
+
   function init() {
     var initialLanguage;
 
@@ -3060,7 +3232,9 @@
     initializeLanguageSelector();
     bindEvents();
     updateHeaderAuth();
-    initialLanguage = DEFAULT_LANGUAGE;
+    initialLanguage = window.MinSPI18n && typeof window.MinSPI18n.getCurrentLanguage === 'function'
+      ? window.MinSPI18n.getCurrentLanguage()
+      : DEFAULT_LANGUAGE;
     updateLanguage(initialLanguage);
     window.setLanguage = setLanguage;
     window.showProduct = showProduct;
@@ -3099,10 +3273,21 @@
 
     setTimeout(loadInitialRoute, 0);
 
-    console.log("MinSP initialisé avec", mice.length, "souris validées");
+    // Sécuriser le rendu initial du catalogue
+    if (typeof mice !== 'undefined' && mice.length > 0) {
+      renderCatalog();
+      console.log("MinSp : Catalogue chargé avec succès");
+    } else {
+      console.error("MinSp Error : Les données 'mice' sont introuvables !");
+    }
   }
 
   // Note: AI Recommendation feature moved to separate page: ai-recommend.html
 
-  init();
+  // Vérification finale avant initialisation
+  if (typeof mice !== 'undefined' && mice.length > 0) {
+    init();
+  } else {
+    console.error("MinSp Critical Error : Impossible d'initialiser - données manquantes");
+  }
 }());

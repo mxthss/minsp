@@ -940,10 +940,10 @@
       image: "./assets/mice/logitech-m705-marathon.webp",
     },
     "Logitech Pebble M350": {
-      image: "./assets/mice/logitech-pebble-m350-cutout.png",
+      image: "./assets/mice/logitech-pebble-m350.webp",
     },
     "Logitech M90": {
-      image: "./assets/mice/logitech-m90-cutout.png",
+      image: "./assets/mice/logitech-m90.webp",
     },
     "Logitech M100": {
       image: "./assets/mice/logitech-m100.webp",
@@ -1077,7 +1077,7 @@
       ]
     },
     "Razer Basilisk V3": {
-      image: "./assets/mice/razer-basilisk-v3-cutout.png",
+      image: "./assets/mice/razer-basilisk-v3.webp",
       summary: "La Basilisk V3 est la version filaire de la souris polyvalente haut de gamme de Razer. Elle m?lange une ergonomie pour droitier tr?s confortable, une molette intelligente et une grosse dose de personnalisation pour les joueurs qui veulent une seule souris capable de tout faire.",
       highlights: [
         "Molette HyperScroll intelligente",
@@ -1372,7 +1372,7 @@
       image: "./assets/mice/razer-deathadder-v2-mini.webp",
     },
     "Razer DeathAdder V3": {
-      image: "./assets/mice/razer-deathadder-v3-cutout.png",
+      image: "./assets/mice/razer-deathadder-v3.webp",
     },
     "Razer Basilisk Essential": {
       image: "./assets/mice/razer-basilisk-essential.webp",
@@ -1776,7 +1776,7 @@
       ]
     },
     "SteelSeries Rival 100": {
-      image: "./assets/mice/steelseries-rival-100-cutout.png",
+      image: "./assets/mice/steelseries-rival-100.webp",
     },
     "SteelSeries Rival 110": {
       image: "./assets/mice/steelseries-rival-110.webp",
@@ -1947,7 +1947,7 @@
       ]
     },
     "Glorious Model D": {
-      image: "./assets/mice/glorious-model-d-cutout.png",
+      image: "./assets/mice/glorious-model-d.webp",
       summary: "Le Model D transpose la recette Glorious dans un ch?ssis ergonomique pour droitier. Il s'adresse aux joueurs qui veulent une souris tr?s l?g?re mais plus remplie dans la paume qu'un shape sym?trique classique.",
       highlights: [
         "Forme ergonomique pour droitier",
@@ -2074,7 +2074,7 @@
       ]
     },
     "Microsoft Pro Intellimouse": {
-      image: "./assets/mice/microsoft-pro-intellimouse-cutout.png",
+      image: "./assets/mice/microsoft-pro-intellimouse.webp",
       summary: "La Pro Intellimouse reprend l'h?ritage de la c?l?bre IntelliMouse en le modernisant pour le travail et le jeu. Microsoft la pr?sente comme une souris filaire haute performance avec un vrai accent sur le confort, la pr?cision et la personnalisation.",
       highlights: [
         "Retour d'une forme iconique",
@@ -2591,7 +2591,7 @@
       image: "./assets/mice/trust-gxt-101.webp",
     },
     "Trust GXT 105": {
-      image: "./assets/mice/trust-gxt-105-cutout.png",
+      image: "./assets/mice/trust-gxt-105.webp",
     },
     "Trust GXT 144": {
       image: "./assets/mice/trust-gxt-144.webp",
@@ -2833,8 +2833,8 @@
     "Logitech MX Ergo": "./assets/mice/logitech mx-ergo.webp",
     "Logitech M510": "./assets/mice/logitech m510-black.png",
     "Logitech M705 Marathon": "./assets/mice/logitech m705.png",
-    "Logitech Pebble M350": "./assets/mice/logitech-pebble-m350-cutout.png",
-    "Logitech M90": "./assets/mice/logitech-m90-cutout.png",
+    "Logitech Pebble M350": "./assets/mice/logitech-pebble-m350.webp",
+    "Logitech M90": "./assets/mice/logitech-m90.webp",
     "Logitech M100": "./assets/mice/logitech m100 wired.avif",
     "Logitech B100": "./assets/mice/logitech b100.png",
     "Logitech MX518": "./assets/mice/Logitech MX518 mouse white background png.webp",
@@ -2843,8 +2843,8 @@
     "Logitech G303 Shroud Edition": "./assets/mice/Logitech G303 Shroud Edition mouse white background png.jpg",
     "Razer DeathAdder V4 Pro": "./assets/mice/Razer DeathAdder V4 Pro mouse white background png.jpg",
     "Razer DeathAdder V3 Pro": "./assets/mice/razer-deathadder-v3-pro.webp",
-    "Razer DeathAdder V3": "./assets/mice/razer-deathadder-v3-cutout.png",
-    "Razer Basilisk V3": "./assets/mice/razer-basilisk-v3-cutout.png",
+    "Razer DeathAdder V3": "./assets/mice/razer-deathadder-v3.webp",
+    "Razer Basilisk V3": "./assets/mice/razer-basilisk-v3.webp",
     "Razer Basilisk V3 Pro": "./assets/mice/Razer Basilisk V3 pro mouse white background png.png",
     "Razer Viper V4 Pro": "./assets/mice/Razer Viper V4 Pro mouse white background png.avif",
     "Razer Viper V3 Pro": "./assets/mice/Razer Viper V3 Pro mouse white background png.jpg",
@@ -2892,7 +2892,7 @@
     "SteelSeries Sensei / Sensei 310": "./assets/mice/Steelseries Sensei mouse white background png.png",
     "SteelSeries Kana v2": "./assets/mice/Steelseries Kana v2 mouse white background png.jpg",
     "SteelSeries Rival 710 / Rival 3 / Rival 5": "./assets/mice/Steelseries Rival 710  mouse white background png.webp",
-    "SteelSeries Rival 100": "./assets/mice/steelseries-rival-100-cutout.png",
+    "SteelSeries Rival 100": "./assets/mice/steelseries-rival-100.webp",
     "SteelSeries Rival 110": "./assets/mice/SteelSeries Rival 110 png.webp",
     "SteelSeries Rival 300": "./assets/mice/SteelSeries Rival 300  png.jpg",
     "SteelSeries Rival 600": "./assets/mice/SteelSeries Rival 600.png",
@@ -2911,7 +2911,7 @@
     "Asus ROG Spatha": "./assets/mice/Asus ROG Spatha mouse white background png.png",
     "Glorious Model O": "./assets/mice/Glorious Model O mouse white background png.jpg",
     "Glorious Model O3 Wireless": "./assets/mice/Glorious Model O3 Wireless mouse white background png.webp",
-    "Glorious Model D": "./assets/mice/glorious-model-d-cutout.png",
+    "Glorious Model D": "./assets/mice/glorious-model-d.webp",
     "Glorious Model D3 Wireless": "./assets/mice/Glorious Model D3 Wireless mouse white background png.webp",
     "Glorious Model O Wireless": "./assets/mice/Glorious Model O Wireless  png.jpg",
     "Glorious Model O Minus": "./assets/mice/Glorious Model O Minus  png.jpg",
@@ -2924,7 +2924,7 @@
     "Endgame Gear XM1r": "./assets/mice/Endgame Gear XM1r png.webp",
     "Endgame Gear OP1": "./assets/mice/Endgame Gear OP1 png.png",
     "Microsoft Surface Mobile Mouse": "./assets/mice/Microsoft Surface Mobile Mouse mouse white background png.jpg",
-    "Microsoft Pro Intellimouse": "./assets/mice/microsoft-pro-intellimouse-cutout.png",
+    "Microsoft Pro Intellimouse": "./assets/mice/microsoft-pro-intellimouse.webp",
     "Microsoft Wireless IntelliMouse Explorer": "./assets/mice/Microsoft Wireless IntelliMouse Explorer mouse white background png.jpg",
     "Microsoft Basic Optical Mouse": "./assets/mice/Microsoft Basic Optical Mouse mouse white background png.jpg",
     "Microsoft Classic Intellimouse": "./assets/mice/Microsoft Classic Intellimouse mouse white background png.avif",
@@ -2982,7 +2982,7 @@
     "Dell WM126": "./assets/mice/Dell WM126 mouse white background png.avif",
     "Trust YVI+": "./assets/mice/Trust YVI+ mouse white background png.png",
     "Trust GXT 101": "./assets/mice/Trust GXT 101 mouse white background png.webp",
-    "Trust GXT 105": "./assets/mice/trust-gxt-105-cutout.png",
+    "Trust GXT 105": "./assets/mice/trust-gxt-105.webp",
     "Trust GXT 144": "./assets/mice/Trust GXT 144 mouse white background png.png",
     "Trust GXT 130": "./assets/mice/Trust GXT 130 mouse white background png.webp",
     "ATK Blazing Sky U2 8K": "./assets/mice/ATK Blazing Sky U2 8K mouse white background png.webp",
@@ -2995,8 +2995,6 @@
     "Urban Factory Ergo Mouse": "./assets/mice/Urban Factory Ergo Mouse mouse white background png.jpg",
     "Kensington Ergo Series": "./assets/mice/Kensington Ergo Series mouse white background pn.jpg"
   };
-
-  const validLocalImages = new Set(Object.values(localImageOverrides));
 
   const imagePaletteByBrand = {
     "Logitech": { base: "#f4efe6", accent: "#0f766e", line: "#1f2937", tag: "#ecfdf5" },
@@ -4423,13 +4421,6 @@ Trust GXT 130,2 400,500 Hz,Sans fil,Ergo Droitier,150g
 
       if (localImageOverrides[item]) {
         baseEntry.image = localImageOverrides[item];
-      } else if (
-        baseEntry.image &&
-        !/^https?:\/\//i.test(baseEntry.image) &&
-        !/^data:/i.test(baseEntry.image) &&
-        !validLocalImages.has(baseEntry.image)
-      ) {
-        baseEntry.image = null;
       }
 
       const sourceText = [

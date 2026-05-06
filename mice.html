@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSp — Catalogue Souris | Gaming, Bureau, Sans-fil</title>
-  <meta name="description" content="Explorez notre catalogue complet de souris gaming et bureau. Comparez DPI, polling rate, poids et plus. Filtres avancés et recommandation IA.">
-  <meta name="keywords" content="souris gaming, souris bureau, comparateur souris, DPI, polling rate, souris légère, souris ergonomique, sans-fil">
+  <title>MinSp â€” Catalogue Souris | Gaming, Bureau, Sans-fil</title>
+  <meta name="description" content="Explorez notre catalogue complet de souris gaming et bureau. Comparez DPI, polling rate, poids et plus. Filtres avancÃ©s et recommandation IA.">
+  <meta name="keywords" content="souris gaming, souris bureau, comparateur souris, DPI, polling rate, souris lÃ©gÃ¨re, souris ergonomique, sans-fil">
   <meta name="author" content="MinSP">
   <meta name="robots" content="index, follow">
   
@@ -51,10 +51,11 @@
   <script src="./mobile-filters.js"></script>
   <!-- Premium Sticky Nav -->
   <script src="./nav-header.js"></script>
+  <script src="./i18n.js"></script>
   <link rel="canonical" href="https://minsp.onrender.com/mice.html">
 </head>
 <body class="theme-tech">
-  <!-- ═══ Premium Sticky Nav ═══ -->
+  <!-- â•â•â• Premium Sticky Nav â•â•â• -->
   <nav class="site-nav" id="site-nav">
     <div class="site-nav-inner">
       <!-- Left: Logo + Slogan -->
@@ -69,7 +70,7 @@
       <div class="nav-center">
         <nav class="nav-links" aria-label="Main navigation">
           <a href="index.html" class="nav-link">Home</a>
-          <a href="mice.html" class="nav-link is-active">Mice</a>
+          <a href="mice.html" class="nav-link" data-i18n="navMice">Mouse</a>
           <a href="keyboards.html" class="nav-link">Keyboards</a>
           <a href="pc-components.html" class="nav-link">PC Components</a>
           <a href="ai-landing.html" class="nav-link nav-link-ai">AI Recommendation</a>
@@ -97,11 +98,11 @@
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="fr" data-flag="fi-fr" aria-selected="false">
               <span class="fi fi-fr" aria-hidden="true"></span>
-              <span>Français (FR)</span>
+              <span>FranÃ§ais (FR)</span>
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="es" data-flag="fi-es" aria-selected="false">
               <span class="fi fi-es" aria-hidden="true"></span>
-              <span>Español (ES)</span>
+              <span>EspaÃ±ol (ES)</span>
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="de" data-flag="fi-de" aria-selected="false">
               <span class="fi fi-de" aria-hidden="true"></span>
@@ -113,15 +114,15 @@
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="pt" data-flag="fi-pt" aria-selected="false">
               <span class="fi fi-pt" aria-hidden="true"></span>
-              <span>Português (PT)</span>
+              <span>PortuguÃªs (PT)</span>
             </button>
           </div>
         </div>
 
-        <a href="login.html" class="nav-account-btn">
+        <button type="button" class="nav-account-btn" onclick="showAuthModal('login')">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           <span>Se connecter</span>
-        </a>
+        </button>
 
         <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -129,11 +130,7 @@
       </div>
     </div>
   </nav>
-
-  <!-- Google Translate element (outside nav to avoid blocking clicks) -->
-  <div id="google_translate_element" style="display:none;position:absolute;left:-9999px;"></div>
-
-  <!-- ═══ Stats Section (Below Header) ═══ -->
+<!-- â•â•â• Stats Section (Below Header) â•â•â• -->
   <section class="stats-section" aria-label="Catalog statistics">
     <div class="stats-grid">
       <div class="stat-card">
@@ -217,10 +214,10 @@
               <h2 id="catalog-title">Mice Catalog</h2>
             </div>
             <div class="section-actions">
-              <button type="button" class="back-home-btn" id="back-home-btn">← 🏠 <span data-translate="Home">Home</span></button>
-              <button type="button" class="fav-view-btn" id="fav-view-btn">★ <span id="fav-btn-text">Favorites</span></button>
+              <button type="button" class="back-home-btn" id="back-home-btn">â† ðŸ  <span data-translate="Home">Home</span></button>
+              <button type="button" class="fav-view-btn" id="fav-view-btn">â˜… <span id="fav-btn-text">Favorites</span></button>
               <a href="ai-recommend.html" class="ai-recommend-btn" id="ai-recommend-btn" title="Get AI mouse recommendation (login required)" onclick="return checkAIAccess();">
-                <span class="ai-btn-icon">✨</span>
+                <span class="ai-btn-icon">âœ¨</span>
                 <span class="ai-btn-text">AI</span>
               </a>
             </div>
@@ -288,7 +285,7 @@
               <p class="section-kicker" id="fav-kicker">Favorites</p>
               <h2 id="fav-page-title" data-translate="Your favorite mouse">Your favorite mouse</h2>
             </div>
-            <button type="button" class="back-btn" id="back-to-catalog">← Back to catalog</button>
+            <button type="button" class="back-btn" id="back-to-catalog">â† Back to catalog</button>
           </div>
           <div class="catalog-grid" id="favorites-grid"></div>
         </section>
@@ -324,36 +321,7 @@
       </aside>
     </div>
   </div>
-
-  <style>
-    .goog-te-banner-frame, .goog-te-banner, .skiptranslate {
-      display: none !important;
-      visibility: hidden !important;
-    }
-    body {
-      top: 0 !important;
-      position: static !important;
-    }
-    #goog-gt-tt, .goog-te-balloon-frame {
-      display: none !important;
-    }
-    .goog-te-gadget {
-      display: none !important;
-    }
-  </style>
-
-  <!-- Keep-alive script to counter Render Cold Start -->
-  <script>
-    (function() {
-      setInterval(function() {
-        if (navigator.onLine) {
-          fetch(window.location.href, { method: 'HEAD', cache: 'no-store' }).catch(function() {});
-        }
-      }, 300000);
-    })();
-  </script>
-
-  <script src="./data/mice.js"></script>
+<script src="./data/mice.js"></script>
   <script src="./data/keyboards.js"></script>
   <script src="./data/pc-components.js"></script>
   <script src="./app.js"></script>
@@ -381,7 +349,7 @@
       }
       
       if (!currentUser) {
-        alert('🔒 Please log in to use AI recommendations\n\nCreate a free account to unlock personalized mouse recommendations powered by AI.');
+        alert('ðŸ”’ Please log in to use AI recommendations\n\nCreate a free account to unlock personalized mouse recommendations powered by AI.');
         window.location.href = 'login.html?return=ai-recommend.html';
         return false;
       }
@@ -410,7 +378,7 @@
         <div class="footer-categories">
           <a href="ai-recommend.html?usage=gaming&budget=50">Budget Gaming Mice</a>
           <a href="ai-recommend.html?usage=fps&wireless=true">Wireless FPS Mice</a>
-          <a href="ai-recommend.html?usage=bureautique&budget=80">Office Mice Under 80€</a>
+          <a href="ai-recommend.html?usage=bureautique&budget=80">Office Mice Under 80â‚¬</a>
           <a href="ai-recommend.html?weight=ultralight&wireless=true">Ultra Light Wireless</a>
           <a href="ai-recommend.html?brand=Logitech&usage=gaming">Logitech Gaming</a>
           <a href="ai-recommend.html?hand-size=small&usage=gaming">Small Hand Gaming</a>
@@ -428,7 +396,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+

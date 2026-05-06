@@ -56,211 +56,131 @@
     });
   }
 
-  /* ── 3. Language picker (Google Translate Widget) ── */
-  var langTrigger = document.getElementById('nav-lang-trigger');
-  var langMenu = document.getElementById('nav-lang-menu');
-  var langFlag = document.getElementById('nav-lang-flag');
-  var langLabel = document.getElementById('nav-lang-label');
-  var langOptions = document.querySelectorAll('.nav-lang-option');
+  /* ── 3. Language picker (local i18n) ── */
+  var i18n = window.MinSPI18n;
+  var picker = document.getElementById('nav-lang-picker') || nav.querySelector('.nav-lang-picker');
+  var langTrigger;
+  var langMenu;
+  var langFlag;
+  var langLabel;
 
-  var STORAGE_KEY = 'minsp_language';
-
-  var langConfig = {
-    'en': { flag: 'fi-us', label: 'EN', name: 'English (US)' },
-    'fr': { flag: 'fi-fr', label: 'FR', name: 'Français (FR)' },
-    'es': { flag: 'fi-es', label: 'ES', name: 'Español (ES)' },
-    'de': { flag: 'fi-de', label: 'DE', name: 'Deutsch (DE)' },
-    'it': { flag: 'fi-it', label: 'IT', name: 'Italiano (IT)' },
-    'pt': { flag: 'fi-pt', label: 'PT', name: 'Português (PT)' }
-  };
-
-  // Read googtrans cookie
-  function getLangFromCookie() {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-      var c = cookies[i].trim();
-      if (c.startsWith('googtrans=')) {
-        var val = c.substring('googtrans='.length);
-        var parts = val.split('/');
-        if (parts.length >= 3) {
-          var lang = parts[2].split('-')[0].toLowerCase();
-          return lang;
-        }
-      }
-    }
-    return null;
-  }
-
-  // Get current language from cookie, localStorage, or browser
-  function getCurrentLanguage() {
-    var cookieLang = getLangFromCookie();
-    if (cookieLang && langConfig[cookieLang]) return cookieLang;
-    try {
-      var stored = localStorage.getItem(STORAGE_KEY);
-      if (stored && langConfig[stored]) return stored;
-    } catch (e) {}
-    var browserLang = navigator.language || navigator.userLanguage || 'en';
-    var shortLang = browserLang.split('-')[0].toLowerCase();
-    if (langConfig[shortLang]) return shortLang;
-    return 'en';
-  }
-
-  // Update UI for selected language
-  function updateLanguageUI(lang) {
-    var config = langConfig[lang];
-    if (!config) return;
-    if (langFlag) langFlag.className = 'fi ' + config.flag;
-    if (langLabel) langLabel.textContent = config.label;
-    langOptions.forEach(function (opt) {
-      var isSelected = opt.getAttribute('data-lang') === lang;
-      opt.classList.toggle('is-active', isSelected);
-      opt.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-    });
-    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-  }
-
-  // Trigger Google Translate with retry mechanism
-  function triggerGoogleTranslate(lang) {
-    if (lang === 'en') {
-      clearGoogleTranslateCookies();
-      window.location.reload();
+  function closeLanguageMenu() {
+    if (!langTrigger || !langMenu) {
       return;
     }
 
-    // Try to use Google Translate combo (wait for it to be ready)
-    var attempts = 0;
-    var maxAttempts = 50; // 5 seconds total
+    langTrigger.setAttribute('aria-expanded', 'false');
+    langMenu.classList.remove('is-open');
+  }
 
-    function tryTranslate() {
-      var combo = document.querySelector('.goog-te-combo');
-      if (combo) {
-        combo.value = lang;
-        combo.dispatchEvent(new Event('change', { bubbles: true }));
-        return;
-      }
-
-      // Also try direct Google Translate API if available
-      if (window.google && google.translate && google.translate.TranslateElement) {
-        var gtElement = document.getElementById('google_translate_element');
-        if (gtElement && gtElement._gtElement) {
-          gtElement._gtElement.showBanner(lang);
-          return;
-        }
-      }
-
-      attempts++;
-      if (attempts < maxAttempts) {
-        setTimeout(tryTranslate, 100);
-      } else {
-        // Final fallback: cookie method
-        setGoogleTranslateCookie(lang);
-        window.location.reload();
-      }
+  function ensureLanguagePicker() {
+    if (!picker || !i18n) {
+      return;
     }
 
-    tryTranslate();
-  }
-
-  // Clear GT cookies (for returning to English)
-  function clearGoogleTranslateCookies() {
-    var domain = window.location.hostname;
-    var expires = 'expires=Thu, 01 Jan 1970 00:00:01 GMT';
-    // Clear all possible domain variations
-    document.cookie = 'googtrans=; path=/; ' + expires;
-    document.cookie = 'googtrans=; path=/; domain=' + domain + '; ' + expires;
-    document.cookie = 'googtrans=; path=/; domain=.' + domain + '; ' + expires;
-    document.cookie = 'googtrans=; path=/; domain=www.' + domain + '; ' + expires;
-    // Also clear without domain
-    document.cookie = 'googtrans=; path=/; ' + expires;
-  }
-
-  // Set GT cookie for translation
-  function setGoogleTranslateCookie(lang) {
-    var domain = window.location.hostname;
-    var cookieValue = '/en/' + lang;
-    var cookieOptions = 'path=/; max-age=86400'; // 24 hours
-    // Set for multiple domain variations to be safe
-    document.cookie = 'googtrans=' + cookieValue + '; ' + cookieOptions;
-    if (domain && domain !== 'localhost') {
-      document.cookie = 'googtrans=' + cookieValue + '; domain=' + domain + '; ' + cookieOptions;
-      document.cookie = 'googtrans=' + cookieValue + '; domain=.' + domain + '; ' + cookieOptions;
+    if (!picker.id) {
+      picker.id = 'nav-lang-picker';
     }
+
+    picker.setAttribute('data-minsp-no-auto-translate', 'true');
+    picker.innerHTML =
+      '<button class="nav-lang-trigger" id="nav-lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose language">' +
+        '<span class="nav-lang-flag-emoji" id="nav-lang-flag" aria-hidden="true"></span>' +
+        '<span class="nav-lang-label" id="nav-lang-label">EN</span>' +
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>' +
+      '</button>' +
+      '<div class="nav-lang-menu" id="nav-lang-menu" role="listbox" aria-label="Choose language" data-minsp-no-auto-translate="true"></div>';
+
+    langTrigger = document.getElementById('nav-lang-trigger');
+    langMenu = document.getElementById('nav-lang-menu');
+    langFlag = document.getElementById('nav-lang-flag');
+    langLabel = document.getElementById('nav-lang-label');
   }
 
-  if (langTrigger && langMenu) {
-    langTrigger.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+  function renderLanguageMenu(activeLang) {
+    var currentLanguage = i18n.normalizeLanguageCode(activeLang);
+
+    if (!langMenu) {
+      return;
+    }
+
+    langMenu.innerHTML = i18n.getLanguageOrder().map(function (lang) {
+      var config = i18n.getLanguageConfig(lang);
+      var isActive = currentLanguage === lang;
+
+      return (
+        '<button class="nav-lang-option' + (isActive ? ' is-active' : '') + '" type="button" role="option" aria-selected="' + (isActive ? 'true' : 'false') + '" data-lang="' + lang + '">' +
+          '<span class="nav-lang-option-emoji" aria-hidden="true">' + config.emoji + '</span>' +
+          '<span>' + config.name + '</span>' +
+        '</button>'
+      );
+    }).join('');
+  }
+
+  function updateLanguageUI(activeLang) {
+    var currentLanguage = i18n.normalizeLanguageCode(activeLang);
+    var config = i18n.getLanguageConfig(currentLanguage);
+
+    if (langFlag) {
+      langFlag.textContent = config.emoji;
+    }
+
+    if (langLabel) {
+      langLabel.textContent = config.label;
+    }
+
+    if (langTrigger) {
+      langTrigger.setAttribute('aria-label', window.translateText ? window.translateText('Choose language', currentLanguage) : 'Choose language');
+    }
+
+    if (langMenu) {
+      langMenu.setAttribute('aria-label', window.translateText ? window.translateText('Choose language', currentLanguage) : 'Choose language');
+    }
+
+    renderLanguageMenu(currentLanguage);
+  }
+
+  ensureLanguagePicker();
+
+  if (langTrigger && langMenu && i18n) {
+    langTrigger.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
       var isExpanded = langTrigger.getAttribute('aria-expanded') === 'true';
       langTrigger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
       langMenu.classList.toggle('is-open', !isExpanded);
     });
 
-    // Close on outside click
-    document.addEventListener('click', function (e) {
-      if (!langTrigger.contains(e.target) && !langMenu.contains(e.target)) {
-        langTrigger.setAttribute('aria-expanded', 'false');
-        langMenu.classList.remove('is-open');
+    langMenu.addEventListener('click', function (event) {
+      var option = event.target.closest('.nav-lang-option[data-lang]');
+
+      if (!option) {
+        return;
+      }
+
+      i18n.setLanguage(option.getAttribute('data-lang'));
+      closeLanguageMenu();
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!picker.contains(event.target)) {
+        closeLanguageMenu();
       }
     });
 
-    // Close on Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        langTrigger.setAttribute('aria-expanded', 'false');
-        langMenu.classList.remove('is-open');
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeLanguageMenu();
       }
     });
 
-    // Language option clicks
-    langOptions.forEach(function (option) {
-      option.addEventListener('click', function () {
-        var selectedLang = this.getAttribute('data-lang');
-        updateLanguageUI(selectedLang);
-        langTrigger.setAttribute('aria-expanded', 'false');
-        langMenu.classList.remove('is-open');
+    updateLanguageUI(i18n.getCurrentLanguage());
 
-        // Show loading state on button
-        var originalLabel = langLabel ? langLabel.textContent : '';
-        if (langLabel) langLabel.textContent = '...';
-        if (langTrigger) langTrigger.style.opacity = '0.6';
-
-        triggerGoogleTranslate(selectedLang);
-
-        // Restore button after a delay
-        setTimeout(function() {
-          if (langLabel && originalLabel) langLabel.textContent = originalLabel;
-          if (langTrigger) langTrigger.style.opacity = '1';
-        }, 2000);
-      });
+    window.addEventListener('minsp:languagechange', function (event) {
+      if (event && event.detail && event.detail.language) {
+        updateLanguageUI(event.detail.language);
+      }
     });
-
-    // Initialize UI
-    var currentLang = getCurrentLanguage();
-    updateLanguageUI(currentLang);
-  }
-
-  // Initialize Google Translate widget if element exists
-  function initGoogleTranslate() {
-    var el = document.getElementById('google_translate_element');
-    if (el && typeof google !== 'undefined' && google.translate) {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  }
-
-  // Make init function globally available for the Google Translate script callback
-  window.googleTranslateElementInit = function () {
-    initGoogleTranslate();
-  };
-
-  // If Google Translate script already loaded, init now
-  if (typeof google !== 'undefined' && google.translate) {
-    initGoogleTranslate();
   }
 
   /* ── 4. Favorites button → scroll to / show favorites ── */

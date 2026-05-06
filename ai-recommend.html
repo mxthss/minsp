@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSp — Recommandation IA Souris | Trouvez votre souris idéale</title>
-  <meta name="description" content="Obtenez une recommandation de souris personnalisée par IA en 30 secondes. Analysez votre profil, grip, budget et usage. Gratuit et sans inscription.">
+  <title>MinSp â€” Recommandation IA Souris | Trouvez votre souris idÃ©ale</title>
+  <meta name="description" content="Obtenez une recommandation de souris personnalisÃ©e par IA en 30 secondes. Analysez votre profil, grip, budget et usage. Gratuit et sans inscription.">
   <meta name="robots" content="index, follow">
   
   <!-- Canonical URL -->
@@ -19,7 +19,7 @@
   
   <!-- Open Graph -->
   <meta property="og:title" content="MinSp - AI Mouse Recommendation">
-  <meta property="og:description" content="Découvrez gratuitement votre plan personnalisé MinSp en 30 secondes. Rapide, précis et sans inscription !">
+  <meta property="og:description" content="DÃ©couvrez gratuitement votre plan personnalisÃ© MinSp en 30 secondes. Rapide, prÃ©cis et sans inscription !">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://minsp.onrender.com/ai-recommend.html">
   <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
@@ -29,7 +29,7 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MinSp - AI Mouse Recommendation">
-  <meta name="twitter:description" content="Découvrez gratuitement votre plan personnalisé MinSp en 30 secondes. Rapide, précis et sans inscription !">
+  <meta name="twitter:description" content="DÃ©couvrez gratuitement votre plan personnalisÃ© MinSp en 30 secondes. Rapide, prÃ©cis et sans inscription !">
   <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
   
   <!-- Critical CSS for AI Recommend Page -->
@@ -40,6 +40,7 @@
   <script src="./theme-toggle.js"></script>
   <!-- Premium Sticky Nav -->
   <script src="./nav-header.js"></script>
+  <script src="./i18n.js"></script>
   <!-- Performance Optimizations -->
   <script src="./app-optimizations.js"></script>
   
@@ -110,8 +111,21 @@
     }
 
     .ai-page-header {
+      display: flex;
+      align-items: center;
+      gap: 22px;
       text-align: left;
       margin-bottom: 48px;
+    }
+
+    .ai-header-mascot {
+      flex: 0 0 auto;
+      width: clamp(118px, 18vw, 168px);
+      margin-inline: 0;
+    }
+
+    .ai-header-copy {
+      min-width: 0;
     }
 
     .ai-page-header h1 {
@@ -119,7 +133,7 @@
       font-weight: 400;
       margin: 0 0 8px;
       color: var(--text);
-      letter-spacing: -0.5px;
+      letter-spacing: 0;
     }
 
     .ai-page-header p {
@@ -127,6 +141,14 @@
       color: var(--text-faint);
       margin: 0;
       font-weight: 300;
+    }
+
+    @media (max-width: 600px) {
+      .ai-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
     }
 
     .ai-back-link {
@@ -588,7 +610,7 @@
     }
 
     .ai-best-badge::before {
-      content: '🏆';
+      content: 'ðŸ†';
     }
 
     .ai-best-name {
@@ -1615,7 +1637,6 @@
         <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Favoris</span></button>
         <!-- Google Translate Widget -->
         <div class="nav-lang-picker">
-          <div id="google_translate_element"></div>
         </div>
         <a href="login.html" class="nav-account-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Se connecter</span></a>
         <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
@@ -1624,16 +1645,19 @@
   </nav>
   <div class="ai-page">
     <div class="ai-container">
-      <a href="index.html" class="ai-back-link">← Back to catalog</a>
+      <a href="index.html" class="ai-back-link">â† Back to catalog</a>
 
       <div class="ai-page-header">
-        <h1>🤖 AI Mouse Recommendation</h1>
-        <p>Answer a few questions and let our AI find your perfect mouse</p>
+        <div class="minsp-mascot is-yawning ai-header-mascot" id="ai-idle-mascot" role="img" aria-label="MinSp mascot resting"></div>
+        <div class="ai-header-copy">
+          <h1>ðŸ¤– AI Mouse Recommendation</h1>
+          <p>Answer a few questions and let our AI find your perfect mouse</p>
+        </div>
       </div>
 
       <!-- Step 1: Form -->
       <div class="ai-form-card" id="ai-form-section">
-        <h2><span class="icon">🎯</span> Your Preferences</h2>
+        <h2><span class="icon">ðŸŽ¯</span> Your Preferences</h2>
         
         <!-- Progress Bar -->
         <div class="ai-progress-container">
@@ -1649,14 +1673,14 @@
               <label for="ai-budget">Budget <span class="required">*</span></label>
               <select id="ai-budget" name="budget" required>
                 <option value="">Select...</option>
-                <option value="30">Under 30€</option>
-                <option value="50">Up to 50€</option>
-                <option value="80">Up to 80€</option>
-                <option value="100">Up to 100€</option>
-                <option value="150">Up to 150€</option>
-                <option value="200">Up to 200€</option>
-                <option value="300">Up to 300€</option>
-                <option value="400">Up to 400€</option>
+                <option value="30">Under 30â‚¬</option>
+                <option value="50">Up to 50â‚¬</option>
+                <option value="80">Up to 80â‚¬</option>
+                <option value="100">Up to 100â‚¬</option>
+                <option value="150">Up to 150â‚¬</option>
+                <option value="200">Up to 200â‚¬</option>
+                <option value="300">Up to 300â‚¬</option>
+                <option value="400">Up to 400â‚¬</option>
               </select>
             </div>
             <div class="ai-form-group">
@@ -1773,20 +1797,23 @@
           </div>
 
           <button type="submit" class="ai-submit-btn" id="ai-submit-btn">
-            <span>✨</span>
+            <span>âœ¨</span>
             Get My Recommendation
           </button>
           
           <!-- Dynamic Counter -->
           <div class="ai-counter" id="ai-counter">
-            <span class="ai-counter-icon">📊</span>
-            <span class="ai-counter-text">Déjà plus de <span id="ai-counter-number">0</span> analyses générées cette semaine</span>
+            <span class="ai-counter-icon">ðŸ“Š</span>
+            <span class="ai-counter-text">DÃ©jÃ  plus de <span id="ai-counter-number">0</span> analyses gÃ©nÃ©rÃ©es cette semaine</span>
           </div>
         </form>
       </div>
 
       <!-- Step 2: Loading -->
       <div class="ai-loading-card hidden" id="ai-loading-section">
+        <!-- Mascotte animÃ©e pendant le calcul IA -->
+        <div class="minsp-mascot is-loading" role="img" aria-label="MinSp mascot analyzing"></div>
+
         <div class="ai-loading-spinner"></div>
         <h3>Analyzing your profile...</h3>
         <p>Our AI is comparing your needs with our database of mice</p>
@@ -1809,12 +1836,12 @@
       <div class="ai-results-card hidden" id="ai-results-section">
         <!-- Affiliate Disclosure -->
         <div class="ai-affiliate-disclosure">
-          <span class="ai-disclosure-icon">ℹ️</span>
-          <span class="ai-disclosure-text">MinSp est soutenu par ses lecteurs. Nous pouvons percevoir une commission sur les achats effectués via nos liens.</span>
+          <span class="ai-disclosure-icon">â„¹ï¸</span>
+          <span class="ai-disclosure-text">MinSp est soutenu par ses lecteurs. Nous pouvons percevoir une commission sur les achats effectuÃ©s via nos liens.</span>
         </div>
         
         <div class="ai-results-header">
-          <h2>🎉 Your Perfect Match</h2>
+          <h2>ðŸŽ‰ Your Perfect Match</h2>
           <p>Based on your preferences, here's what we recommend</p>
         </div>
 
@@ -1823,18 +1850,18 @@
         </div>
 
         <button type="button" class="ai-new-btn" id="ai-new-btn">
-          <span>🔄</span>
+          <span>ðŸ”„</span>
           Get another recommendation
         </button>
 
         <button type="button" class="ai-share-btn" id="ai-share-btn">
-          <span>📤</span>
+          <span>ðŸ“¤</span>
           Partager mon profil
         </button>
 
         <!-- Dynamic Resource Suggestions -->
         <div class="ai-resources-section" id="ai-resources-section">
-          <h2>📚 Pour aller plus loin avec votre profil</h2>
+          <h2>ðŸ“š Pour aller plus loin avec votre profil</h2>
           <div class="ai-resources-grid" id="ai-resources-grid">
             <!-- Dynamic cards injected here -->
           </div>
@@ -1845,13 +1872,13 @@
           <!-- Tab Navigation -->
           <div class="ai-info-tabs">
             <button class="ai-info-tab active" data-tab="faq" type="button">
-              <span>❓</span> FAQ
+              <span>â“</span> FAQ
             </button>
             <button class="ai-info-tab" data-tab="methodology" type="button">
-              <span>📊</span> Methodology
+              <span>ðŸ“Š</span> Methodology
             </button>
             <button class="ai-info-tab" data-tab="testimonials" type="button">
-              <span>💬</span> Reviews
+              <span>ðŸ’¬</span> Reviews
             </button>
           </div>
 
@@ -1885,39 +1912,39 @@
                 <p>Our scoring system is based on 15 technical criteria weighted according to your specific use case:</p>
                 <div class="ai-methodology-grid">
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">🎯</span>
+                    <span class="ai-methodology-icon">ðŸŽ¯</span>
                     <span class="ai-methodology-text">Budget alignment (20%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">🤚</span>
+                    <span class="ai-methodology-icon">ðŸ¤š</span>
                     <span class="ai-methodology-text">Hand size compatibility (15%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">🖐️</span>
+                    <span class="ai-methodology-icon">ðŸ–ï¸</span>
                     <span class="ai-methodology-text">Grip style match (15%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">🎮</span>
+                    <span class="ai-methodology-icon">ðŸŽ®</span>
                     <span class="ai-methodology-text">Usage type fit (15%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">📡</span>
+                    <span class="ai-methodology-icon">ðŸ“¡</span>
                     <span class="ai-methodology-text">Wireless preference (10%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">⚖️</span>
+                    <span class="ai-methodology-icon">âš–ï¸</span>
                     <span class="ai-methodology-text">Weight optimization (10%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">🏷️</span>
+                    <span class="ai-methodology-icon">ðŸ·ï¸</span>
                     <span class="ai-methodology-text">Brand preference (5%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">🌈</span>
+                    <span class="ai-methodology-icon">ðŸŒˆ</span>
                     <span class="ai-methodology-text">RGB/Lighting (5%)</span>
                   </div>
                   <div class="ai-methodology-item">
-                    <span class="ai-methodology-icon">�</span>
+                    <span class="ai-methodology-icon">ï¿½</span>
                     <span class="ai-methodology-text">Button count (5%)</span>
                   </div>
                 </div>
@@ -1931,15 +1958,15 @@
                 <h2>Ce que disent nos utilisateurs</h2>
                 <div class="ai-testimonials-list">
                   <div class="ai-testimonial">
-                    <p class="ai-testimonial-text">"Top pour gérer mon budget, j'ai trouvé la souris parfaite pour le gaming à petit prix!"</p>
+                    <p class="ai-testimonial-text">"Top pour gÃ©rer mon budget, j'ai trouvÃ© la souris parfaite pour le gaming Ã  petit prix!"</p>
                     <p class="ai-testimonial-author">- Marc L.</p>
                   </div>
                   <div class="ai-testimonial">
-                    <p class="ai-testimonial-text">"L'outil est super rapide et les recommandations sont vraiment précises pour ma taille de main."</p>
+                    <p class="ai-testimonial-text">"L'outil est super rapide et les recommandations sont vraiment prÃ©cises pour ma taille de main."</p>
                     <p class="ai-testimonial-author">- Sophie M.</p>
                   </div>
                   <div class="ai-testimonial">
-                    <p class="ai-testimonial-text">"En tant que designer, j'ai trouvé exactement ce qu'il me fallait pour le travail de précision."</p>
+                    <p class="ai-testimonial-text">"En tant que designer, j'ai trouvÃ© exactement ce qu'il me fallait pour le travail de prÃ©cision."</p>
                     <p class="ai-testimonial-author">- Thomas R.</p>
                   </div>
                 </div>
@@ -1951,16 +1978,26 @@
 
       <!-- Step 4: Error -->
       <div class="ai-error-card hidden" id="ai-error-section">
-        <div class="ai-error-icon">⚠️</div>
+        <div class="ai-error-icon">âš ï¸</div>
         <h3>Oops! Something went wrong</h3>
         <p id="ai-error-message">We couldn't get a recommendation. Please try again.</p>
         <button type="button" class="ai-retry-btn" id="ai-error-btn">
-          <span>🔄</span>
+          <span>ðŸ”„</span>
           Try Again
         </button>
       </div>
     </div>
   </div>
+
+  <!-- Mascotte assistante MinSp -->
+  <aside class="minsp-guide is-right is-visible is-speaking" id="minsp-guide-recommend" aria-live="polite">
+    <div class="minsp-guide-inner">
+      <div class="minsp-guide-bubble" id="minsp-guide-recommend-text">
+        I am ready. Start an analysis and I will guide you.
+      </div>
+      <div class="minsp-mascot is-thinking" role="img" aria-label="MinSp mascot"></div>
+    </div>
+  </aside>
 
   <!-- Footer with Quick Links -->
   <footer class="ai-footer">
@@ -1982,7 +2019,7 @@
         <div class="ai-footer-categories">
           <a href="ai-recommend.html?usage=gaming&budget=50">Budget Gaming Mice</a>
           <a href="ai-recommend.html?usage=fps&wireless=true">Wireless FPS Mice</a>
-          <a href="ai-recommend.html?usage=bureautique&budget=80">Office Mice Under 80€</a>
+          <a href="ai-recommend.html?usage=bureautique&budget=80">Office Mice Under 80â‚¬</a>
           <a href="ai-recommend.html?weight=ultralight&wireless=true">Ultra Light Wireless</a>
           <a href="ai-recommend.html?brand=Logitech&usage=gaming">Logitech Gaming</a>
           <a href="ai-recommend.html?hand-size=small&usage=gaming">Small Hand Gaming</a>
@@ -2026,7 +2063,7 @@
         if (backLink && currentUser.pseudo) {
           backLink.insertAdjacentHTML('afterend', 
             '<p style="color: var(--text-faint); font-size: 0.9rem; margin: -16px 0 16px;">Welcome, <strong>' + 
-            escapeHtml(currentUser.pseudo) + '</strong> ✨</p>');
+            escapeHtml(currentUser.pseudo) + '</strong> âœ¨</p>');
         }
       });
       
@@ -2077,6 +2114,47 @@
       var progressFill = document.getElementById('ai-progress-fill');
       var progressText = document.getElementById('ai-progress-text');
       var shareBtn = document.getElementById('ai-share-btn');
+      var pageMascot = document.getElementById('ai-idle-mascot');
+      var mascotGuide = document.getElementById('minsp-guide-recommend');
+      var mascotGuideText = document.getElementById('minsp-guide-recommend-text');
+      var mascotGuideIcon = mascotGuide ? mascotGuide.querySelector('.minsp-mascot') : null;
+      var mascotGuideSides = ['is-right', 'is-left'];
+      var mascotGuideSideIndex = 0;
+
+      function setMascotPose(element, pose) {
+        if (!element) return;
+        element.classList.remove('is-yawning', 'is-thinking', 'is-loading', 'is-working');
+        if (pose === 'yawn') {
+          element.classList.add('is-yawning');
+        } else if (pose === 'think') {
+          element.classList.add('is-thinking');
+        } else if (pose === 'work') {
+          element.classList.add('is-working');
+        }
+      }
+
+      function mascotSay(message, visibleMs, pose, side) {
+        if (!mascotGuide || !mascotGuideText) return;
+        if (pose) {
+          setMascotPose(mascotGuideIcon, pose);
+        }
+        var nextSide = side || mascotGuideSides[mascotGuideSideIndex];
+        mascotGuideSideIndex = (mascotGuideSideIndex + 1) % mascotGuideSides.length;
+        mascotGuideText.textContent = message;
+        mascotGuide.classList.remove('is-visible', 'is-speaking', 'is-left', 'is-right');
+        mascotGuide.classList.add(nextSide);
+        void mascotGuide.offsetWidth;
+        mascotGuide.classList.add('is-visible', 'is-speaking');
+        setTimeout(function() {
+          mascotGuide.classList.remove('is-speaking', 'is-visible');
+        }, visibleMs || 3800);
+      }
+
+      setTimeout(function() {
+        if (mascotGuide) {
+          mascotGuide.classList.remove('is-speaking', 'is-visible');
+        }
+      }, 5600);
 
       function showSection(section) {
         formSection.classList.add('hidden');
@@ -2087,6 +2165,8 @@
         section.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+
+      var progressCelebrated = false;
 
       // Progress Bar Logic
       function updateProgress() {
@@ -2102,6 +2182,13 @@
         var progress = Math.round((filledCount / requiredFields.length) * 100);
         progressFill.style.width = progress + '%';
         progressText.textContent = progress + '% completed';
+
+        if (progress === 100 && !progressCelebrated && !formSection.classList.contains('hidden')) {
+          progressCelebrated = true;
+          mascotSay("Profile complete. I can start the analysis when you are ready.", 4200, 'think');
+        } else if (progress < 100) {
+          progressCelebrated = false;
+        }
       }
 
       // Add event listeners to form fields for progress tracking
@@ -2124,16 +2211,16 @@
         if (formData.get('buttons')) params.set('buttons', formData.get('buttons'));
         
         var shareUrl = window.location.origin + window.location.pathname + '?' + params.toString();
-        var shareText = '🖱️ Découvre ma souris idéale sur MinSp! ' + shareUrl;
+        var shareText = 'ðŸ–±ï¸ DÃ©couvre ma souris idÃ©ale sur MinSp! ' + shareUrl;
         
         navigator.clipboard.writeText(shareText).then(function() {
           var originalText = shareBtn.innerHTML;
-          shareBtn.innerHTML = '<span>✅</span> Copié!';
+          shareBtn.innerHTML = '<span>âœ…</span> CopiÃ©!';
           setTimeout(function() {
             shareBtn.innerHTML = originalText;
           }, 2000);
         }).catch(function() {
-          alert('Lien copié: ' + shareUrl);
+          alert('Lien copiÃ©: ' + shareUrl);
         });
       });
 
@@ -2356,42 +2443,42 @@
         // Hand size tip
         if (userProfile.handSize) {
           if (userProfile.handSize === 'small' && mouse.shape === 'ambidextrous') {
-            tips.push('Idéal pour les petites mains avec sa forme ambidextre.');
+            tips.push('IdÃ©al pour les petites mains avec sa forme ambidextre.');
           } else if (userProfile.handSize === 'medium' && mouse.shape === 'ergonomic') {
-            tips.push('Parfait pour les mains moyennes en Palm Grip grâce à son ergonomie.');
+            tips.push('Parfait pour les mains moyennes en Palm Grip grÃ¢ce Ã  son ergonomie.');
           } else if (userProfile.handSize === 'large' && mouse.weight > 100) {
-            tips.push('Le poids élevé offre une stabilité supplémentaire pour les grandes mains.');
+            tips.push('Le poids Ã©levÃ© offre une stabilitÃ© supplÃ©mentaire pour les grandes mains.');
           }
         }
         
         // Usage tip
         if (userProfile.usage === 'fps' && mouse.dpi && mouse.dpi > 16000) {
-          tips.push('Le DPI élevé permet des mouvements précis en FPS compétitif.');
+          tips.push('Le DPI Ã©levÃ© permet des mouvements prÃ©cis en FPS compÃ©titif.');
         } else if (userProfile.usage === 'moba' && mouse.buttons && mouse.buttons > 5) {
-          tips.push('Les boutons supplémentaires sont parfaits pour les macros en MOBA.');
+          tips.push('Les boutons supplÃ©mentaires sont parfaits pour les macros en MOBA.');
         } else if (userProfile.usage === 'bureautique' && mouse.wireless) {
-          tips.push('Le sans-fil offre une liberté de mouvement optimale pour le travail.');
+          tips.push('Le sans-fil offre une libertÃ© de mouvement optimale pour le travail.');
         }
         
         // Grip style tip
         if (userProfile.gripStyle === 'palm' && mouse.shape === 'ergonomic') {
-          tips.push('La forme ergonomique est conçue pour le Palm Grip confortable.');
+          tips.push('La forme ergonomique est conÃ§ue pour le Palm Grip confortable.');
         } else if (userProfile.gripStyle === 'claw' && mouse.weight && mouse.weight < 80) {
-          tips.push('Le poids léger facilite les mouvements rapides en Claw Grip.');
+          tips.push('Le poids lÃ©ger facilite les mouvements rapides en Claw Grip.');
         } else if (userProfile.gripStyle === 'fingertip' && mouse.shape === 'ambidextrous') {
-          tips.push('La forme plate est idéale pour le Fingertip Grip.');
+          tips.push('La forme plate est idÃ©ale pour le Fingertip Grip.');
         }
         
         // Weight tip
         if (mouse.weight && mouse.weight < 60) {
-          tips.push('Ultra léger, parfait pour les sessions de gaming prolongées.');
+          tips.push('Ultra lÃ©ger, parfait pour les sessions de gaming prolongÃ©es.');
         } else if (mouse.weight && mouse.weight > 100) {
-          tips.push('Le poids important offre une sensation de stabilité et de contrôle.');
+          tips.push('Le poids important offre une sensation de stabilitÃ© et de contrÃ´le.');
         }
         
         // Default tip if no specific tip generated
         if (tips.length === 0) {
-          tips.push('Un excellent choix équilibré pour votre profil d\'utilisation.');
+          tips.push('Un excellent choix Ã©quilibrÃ© pour votre profil d\'utilisation.');
         }
         
         return tips[0]; // Return the first relevant tip
@@ -2533,7 +2620,7 @@
 
         // Best choice card
         html += '<div class="ai-best-card">';
-        html += '<div class="ai-best-badge">🏆 Best Choice</div>';
+        html += '<div class="ai-best-badge">ðŸ† Best Choice</div>';
         html += '<h3 class="ai-best-name">' + escapeHtml(best.name) + '</h3>';
 
         // Display resource suggestions based on profile
@@ -2544,12 +2631,12 @@
           html += '<div class="ai-best-specs">';
           if (bestMouse.dpi || bestMouse.dpiMax) {
             var dpiValue = bestMouse.dpi || bestMouse.dpiMax;
-            html += '<span>📊 <span class="ai-counter-anim" data-value="' + dpiValue + '">0</span> DPI</span>';
+            html += '<span>ðŸ“Š <span class="ai-counter-anim" data-value="' + dpiValue + '">0</span> DPI</span>';
           }
           if (bestMouse.weight) {
-            html += '<span>⚖️ <span class="ai-counter-anim" data-value="' + bestMouse.weight + '">0</span>g</span>';
+            html += '<span>âš–ï¸ <span class="ai-counter-anim" data-value="' + bestMouse.weight + '">0</span>g</span>';
           }
-          html += '<span>' + (bestMouse.wireless ? '📡 Wireless' : '🔌 Wired') + '</span>';
+          html += '<span>' + (bestMouse.wireless ? 'ðŸ“¡ Wireless' : 'ðŸ”Œ Wired') + '</span>';
           html += '</div>';
           
           // Create product URL
@@ -2562,7 +2649,7 @@
         var expertTip = generateExpertTip(bestMouse, recommendation.userProfile);
         if (expertTip) {
           html += '<div class="ai-expert-tip">';
-          html += '<h4>🧑‍� L\'avis de l\'expert</h4>';
+          html += '<h4>ðŸ§‘â€ï¿½ L\'avis de l\'expert</h4>';
           html += '<p>' + expertTip + '</p>';
           html += '</div>';
         }
@@ -2570,21 +2657,21 @@
         // Action Plan card (MinSp Engine feature)
         if (best.actionPlan) {
           html += '<div class="ai-action-card">';
-          html += '<h4>📋 Action Plan</h4>';
+          html += '<h4>ðŸ“‹ Action Plan</h4>';
           html += '<p>' + escapeHtml(best.actionPlan) + '</p>';
           html += '</div>';
         }
 
         // Reason card
         html += '<div class="ai-reason-card">';
-        html += '<h4>💡 Why this mouse?</h4>';
+        html += '<h4>ðŸ’¡ Why this mouse?</h4>';
         html += '<p>' + escapeHtml(best.reason) + '</p>';
         html += '</div>';
 
         // Match details (MinSp Engine details)
         if (best.details && best.details.length > 0) {
           html += '<div class="ai-details-card">';
-          html += '<h4>🔍 Analysis Details</h4>';
+          html += '<h4>ðŸ” Analysis Details</h4>';
           html += '<ul class="ai-details-list">';
           best.details.forEach(function(detail) {
             html += '<li>' + escapeHtml(detail) + '</li>';
@@ -2596,7 +2683,7 @@
         // Alternatives with Match Scores
         if (alternatives.length > 0) {
           html += '<div class="ai-alternatives-card">';
-          html += '<h4>🔄 Alternative Options</h4>';
+          html += '<h4>ðŸ”„ Alternative Options</h4>';
           html += '<div class="ai-alt-list">';
           
           alternatives.forEach(function(alt) {
@@ -2612,7 +2699,7 @@
               html += '<span class="ai-alt-score"><span class="ai-counter-anim" data-value="' + alt.matchScore + '">0</span>% ' + alt.matchLevel + '</span>';
             }
             if (altMouse) {
-              html += '<span class="ai-alt-desc">' + altMouse.brand + ' • ' + (altMouse.wireless ? 'Wireless' : 'Wired') + '</span>';
+              html += '<span class="ai-alt-desc">' + altMouse.brand + ' â€¢ ' + (altMouse.wireless ? 'Wireless' : 'Wired') + '</span>';
             }
             html += '</div>';
             html += '<span class="ai-alt-price">$' + alt.price + '</span>';
@@ -2662,7 +2749,10 @@
         // Show loading
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<div class="spinner"></div> Processing...';
+        setMascotPose(pageMascot, 'work');
+        setMascotPose(mascotGuideIcon, 'work');
         showSection(loadingSection);
+        mascotSay("Analysis in progress. I am comparing your profile with the database.", 5200, 'work');
 
         // Simulate processing delay (for UX)
         setTimeout(function() {
@@ -2670,19 +2760,26 @@
           
           if (!recommendation.bestChoice) {
             errorMessage.innerHTML = 'No mice found in database. Please try again later.';
+            setMascotPose(pageMascot, 'think');
             showSection(errorSection);
+            mascotSay("I could not finish the analysis. Try again in a moment.", 5200, 'think');
           } else {
             displayResults(recommendation);
+            setMascotPose(pageMascot, '');
+            setMascotPose(mascotGuideIcon, '');
             showSection(resultsSection);
+            mascotSay("Your analysis is complete. Here is the best recommendation for you.", 6200, '');
           }
           
           submitBtn.disabled = false;
-          submitBtn.innerHTML = '<span>✨</span> Get My Recommendation';
+          submitBtn.innerHTML = '<span>âœ¨</span> Get My Recommendation';
         }, 800);
       }
 
       function resetForm() {
         form.reset();
+        setMascotPose(pageMascot, 'yawn');
+        setMascotPose(mascotGuideIcon, 'think');
         showSection(formSection);
       }
 
@@ -2699,30 +2796,30 @@
         if (budget <= 50) {
           // Budget profile
           resources = [
-            { icon: '💰', title: 'Best Budget Mice Under 50€', desc: 'Top affordable gaming mice reviewed', link: 'mice.html' },
-            { icon: '🎯', title: 'Value-for-Money Guide', desc: 'How to choose quality on a budget', link: 'about.html' },
-            { icon: '📊', title: 'Budget Comparison', desc: 'Compare specs vs price effectively', link: 'mice.html' }
+            { icon: 'ðŸ’°', title: 'Best Budget Mice Under 50â‚¬', desc: 'Top affordable gaming mice reviewed', link: 'mice.html' },
+            { icon: 'ðŸŽ¯', title: 'Value-for-Money Guide', desc: 'How to choose quality on a budget', link: 'about.html' },
+            { icon: 'ðŸ“Š', title: 'Budget Comparison', desc: 'Compare specs vs price effectively', link: 'mice.html' }
           ];
         } else if (usage === 'fps' || usage === 'moba') {
           // Gaming profile
           resources = [
-            { icon: '🎮', title: 'Pro Gaming Mice', desc: 'What esports players use', link: 'mice.html' },
-            { icon: '⚡', title: 'High DPI Settings', desc: 'Optimize sensitivity for FPS', link: 'about.html' },
-            { icon: '🏆', title: 'Tournament Gear', desc: 'Equipment for competitive play', link: 'mice.html' }
+            { icon: 'ðŸŽ®', title: 'Pro Gaming Mice', desc: 'What esports players use', link: 'mice.html' },
+            { icon: 'âš¡', title: 'High DPI Settings', desc: 'Optimize sensitivity for FPS', link: 'about.html' },
+            { icon: 'ðŸ†', title: 'Tournament Gear', desc: 'Equipment for competitive play', link: 'mice.html' }
           ];
         } else if (usage === 'bureautique' || usage === 'design') {
           // Productivity profile
           resources = [
-            { icon: '💼', title: 'Ergonomic Office Mice', desc: 'Comfort for long work sessions', link: 'mice.html' },
-            { icon: '🎨', title: 'Creative Tools', desc: 'Precision for design work', link: 'keyboards.html' },
-            { icon: '⌨️', title: 'Productivity Setup', desc: 'Complete workspace optimization', link: 'about.html' }
+            { icon: 'ðŸ’¼', title: 'Ergonomic Office Mice', desc: 'Comfort for long work sessions', link: 'mice.html' },
+            { icon: 'ðŸŽ¨', title: 'Creative Tools', desc: 'Precision for design work', link: 'keyboards.html' },
+            { icon: 'âŒ¨ï¸', title: 'Productivity Setup', desc: 'Complete workspace optimization', link: 'about.html' }
           ];
         } else {
           // General profile
           resources = [
-            { icon: '🖱️', title: 'Complete Mouse Guide', desc: 'Everything you need to know', link: 'mice.html' },
-            { icon: '⌨️', title: 'Keyboard Selection', desc: 'Find your perfect typing companion', link: 'keyboards.html' },
-            { icon: '🖥️', title: 'PC Building Guide', desc: 'Component selection tips', link: 'pc-components.html' }
+            { icon: 'ðŸ–±ï¸', title: 'Complete Mouse Guide', desc: 'Everything you need to know', link: 'mice.html' },
+            { icon: 'âŒ¨ï¸', title: 'Keyboard Selection', desc: 'Find your perfect typing companion', link: 'keyboards.html' },
+            { icon: 'ðŸ–¥ï¸', title: 'PC Building Guide', desc: 'Component selection tips', link: 'pc-components.html' }
           ];
         }
 
@@ -2737,6 +2834,19 @@
 
         resourcesGrid.innerHTML = html;
       }
+
+      var idleTips = [
+        "Tip: your main use has the biggest impact on the score.",
+        "Not sure? Leave optional fields empty. I can still analyze your profile.",
+        "You can come back later with a shared link to this profile."
+      ];
+      var idleTipIndex = 0;
+
+      setInterval(function() {
+        if (!formSection || formSection.classList.contains('hidden')) return;
+        mascotSay(idleTips[idleTipIndex], 3800, 'think');
+        idleTipIndex = (idleTipIndex + 1) % idleTips.length;
+      }, 22000);
 
       // Event listeners
       form.addEventListener('submit', handleSubmit);
@@ -2808,16 +2918,16 @@
 
         if (budget) {
           var budgetLabels = {
-            '30': 'Under 30€',
-            '50': 'Up to 50€',
-            '80': 'Up to 80€',
-            '100': 'Up to 100€',
-            '150': 'Up to 150€',
-            '200': 'Up to 200€',
-            '300': 'Up to 300€',
-            '400': 'Up to 400€'
+            '30': 'Under 30â‚¬',
+            '50': 'Up to 50â‚¬',
+            '80': 'Up to 80â‚¬',
+            '100': 'Up to 100â‚¬',
+            '150': 'Up to 150â‚¬',
+            '200': 'Up to 200â‚¬',
+            '300': 'Up to 300â‚¬',
+            '400': 'Up to 400â‚¬'
           };
-          titleParts.push(budgetLabels[budget] || budget + '€');
+          titleParts.push(budgetLabels[budget] || budget + 'â‚¬');
         }
 
         if (wireless === 'true') {
@@ -2834,7 +2944,7 @@
           // Update h1
           var h1 = document.querySelector('.ai-page-header h1');
           if (h1) {
-            h1.textContent = '🖱️ ' + dynamicTitle;
+            h1.textContent = 'ðŸ–±ï¸ ' + dynamicTitle;
           }
 
           // Update description
@@ -2872,35 +2982,11 @@
       }
 
       initCounter();
+
+      // Mascot greeting on the AI page
+      mascotSay("Fill out your profile and I will prepare a precise recommendation.", 5600, 'think', 'is-right');
     })();
   </script>
-
-  <style>
-    /* Google Translate Widget Styling */
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0 !important; }
-    .goog-te-gadget-simple {
-      background: transparent !important; border: none !important;
-      padding: 0 !important; margin: 0 !important;
-      font-family: inherit !important; font-size: 14px !important; color: #fff !important;
-    }
-    .goog-te-menu-value { color: #fff !important; }
-    .goog-te-menu-value span { color: #fff !important; border: none !important; }
-    .goog-te-gadget-icon, .goog-logo-link, .goog-te-gadget span { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value:first-child {
-      display: inline-flex !important; align-items: center; gap: 8px;
-    }
-  </style>
-
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+

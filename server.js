@@ -2,7 +2,7 @@
 
 const express = require('express');
 const path = require('path');
-const { getMinSpRecommendation } = require('./recommendations');
+const { getMinSpRecommendation, calculateMatch } = require('./recommendations');
 
 const app = express();
 const PORT = process.env.PORT || 3000;

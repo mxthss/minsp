@@ -1,0 +1,22 @@
+# Robots.txt for MinSp
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Block access to configuration and backend files
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.git/
+Disallow: /data/
+Disallow: /api/
+
+# Block access to development files
+Disallow: /.*.swp
+Disallow: /.*.swo
+Disallow: /.*.bak
+
+# Sitemap location
+Sitemap: https://minsp.onrender.com/sitemap.xml

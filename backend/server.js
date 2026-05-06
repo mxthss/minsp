@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 // Security: Rate limiting middleware (simple in-memory)
 const requestCounts = new Map();
-const RATE_LIMIT = 10; // requests per minute
+const RATE_LIMIT = 60; // requests per minute
 const RATE_WINDOW = 60 * 1000; // 1 minute
 
 function rateLimit(req, res, next) {

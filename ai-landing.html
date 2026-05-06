@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSp — Recommandation IA | Choisissez votre catégorie</title>
-  <meta name="description" content="Obtenez une recommandation personnalisée par IA pour souris, claviers ou composants PC. Analysez votre profil et trouvez le produit idéal.">
+  <title>MinSp â€” Recommandation IA | Choisissez votre catÃ©gorie</title>
+  <meta name="description" content="Obtenez une recommandation personnalisÃ©e par IA pour souris, claviers ou composants PC. Analysez votre profil et trouvez le produit idÃ©al.">
   <meta name="robots" content="index, follow">
 
   <!-- Canonical URL -->
@@ -19,7 +19,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="MinSp - AI Recommendation">
-  <meta property="og:description" content="Découvrez gratuitement votre produit idéal avec notre IA en 30 secondes.">
+  <meta property="og:description" content="DÃ©couvrez gratuitement votre produit idÃ©al avec notre IA en 30 secondes.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://minsp.onrender.com/ai-landing.html">
   <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
@@ -27,7 +27,7 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MinSp - AI Recommendation">
-  <meta name="twitter:description" content="Découvrez gratuitement votre produit idéal avec notre IA.">
+  <meta name="twitter:description" content="DÃ©couvrez gratuitement votre produit idÃ©al avec notre IA.">
   <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
 
   <!-- Critical CSS -->
@@ -37,6 +37,7 @@
   <script src="./theme-toggle.js"></script>
   <!-- Premium Sticky Nav -->
   <script src="./nav-header.js"></script>
+  <script src="./i18n.js"></script>
 
   <style>
     .ai-landing-page {
@@ -217,7 +218,7 @@
   </style>
 </head>
 <body class="theme-tech">
-  <!-- ═══ Premium Sticky Nav ═══ -->
+  <!-- â•â•â• Premium Sticky Nav â•â•â• -->
   <nav class="site-nav" id="site-nav">
     <div class="site-nav-inner">
       <!-- Left: Logo + Slogan -->
@@ -239,7 +240,6 @@
         <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Favoris</span></button>
         <!-- Google Translate Widget -->
         <div class="nav-lang-picker">
-          <div id="google_translate_element"></div>
         </div>
         <a href="login.html" class="nav-account-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Se connecter</span></a>
         <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
@@ -249,10 +249,13 @@
 
   <div class="ai-landing-page">
     <div class="ai-landing-container">
-      <a href="index.html" class="ai-landing-back">← Back to home</a>
+      <a href="index.html" class="ai-landing-back">â† Back to home</a>
 
       <div class="ai-landing-hero">
-        <h1>🤖 AI Recommendation</h1>
+        <!-- Mascotte MinSp (centrÃ©e horizontalement) -->
+        <div class="minsp-mascot is-yawning" role="img" aria-label="MinSp mascot resting"></div>
+
+        <h1>ðŸ¤– AI Recommendation</h1>
         <p>Choose a category and let our AI find your perfect product</p>
       </div>
 
@@ -296,6 +299,16 @@
     </div>
   </div>
 
+  <!-- Mascotte assistante MinSp -->
+  <aside class="minsp-guide is-right is-visible is-speaking" id="minsp-guide-landing" aria-live="polite">
+    <div class="minsp-guide-inner">
+      <div class="minsp-guide-bubble" id="minsp-guide-landing-text">
+        I am watching the AI tools. Choose a category and I will get to work.
+      </div>
+      <div class="minsp-mascot is-thinking" role="img" aria-label="MinSp mascot"></div>
+    </div>
+  </aside>
+
   <script>
     // Simple entrance animation
     document.addEventListener('DOMContentLoaded', function() {
@@ -309,34 +322,43 @@
           card.style.transform = 'translateY(0)';
         }, 100 * index);
       });
+
+      // Mascotte: mini "visite" avec messages contextuels
+      const guide = document.getElementById('minsp-guide-landing');
+      const guideText = document.getElementById('minsp-guide-landing-text');
+      const messages = [
+        "I am watching the AI tools. Choose a category and I will get to work.",
+        "Need a quick recommendation? Pick the category you care about.",
+        "When you start an analysis, I compare the options for you."
+      ];
+      const sides = ['is-right', 'is-left'];
+      let msgIndex = 0;
+      let sideIndex = 1;
+
+      function showGuideMessage(message) {
+        const side = sides[sideIndex];
+        sideIndex = (sideIndex + 1) % sides.length;
+        guide.classList.remove('is-visible', 'is-speaking', 'is-left', 'is-right');
+        guide.classList.add(side);
+        guideText.textContent = message;
+        void guide.offsetWidth;
+        guide.classList.add('is-visible', 'is-speaking');
+
+        setTimeout(() => {
+          guide.classList.remove('is-speaking', 'is-visible');
+        }, 5200);
+      }
+
+      setTimeout(() => {
+        guide.classList.remove('is-speaking', 'is-visible');
+      }, 5600);
+
+      setInterval(() => {
+        msgIndex = (msgIndex + 1) % messages.length;
+        showGuideMessage(messages[msgIndex]);
+      }, 18000);
     });
   </script>
-
-  <style>
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0 !important; }
-    .goog-te-gadget-simple {
-      background: transparent !important; border: none !important;
-      padding: 0 !important; margin: 0 !important;
-      font-family: inherit !important; font-size: 14px !important; color: #fff !important;
-    }
-    .goog-te-menu-value { color: #fff !important; }
-    .goog-te-menu-value span { color: #fff !important; border: none !important; }
-    .goog-te-gadget-icon, .goog-logo-link, .goog-te-gadget span { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value:first-child {
-      display: inline-flex !important; align-items: center; gap: 8px;
-    }
-  </style>
-
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSp — Comparateur de produits tech | Souris, Claviers, PC</title>
-  <meta name="description" content="Comparez gratuitement les meilleurs souris gaming, claviers mécaniques et composants PC. Analyse IA, filtres avancés, sans inscription.">
-  <meta name="keywords" content="comparateur souris, souris gaming, clavier mécanique, composants PC, comparaison produit, DPI, polling rate, MinSp">
+  <title>MinSp â€” Comparateur de produits tech | Souris, Claviers, PC</title>
+  <meta name="description" content="Comparez gratuitement les meilleurs souris gaming, claviers mÃ©caniques et composants PC. Analyse IA, filtres avancÃ©s, sans inscription.">
+  <meta name="keywords" content="comparateur souris, souris gaming, clavier mÃ©canique, composants PC, comparaison produit, DPI, polling rate, MinSp">
   <meta name="author" content="MinSP">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="CV6NEJikamETphSj5twGac7Mi7tFtxIYhvDU10gUAG8" />
@@ -28,7 +28,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://minsp.onrender.com/">
   <meta property="og:title" content="MinSp - Electronic Product Comparison">
-  <meta property="og:description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, précis et sans inscription !">
+  <meta property="og:description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, prÃ©cis et sans inscription !">
   <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -39,7 +39,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://minsp.onrender.com/">
   <meta name="twitter:title" content="MinSp - Electronic Product Comparison">
-  <meta name="twitter:description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, précis et sans inscription !">
+  <meta name="twitter:description" content="Comparez gratuitement les meilleurs souris et PC en 30 secondes. Rapide, prÃ©cis et sans inscription !">
   <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
 
   <!-- Discord (utilise OpenGraph) -->
@@ -65,6 +65,7 @@
   <script src="./mobile-filters.js"></script>
   <!-- Premium Sticky Nav -->
   <script src="./nav-header.js"></script>
+  <script src="./i18n.js"></script>
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -81,7 +82,7 @@
   </script>
 </head>
 <body class="theme-tech">
-  <!-- ═══ Premium Sticky Nav ═══ -->
+  <!-- â•â•â• Premium Sticky Nav â•â•â• -->
   <nav class="site-nav" id="site-nav">
     <div class="site-nav-inner">
       <!-- Left: Logo + Slogan -->
@@ -96,7 +97,7 @@
       <div class="nav-center">
         <nav class="nav-links" aria-label="Main navigation">
           <a href="index.html" class="nav-link is-active" data-i18n="navHome">Home</a>
-          <a href="mice.html" class="nav-link" data-i18n="navMice">Mice</a>
+          <a href="mice.html" class="nav-link" data-i18n="navMice">Mouse</a>
           <a href="keyboards.html" class="nav-link" data-i18n="navKeyboards">Keyboards</a>
           <a href="pc-components.html" class="nav-link" data-i18n="navPCComponents">PC Components</a>
           <a href="ai-landing.html" class="nav-link nav-link-ai" data-i18n="navAIRecommendation">AI Recommendation</a>
@@ -124,11 +125,11 @@
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="fr" data-flag="fi-fr" aria-selected="false">
               <span class="fi fi-fr" aria-hidden="true"></span>
-              <span>Français (FR)</span>
+              <span>FranÃ§ais (FR)</span>
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="es" data-flag="fi-es" aria-selected="false">
               <span class="fi fi-es" aria-hidden="true"></span>
-              <span>Español (ES)</span>
+              <span>EspaÃ±ol (ES)</span>
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="de" data-flag="fi-de" aria-selected="false">
               <span class="fi fi-de" aria-hidden="true"></span>
@@ -140,15 +141,15 @@
             </button>
             <button class="nav-lang-option" type="button" role="option" data-lang="pt" data-flag="fi-pt" aria-selected="false">
               <span class="fi fi-pt" aria-hidden="true"></span>
-              <span>Português (PT)</span>
+              <span>PortuguÃªs (PT)</span>
             </button>
           </div>
         </div>
 
-        <a href="login.html" class="nav-account-btn">
+        <button type="button" class="nav-account-btn" onclick="showAuthModal('login')">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           <span data-i18n="navLogin">Se connecter</span>
-        </a>
+        </button>
 
         <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -156,11 +157,7 @@
       </div>
     </div>
   </nav>
-
-  <!-- Google Translate element (outside nav to avoid blocking clicks) -->
-  <div id="google_translate_element" style="display:none;position:absolute;left:-9999px;"></div>
-
-  <!-- ═══ Stats Section (Below Header) ═══ -->
+<!-- â•â•â• Stats Section (Below Header) â•â•â• -->
   <section class="stats-section" aria-label="Catalog statistics">
     <div class="stats-grid">
       <div class="stat-card">
@@ -203,7 +200,7 @@
             <a href="pc-components.html" class="catalog-bubble-card" data-catalog="pc-component">
               <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3M9 9h.01M15 9h.01M9 15h.01M15 15h.01"/></svg></span>
               <span class="catalog-bubble-card-name" data-i18n="catPCComponentsName">PC Components</span>
-              <span class="catalog-bubble-card-desc" data-i18n="catPCComponentsDesc">Graphics cards, RAM…</span>
+              <span class="catalog-bubble-card-desc" data-i18n="catPCComponentsDesc">Graphics cards, RAMâ€¦</span>
             </a>
             <a href="#" class="catalog-bubble-card catalog-bubble-card-soon">
               <span class="catalog-bubble-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
@@ -288,10 +285,10 @@
               <h2 id="catalog-title" data-i18n="sectionCatalogTitle">Product selection</h2>
             </div>
             <div class="section-actions">
-              <button type="button" class="back-home-btn" id="back-home-btn">← <span data-i18n="buttonBackHome">🏠 Home</span></button>
-              <button type="button" class="fav-view-btn" id="fav-view-btn">★ <span id="fav-btn-text" data-i18n="buttonFavorites">Favorites</span></button>
+              <button type="button" class="back-home-btn" id="back-home-btn">â† <span data-i18n="buttonBackHome">ðŸ  Home</span></button>
+              <button type="button" class="fav-view-btn" id="fav-view-btn">â˜… <span id="fav-btn-text" data-i18n="buttonFavorites">Favorites</span></button>
               <a href="ai-recommend.html" class="ai-recommend-btn" id="ai-recommend-btn" data-i18n-aria="aiTooltip" title="Get AI mouse recommendation (login required)" onclick="return checkAIAccess();">
-                <span class="ai-btn-icon">✨</span>
+                <span class="ai-btn-icon">âœ¨</span>
                 <span class="ai-btn-text" data-i18n="buttonAI">AI</span>
               </a>
             </div>
@@ -359,7 +356,7 @@
               <p class="section-kicker" id="fav-kicker" data-i18n="favKicker">Favorites</p>
               <h2 id="fav-page-title" data-i18n="favTitle">Your favorites</h2>
             </div>
-            <button type="button" class="back-btn" id="back-to-catalog" data-i18n="buttonBackToCatalog">← Back to catalog</button>
+            <button type="button" class="back-btn" id="back-to-catalog" data-i18n="buttonBackToCatalog">â† Back to catalog</button>
           </div>
           <div class="catalog-grid" id="favorites-grid"></div>
         </section>
@@ -395,83 +392,10 @@
       </aside>
     </div>
   </div>
-
-  <style>
-    /* Google Translate Widget Styling - HIDE ALL GOOGLE TRANSLATE UI */
-    .goog-te-banner-frame {
-      display: none !important;
-    }
-    body {
-      top: 0 !important;
-    }
-    /* Hide the Google Translate iframe overlay that blocks clicks */
-    .goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    .goog-te-spinner-pos,
-    .goog-te-bottom-bar,
-    .skiptranslate {
-      display: none !important;
-      pointer-events: none !important;
-      visibility: hidden !important;
-      height: 0 !important;
-      width: 0 !important;
-      overflow: hidden !important;
-      position: absolute !important;
-      z-index: -9999 !important;
-    }
-    /* Ensure our custom language picker is always above everything */
-    .nav-lang-picker {
-      position: relative;
-      z-index: 10000 !important;
-    }
-    .nav-lang-trigger {
-      pointer-events: auto !important;
-      z-index: 10001 !important;
-      position: relative !important;
-    }
-    .nav-lang-menu {
-      z-index: 10002 !important;
-    }
-    /* Style the translate dropdown to match our design */
-    .goog-te-gadget-simple {
-      background: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      font-family: inherit !important;
-      font-size: 14px !important;
-      color: #fff !important;
-    }
-    .goog-te-menu-value {
-      color: #fff !important;
-    }
-    .goog-te-menu-value span {
-      color: #fff !important;
-      border: none !important;
-    }
-    /* Hide the icon and "Powered by" text */
-    .goog-te-gadget-icon {
-      display: none !important;
-    }
-    .goog-logo-link {
-      display: none !important;
-    }
-    .goog-te-gadget span {
-      display: none !important;
-    }
-    /* Show only the language selector */
-    .goog-te-gadget-simple .goog-te-menu-value:first-child {
-      display: inline-flex !important;
-      align-items: center;
-      gap: 8px;
-    }
-  </style>
-
-  <script src="./data/mice.js"></script>
+<script src="./data/mice.js"></script>
   <script src="./data/keyboards.js"></script>
   <script src="./data/pc-components.js"></script>
   <script src="./app.js"></script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -493,7 +417,7 @@
         <div class="footer-categories">
           <a href="ai-recommend.html?usage=gaming&budget=50" data-i18n="footerBudgetGaming">Budget Gaming Mice</a>
           <a href="ai-recommend.html?usage=fps&wireless=true" data-i18n="footerWirelessFPS">Wireless FPS Mice</a>
-          <a href="ai-recommend.html?usage=bureautique&budget=80" data-i18n="footerOfficeUnder80">Office Mice Under €80</a>
+          <a href="ai-recommend.html?usage=bureautique&budget=80" data-i18n="footerOfficeUnder80">Office Mice Under â‚¬80</a>
           <a href="ai-recommend.html?weight=ultralight&wireless=true" data-i18n="footerUltraLight">Ultra Light Wireless</a>
           <a href="ai-recommend.html?brand=Logitech&usage=gaming" data-i18n="footerLogitechGaming">Logitech Gaming</a>
           <a href="ai-recommend.html?hand-size=small&usage=gaming" data-i18n="footerSmallHand">Small Hand Gaming</a>
@@ -512,44 +436,6 @@
     </div>
   </footer>
 
-  <!-- Keep-alive script to counter Render Cold Start -->
-  <script>
-    (function() {
-      // Configuration
-      var BACKEND_URL = 'https://minsp.onrender.com'; // Change this to your Render backend URL
-      var PING_INTERVAL = 14 * 60 * 1000; // 14 minutes in milliseconds
-      
-      // Keep connection warm with periodic pings to /ping endpoint
-      setInterval(function() {
-        if (navigator.onLine) {
-          fetch(BACKEND_URL + '/ping', { 
-            method: 'GET',
-            cache: 'no-store',
-            headers: {
-              'X-Keep-Alive': 'true'
-            }
-          }).then(function(response) {
-            if (response.ok) {
-              console.log('[Keep-Alive] Ping successful at', new Date().toLocaleTimeString());
-            }
-          }).catch(function(error) {
-            console.log('[Keep-Alive] Ping failed:', error);
-          });
-        }
-      }, PING_INTERVAL);
-      
-      // Initial ping on page load (with delay to let page fully load)
-      setTimeout(function() {
-        if (navigator.onLine) {
-          fetch(BACKEND_URL + '/ping', { 
-            method: 'GET',
-            cache: 'no-store'
-          }).catch(function() {});
-        }
-      }, 5000);
-    })();
-  </script>
-
   <script>
     // Check AI access - redirects to login if not authenticated
     function checkAIAccess() {
@@ -563,7 +449,7 @@
       }
       
       if (!currentUser) {
-        alert('🔒 Please log in to use AI recommendations\n\nCreate a free account to unlock personalized mouse recommendations powered by AI.');
+        alert('ðŸ”’ Please log in to use AI recommendations\n\nCreate a free account to unlock personalized mouse recommendations powered by AI.');
         window.location.href = 'login.html?return=ai-recommend.html';
         return false;
       }
@@ -571,5 +457,7 @@
       return true;
     }
   </script>
+
 </body>
 </html>
+

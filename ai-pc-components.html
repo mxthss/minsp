@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinSp — Recommandation IA Composants PC | Trouvez vos composants idéaux</title>
-  <meta name="description" content="Obtenez une recommandation de composants PC personnalisée par IA. Analysez votre usage, budget et besoins. Gratuit et sans inscription.">
+  <title>MinSp â€” Recommandation IA Composants PC | Trouvez vos composants idÃ©aux</title>
+  <meta name="description" content="Obtenez une recommandation de composants PC personnalisÃ©e par IA. Analysez votre usage, budget et besoins. Gratuit et sans inscription.">
   <meta name="robots" content="index, follow">
 
   <link rel="canonical" href="https://minsp.onrender.com/ai-pc-components.html">
@@ -13,14 +13,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <meta property="og:title" content="MinSp - AI PC Components Recommendation">
-  <meta property="og:description" content="Découvrez vos composants PC idéaux avec notre IA.">
+  <meta property="og:description" content="DÃ©couvrez vos composants PC idÃ©aux avec notre IA.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://minsp.onrender.com/ai-pc-components.html">
   <meta property="og:image" content="https://minsp.onrender.com/og-image.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MinSp - AI PC Components Recommendation">
-  <meta name="twitter:description" content="Découvrez vos composants PC idéaux avec notre IA.">
+  <meta name="twitter:description" content="DÃ©couvrez vos composants PC idÃ©aux avec notre IA.">
   <meta name="twitter:image" content="https://minsp.onrender.com/og-image.png">
 
   <link rel="stylesheet" href="./critical-ai-recommend.css">
@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
   <script src="./theme-toggle.js"></script>
   <script src="./nav-header.js"></script>
+  <script src="./i18n.js"></script>
   <script src="./app-optimizations.js"></script>
 </head>
 <body class="theme-tech">
@@ -43,10 +44,9 @@
         <button class="nav-fav-btn" id="nav-fav-btn" type="button" aria-label="Voir les favoris"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Favoris</span></button>
         <!-- Google Translate Widget -->
         <div class="nav-lang-picker">
-          <div id="google_translate_element"></div>
         </div>
         <a href="ai-landing.html" class="nav-ai-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M19 13l.75 2.25L22 16l-2.25.75L19 19l-.75-2.25L16 16l2.25-.75L19 13z"/><path d="M5 17l.5 1.5L7 19l-1.5.5L5 21l-.5-1.5L3 19l1.5-.5L5 17z"/></svg><span>Recommandation IA</span></a>
-        <a href="login.html" class="nav-account-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Créer compte</span></a>
+        <a href="login.html" class="nav-account-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>CrÃ©er compte</span></a>
         <button class="nav-mobile-toggle" id="nav-mobile-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
       </div>
     </div>
@@ -54,15 +54,15 @@
 
   <div class="ai-page">
     <div class="ai-container">
-      <a href="pc-components.html" class="ai-back-link">← Back to PC components</a>
+      <a href="pc-components.html" class="ai-back-link">â† Back to PC components</a>
 
       <div class="ai-page-header">
-        <h1>🖥️ AI PC Components Recommendation</h1>
+        <h1>ðŸ–¥ï¸ AI PC Components Recommendation</h1>
         <p>Answer a few questions and let our AI help you choose your PC components</p>
       </div>
 
       <div class="ai-form-card" id="ai-form-section">
-        <h2><span class="icon">🎯</span> Your Build Preferences</h2>
+        <h2><span class="icon">ðŸŽ¯</span> Your Build Preferences</h2>
 
         <div class="ai-progress-container">
           <div class="ai-progress-bar" id="ai-progress-bar">
@@ -77,12 +77,12 @@
               <label for="ai-budget">Total Budget <span class="required">*</span></label>
               <select id="ai-budget" name="budget" required>
                 <option value="">Select...</option>
-                <option value="500">Under 500€</option>
-                <option value="800">500€ - 800€</option>
-                <option value="1200">800€ - 1200€</option>
-                <option value="1500">1200€ - 1500€</option>
-                <option value="2000">1500€ - 2000€</option>
-                <option value="3000">2000€+</option>
+                <option value="500">Under 500â‚¬</option>
+                <option value="800">500â‚¬ - 800â‚¬</option>
+                <option value="1200">800â‚¬ - 1200â‚¬</option>
+                <option value="1500">1200â‚¬ - 1500â‚¬</option>
+                <option value="2000">1500â‚¬ - 2000â‚¬</option>
+                <option value="3000">2000â‚¬+</option>
               </select>
             </div>
 
@@ -153,7 +153,7 @@
 
           <div class="ai-form-group" style="margin-top: 24px;">
             <button type="submit" class="ai-submit-btn" id="ai-submit-btn">
-              <span class="btn-text">✨ Get My Recommendation</span>
+              <span class="btn-text">âœ¨ Get My Recommendation</span>
               <span class="btn-loader" style="display: none;">
                 <svg class="spinner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="60" stroke-dashoffset="20"/></svg>
                 Analyzing...
@@ -164,22 +164,22 @@
       </div>
 
       <div class="ai-result-card" id="ai-result-section" style="display: none;">
-        <h2>🎉 Your Component Recommendation</h2>
+        <h2>ðŸŽ‰ Your Component Recommendation</h2>
         <div id="ai-result-content"></div>
         <button class="ai-reset-btn" id="ai-reset-btn" type="button">Start Over</button>
       </div>
 
       <div class="ai-info-grid">
         <div class="ai-info-card">
-          <h3>🧠 How It Works</h3>
+          <h3>ðŸ§  How It Works</h3>
           <p>Our AI analyzes your build requirements against our database of PC components to find the best match.</p>
         </div>
         <div class="ai-info-card">
-          <h3>⚡ Real-time Analysis</h3>
+          <h3>âš¡ Real-time Analysis</h3>
           <p>Get instant recommendations based on current market availability, pricing, and compatibility.</p>
         </div>
         <div class="ai-info-card">
-          <h3>🔒 No Data Stored</h3>
+          <h3>ðŸ”’ No Data Stored</h3>
           <p>Your preferences are processed in real-time and never stored on our servers.</p>
         </div>
       </div>
@@ -187,32 +187,6 @@
   </div>
 
   <script src="./ai-pc-components-engine.js"></script>
-
-  <style>
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0 !important; }
-    .goog-te-gadget-simple {
-      background: transparent !important; border: none !important;
-      padding: 0 !important; margin: 0 !important;
-      font-family: inherit !important; font-size: 14px !important; color: #fff !important;
-    }
-    .goog-te-menu-value { color: #fff !important; }
-    .goog-te-menu-value span { color: #fff !important; border: none !important; }
-    .goog-te-gadget-icon, .goog-logo-link, .goog-te-gadget span { display: none !important; }
-    .goog-te-gadget-simple .goog-te-menu-value:first-child {
-      display: inline-flex !important; align-items: center; gap: 8px;
-    }
-  </style>
-
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr,es,de,it,pt,nl,pl,sv,uk,ru,zh-CN,ja,ko,ar,hi',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+

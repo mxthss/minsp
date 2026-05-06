@@ -10,7 +10,6 @@ Disallow: /.env
 Disallow: /package.json
 Disallow: /package-lock.json
 Disallow: /.git/
-Disallow: /data/
 Disallow: /api/
 
 # Block access to development files
