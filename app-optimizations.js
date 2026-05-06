@@ -343,6 +343,12 @@
         return null;
       }
       
+      // Ne pas enregistrer le Service Worker en mode file://
+      if (window.location.protocol === 'file:') {
+        console.log('[SW] Service Worker disabled in file:// protocol');
+        return null;
+      }
+      
       try {
         this.registration = await navigator.serviceWorker.register('/sw.js', {
           scope: '/',

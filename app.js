@@ -3262,6 +3262,9 @@ if (typeof window.normalizeLanguageCode !== 'function') {
       detailPanel.setAttribute("tabindex", "0");
     }
 
+    // Définir les éléments manquants pour éviter les erreurs
+    var backHomeBtn = document.getElementById('back-home-btn');
+
     initializeLanguageSelector();
     bindEvents();
     updateHeaderAuth();
