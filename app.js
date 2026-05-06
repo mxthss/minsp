@@ -3264,6 +3264,7 @@ if (typeof window.normalizeLanguageCode !== 'function') {
 
     // Définir les éléments manquants pour éviter les erreurs
     var backHomeBtn = document.getElementById('back-home-btn');
+    var favViewBtn = document.getElementById('fav-view-btn');
 
     initializeLanguageSelector();
     bindEvents();
