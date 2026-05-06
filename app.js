@@ -3268,6 +3268,9 @@ if (typeof window.normalizeLanguageCode !== 'function') {
         }
         handleRoute(routeToHandle, initialHash);
         console.log('[Route] Loaded catalog from URL:', routeToHandle);
+      } else if (routeToHandle === '/') {
+        // Page d'accueil - mettre à jour les statistiques
+        syncStats(mice);
       }
     }
 
